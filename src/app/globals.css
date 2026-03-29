@@ -1,0 +1,65 @@
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ocean: #0077b6;
+    --ocean-clair: #00b4d8;
+    --ocean-pale: #caf0f8;
+    --sable: #fdf6ec;
+    --sable-fonce: #f0e3ca;
+    --ardoise: #1a2333;
+    --ardoise-clair: #4a5568;
+    --vert-accessible: #2d6a4f;
+    --vert-pale: #d8f3dc;
+    --corail: #e76f51;
+    --soleil: #f4a261;
+  }
+
+  /* Taille de police accessible — minimum 16px */
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+
+  /* Focus visible très clair pour navigation clavier */
+  *:focus-visible {
+    outline: 3px solid var(--ocean);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  body {
+    font-family: var(--font-nunito), sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-ocean { color: var(--ocean); }
+  .bg-ocean { background-color: var(--ocean); }
+  .text-ardoise { color: var(--ardoise); }
+  .bg-sable { background-color: var(--sable); }
+  .bg-sable-fonce { background-color: var(--sable-fonce); }
+  .bg-ocean-pale { background-color: var(--ocean-pale); }
+  .text-vert-accessible { color: var(--vert-accessible); }
+  .bg-vert-pale { background-color: var(--vert-pale); }
+
+  /* Gradient vague décoratif */
+  .vague-bg {
+    background: linear-gradient(
+      135deg,
+      #e0f7fa 0%,
+      #b2ebf2 30%,
+      #caf0f8 60%,
+      #fdf6ec 100%
+    );
+  }
+}
+
+/* Carte Leaflet */
+.leaflet-container {
+  border-radius: 12px;
+  z-index: 0;
+}

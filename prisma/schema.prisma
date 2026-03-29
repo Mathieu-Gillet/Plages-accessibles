@@ -1,0 +1,108 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Plage {
+  id          String   @id @default(cuid())
+  nom         String
+  slug        String   @unique
+  description String?
+  departement String
+  region      String
+  commune     String
+  codePostal  String
+  latitude    Float
+  longitude   Float
+  photo       String?  // URL photo principale
+  photos      String[] // URLs photos supplémentaires
+  noteGlobale Float    @default(0)
+  nombreAvis  Int      @default(0)
+  actif       Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  accessibilites  Accessibilite[]
+  hebergements    Hebergement[]
+  offrescultures  OffreCulturelle[]
+  avis            Avis[]
+
+  @@index([departement])
+  @@index([region])
+  @@index([noteGlobale])
+}
+
+model Accessibilite {
+  id          String          @id @default(cuid())
+  type        TypeAccessibilite
+  disponible  Boolean         @default(true)
+  details     String?
+  plageId     String
+  plage       Plage           @relation(fields: [plageId], references: [id], onDelete: Cascade)
+}
+
+enum TypeAccessibilite {
+  FAUTEUIL_ROULANT      // Accès fauteuil roulant
+  HANDISURF             // Handisurf / surf adapté
+  TIRALO                // Tiralo (fauteuil amphibie)
+  HIPPOCAMPE            // Hippocampe (fauteuil nautique)
+  PARKINGS_PMR          // Parkings PMR
+  SANITAIRES_ADAPTES    // Sanitaires adaptés
+  DOUCHES_ACCESSIBLES   // Douches accessibles
+  CHEMIN_ACCES          // Chemin d'accès aménagé
+  RAMPE_ACCES           // Rampe d'accès
+  SABLE_COMPACT         // Sable compact / tapis de plage
+  PERSONNEL_FORME       // Personnel formé handicap
+  SIGNALISATION_BRAILLE // Signalisation braille / malvoyants
+  BOUCLE_MAGNETIQUE     // Boucle magnétique / malentendants
+  LOCATION_MATERIEL     // Location matériel adapté
+}
+
+model Hebergement {
+  id          String  @id @default(cuid())
+  nom         String
+  type        String  // hôtel, camping, gîte, etc.
+  adresse     String
+  telephone   String?
+  email       String?
+  siteWeb     String?
+  latitude    Float
+  longitude   Float
+  distanceKm  Float   // distance de la plage en km
+  accessiblePMR Boolean @default(false)
+  plageId     String
+  plage       Plage   @relation(fields: [plageId], references: [id], onDelete: Cascade)
+}
+
+model OffreCulturelle {
+  id          String  @id @default(cuid())
+  nom         String
+  type        String  // musée, festival, monument, activité
+  adresse     String
+  description String?
+  telephone   String?
+  siteWeb     String?
+  latitude    Float
+  longitude   Float
+  distanceKm  Float
+  accessiblePMR Boolean @default(false)
+  plageId     String
+  plage       Plage   @relation(fields: [plageId], references: [id], onDelete: Cascade)
+}
+
+model Avis {
+  id        String   @id @default(cuid())
+  note      Int      // 1-5
+  commentaire String?
+  auteur    String?
+  date      DateTime @default(now())
+  plageId   String
+  plage     Plage    @relation(fields: [plageId], references: [id], onDelete: Cascade)
+}
