@@ -107,7 +107,7 @@ export interface Avis {
   note: number
   commentaire?: string | null
   auteur?: string | null
-  date: string
+  date: Date
 }
 
 export const REGIONS_FRANCE = [
