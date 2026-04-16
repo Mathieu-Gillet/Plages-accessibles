@@ -10,6 +10,7 @@ interface SearchParams {
   departement?: string
   q?: string
   page?: string
+  [key: string]: string | undefined
 }
 
 async function rechercherPlages(params: SearchParams): Promise<{ plages: PlageResume[]; total: number }> {
