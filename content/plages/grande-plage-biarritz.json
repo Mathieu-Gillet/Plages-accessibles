@@ -1,0 +1,27 @@
+{
+  "slug": "grande-plage-biarritz",
+  "nom": "Grande Plage de Biarritz",
+  "description": "Plage centrale de Biarritz au pied du Casino municipal, labellisée Handiplage niveau 3. Cheminement en bois, tiralos disponibles auprès des MNS, parking PMR au Square Edouard VII et sanitaires PMR à proximité. Encadrement par des sauveteurs formés à l'accueil des personnes handicapées.",
+  "commune": "Biarritz",
+  "codePostal": "64200",
+  "departement": "Pyrénées-Atlantiques",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.4848,
+  "longitude": -1.5614,
+  "photos": [],
+  "noteGlobale": 0,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-18",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "CHEMIN_ACCES",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "plage-sables-d-or-anglet",
+  "nom": "Plage des Sables d'Or à Anglet",
+  "description": "Plage du Pays basque labellisée Handiplage niveau 3, avec un environnement préservé entre Anglet et Biarritz. Zone de baignade surveillée, mise à disposition de tiralos et de fauteuils Hippocampe, rampe d'accès au sable, parking PMR et sanitaires adaptés à proximité immédiate.",
+  "commune": "Anglet",
+  "codePostal": "64600",
+  "departement": "Pyrénées-Atlantiques",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.4969,
+  "longitude": -1.5378,
+  "photos": [],
+  "noteGlobale": 0,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-18",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "HIPPOCAMPE",
+    "RAMPE_ACCES",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
