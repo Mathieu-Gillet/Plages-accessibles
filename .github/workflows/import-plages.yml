@@ -1,0 +1,107 @@
+name: Import quotidien des plages
+
+on:
+  schedule:
+    # 06:00 UTC = 08:00 Paris été / 07:00 Paris hiver.
+    # GitHub Actions schedules can drift by 5–15 min during peak load.
+    - cron: '0 6 * * *'
+  workflow_dispatch:  # Manual trigger button in the Actions tab — useful for testing.
+
+permissions:
+  contents: write       # Required to push the auto/import-* branch.
+  pull-requests: write  # Required to open the PR.
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run import script
+        id: import
+        run: npx tsx scripts/import-plages.ts
+
+      - name: Bail out if no new beaches
+        if: steps.import.outputs.added == '0'
+        run: |
+          echo "Aucune nouvelle plage qualifiée aujourd'hui — pas de PR créée."
+          exit 0
+
+      - name: Configure git
+        if: steps.import.outputs.added != '0'
+        run: |
+          git config user.name "plages-import-bot"
+          git config user.email "actions@users.noreply.github.com"
+
+      - name: Create branch and commit
+        if: steps.import.outputs.added != '0'
+        id: branch
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          BRANCH="auto/import-${DATE}"
+          git checkout -b "$BRANCH"
+          git add content/plages/
+          git commit -m "auto: ${{ steps.import.outputs.added }} nouvelles plages — ${DATE}"
+          git push origin "$BRANCH"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+
+      - name: Ensure auto-import label exists
+        if: steps.import.outputs.added != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create auto-import \
+            --color "0E8A16" \
+            --description "PR auto-générée par le workflow d'import quotidien" \
+            2>/dev/null || true
+
+      - name: Open Pull Request
+        if: steps.import.outputs.added != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          SLUGS="${{ steps.import.outputs.slugs }}"
+          BULLETS=$(echo "$SLUGS" | tr ',' '\n' | sed 's|^|- `content/plages/|; s|$|.json`|')
+          BODY=$(cat <<EOF
+          ## Import automatique du ${{ steps.branch.outputs.date }}
+
+          **${{ steps.import.outputs.added }} nouvelles plages** ajoutées par le bot quotidien.
+
+          ### Plages candidates (à reviewer)
+          ${BULLETS}
+
+          ### Checklist de review
+          - [ ] Nom + commune cohérents
+          - [ ] Coordonnées GPS plausibles (zoom sur la carte)
+          - [ ] Description claire et factuelle (pas de blabla générique)
+          - [ ] Au moins 2 accessibilités documentées par plage
+          - [ ] Champ \`verifiedBy\` présent (source labellisée)
+
+          ### Si une plage est douteuse
+          Éditer le fichier dans cette PR (icône crayon) → supprimer le fichier indésirable → commit → merger le reste.
+
+          ### Si tout est OK
+          Cliquer **Merge pull request** → Vercel rebuild en ~2 min → en ligne sur https://plages-accessibles.fr
+
+          ---
+          _Workflow : \`.github/workflows/import-plages.yml\`_
+          _Source(s) consultée(s) : handiplage.fr_
+          EOF
+          )
+          gh pr create \
+            --base master \
+            --head "${{ steps.branch.outputs.branch }}" \
+            --title "auto: ${{ steps.import.outputs.added }} nouvelles plages — ${{ steps.branch.outputs.date }}" \
+            --body "$BODY" \
+            --label "auto-import"
