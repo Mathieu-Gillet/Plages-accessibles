@@ -4,6 +4,7 @@ import { Nunito } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/features/Header'
 import { Footer } from '@/components/features/Footer'
+import { Analytics } from '@vercel/analytics/next'
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -55,6 +56,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
