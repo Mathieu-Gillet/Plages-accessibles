@@ -52,7 +52,9 @@ jobs:
           git checkout -b "$BRANCH"
           git add content/plages/
           git commit -m "auto: ${{ steps.import.outputs.added }} nouvelles plages — ${DATE}"
-          git push origin "$BRANCH"
+          # Force push: a previous failed run may have left a stale branch on origin.
+          # We own this branch entirely (auto/* namespace), so overwriting is safe.
+          git push origin "$BRANCH" --force
           echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
 
@@ -66,8 +68,22 @@ jobs:
             --description "PR auto-générée par le workflow d'import quotidien" \
             2>/dev/null || true
 
-      - name: Open Pull Request
+      - name: Skip PR creation if one is already open on this branch
         if: steps.import.outputs.added != '0'
+        id: existing
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NUMBER=$(gh pr list --head "${{ steps.branch.outputs.branch }}" --state open --json number --jq '.[0].number // ""')
+          if [ -n "$NUMBER" ]; then
+            echo "PR #$NUMBER déjà ouverte — le force push l'a mise à jour automatiquement."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open Pull Request
+        if: steps.import.outputs.added != '0' && steps.existing.outputs.skip == 'false'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
