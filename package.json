@@ -2,23 +2,13 @@
   "name": "plages-accessibles",
   "version": "0.1.0",
   "private": true,
-  "prisma": {
-    "seed": "tsx prisma/seed.ts"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint .",
-    "db:generate": "prisma generate",
-    "db:migrate": "prisma migrate dev",
-    "db:push": "prisma db push",
-    "db:seed": "tsx prisma/seed.ts",
-    "db:studio": "prisma studio"
+    "lint": "eslint ."
   },
   "dependencies": {
-    "@prisma/client": "^5.22.0",
-    "@tanstack/react-query": "^5.99.0",
     "clsx": "^2.1.1",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.544.0",
@@ -39,9 +29,7 @@
     "eslint": "^9.18.0",
     "eslint-config-next": "^15.5.0",
     "postcss": "^8.5.10",
-    "prisma": "^5.22.0",
     "tailwindcss": "^3.4.19",
-    "ts-node": "^10.9.2",
     "tsx": "^4.16.2",
     "typescript": "^5.9.3"
   }

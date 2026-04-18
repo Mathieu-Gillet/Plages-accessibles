@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(npm install:*)",
-      "Bash(npx prisma:*)"
+      "Bash(npx prisma:*)",
+      "Bash(npm audit:*)",
+      "Bash(grep -iE \"eslint|^\\\\\\\\.\")",
+      "Bash(npm run:*)",
+      "Bash(npx tsc:*)"
     ]
   }
 }
