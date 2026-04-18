@@ -1,0 +1,40 @@
+{
+  "slug": "plage-du-prado-marseille",
+  "nom": "Plage du Prado",
+  "description": "La plus grande plage aménagée de Marseille, avec un accès PMR complet et du matériel amphibie disponible.",
+  "commune": "Marseille",
+  "codePostal": "13008",
+  "departement": "Bouches-du-Rhône",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.2636,
+  "longitude": 5.3741,
+  "noteGlobale": 4.5,
+  "nombreAvis": 42,
+  "actif": true,
+  "verifiedAt": "2026-04-16",
+  "verifiedBy": "seed",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "TIRALO",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT",
+    "PERSONNEL_FORME",
+    "LOCATION_MATERIEL"
+  ],
+  "hebergements": [
+    {
+      "nom": "Hôtel proche de Plage du Prado",
+      "type": "hôtel",
+      "adresse": "13008 Marseille",
+      "latitude": 43.2736,
+      "longitude": 5.3841,
+      "distanceKm": 0.5,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [],
+  "avis": []
+}

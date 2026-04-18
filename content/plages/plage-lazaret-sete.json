@@ -1,0 +1,36 @@
+{
+  "slug": "plage-lazaret-sete",
+  "nom": "Plage du Lazaret",
+  "description": "Plage calme et aménagée sur l'étang de Thau, idéale pour les personnes à mobilité réduite grâce à ses accès en dur.",
+  "commune": "Sète",
+  "codePostal": "34200",
+  "departement": "Hérault",
+  "region": "Occitanie",
+  "latitude": 43.4074,
+  "longitude": 3.6857,
+  "noteGlobale": 4.1,
+  "nombreAvis": 19,
+  "actif": true,
+  "verifiedAt": "2026-04-16",
+  "verifiedBy": "seed",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [
+    {
+      "nom": "Hôtel proche de Plage du Lazaret",
+      "type": "hôtel",
+      "adresse": "34200 Sète",
+      "latitude": 43.4174,
+      "longitude": 3.6957,
+      "distanceKm": 0.5,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [],
+  "avis": []
+}

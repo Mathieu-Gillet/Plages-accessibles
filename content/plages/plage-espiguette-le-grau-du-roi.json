@@ -1,0 +1,36 @@
+{
+  "slug": "plage-espiguette-le-grau-du-roi",
+  "nom": "Plage de l'Espiguette",
+  "description": "Vaste plage naturelle avec tapis d'accès, fauteuils amphibies et parkings adaptés à proximité.",
+  "commune": "Le Grau-du-Roi",
+  "codePostal": "30240",
+  "departement": "Gard",
+  "region": "Occitanie",
+  "latitude": 43.4768,
+  "longitude": 4.1356,
+  "noteGlobale": 4.2,
+  "nombreAvis": 28,
+  "actif": true,
+  "verifiedAt": "2026-04-16",
+  "verifiedBy": "seed",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [
+    {
+      "nom": "Hôtel proche de Plage de l'Espiguette",
+      "type": "hôtel",
+      "adresse": "30240 Le Grau-du-Roi",
+      "latitude": 43.4868,
+      "longitude": 4.1456,
+      "distanceKm": 0.5,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [],
+  "avis": []
+}

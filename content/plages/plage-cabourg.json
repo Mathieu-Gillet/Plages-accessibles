@@ -1,0 +1,39 @@
+{
+  "slug": "plage-cabourg",
+  "nom": "Plage de Cabourg",
+  "description": "Plage normande exemplaire en matière d'accessibilité, avec un programme complet Handiplage labellisé.",
+  "commune": "Cabourg",
+  "codePostal": "14390",
+  "departement": "Calvados",
+  "region": "Normandie",
+  "latitude": 49.2865,
+  "longitude": -0.1243,
+  "noteGlobale": 4.6,
+  "nombreAvis": 37,
+  "actif": true,
+  "verifiedAt": "2026-04-16",
+  "verifiedBy": "seed",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "TIRALO",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "DOUCHES_ACCESSIBLES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [
+    {
+      "nom": "Hôtel proche de Plage de Cabourg",
+      "type": "hôtel",
+      "adresse": "14390 Cabourg",
+      "latitude": 49.2965,
+      "longitude": -0.1143,
+      "distanceKm": 0.5,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "plage-la-baule",
+  "nom": "Plage de la Baule",
+  "description": "La grande plage de La Baule est réputée pour son accès facilité et ses équipements modernes pour les personnes à mobilité réduite.",
+  "commune": "La Baule-Escoublac",
+  "codePostal": "44500",
+  "departement": "Loire-Atlantique",
+  "region": "Pays de la Loire",
+  "latitude": 47.2886,
+  "longitude": -2.3877,
+  "noteGlobale": 4.7,
+  "nombreAvis": 65,
+  "actif": true,
+  "verifiedAt": "2026-04-16",
+  "verifiedBy": "seed",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "TIRALO",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "DOUCHES_ACCESSIBLES",
+    "CHEMIN_ACCES",
+    "RAMPE_ACCES",
+    "SABLE_COMPACT",
+    "PERSONNEL_FORME",
+    "LOCATION_MATERIEL"
+  ],
+  "hebergements": [
+    {
+      "nom": "Hôtel proche de Plage de la Baule",
+      "type": "hôtel",
+      "adresse": "44500 La Baule-Escoublac",
+      "latitude": 47.2986,
+      "longitude": -2.3777,
+      "distanceKm": 0.5,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [],
+  "avis": []
+}
