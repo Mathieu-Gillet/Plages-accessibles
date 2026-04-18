@@ -9,7 +9,7 @@
   "latitude": 43.4848,
   "longitude": -1.5614,
   "photos": [],
-  "noteGlobale": 0,
+  "noteGlobale": 4.2,
   "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-18",
@@ -23,5 +23,6 @@
   ],
   "hebergements": [],
   "offresCulturelles": [],
-  "avis": []
+  "avis": [],
+  "photo": "https://picsum.photos/seed/grande-plage-biarritz/1200/600"
 }

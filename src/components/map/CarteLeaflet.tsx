@@ -83,19 +83,22 @@ export default function CarteLeaflet({
           title={plage.nom}
         >
           <Popup>
-            <div className="min-w-[160px]">
-              <p className="font-bold text-ardoise text-sm">{plage.nom}</p>
-              <p className="text-xs text-gray-500">{plage.commune}</p>
+            <div className="min-w-[180px]">
+              <p className="font-bold text-ardoise text-base leading-tight">{plage.nom}</p>
+              <p className="text-xs text-ardoise-clair mt-0.5">{plage.commune}</p>
               {plage.noteGlobale > 0 && (
-                <p className="text-xs font-semibold text-ocean mt-1">
-                  ★ {formatNote(plage.noteGlobale)} / 5
+                <p className="text-sm font-bold mt-2 flex items-center gap-1" style={{ color: '#f59e0b' }}>
+                  <span aria-hidden="true">★</span>
+                  <span>{formatNote(plage.noteGlobale)}</span>
+                  <span className="text-ardoise-clair font-normal text-xs">/ 5</span>
                 </p>
               )}
               <a
                 href={`/plage/${plage.slug}`}
-                className="mt-2 block text-center text-xs bg-ocean text-white py-1.5 rounded-lg font-semibold hover:bg-ocean-clair"
+                className="mt-3 block text-center text-sm py-2 px-3 rounded-lg font-bold transition-opacity hover:opacity-90"
+                style={{ backgroundColor: '#2d6a4f', color: 'white' }}
               >
-                Voir la plage
+                Voir la plage →
               </a>
             </div>
           </Popup>

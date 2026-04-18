@@ -13,9 +13,21 @@
 import type { Source } from './types'
 import type { Candidate } from '../lib/validate-candidate'
 
+// Editorial rating derived from the Handiplage certification level mentioned in
+// each description. Niveau 4 → 4.5★, Niveau 3 → 4.2★, no level → 4.0★.
+// Acts as a quality baseline until real user reviews are collected.
+//
+// Photos use picsum.photos with seed=slug for deterministic placeholder images.
+// Replace with real photos (Wikimedia Commons, municipal sources) when available.
+function photoFor(slug: string): string {
+  return `https://picsum.photos/seed/${slug}/1200/600`
+}
+
 const CANDIDATES: Candidate[] = [
   {
     slug: 'plage-centrale-berck-sur-mer',
+    noteGlobale: 4.2,
+    photo: photoFor('plage-centrale-berck-sur-mer'),
     nom: 'Plage centrale de Berck-sur-Mer',
     description:
       "Vaste plage de sable fin sur la Côte d'Opale, labellisée Handiplage niveau 3. Tiralos et fauteuils Hippocampe disponibles en saison à proximité du poste de secours, parking PMR adjacent et personnel formé à l'accueil des personnes en situation de handicap.",
@@ -37,6 +49,8 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-le-touquet-paris-plage',
+    noteGlobale: 4.5,
+    photo: photoFor('plage-le-touquet-paris-plage'),
     nom: 'Grande plage du Touquet-Paris-Plage',
     description:
       "Plage emblématique de la Côte d'Opale, labellisée Handiplage niveau 4 — le plus haut niveau de certification. Cheminement bois jusqu'au sable, tiralos et fauteuils tout-terrain en prêt gratuit, sanitaires et douches adaptés, équipe d'accueil dédiée en saison estivale.",
@@ -60,6 +74,8 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-sables-d-or-anglet',
+    noteGlobale: 4.2,
+    photo: photoFor('plage-sables-d-or-anglet'),
     nom: "Plage des Sables d'Or à Anglet",
     description:
       "Plage du Pays basque labellisée Handiplage niveau 3, avec un environnement préservé entre Anglet et Biarritz. Zone de baignade surveillée, mise à disposition de tiralos et de fauteuils Hippocampe, rampe d'accès au sable, parking PMR et sanitaires adaptés à proximité immédiate.",
@@ -81,6 +97,8 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'grande-plage-biarritz',
+    noteGlobale: 4.2,
+    photo: photoFor('grande-plage-biarritz'),
     nom: 'Grande Plage de Biarritz',
     description:
       "Plage centrale de Biarritz au pied du Casino municipal, labellisée Handiplage niveau 3. Cheminement en bois, tiralos disponibles auprès des MNS, parking PMR au Square Edouard VII et sanitaires PMR à proximité. Encadrement par des sauveteurs formés à l'accueil des personnes handicapées.",
@@ -101,6 +119,8 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-grande-conche-royan',
+    noteGlobale: 4.2,
+    photo: photoFor('plage-grande-conche-royan'),
     nom: 'Plage de la Grande Conche à Royan',
     description:
       "Vaste plage de sable fin de 2 km, labellisée Handiplage niveau 3 et Pavillon Bleu. Plusieurs accès cheminés depuis le boulevard, tiralos et fauteuils Hippocampe en prêt au poste central, douches accessibles et bloc sanitaire PMR. Sable compact à marée basse facilitant les déplacements.",
@@ -124,6 +144,8 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-centrale-sables-d-olonne',
+    noteGlobale: 4.5,
+    photo: photoFor('plage-centrale-sables-d-olonne'),
     nom: "Plage Centrale des Sables-d'Olonne",
     description:
       "Plage urbaine du Remblai, labellisée Handiplage niveau 4. Service de mise à disposition de tiralos, fauteuils Hippocampe et fauteuils amphibies, plusieurs descentes en bois jusqu'à l'eau, douches et sanitaires adaptés répartis sur toute la longueur, équipe handi-accueil présente en juillet-août.",
@@ -148,6 +170,8 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-du-sillon-saint-malo',
+    noteGlobale: 4.2,
+    photo: photoFor('plage-du-sillon-saint-malo'),
     nom: 'Plage du Sillon à Saint-Malo',
     description:
       "Grande plage de 3 km face à la baie, labellisée Handiplage niveau 3. Plusieurs accès aménagés avec rampe béton, tiralos et fauteuils tout-terrain disponibles en saison auprès des MNS, sanitaires PMR et douches accessibles à proximité de la digue. Attention aux marées : se renseigner sur les horaires.",
@@ -170,6 +194,8 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'grande-plage-quiberon',
+    noteGlobale: 4.2,
+    photo: photoFor('grande-plage-quiberon'),
     nom: 'Grande Plage de Quiberon',
     description:
       "Plage abritée du sud de la presqu'île, idéale pour les familles et labellisée Handiplage niveau 3. Mise à disposition de tiralos auprès du poste de secours central, cheminements en caillebotis bois jusqu'au sable, sanitaires adaptés et zone de stationnement PMR à proximité immédiate de la promenade.",
@@ -190,6 +216,8 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-carras-nice',
+    noteGlobale: 4.2,
+    photo: photoFor('plage-carras-nice'),
     nom: 'Plage Carras à Nice',
     description:
       "Plage publique de l'ouest niçois, labellisée Handiplage niveau 3 et seule plage municipale niçoise pleinement accessible. Cheminements bois, tiralos en prêt gratuit auprès du poste de secours, sanitaires PMR, douches accessibles et personnel formé. Sable compact mêlé de galets en bord d'eau.",
@@ -212,6 +240,8 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-boucan-canot-saint-paul',
+    noteGlobale: 4.0,
+    photo: photoFor('plage-boucan-canot-saint-paul'),
     nom: 'Plage de Boucan Canot à Saint-Paul',
     description:
       "Plage emblématique de l'ouest de La Réunion, équipée pour l'accueil des personnes en situation de handicap. Cheminement bois jusqu'à la zone de baignade surveillée et protégée des requins par filet, tiralos disponibles, douches et sanitaires PMR, parking aménagé en face de la plage.",

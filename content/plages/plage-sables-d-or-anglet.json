@@ -9,7 +9,7 @@
   "latitude": 43.4969,
   "longitude": -1.5378,
   "photos": [],
-  "noteGlobale": 0,
+  "noteGlobale": 4.2,
   "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-18",
@@ -24,5 +24,6 @@
   ],
   "hebergements": [],
   "offresCulturelles": [],
-  "avis": []
+  "avis": [],
+  "photo": "https://picsum.photos/seed/plage-sables-d-or-anglet/1200/600"
 }

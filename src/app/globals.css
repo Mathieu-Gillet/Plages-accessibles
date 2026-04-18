@@ -63,3 +63,14 @@
   border-radius: 12px;
   z-index: 0;
 }
+
+/* Leaflet sets `.leaflet-container a { color: #0078A8 }` by default,
+   which overrides Tailwind's text classes inside popups (dark blue text
+   on dark blue button = invisible). We let our own classes win here. */
+.leaflet-popup-content a {
+  color: inherit;
+}
+.leaflet-popup-content {
+  margin: 12px 14px;
+  font-family: var(--font-nunito), sans-serif;
+}

@@ -40,13 +40,39 @@ export default function PagePlage({ params }: { params: { slug: string } }) {
       {/* En-tête */}
       <header className="mb-8">
         {plage.photo && (
-          <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden mb-6 bg-ocean-pale">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={plage.photo}
-              alt={`Vue de la plage ${plage.nom}`}
-              className="w-full h-full object-cover"
-            />
+          <div className="mb-6">
+            <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden bg-ocean-pale shadow-md">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={plage.photo}
+                alt={`Vue de la plage ${plage.nom}`}
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
+
+            {plage.photos.length > 0 && (
+              <div className="mt-3 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2" aria-label="Photos supplémentaires">
+                {plage.photos.map((url, i) => (
+                  <a
+                    key={url}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative h-20 rounded-lg overflow-hidden bg-ocean-pale focus-visible:ring-2 focus-visible:ring-ocean"
+                    aria-label={`Photo ${i + 2} de ${plage.nom} (ouvrir en grand, nouvel onglet)`}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={url}
+                      alt={`Photo ${i + 2} de ${plage.nom}`}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                      loading="lazy"
+                    />
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
         )}
 

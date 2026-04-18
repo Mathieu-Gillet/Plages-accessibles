@@ -9,7 +9,7 @@
   "latitude": 45.6225,
   "longitude": -1.0244,
   "photos": [],
-  "noteGlobale": 0,
+  "noteGlobale": 4.2,
   "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-18",
@@ -26,5 +26,6 @@
   ],
   "hebergements": [],
   "offresCulturelles": [],
-  "avis": []
+  "avis": [],
+  "photo": "https://picsum.photos/seed/plage-grande-conche-royan/1200/600"
 }

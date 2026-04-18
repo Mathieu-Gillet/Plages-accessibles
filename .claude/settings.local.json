@@ -6,7 +6,9 @@
       "Bash(npm audit:*)",
       "Bash(grep -iE \"eslint|^\\\\\\\\.\")",
       "Bash(npm run:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(node -e ' *)",
+      "Bash(npx tsx *)"
     ]
   }
 }

@@ -9,7 +9,7 @@
   "latitude": 50.5236,
   "longitude": 1.5853,
   "photos": [],
-  "noteGlobale": 0,
+  "noteGlobale": 4.5,
   "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-18",
@@ -26,5 +26,6 @@
   ],
   "hebergements": [],
   "offresCulturelles": [],
-  "avis": []
+  "avis": [],
+  "photo": "https://picsum.photos/seed/plage-le-touquet-paris-plage/1200/600"
 }

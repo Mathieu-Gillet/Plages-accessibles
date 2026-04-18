@@ -8,6 +8,9 @@ const nextConfig = {
       { protocol: 'https', hostname: '*.supabase.co' },
       { protocol: 'https', hostname: 'upload.wikimedia.org' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
+      // Picsum: placeholder images (deterministic via seed). To replace with real
+      // beach photos as they become available (Wikimedia Commons or municipal sources).
+      { protocol: 'https', hostname: 'picsum.photos' },
     ],
   },
   async rewrites() {
