@@ -7,8 +7,8 @@ import { CarteDetailPlage } from '@/components/map/CarteDetailPlage'
 import { HebergementCard } from '@/components/features/HebergementCard'
 import { OffreCulturelleCard } from '@/components/features/OffreCulturelleCard'
 import { AvisSection } from '@/components/features/AvisSection'
-import { formatNote, etoiles } from '@/lib/utils'
-import { MapPin, Users } from 'lucide-react'
+import { formatNote } from '@/lib/utils'
+import { MapPin } from 'lucide-react'
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }))
@@ -90,15 +90,10 @@ export default function PagePlage({ params }: { params: { slug: string } }) {
           {plage.noteGlobale > 0 && (
             <div
               className="flex flex-col items-center bg-ocean text-white px-5 py-3 rounded-xl"
-              aria-label={`Note : ${formatNote(plage.noteGlobale)} sur 5 basée sur ${plage.nombreAvis} avis`}
+              aria-label={`Note : ${formatNote(plage.noteGlobale)} sur 5`}
             >
               <span className="text-3xl font-extrabold">{formatNote(plage.noteGlobale)}</span>
-              <span className="text-yellow-300 text-lg" aria-hidden="true">
-                {etoiles(plage.noteGlobale)}
-              </span>
-              <span className="text-xs opacity-80 mt-1 flex items-center gap-1">
-                <Users size={12} aria-hidden="true" /> {plage.nombreAvis} avis
-              </span>
+              <span className="text-xs opacity-80 mt-1">sur 5</span>
             </div>
           )}
         </div>

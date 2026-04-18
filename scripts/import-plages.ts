@@ -18,6 +18,7 @@ import path from 'node:path'
 import { handiplageSampleSource } from './sources/handiplage-sample'
 import type { Source } from './sources/types'
 import { validateCandidate, type Candidate } from './lib/validate-candidate'
+import { fetchBeachPhoto } from './lib/wikimedia'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'plages')
 const MAX_PER_RUN = 5
@@ -119,10 +120,15 @@ async function main(): Promise<void> {
       continue
     }
 
+    // Try to upgrade the placeholder photo with a real Wikimedia Commons one.
+    // Falls back to whatever the source provided (typically picsum) on miss.
+    const realPhoto = await fetchBeachPhoto({ nom: result.plage.nom, commune: result.plage.commune })
+    const finalPlage = realPhoto ? { ...result.plage, photo: realPhoto } : result.plage
+
     if (!dryRun) {
-      await writeBeach(result.plage.slug, result.plage)
+      await writeBeach(finalPlage.slug, finalPlage)
     }
-    summary.added.push(result.plage.slug)
+    summary.added.push(finalPlage.slug)
     qualifiedCount++
   }
 
