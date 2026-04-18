@@ -1,0 +1,28 @@
+{
+  "slug": "plage-centrale-berck-sur-mer",
+  "nom": "Plage centrale de Berck-sur-Mer",
+  "description": "Vaste plage de sable fin sur la Côte d'Opale, labellisée Handiplage niveau 3. Tiralos et fauteuils Hippocampe disponibles en saison à proximité du poste de secours, parking PMR adjacent et personnel formé à l'accueil des personnes en situation de handicap.",
+  "commune": "Berck-sur-Mer",
+  "codePostal": "62600",
+  "departement": "Pas-de-Calais",
+  "region": "Hauts-de-France",
+  "latitude": 50.4045,
+  "longitude": 1.5635,
+  "photos": [],
+  "noteGlobale": 0,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-18",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "PERSONNEL_FORME",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

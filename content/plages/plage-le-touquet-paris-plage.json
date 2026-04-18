@@ -1,0 +1,30 @@
+{
+  "slug": "plage-le-touquet-paris-plage",
+  "nom": "Grande plage du Touquet-Paris-Plage",
+  "description": "Plage emblématique de la Côte d'Opale, labellisée Handiplage niveau 4 — le plus haut niveau de certification. Cheminement bois jusqu'au sable, tiralos et fauteuils tout-terrain en prêt gratuit, sanitaires et douches adaptés, équipe d'accueil dédiée en saison estivale.",
+  "commune": "Le Touquet-Paris-Plage",
+  "codePostal": "62520",
+  "departement": "Pas-de-Calais",
+  "region": "Hauts-de-France",
+  "latitude": 50.5236,
+  "longitude": 1.5853,
+  "photos": [],
+  "noteGlobale": 0,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-18",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "TIRALO",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "DOUCHES_ACCESSIBLES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "plage-grande-conche-royan",
+  "nom": "Plage de la Grande Conche à Royan",
+  "description": "Vaste plage de sable fin de 2 km, labellisée Handiplage niveau 3 et Pavillon Bleu. Plusieurs accès cheminés depuis le boulevard, tiralos et fauteuils Hippocampe en prêt au poste central, douches accessibles et bloc sanitaire PMR. Sable compact à marée basse facilitant les déplacements.",
+  "commune": "Royan",
+  "codePostal": "17200",
+  "departement": "Charente-Maritime",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 45.6225,
+  "longitude": -1.0244,
+  "photos": [],
+  "noteGlobale": 0,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-18",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "HIPPOCAMPE",
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "PARKINGS_PMR",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
