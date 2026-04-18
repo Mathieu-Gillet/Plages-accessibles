@@ -1,7 +1,7 @@
 'use client'
 // src/components/map/CarteDetailPlage.tsx
 import dynamic from 'next/dynamic'
-import type { Hebergement, OffreCulturelle } from '@/types'
+import type { Hebergement, OffreCulturelle, PlageResume } from '@/types'
 
 const CarteLeaflet = dynamic(() => import('./CarteLeaflet'), {
   ssr: false,
@@ -21,7 +21,7 @@ interface CarteDetailPlageProps {
 export function CarteDetailPlage({
   latitude, longitude, nom, hebergements, offres
 }: CarteDetailPlageProps) {
-  const plageMarqueur = [{
+  const plageMarqueur: PlageResume[] = [{
     id: 'plage',
     nom,
     slug: '',
@@ -33,7 +33,7 @@ export function CarteDetailPlage({
     noteGlobale: 0,
     nombreAvis: 0,
     photo: null,
-    accessibilites: [] as any[],
+    accessibilites: [],
   }]
 
   const poi = [

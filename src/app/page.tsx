@@ -1,57 +1,14 @@
 // src/app/page.tsx
 import { Suspense } from 'react'
-import { prisma } from '@/lib/prisma'
+import { getAllPlagesResume, getStats } from '@/lib/content'
 import { CarteAccueil } from '@/components/features/CarteAccueil'
 import { RechercheRapide } from '@/components/features/RechercheRapide'
 import { StatsBandeau } from '@/components/features/StatsBandeau'
 import { PlageCardResume } from '@/components/features/PlageCard'
-import type { PlageResume } from '@/types'
 
-async function getTopPlages(): Promise<PlageResume[]> {
-  try {
-    const plages = await prisma.plage.findMany({
-      where: { actif: true },
-      select: {
-        id: true,
-        nom: true,
-        slug: true,
-        commune: true,
-        departement: true,
-        region: true,
-        latitude: true,
-        longitude: true,
-        noteGlobale: true,
-        nombreAvis: true,
-        photo: true,
-        accessibilites: { select: { type: true } },
-      },
-      orderBy: { noteGlobale: 'desc' },
-      take: 50,
-    })
-
-    return plages.map((p) => ({
-      ...p,
-      accessibilites: p.accessibilites.map((a) => a.type as any),
-    }))
-  } catch {
-    return []
-  }
-}
-
-async function getStats() {
-  try {
-    const [totalPlages, regions] = await Promise.all([
-      prisma.plage.count({ where: { actif: true } }),
-      prisma.plage.groupBy({ by: ['region'], where: { actif: true } }),
-    ])
-    return { totalPlages, totalRegions: regions.length }
-  } catch {
-    return { totalPlages: 0, totalRegions: 0 }
-  }
-}
-
-export default async function PageAccueil() {
-  const [plages, stats] = await Promise.all([getTopPlages(), getStats()])
+export default function PageAccueil() {
+  const plages = getAllPlagesResume() // already sorted by note desc in the loader
+  const stats = getStats()
 
   return (
     <>

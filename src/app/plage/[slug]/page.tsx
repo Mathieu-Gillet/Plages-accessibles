@@ -1,37 +1,25 @@
 // src/app/plage/[slug]/page.tsx
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import { prisma } from '@/lib/prisma'
+import { getAllSlugs, getPlageBySlug } from '@/lib/content'
 import { BadgeAccessibilite } from '@/components/features/BadgeAccessibilite'
 import { CarteDetailPlage } from '@/components/map/CarteDetailPlage'
 import { HebergementCard } from '@/components/features/HebergementCard'
 import { OffreCulturelleCard } from '@/components/features/OffreCulturelleCard'
 import { AvisSection } from '@/components/features/AvisSection'
 import { formatNote, etoiles } from '@/lib/utils'
-import { MapPin, Star, Users } from 'lucide-react'
+import { MapPin, Users } from 'lucide-react'
 
-async function getPlage(slug: string) {
-  try {
-    return await prisma.plage.findUnique({
-      where: { slug, actif: true },
-      include: {
-        accessibilites: true,
-        hebergements: { orderBy: { distanceKm: 'asc' } },
-        offrescultures: { orderBy: { distanceKm: 'asc' } },
-        avis: { orderBy: { date: 'desc' }, take: 10 },
-      },
-    })
-  } catch {
-    return null
-  }
+export function generateStaticParams() {
+  return getAllSlugs().map((slug) => ({ slug }))
 }
 
-export async function generateMetadata({
+export function generateMetadata({
   params,
 }: {
   params: { slug: string }
-}): Promise<Metadata> {
-  const plage = await getPlage(params.slug)
+}): Metadata {
+  const plage = getPlageBySlug(params.slug)
   if (!plage) return { title: 'Plage introuvable' }
 
   return {
@@ -43,8 +31,8 @@ export async function generateMetadata({
   }
 }
 
-export default async function PagePlage({ params }: { params: { slug: string } }) {
-  const plage = await getPlage(params.slug)
+export default function PagePlage({ params }: { params: { slug: string } }) {
+  const plage = getPlageBySlug(params.slug)
   if (!plage) notFound()
 
   return (
@@ -53,6 +41,7 @@ export default async function PagePlage({ params }: { params: { slug: string } }
       <header className="mb-8">
         {plage.photo && (
           <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden mb-6 bg-ocean-pale">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={plage.photo}
               alt={`Vue de la plage ${plage.nom}`}
@@ -101,8 +90,8 @@ export default async function PagePlage({ params }: { params: { slug: string } }
           ♿ Équipements d&apos;accessibilité
         </h2>
         <div className="flex flex-wrap gap-3">
-          {plage.accessibilites.map((a) => (
-            <BadgeAccessibilite key={a.id} type={a.type as any} details={a.details ?? undefined} />
+          {plage.accessibilites.map((type) => (
+            <BadgeAccessibilite key={type} type={type} />
           ))}
         </div>
       </section>
@@ -117,7 +106,7 @@ export default async function PagePlage({ params }: { params: { slug: string } }
           longitude={plage.longitude}
           nom={plage.nom}
           hebergements={plage.hebergements}
-          offres={plage.offrescultures}
+          offres={plage.offresCulturelles}
         />
         <a
           href={`https://www.google.com/maps/search/?api=1&query=${plage.latitude},${plage.longitude}`}
@@ -148,13 +137,13 @@ export default async function PagePlage({ params }: { params: { slug: string } }
         )}
 
         {/* Offres culturelles */}
-        {plage.offrescultures.length > 0 && (
+        {plage.offresCulturelles.length > 0 && (
           <section aria-labelledby="titre-culture">
             <h2 id="titre-culture" className="text-2xl font-bold text-ardoise mb-4">
               🎨 À faire à proximité
             </h2>
             <ul className="space-y-3" role="list">
-              {plage.offrescultures.map((o) => (
+              {plage.offresCulturelles.map((o) => (
                 <li key={o.id}>
                   <OffreCulturelleCard offre={o} />
                 </li>
@@ -165,7 +154,7 @@ export default async function PagePlage({ params }: { params: { slug: string } }
       </div>
 
       {/* Avis */}
-      <AvisSection plageId={plage.id} avis={plage.avis} />
+      <AvisSection avis={plage.avis} />
     </article>
   )
 }

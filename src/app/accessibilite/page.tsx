@@ -41,7 +41,7 @@ export default function PageAccessibilite() {
             <li>Textes alternatifs sur toutes les images informatives</li>
             <li>Police minimum 16px, redimensionnable jusqu&apos;à 200%</li>
             <li>Contraste minimum 4.5:1 sur les textes</li>
-            <li>Attribut <code>lang="fr"</code> sur le document</li>
+            <li>Attribut <code>lang=&quot;fr&quot;</code> sur le document</li>
           </ul>
         </section>
 

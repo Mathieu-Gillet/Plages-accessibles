@@ -1,14 +1,13 @@
 'use client'
 // src/components/map/CarteLeaflet.tsx
-import { useEffect } from 'react'
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import L from 'leaflet'
-import Link from 'next/link'
 import type { PlageResume } from '@/types'
 import { formatNote } from '@/lib/utils'
 import 'leaflet/dist/leaflet.css'
 
-// Fix icône Leaflet avec webpack
+// Fix icône Leaflet avec webpack — workaround officiel react-leaflet
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 delete (L.Icon.Default.prototype as any)._getIconUrl
 L.Icon.Default.mergeOptions({
   iconUrl: '/leaflet/marker-icon.png',
