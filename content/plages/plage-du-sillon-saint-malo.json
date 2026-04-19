@@ -1,0 +1,30 @@
+{
+  "slug": "plage-du-sillon-saint-malo",
+  "nom": "Plage du Sillon à Saint-Malo",
+  "description": "Grande plage de 3 km face à la baie, labellisée Handiplage niveau 3. Plusieurs accès aménagés avec rampe béton, tiralos et fauteuils tout-terrain disponibles en saison auprès des MNS, sanitaires PMR et douches accessibles à proximité de la digue. Attention aux marées : se renseigner sur les horaires.",
+  "commune": "Saint-Malo",
+  "codePostal": "35400",
+  "departement": "Ille-et-Vilaine",
+  "region": "Bretagne",
+  "latitude": 48.6512,
+  "longitude": -2.0225,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Saint-Malo_-_plage_du_M%C3%B4le.jpg/1280px-Saint-Malo_-_plage_du_M%C3%B4le.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-19",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "RAMPE_ACCES",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "PARKINGS_PMR",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

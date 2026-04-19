@@ -1,0 +1,28 @@
+{
+  "slug": "grande-plage-quiberon",
+  "nom": "Grande Plage de Quiberon",
+  "description": "Plage abritée du sud de la presqu'île, idéale pour les familles et labellisée Handiplage niveau 3. Mise à disposition de tiralos auprès du poste de secours central, cheminements en caillebotis bois jusqu'au sable, sanitaires adaptés et zone de stationnement PMR à proximité immédiate de la promenade.",
+  "commune": "Quiberon",
+  "codePostal": "56170",
+  "departement": "Morbihan",
+  "region": "Bretagne",
+  "latitude": 47.4836,
+  "longitude": -3.1186,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Quiberon_-_Plage_%281%29.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-19",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "CHEMIN_ACCES",
+    "SANITAIRES_ADAPTES",
+    "PARKINGS_PMR",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
