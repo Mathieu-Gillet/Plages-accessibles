@@ -1,0 +1,32 @@
+{
+  "slug": "plage-centrale-sables-d-olonne",
+  "nom": "Plage Centrale des Sables-d'Olonne",
+  "description": "Plage urbaine du Remblai, labellisée Handiplage niveau 4. Service de mise à disposition de tiralos, fauteuils Hippocampe et fauteuils amphibies, plusieurs descentes en bois jusqu'à l'eau, douches et sanitaires adaptés répartis sur toute la longueur, équipe handi-accueil présente en juillet-août.",
+  "commune": "Les Sables-d'Olonne",
+  "codePostal": "85100",
+  "departement": "Vendée",
+  "region": "Pays de la Loire",
+  "latitude": 46.4925,
+  "longitude": -1.7869,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Plage_et_baie_des_Sables-d%27Olonne_%C3%A0_mar%C3%A9e_basse_%28juin_2023%29.JPG/1280px-Plage_et_baie_des_Sables-d%27Olonne_%C3%A0_mar%C3%A9e_basse_%28juin_2023%29.JPG",
+  "photos": [],
+  "noteGlobale": 4.5,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-19",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "TIRALO",
+    "HIPPOCAMPE",
+    "CHEMIN_ACCES",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "PARKINGS_PMR",
+    "PERSONNEL_FORME",
+    "LOCATION_MATERIEL"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

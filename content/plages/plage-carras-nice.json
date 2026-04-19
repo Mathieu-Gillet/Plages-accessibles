@@ -1,0 +1,30 @@
+{
+  "slug": "plage-carras-nice",
+  "nom": "Plage Carras à Nice",
+  "description": "Plage publique de l'ouest niçois, labellisée Handiplage niveau 3 et seule plage municipale niçoise pleinement accessible. Cheminements bois, tiralos en prêt gratuit auprès du poste de secours, sanitaires PMR, douches accessibles et personnel formé. Sable compact mêlé de galets en bord d'eau.",
+  "commune": "Nice",
+  "codePostal": "06200",
+  "departement": "Alpes-Maritimes",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.6678,
+  "longitude": 7.2008,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Baie_des_Anges_Nice_plage.jpg/1280px-Baie_des_Anges_Nice_plage.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-19",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "PARKINGS_PMR",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

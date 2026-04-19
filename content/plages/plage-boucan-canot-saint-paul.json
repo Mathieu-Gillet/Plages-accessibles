@@ -1,0 +1,28 @@
+{
+  "slug": "plage-boucan-canot-saint-paul",
+  "nom": "Plage de Boucan Canot à Saint-Paul",
+  "description": "Plage emblématique de l'ouest de La Réunion, équipée pour l'accueil des personnes en situation de handicap. Cheminement bois jusqu'à la zone de baignade surveillée et protégée des requins par filet, tiralos disponibles, douches et sanitaires PMR, parking aménagé en face de la plage.",
+  "commune": "Saint-Paul",
+  "codePostal": "97434",
+  "departement": "La Réunion",
+  "region": "La Réunion",
+  "latitude": -21.0428,
+  "longitude": 55.2256,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Paul_Signac._Saint-Tropez._Plage_de_Granier.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-19",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "CHEMIN_ACCES",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "PARKINGS_PMR"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
