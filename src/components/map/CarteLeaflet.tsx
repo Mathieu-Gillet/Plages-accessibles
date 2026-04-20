@@ -54,6 +54,7 @@ interface CarteLeafletProps {
     nom: string
     type: 'hebergement' | 'culture'
   }>
+  lienGoogleMaps?: boolean
 }
 
 export default function CarteLeaflet({
@@ -62,6 +63,7 @@ export default function CarteLeaflet({
   centreInitial = [46.8, 2.3],
   zoomInitial = 6,
   marqueursPoi = [],
+  lienGoogleMaps = false,
 }: CarteLeafletProps) {
   return (
     <MapContainer
@@ -94,11 +96,15 @@ export default function CarteLeaflet({
                 </p>
               )}
               <a
-                href={`/plage/${plage.slug}`}
+                href={lienGoogleMaps
+                  ? `https://www.google.com/maps/search/?api=1&query=${plage.latitude},${plage.longitude}`
+                  : `/plage/${plage.slug}`}
+                target={lienGoogleMaps ? '_blank' : undefined}
+                rel={lienGoogleMaps ? 'noopener noreferrer' : undefined}
                 className="mt-3 block text-center text-sm py-2 px-3 rounded-lg font-bold transition-opacity hover:opacity-90"
                 style={{ backgroundColor: '#2d6a4f', color: 'white' }}
               >
-                Voir la plage →
+                {lienGoogleMaps ? 'Ouvrir dans Google Maps →' : 'Voir la plage →'}
               </a>
             </div>
           </Popup>

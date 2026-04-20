@@ -49,6 +49,7 @@ export function CarteDetailPlage({
         centreInitial={[latitude, longitude]}
         zoomInitial={13}
         marqueursPoi={poi}
+        lienGoogleMaps
       />
     </div>
   )
