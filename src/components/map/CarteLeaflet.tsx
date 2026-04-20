@@ -97,7 +97,7 @@ export default function CarteLeaflet({
               )}
               <a
                 href={lienGoogleMaps
-                  ? `https://www.google.com/maps/search/?api=1&query=${plage.latitude},${plage.longitude}`
+                  ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${plage.nom}, ${plage.commune}`)}`
                   : `/plage/${plage.slug}`}
                 target={lienGoogleMaps ? '_blank' : undefined}
                 rel={lienGoogleMaps ? 'noopener noreferrer' : undefined}
