@@ -1,30 +1,24 @@
-# 🌊 Plages Accessibles
+# Plages Accessibles
 
-Annuaire collaboratif des plages françaises accessibles aux personnes en situation de handicap.
-
-## Stack technique
-
-- **Next.js 14** (App Router, SSR)
-- **TypeScript**
-- **Tailwind CSS**
-- **Prisma** + **PostgreSQL**
-- **Leaflet** (carte interactive OpenStreetMap)
+Annuaire collaboratif et gratuit des plages françaises accessibles aux personnes en situation de handicap.
 
 ---
 
-## Démarrage en 3 commandes
+## Stack technique
+
+- **Next.js 14** (App Router, SSG/SSR)
+- **TypeScript 5**
+- **Tailwind CSS 3** (palette personnalisée)
+- **Leaflet + React-Leaflet** (carte interactive OpenStreetMap)
+- **Zod** (validation des données à la compilation)
+- Aucune base de données — les plages sont des fichiers JSON dans `content/plages/`
+
+---
+
+## Démarrage rapide
 
 ```bash
-# 1. Installer les dépendances
 npm install
-
-# 2. Démarrer la base de données (Docker requis)
-docker compose up -d
-
-# 3. Initialiser la base et lancer le serveur
-cp .env.example .env.local
-npm run db:migrate
-npm run db:seed
 npm run dev
 ```
 
@@ -35,20 +29,32 @@ Le site est accessible sur **http://localhost:3000**
 ## Structure du projet
 
 ```
+content/
+└── plages/               ← Données des plages (un fichier JSON par plage)
+
 src/
-├── app/                    ← Pages (Next.js App Router)
-│   ├── page.tsx            ← Accueil avec carte + top plages
-│   ├── recherche/          ← Recherche par région/département
-│   ├── plage/[slug]/       ← Page détail d'une plage
-│   └── api/                ← Routes API REST
+├── app/
+│   ├── page.tsx          ← Accueil : hero, carte France, top plages
+│   ├── recherche/        ← Recherche par région, département ou nom
+│   ├── plage/[slug]/     ← Page détail d'une plage (générée statiquement)
+│   ├── a-propos/         ← Présentation du projet et des équipements
+│   ├── contribuer/       ← Formulaire de contribution (via GitHub Issues)
+│   └── accessibilite/    ← Déclaration d'accessibilité RGAA
 ├── components/
-│   ├── features/           ← Composants métier
-│   └── map/                ← Composants carte Leaflet
-├── lib/                    ← Prisma, utilitaires
-└── types/                  ← Types TypeScript partagés
-prisma/
-├── schema.prisma           ← Modèle de données
-└── seed.ts                 ← Données d'exemple
+│   ├── features/         ← Composants métier (cartes, filtres, badges…)
+│   └── map/              ← Composants Leaflet (carte accueil, carte détail)
+├── lib/
+│   ├── content.ts        ← Chargeur de données JSON (cache mémoire)
+│   ├── content-schema.ts ← Schémas Zod de validation
+│   └── utils.ts          ← Utilitaires (formatNote, slugify, cn…)
+└── types/index.ts        ← Interfaces TypeScript partagées
+
+scripts/
+├── import-plages.ts      ← Orchestrateur d'import quotidien (CI)
+├── enrich-photos.ts      ← Enrichissement photos Wikimedia Commons
+└── lib/
+    ├── validate-candidate.ts ← Contrôles qualité avant import
+    └── wikimedia.ts          ← Résolution de photos libres de droits
 ```
 
 ---
@@ -58,27 +64,56 @@ prisma/
 | Commande | Description |
 |---|---|
 | `npm run dev` | Serveur de développement |
-| `npm run build` | Build de production |
-| `npm run db:migrate` | Appliquer les migrations |
-| `npm run db:seed` | Insérer les données d'exemple |
-| `npm run db:studio` | Interface Prisma Studio |
+| `npm run build` | Build de production (SSG) |
+| `npm run lint` | Vérification ESLint |
 
 ---
 
 ## Ajouter une plage
 
-Deux méthodes :
+### Via un fichier JSON (méthode directe)
 
-**1. Via Prisma Studio** (développement)
-```bash
-npm run db:studio
+Créez `content/plages/nom-de-la-plage.json` en respectant le schéma :
+
+```json
+{
+  "slug": "grande-plage-exemple",
+  "nom": "Grande Plage d'Exemple",
+  "description": "Au moins 150 caractères décrivant la plage et ses équipements d'accessibilité…",
+  "commune": "Exemple-sur-Mer",
+  "codePostal": "12345",
+  "departement": "Exemple",
+  "region": "Ma Région",
+  "latitude": 47.1234,
+  "longitude": -1.5678,
+  "photo": "https://upload.wikimedia.org/...",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-01-01",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": ["FAUTEUIL_ROULANT", "TIRALO", "CHEMIN_ACCES"],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
 ```
 
-**2. Via le seed** (`prisma/seed.ts`)  
-Ajoutez votre plage dans le tableau `plagesData` et relancez `npm run db:seed`.
+Types d'accessibilité disponibles : `FAUTEUIL_ROULANT`, `TIRALO`, `HIPPOCAMPE`, `HANDISURF`, `CHEMIN_ACCES`, `RAMPE_ACCES`, `SABLE_COMPACTE`, `DOUCHES_ACCESSIBLES`, `SANITAIRES_ADAPTES`, `PARKINGS_PMR`, `PERSONNEL_FORME`, `LOCATION_MATERIEL`, `SIGNALISATION_BRAILLE`, `BOUCLE_INDUCTIVE`
 
-**3. Interface admin** *(à développer)*  
-Une interface `/admin` protégée par `ADMIN_SECRET_KEY` est prévue.
+### Via GitHub Issues (méthode collaborative)
+
+Ouvrez une issue avec le template « Proposer une plage » sur le dépôt. Le pipeline d'import quotidien prend en charge la validation et l'intégration automatique.
+
+### Via le pipeline d'import (CI)
+
+Le script `scripts/import-plages.ts` s'exécute automatiquement chaque jour. Il :
+1. Récupère les candidats depuis les sources de données enregistrées
+2. Valide chaque candidat (source autorisée, GPS dans les limites de la France, description >= 150 car., >= 2 équipements)
+3. Enrichit les photos via Wikimedia Commons
+4. Écrit les fichiers JSON validés dans `content/plages/`
+5. Ouvre une Pull Request automatique
 
 ---
 
@@ -91,12 +126,9 @@ npm i -g vercel
 vercel
 ```
 
-Configurez la variable `DATABASE_URL` dans les settings Vercel avec votre PostgreSQL hébergé (ex: [Neon](https://neon.tech), Supabase, Railway).
-
-### Variables d'environnement requises en production
+Aucune variable d'environnement n'est requise pour le fonctionnement de base — le site est entièrement statique. Pour activer l'analytics :
 
 ```
-DATABASE_URL=postgresql://...
 NEXT_PUBLIC_SITE_URL=https://votre-domaine.fr
 ```
 
@@ -104,32 +136,34 @@ NEXT_PUBLIC_SITE_URL=https://votre-domaine.fr
 
 ## Contribuer
 
-1. Forkez le repo
-2. Créez une branche : `git checkout -b feat/nouvelle-plage`
-3. Committez vos changements
+1. Forkez le dépôt
+2. Créez une branche : `git checkout -b feat/ma-contribution`
+3. Committez vos changements avec un message clair
 4. Ouvrez une Pull Request
 
-### Données recherchées
+### Ce que nous cherchons
 
-Pour chaque plage :
-- Coordonnées GPS précises
-- Types d'équipements d'accessibilité disponibles
-- Photos libres de droits
-- Hébergements et offres culturelles à proximité
+- Nouvelles plages avec coordonnées GPS précises et description détaillée
+- Correction ou mise à jour des équipements d'accessibilité
+- Photos libres de droits (Wikimedia Commons de préférence)
+- Hébergements et offres culturelles à proximité des plages existantes
+- Améliorations UI/UX et corrections de bugs
 
 ---
 
-## Accessibilité du site lui-même
+## Accessibilité du site
 
 Ce site vise le niveau **RGAA AA** :
+
 - Navigation clavier complète (skip link, focus visible)
 - ARIA labels sur tous les éléments interactifs
 - Contraste minimum 4.5:1
 - Textes redimensionnables jusqu'à 200%
 - Compatibilité lecteurs d'écran (VoiceOver, NVDA)
+- Balisage sémantique HTML5 (nav, main, section, article, hiérarchie de titres)
 
 ---
 
 ## Licence
 
-MIT — Contributions bienvenues 🤝
+MIT — Contributions bienvenues
