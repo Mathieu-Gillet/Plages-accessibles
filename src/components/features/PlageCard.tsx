@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { MapPin, Star } from 'lucide-react'
 import { BadgeAccessibilite } from './BadgeAccessibilite'
+import { InfobulleNote } from './InfobulleNote'
 import { formatNote } from '@/lib/utils'
 import type { PlageResume, TypeAccessibilite } from '@/types'
 
@@ -14,9 +15,9 @@ export function PlageCardResume({ plage }: PlageCardProps) {
   const reste = plage.accessibilites.length - 3
 
   return (
-    <article className="bg-white rounded-2xl shadow-sm border border-sable-fonce hover:shadow-md transition-shadow overflow-hidden">
+    <article className="bg-white rounded-2xl shadow-sm border border-sable-fonce hover:shadow-md transition-shadow relative">
       {/* Photo */}
-      <div className="h-44 bg-ocean-pale relative overflow-hidden">
+      <div className="h-44 bg-ocean-pale relative overflow-hidden rounded-t-2xl">
         {plage.photo ? (
           <img
             src={plage.photo}
@@ -28,16 +29,19 @@ export function PlageCardResume({ plage }: PlageCardProps) {
             🏖️
           </div>
         )}
-        {plage.noteGlobale > 0 && (
-          <div
-            className="absolute top-3 right-3 bg-ocean text-white text-sm font-bold px-2 py-1 rounded-lg flex items-center gap-1"
-            aria-label={`Note : ${formatNote(plage.noteGlobale)}`}
-          >
-            <Star size={13} fill="currentColor" aria-hidden="true" />
-            {formatNote(plage.noteGlobale)}
-          </div>
-        )}
       </div>
+
+      {/* Badge note — hors overflow pour permettre au tooltip de s'afficher */}
+      {plage.noteGlobale > 0 && (
+        <div
+          className="absolute top-3 right-3 bg-ocean text-white text-sm font-bold px-2 py-1 rounded-lg flex items-center gap-1.5"
+          aria-label={`Note : ${formatNote(plage.noteGlobale)}`}
+        >
+          <Star size={13} fill="currentColor" aria-hidden="true" />
+          {formatNote(plage.noteGlobale)}
+          <InfobulleNote />
+        </div>
+      )}
 
       {/* Contenu */}
       <div className="p-4">

@@ -9,6 +9,7 @@ import { OffreCulturelleCard } from '@/components/features/OffreCulturelleCard'
 import { AvisSection } from '@/components/features/AvisSection'
 import { formatNote } from '@/lib/utils'
 import { MapPin } from 'lucide-react'
+import { InfobulleNote } from '@/components/features/InfobulleNote'
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }))
@@ -89,11 +90,14 @@ export default function PagePlage({ params }: { params: { slug: string } }) {
 
           {plage.noteGlobale > 0 && (
             <div
-              className="flex flex-col items-center bg-ocean text-white px-5 py-3 rounded-xl"
+              className="flex flex-col items-center bg-ocean text-white px-5 py-3 rounded-xl relative"
               aria-label={`Note : ${formatNote(plage.noteGlobale)} sur 5`}
             >
               <span className="text-3xl font-extrabold">{formatNote(plage.noteGlobale)}</span>
-              <span className="text-xs opacity-80 mt-1">sur 5</span>
+              <span className="text-xs opacity-80 mt-1 flex items-center gap-1">
+                sur 5
+                <InfobulleNote />
+              </span>
             </div>
           )}
         </div>
