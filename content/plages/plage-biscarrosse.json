@@ -1,0 +1,30 @@
+{
+  "slug": "plage-biscarrosse",
+  "nom": "Plage de Biscarrosse-Plage",
+  "description": "Grande plage océane des Landes, labellisée Handiplage niveau 3. Cheminement en bois sur la dune, tiralos et fauteuils tout-terrain en prêt gratuit, douches et sanitaires accessibles au poste de secours principal, parking PMR à l'entrée principale.",
+  "commune": "Biscarrosse",
+  "codePostal": "40600",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 44.4504,
+  "longitude": -1.2559,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Biscarrosse_%28Landes%29_-_Plage_5.jpg/1280px-Biscarrosse_%28Landes%29_-_Plage_5.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-21",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "HIPPOCAMPE",
+    "CHEMIN_ACCES",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "PARKINGS_PMR",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
