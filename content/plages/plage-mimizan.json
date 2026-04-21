@@ -23,6 +23,30 @@
     "PARKINGS_PMR"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
+  "offresCulturelles": [
+    {
+      "nom": "Musée Prieuré",
+      "type": "musée",
+      "adresse": "39 Rue de l'Abbaye, 40200, Mimizan",
+      "description": "Joyau de l'art médiéval présentant un portail sculpté polychrome du XIIIe siècle ainsi qu'un magnifique ensemble de peintures murales daté du XVe siècle. En 2000 , l'Unesco a inscrit le portail au patrimoine mondial, au titre des Chemins de St Jacques",
+      "telephone": "+33 5 58 09 00 61",
+      "siteWeb": "musee.mimizan.fr",
+      "latitude": 44.2040334,
+      "longitude": -1.2356508,
+      "distanceKm": 4.5,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Cinéma Le Parnasse",
+      "type": "cinéma",
+      "adresse": "Mimizan",
+      "telephone": "+33 5 58 09 93 33",
+      "siteWeb": "https://www.mimizan.fr/sport-culture/culture/cinema-theatre-le-parnasse",
+      "latitude": 44.2007375,
+      "longitude": -1.2274023,
+      "distanceKm": 5.2,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

@@ -25,7 +25,49 @@
     "PERSONNEL_FORME",
     "LOCATION_MATERIEL"
   ],
-  "hebergements": [],
+  "hebergements": [
+    {
+      "nom": "Hôtel Normandy Barrière",
+      "type": "hôtel",
+      "adresse": "Deauville",
+      "siteWeb": "https://www.hotelsbarriere.com/fr/deauville/le-normandy.html",
+      "latitude": 49.3600387,
+      "longitude": 0.0709638,
+      "distanceKm": 0.3,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Holiday Inn Express Deauville Sud",
+      "type": "hôtel",
+      "adresse": "Deauville",
+      "telephone": "+33 7 88 81 06 91",
+      "siteWeb": "https://www.ihg.com/holidayinnexpress/hotels/gb/en/touques/dolqu/hoteldetail?cm_mmc=GoogleMaps-_-EX-_-FR-_-DOLQU",
+      "latitude": 49.348281,
+      "longitude": 0.0946691,
+      "distanceKm": 2,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "L'Amirauté",
+      "type": "hôtel",
+      "adresse": "Deauville",
+      "telephone": "+33 2 31 81 82 83",
+      "siteWeb": "https://www.amiraute.com/",
+      "latitude": 49.3427039,
+      "longitude": 0.100235,
+      "distanceKm": 2.8,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Domaine de La Corniche",
+      "type": "hôtel",
+      "adresse": "Deauville",
+      "latitude": 49.3081304,
+      "longitude": -0.0367578,
+      "distanceKm": 10,
+      "accessiblePMR": true
+    }
+  ],
   "offresCulturelles": [],
   "avis": []
 }
