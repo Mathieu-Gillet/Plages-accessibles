@@ -130,7 +130,7 @@ export default function PagePlage({ params }: { params: { slug: string } }) {
           offres={plage.offresCulturelles}
         />
         <a
-          href={`https://www.google.com/maps/search/?api=1&query=${plage.latitude},${plage.longitude}`}
+          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${plage.nom}, ${plage.commune}`)}`}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-3 inline-flex items-center gap-2 text-ocean hover:underline font-semibold"

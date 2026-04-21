@@ -47,6 +47,15 @@ export function CarteAccueil({ plages }: CarteAccueilProps) {
 
   return (
     <div className="w-full space-y-3">
+      <div className="w-full h-[500px] rounded-xl overflow-hidden shadow-md">
+        <CarteLeaflet
+          plages={plagesFiltrees}
+          hauteur="500px"
+          centreInitial={[46.8, 2.3]}
+          zoomInitial={6}
+        />
+      </div>
+
       <div className="flex flex-wrap gap-2" role="group" aria-label="Filtrer les plages par note">
         {FILTRES.map(({ value, label }) => {
           const actif = filtre === value
@@ -68,15 +77,6 @@ export function CarteAccueil({ plages }: CarteAccueilProps) {
         <span className="self-center text-xs text-gray-400 ml-1">
           {plagesFiltrees.length} plage{plagesFiltrees.length !== 1 ? 's' : ''}
         </span>
-      </div>
-
-      <div className="w-full h-[500px] rounded-xl overflow-hidden shadow-md">
-        <CarteLeaflet
-          plages={plagesFiltrees}
-          hauteur="500px"
-          centreInitial={[46.8, 2.3]}
-          zoomInitial={6}
-        />
       </div>
     </div>
   )
