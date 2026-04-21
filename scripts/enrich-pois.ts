@@ -84,6 +84,12 @@ function coordsOf(el: OverpassElement): { lat: number; lon: number } | null {
   return null
 }
 
+function normalizeUrl(raw: string): string | null {
+  if (!raw) return null
+  const url = /^https?:\/\//i.test(raw) ? raw : `https://${raw}`
+  try { new URL(url); return url } catch { return null }
+}
+
 function buildAdresse(tags: Record<string, string>, commune: string): string {
   const parts: string[] = []
   if (tags['addr:housenumber'] && tags['addr:street']) {
@@ -167,7 +173,7 @@ function toHebergement(
     type: LABELS_HEBERGEMENT[tags.tourism ?? ''] ?? 'hébergement',
     adresse: buildAdresse(tags, commune),
     ...(tags.phone ? { telephone: tags.phone } : {}),
-    ...(tags.website ? { siteWeb: tags.website } : {}),
+    ...(tags.website ? (() => { const u = normalizeUrl(tags.website); return u ? { siteWeb: u } : {} })() : {}),
     latitude: c.lat,
     longitude: c.lon,
     distanceKm: Math.round(haversineKm(beachLat, beachLon, c.lat, c.lon) * 10) / 10,
@@ -192,7 +198,7 @@ function toOffreCulturelle(
     adresse: buildAdresse(tags, commune),
     ...(tags.description ? { description: tags.description } : {}),
     ...(tags.phone ? { telephone: tags.phone } : {}),
-    ...(tags.website ? { siteWeb: tags.website } : {}),
+    ...(tags.website ? (() => { const u = normalizeUrl(tags.website); return u ? { siteWeb: u } : {} })() : {}),
     latitude: c.lat,
     longitude: c.lon,
     distanceKm: Math.round(haversineKm(beachLat, beachLon, c.lat, c.lon) * 10) / 10,
