@@ -1,0 +1,126 @@
+name: Enrichissement quotidien des POIs accessibles
+
+on:
+  schedule:
+    # 06:00 UTC = 08:00 Paris été / 07:00 Paris hiver.
+    - cron: '0 6 * * *'
+  workflow_dispatch:  # Bouton de déclenchement manuel dans l'onglet Actions.
+
+permissions:
+  contents: write       # Required to push the auto/enrich-* branch.
+  pull-requests: write  # Required to open the PR.
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run enrichment script
+        id: enrich
+        run: npx tsx scripts/enrich-pois.ts
+
+      - name: Bail out if nothing changed
+        if: steps.enrich.outputs.enriched == '0'
+        run: |
+          echo "Aucune plage enrichie aujourd'hui — pas de PR créée."
+          exit 0
+
+      - name: Configure git
+        if: steps.enrich.outputs.enriched != '0'
+        run: |
+          git config user.name "plages-enrich-bot"
+          git config user.email "actions@users.noreply.github.com"
+
+      - name: Create branch and commit
+        if: steps.enrich.outputs.enriched != '0'
+        id: branch
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          BRANCH="auto/enrich-${DATE}"
+          git checkout -b "$BRANCH"
+          git add content/plages/
+          git commit -m "auto: enrichissement POIs — +${{ steps.enrich.outputs.hebergements_added }} hébergements, +${{ steps.enrich.outputs.offres_added }} offres culturelles — ${DATE}"
+          git push origin "$BRANCH" --force
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+
+      - name: Ensure auto-enrich label exists
+        if: steps.enrich.outputs.enriched != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create auto-enrich \
+            --color "1D76DB" \
+            --description "PR auto-générée par le workflow d'enrichissement POIs" \
+            2>/dev/null || true
+
+      - name: Skip PR creation if one is already open on this branch
+        if: steps.enrich.outputs.enriched != '0'
+        id: existing
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NUMBER=$(gh pr list --head "${{ steps.branch.outputs.branch }}" --state open --json number --jq '.[0].number // ""')
+          if [ -n "$NUMBER" ]; then
+            echo "PR #$NUMBER déjà ouverte — le force push l'a mise à jour automatiquement."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open Pull Request
+        if: steps.enrich.outputs.enriched != '0' && steps.existing.outputs.skip == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          SLUGS="${{ steps.enrich.outputs.slugs }}"
+          BULLETS=$(echo "$SLUGS" | tr ',' '\n' | sed 's|^|- `content/plages/|; s|$|.json`|')
+          BODY=$(cat <<EOF
+          ## Enrichissement POIs du ${{ steps.branch.outputs.date }}
+
+          **${{ steps.enrich.outputs.enriched }} plage(s)** mises à jour avec des hébergements et offres culturelles accessibles PMR.
+
+          - **+${{ steps.enrich.outputs.hebergements_added }}** hébergements accessibles (hôtels, chambres d'hôtes…)
+          - **+${{ steps.enrich.outputs.offres_added }}** offres culturelles accessibles (musées, châteaux, théâtres…)
+
+          ### Plages mises à jour
+          ${BULLETS}
+
+          ### Source des données
+          [OpenStreetMap](https://www.openstreetmap.org) via l'API Overpass — uniquement les POIs tagués \`wheelchair=yes\` ou \`wheelchair=designated\`, dans un rayon de 10 km autour de chaque plage.
+
+          ### Checklist de review
+          - [ ] Hébergements pertinents et proches de la plage
+          - [ ] Offres culturelles cohérentes (musées, châteaux, théâtres, galeries…)
+          - [ ] Adresses et distances plausibles
+          - [ ] Pas de doublon avec les données existantes
+          - [ ] \`accessiblePMR: true\` justifié (source OSM fiable pour le lieu)
+
+          ### Si une entrée est incorrecte
+          Éditer le fichier JSON dans cette PR (icône crayon) → supprimer l'entrée indésirable → committer → merger le reste.
+
+          ### Si tout est OK
+          Cliquer **Merge pull request** → Vercel rebuild en ~2 min → en ligne sur https://plages-accessibles.fr
+
+          ---
+          _Workflow : \`.github/workflows/enrich-pois.yml\`_
+          _Source : OpenStreetMap Overpass API — rayon 10 km, wheelchair=yes/designated_
+          EOF
+          )
+          gh pr create \
+            --base master \
+            --head "${{ steps.branch.outputs.branch }}" \
+            --title "auto: enrichissement POIs — ${{ steps.enrich.outputs.enriched }} plage(s) — ${{ steps.branch.outputs.date }}" \
+            --body "$BODY" \
+            --label "auto-enrich"
