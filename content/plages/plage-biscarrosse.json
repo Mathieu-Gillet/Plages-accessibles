@@ -25,6 +25,19 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
+  "offresCulturelles": [
+    {
+      "nom": "Musée de l'Hydraviation",
+      "type": "musée",
+      "adresse": "332 Avenue Louis Bréguet, 40600, Biscarrosse",
+      "description": "Le musée scientifique et technique de l’hydraviation rend hommage aux inventeurs de l’hydravion, à l’engagement des industriels impliqués dans leur fabrication, et aux exploits des pilotes qui ont révolutionné l’aéronautique.",
+      "telephone": "+33 5 58 78 00 65",
+      "siteWeb": "https://www.hydravions-biscarrosse.com/",
+      "latitude": 44.3893856,
+      "longitude": -1.1824169,
+      "distanceKm": 8.9,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

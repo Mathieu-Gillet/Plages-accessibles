@@ -22,7 +22,26 @@
     "PERSONNEL_FORME",
     "CHEMIN_ACCES"
   ],
-  "hebergements": [],
+  "hebergements": [
+    {
+      "nom": "Neptune",
+      "type": "hôtel",
+      "adresse": "32 Esplanade Parmentier, Berck-sur-Mer",
+      "latitude": 50.4088719,
+      "longitude": 1.5613017,
+      "distanceKm": 0.5,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "La Hutterie",
+      "type": "hôtel",
+      "adresse": "Berck-sur-Mer",
+      "latitude": 50.3399247,
+      "longitude": 1.5641201,
+      "distanceKm": 7.2,
+      "accessiblePMR": true
+    }
+  ],
   "offresCulturelles": [],
   "avis": [],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Berck_Plage_h%C3%B4pital_Cazin_Perrochaud-CISA0935.jpg/1280px-Berck_Plage_h%C3%B4pital_Cazin_Perrochaud-CISA0935.jpg"

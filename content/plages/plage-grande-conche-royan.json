@@ -24,8 +24,37 @@
     "PARKINGS_PMR",
     "PERSONNEL_FORME"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "Rêve de Sable",
+      "type": "hôtel",
+      "adresse": "Royan",
+      "latitude": 45.6230973,
+      "longitude": -1.0220183,
+      "distanceKm": 0.2,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Hôtel Foncillon",
+      "type": "hôtel",
+      "adresse": "Royan",
+      "latitude": 45.6200931,
+      "longitude": -1.0338136,
+      "distanceKm": 0.8,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Espace d'Art contemporain",
+      "type": "centre culturel",
+      "adresse": "Royan",
+      "latitude": 45.6206927,
+      "longitude": -1.0304614,
+      "distanceKm": 0.5,
+      "accessiblePMR": true
+    }
+  ],
   "avis": [],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/00_2632_Royan-Plage.jpg/1280px-00_2632_Royan-Plage.jpg"
 }

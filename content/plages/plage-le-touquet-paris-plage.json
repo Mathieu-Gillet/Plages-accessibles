@@ -24,7 +24,41 @@
     "CHEMIN_ACCES",
     "PERSONNEL_FORME"
   ],
-  "hebergements": [],
+  "hebergements": [
+    {
+      "nom": "Hôtel Bristol",
+      "type": "hôtel",
+      "adresse": "Le Touquet-Paris-Plage",
+      "telephone": "+33 3 21 05 49 95",
+      "siteWeb": "https://www.hotelbristol.fr/",
+      "latitude": 50.5209565,
+      "longitude": 1.5821265,
+      "distanceKm": 0.4,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Hôtel Barrière Le Westminster",
+      "type": "hôtel",
+      "adresse": "5 Avenue du Verger, 62520, Le Touquet-Paris-Plage",
+      "telephone": "+33 3 21 05 48 48",
+      "siteWeb": "http://www.westminster.fr",
+      "latitude": 50.522356,
+      "longitude": 1.5915345,
+      "distanceKm": 0.5,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Brit Hôtel",
+      "type": "hôtel",
+      "adresse": "15 Chemin Départemental 940, 62630, Étaples",
+      "telephone": "+33 3 21 89 99 99",
+      "siteWeb": "https://hotel-touquet-etaples.brithotel.fr/",
+      "latitude": 50.5312165,
+      "longitude": 1.625003,
+      "distanceKm": 2.9,
+      "accessiblePMR": true
+    }
+  ],
   "offresCulturelles": [],
   "avis": [],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/1933_MG_J-Type_J2_in_Le_Touquet-Paris-Plage_%281%29.jpg/1280px-1933_MG_J-Type_J2_in_Le_Touquet-Paris-Plage_%281%29.jpg"

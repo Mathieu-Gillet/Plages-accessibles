@@ -33,9 +33,101 @@
       "longitude": 5.3841,
       "distanceKm": 0.5,
       "accessiblePMR": true
+    },
+    {
+      "nom": "Le Petit Nice Passedat",
+      "type": "hôtel",
+      "adresse": "Anse de Maldormé - Corniche J.F Kennedy, 13007, Marseille",
+      "siteWeb": "http://www.passedat.fr/?anchor=!home#!home",
+      "latitude": 43.2802191,
+      "longitude": 5.3520689,
+      "distanceKm": 2.6,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Etap Hotel",
+      "type": "hôtel",
+      "adresse": "Marseille",
+      "latitude": 43.2922209,
+      "longitude": 5.3736588,
+      "distanceKm": 3.2,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Novotel",
+      "type": "hôtel",
+      "adresse": "Marseille",
+      "siteWeb": "https://all.accor.com/hotel/0911/index.fr.shtml",
+      "latitude": 43.2928441,
+      "longitude": 5.3601504,
+      "distanceKm": 3.4,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Hôtel Ibis Marseille Euroméditerranée",
+      "type": "hôtel",
+      "adresse": "Marseille",
+      "latitude": 43.3079702,
+      "longitude": 5.3676485,
+      "distanceKm": 5,
+      "accessiblePMR": true
     }
   ],
-  "offresCulturelles": [],
+  "offresCulturelles": [
+    {
+      "nom": "Espace Julien",
+      "type": "centre culturel",
+      "adresse": "Marseille",
+      "telephone": "+33 4 91 24 34 10",
+      "siteWeb": "https://www.espace-julien.com/",
+      "latitude": 43.2943103,
+      "longitude": 5.3834346,
+      "distanceKm": 3.5,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Mémorial de La Marseillaise",
+      "type": "musée",
+      "adresse": "Marseille",
+      "siteWeb": "https://musees.marseille.fr/memorial-de-la-marseillaise-0",
+      "latitude": 43.2977936,
+      "longitude": 5.3784437,
+      "distanceKm": 3.8,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Théâtre de la Mer",
+      "type": "théâtre",
+      "adresse": "Marseille",
+      "telephone": "+33 9 53 29 03 53",
+      "siteWeb": "https://www.letheatredelamer.fr/",
+      "latitude": 43.3026675,
+      "longitude": 5.3709539,
+      "distanceKm": 4.4,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Le Gyptis",
+      "type": "cinéma",
+      "adresse": "Marseille",
+      "telephone": "+33 4 95 04 96 25",
+      "siteWeb": "https://www.lafriche.org/fr/cinema-le-gyptis",
+      "latitude": 43.3126851,
+      "longitude": 5.384402,
+      "distanceKm": 5.5,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Le ZEF - Scène nationale de Marseille",
+      "type": "théâtre",
+      "adresse": "Marseille",
+      "siteWeb": "https://www.lezef.org/fr/",
+      "latitude": 43.3307459,
+      "longitude": 5.3986698,
+      "distanceKm": 7.7,
+      "accessiblePMR": true
+    }
+  ],
   "avis": [],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/La_plage_des_catalans%2C_Marseille_-_panoramio.jpg/1280px-La_plage_des_catalans%2C_Marseille_-_panoramio.jpg"
 }

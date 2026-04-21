@@ -24,7 +24,59 @@
     "PARKINGS_PMR",
     "PERSONNEL_FORME"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "Hôtel Celtique",
+      "type": "hôtel",
+      "adresse": "82 Avenue des Druides, 56340, Carnac",
+      "telephone": "+33 2 97 52 14 15",
+      "latitude": 47.5731884,
+      "longitude": -3.071488,
+      "distanceKm": 0.5,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Thalazur Carnac",
+      "type": "hôtel",
+      "adresse": "Carnac",
+      "latitude": 47.571898,
+      "longitude": -3.0804508,
+      "distanceKm": 1,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Musée de la Préhistoire",
+      "type": "musée",
+      "adresse": "10 Place de la Chapelle, 56340, Carnac",
+      "telephone": "+33 2 97 52 22 04",
+      "siteWeb": "https://www.museedecarnac.com",
+      "latitude": 47.584807,
+      "longitude": -3.078431,
+      "distanceKm": 1,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Maison des Mégalithes",
+      "type": "musée",
+      "adresse": "15 Bahnhofstraße, 86650, Wemding",
+      "siteWeb": "https://www.menhirs-carnac.fr/decouvrir/la-maison-des-megalithes",
+      "latitude": 47.5914525,
+      "longitude": -3.0823356,
+      "distanceKm": 1.8,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Site des mégalithes de Locmariaquer",
+      "type": "musée",
+      "adresse": "Carnac",
+      "siteWeb": "https://www.site-megalithique-locmariaquer.fr/",
+      "latitude": 47.571773,
+      "longitude": -2.9497125,
+      "distanceKm": 9,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

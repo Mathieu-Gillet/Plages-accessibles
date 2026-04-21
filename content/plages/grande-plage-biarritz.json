@@ -21,8 +21,113 @@
     "SANITAIRES_ADAPTES",
     "PERSONNEL_FORME"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "Hôtel Mercure Le Président",
+      "type": "hôtel",
+      "adresse": "Biarritz",
+      "telephone": "+33 5 59 24 66 40",
+      "latitude": 43.4818119,
+      "longitude": -1.559779,
+      "distanceKm": 0.4,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Palmito",
+      "type": "hôtel",
+      "adresse": "Biarritz",
+      "telephone": "+33559241656",
+      "siteWeb": "https://www.palmito-biarritz.com/fr",
+      "latitude": 43.4819938,
+      "longitude": -1.565769,
+      "distanceKm": 0.5,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Le Gamaritz",
+      "type": "hôtel",
+      "adresse": "5 Perspective Côte des Basques, 64200, Biarritz",
+      "telephone": "+33 559240023",
+      "siteWeb": "https://hotel-biarritz-gamaritz.com/",
+      "latitude": 43.4816058,
+      "longitude": -1.5662182,
+      "distanceKm": 0.5,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Briketenia",
+      "type": "hôtel",
+      "adresse": "Rue de l'Église, 64210, Guéthary",
+      "telephone": "+33 5 59 26 51 34",
+      "siteWeb": "https://www.briketenia.com",
+      "latitude": 43.4195656,
+      "longitude": -1.6060988,
+      "distanceKm": 8.1,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Ibis Budget",
+      "type": "hôtel",
+      "adresse": "Biarritz",
+      "latitude": 43.4886905,
+      "longitude": -1.4572935,
+      "distanceKm": 8.4,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Musée de la Mer",
+      "type": "musée",
+      "adresse": "Biarritz",
+      "siteWeb": "https://www.paysbasque.net/aquariums-et-musees/musee-de-la-mer-biarritz/",
+      "latitude": 43.4833364,
+      "longitude": -1.568191,
+      "distanceKm": 0.6,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Musée Asiatica",
+      "type": "musée",
+      "adresse": "1 Rue Guy Petit, Biarritz",
+      "telephone": "+33559227878",
+      "latitude": 43.4781173,
+      "longitude": -1.5553425,
+      "distanceKm": 0.9,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Musée Basque et de l'histoire de Bayonne",
+      "type": "musée",
+      "adresse": "Biarritz",
+      "description": "Situé dans une demeure portuaire de la ville, le musée propose une collection exceptionnelle de plus de 2 000 objets retraçant l'histoire du Pays Basque.",
+      "latitude": 43.4910854,
+      "longitude": -1.473799,
+      "distanceKm": 7.1,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "L'Atalante",
+      "type": "cinéma",
+      "adresse": "Biarritz",
+      "description": "L'Atalante, cinéma d'art et d'essai - Films, expositions, soirées. L’Atalante est un cinéma géré par une association, ouverte à tous ses spectateurs depuis sa création en 1990.",
+      "telephone": "+33 5 59 55 52 98",
+      "siteWeb": "https://atalante-cinema.org/",
+      "latitude": 43.4955453,
+      "longitude": -1.4713303,
+      "distanceKm": 7.4,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Pop-up d'Artistes",
+      "type": "galerie",
+      "adresse": "Avenue du Portou, 64990, Saint-Pierre-d'Irube",
+      "latitude": 43.480431,
+      "longitude": -1.4442573,
+      "distanceKm": 9.5,
+      "accessiblePMR": true
+    }
+  ],
   "avis": [],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Biarritz-Plage.JPG/1280px-Biarritz-Plage.JPG"
 }

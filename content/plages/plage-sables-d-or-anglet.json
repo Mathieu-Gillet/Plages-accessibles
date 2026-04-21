@@ -22,8 +22,113 @@
     "SANITAIRES_ADAPTES",
     "PERSONNEL_FORME"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "Hôtel Mercure Le Président",
+      "type": "hôtel",
+      "adresse": "Anglet",
+      "telephone": "+33 5 59 24 66 40",
+      "latitude": 43.4818119,
+      "longitude": -1.559779,
+      "distanceKm": 2.4,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Palmito",
+      "type": "hôtel",
+      "adresse": "Anglet",
+      "telephone": "+33559241656",
+      "siteWeb": "https://www.palmito-biarritz.com/fr",
+      "latitude": 43.4819938,
+      "longitude": -1.565769,
+      "distanceKm": 2.8,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Le Gamaritz",
+      "type": "hôtel",
+      "adresse": "5 Perspective Côte des Basques, 64200, Biarritz",
+      "telephone": "+33 559240023",
+      "siteWeb": "https://hotel-biarritz-gamaritz.com/",
+      "latitude": 43.4816058,
+      "longitude": -1.5662182,
+      "distanceKm": 2.9,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Ibis Budget",
+      "type": "hôtel",
+      "adresse": "Anglet",
+      "latitude": 43.4886905,
+      "longitude": -1.4572935,
+      "distanceKm": 6.6,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Laminak",
+      "type": "hôtel",
+      "adresse": "Route du Bourg, 64210, Arbonne",
+      "telephone": "+33 5 59 41 95 40",
+      "siteWeb": "https://hotel-laminak.com",
+      "latitude": 43.4269595,
+      "longitude": -1.5484485,
+      "distanceKm": 7.8,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Musée Asiatica",
+      "type": "musée",
+      "adresse": "1 Rue Guy Petit, Anglet",
+      "telephone": "+33559227878",
+      "latitude": 43.4781173,
+      "longitude": -1.5553425,
+      "distanceKm": 2.5,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Musée de la Mer",
+      "type": "musée",
+      "adresse": "Anglet",
+      "siteWeb": "https://www.paysbasque.net/aquariums-et-musees/musee-de-la-mer-biarritz/",
+      "latitude": 43.4833364,
+      "longitude": -1.568191,
+      "distanceKm": 2.9,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Musée Basque et de l'histoire de Bayonne",
+      "type": "musée",
+      "adresse": "Anglet",
+      "description": "Situé dans une demeure portuaire de la ville, le musée propose une collection exceptionnelle de plus de 2 000 objets retraçant l'histoire du Pays Basque.",
+      "latitude": 43.4910854,
+      "longitude": -1.473799,
+      "distanceKm": 5.2,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "L'Atalante",
+      "type": "cinéma",
+      "adresse": "Anglet",
+      "description": "L'Atalante, cinéma d'art et d'essai - Films, expositions, soirées. L’Atalante est un cinéma géré par une association, ouverte à tous ses spectateurs depuis sa création en 1990.",
+      "telephone": "+33 5 59 55 52 98",
+      "siteWeb": "https://atalante-cinema.org/",
+      "latitude": 43.4955453,
+      "longitude": -1.4713303,
+      "distanceKm": 5.4,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Pop-up d'Artistes",
+      "type": "galerie",
+      "adresse": "Avenue du Portou, 64990, Saint-Pierre-d'Irube",
+      "latitude": 43.480431,
+      "longitude": -1.4442573,
+      "distanceKm": 7.8,
+      "accessiblePMR": true
+    }
+  ],
   "avis": [],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Anglet_plage_01.jpg"
 }
