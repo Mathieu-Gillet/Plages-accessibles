@@ -1,0 +1,31 @@
+{
+  "slug": "plage-deauville",
+  "nom": "Plage de Deauville",
+  "description": "Plage normande mythique avec ses planches célèbres, labellisée Handiplage niveau 3. Cheminements accessibles sur les planches, tiralos et fauteuils amphibies disponibles en saison, sanitaires PMR et douches accessibles. Service handi-accueil reconnu.",
+  "commune": "Deauville",
+  "codePostal": "14800",
+  "departement": "Calvados",
+  "region": "Normandie",
+  "latitude": 49.3612,
+  "longitude": 0.0745,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Les_planches_de_la_plage_de_Deauville.jpg/1280px-Les_planches_de_la_plage_de_Deauville.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-21",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "HIPPOCAMPE",
+    "CHEMIN_ACCES",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "PARKINGS_PMR",
+    "PERSONNEL_FORME",
+    "LOCATION_MATERIEL"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

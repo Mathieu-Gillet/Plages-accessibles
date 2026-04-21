@@ -1,0 +1,28 @@
+{
+  "slug": "plage-pornichet",
+  "nom": "Plage de Pornichet",
+  "description": "Plage de la côte de jade en Loire-Atlantique, labellisée Handiplage. Sable fin et pente douce favorisant l'accès, tiralos disponibles auprès des sauveteurs, cheminements bois depuis le front de mer, sanitaires PMR et parking aménagé à faible distance.",
+  "commune": "Pornichet",
+  "codePostal": "44380",
+  "departement": "Loire-Atlantique",
+  "region": "Pays de la Loire",
+  "latitude": 47.2641,
+  "longitude": -2.3385,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Pornichet-FR-44-la_plage-01.jpg/1280px-Pornichet-FR-44-la_plage-01.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-21",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "CHEMIN_ACCES",
+    "SANITAIRES_ADAPTES",
+    "PARKINGS_PMR",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

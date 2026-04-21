@@ -1,0 +1,30 @@
+{
+  "slug": "grande-plage-carnac",
+  "nom": "Grande Plage de Carnac",
+  "description": "Plage de sable fin de 2 km face au golfe du Morbihan, labellisée Handiplage niveau 3. Tiralos et fauteuils Hippocampe disponibles au poste de secours, cheminement en caillebotis bois, sanitaires et douches PMR, stationnement adapté à proximité immédiate.",
+  "commune": "Carnac",
+  "codePostal": "56340",
+  "departement": "Morbihan",
+  "region": "Bretagne",
+  "latitude": 47.5779,
+  "longitude": -3.0699,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/4/40/H%C3%B4tel_de_la_plage_-_D%C3%A9p%C3%B4t_d%27otages_payants_-_salle_de_billard_-_Carnac_-_M%C3%A9diath%C3%A8que_de_l%27architecture_et_du_patrimoine_-_APD0001720.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-21",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "HIPPOCAMPE",
+    "CHEMIN_ACCES",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "PARKINGS_PMR",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

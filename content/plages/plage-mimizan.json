@@ -1,0 +1,28 @@
+{
+  "slug": "plage-mimizan",
+  "nom": "Plage de Mimizan",
+  "description": "Plage landaise de 8 km, classée Handiplage. Accès facilité par des passerelles en bois depuis le parking dune, tiralos disponibles en été au poste central, sanitaires et douches PMR, agent d'accueil dédié en juillet-août.",
+  "commune": "Mimizan",
+  "codePostal": "40200",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 44.2076,
+  "longitude": -1.2922,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Mimizan_les_plages_%287%29.jpg/1280px-Mimizan_les_plages_%287%29.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-21",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "CHEMIN_ACCES",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "PARKINGS_PMR"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
