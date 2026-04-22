@@ -32,9 +32,78 @@
       "longitude": -0.1143,
       "distanceKm": 0.5,
       "accessiblePMR": true
+    },
+    {
+      "nom": "Hôtel Les Bains",
+      "type": "hôtel",
+      "adresse": "Cabourg",
+      "latitude": 49.2896878,
+      "longitude": -0.1312137,
+      "distanceKm": 0.6,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Residence Le Bois Flotté",
+      "type": "appartement meublé",
+      "adresse": "71-73 Route de Cabourg, 14810, Merville-Franceville-Plage",
+      "telephone": "+33 2 31 24 20 60",
+      "siteWeb": "https://www.residence-leboisflotte.com/",
+      "latitude": 49.2827968,
+      "longitude": -0.1939196,
+      "distanceKm": 5.1,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Domaine de La Corniche",
+      "type": "hôtel",
+      "adresse": "Cabourg",
+      "latitude": 49.3081304,
+      "longitude": -0.0367578,
+      "distanceKm": 6.8,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Ibis Styles",
+      "type": "hôtel",
+      "adresse": "Cabourg",
+      "latitude": 49.283225,
+      "longitude": -0.2509689,
+      "distanceKm": 9.2,
+      "accessiblePMR": true
     }
   ],
-  "offresCulturelles": [],
+  "offresCulturelles": [
+    {
+      "nom": "Espace Culturel",
+      "type": "centre culturel",
+      "adresse": "11 Avenue Georges Landry, 14430, Dozulé",
+      "latitude": 49.2302945,
+      "longitude": -0.0421078,
+      "distanceKm": 8.6,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Cinéma Michel Cabieu",
+      "type": "cinéma",
+      "adresse": "Cabourg",
+      "telephone": "+33 2 31973952",
+      "siteWeb": "https://www.lecabieu.fr/",
+      "latitude": 49.27705,
+      "longitude": -0.2571615,
+      "distanceKm": 9.7,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Musée du Débarquement Sword",
+      "type": "musée",
+      "adresse": "Cabourg",
+      "siteWeb": "https://www.musee-4commando.fr/",
+      "latitude": 49.2886093,
+      "longitude": -0.2596121,
+      "distanceKm": 9.8,
+      "accessiblePMR": true
+    }
+  ],
   "avis": [],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/CabourgPlage.jpg/1280px-CabourgPlage.jpg"
 }

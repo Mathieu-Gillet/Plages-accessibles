@@ -27,6 +27,16 @@
     "LOCATION_MATERIEL"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
+  "offresCulturelles": [
+    {
+      "nom": "Musée automobile de Vendée",
+      "type": "musée",
+      "adresse": "Les Sables-d'Olonne",
+      "latitude": 46.4773636,
+      "longitude": -1.6675305,
+      "distanceKm": 9.3,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }
