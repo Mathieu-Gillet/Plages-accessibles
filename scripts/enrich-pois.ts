@@ -90,6 +90,33 @@ function normalizeUrl(raw: string): string | null {
   try { new URL(url); return url } catch { return null }
 }
 
+const UA = 'PlagesAccessibles/1.0 (https://github.com/Mathieu-Gillet/Plages)'
+
+async function verifyUrl(raw: string): Promise<string | null> {
+  const url = normalizeUrl(raw)
+  if (!url) return null
+
+  async function tryFetch(method: 'HEAD' | 'GET'): Promise<boolean> {
+    const ctrl = new AbortController()
+    const timer = setTimeout(() => ctrl.abort(), 5_000)
+    try {
+      const r = await fetch(url, { method, signal: ctrl.signal, headers: { 'User-Agent': UA } })
+      clearTimeout(timer)
+      // 403 = serveur en ligne mais bloque les bots — on considère l'URL valide
+      return r.ok || r.status === 403
+    } catch {
+      clearTimeout(timer)
+      return false
+    }
+  }
+
+  if (await tryFetch('HEAD')) return url
+  // Certains serveurs refusent HEAD (405) — on retente en GET
+  if (await tryFetch('GET')) return url
+  console.log(`    [url-ko] ${url}`)
+  return null
+}
+
 function buildAdresse(tags: Record<string, string>, commune: string): string {
   const parts: string[] = []
   if (tags['addr:housenumber'] && tags['addr:street']) {
@@ -158,22 +185,23 @@ out center;
 
 // ── Mapping OSM → types JSON ──────────────────────────────────────────────────
 
-function toHebergement(
+async function toHebergement(
   el: OverpassElement,
   beachLat: number,
   beachLon: number,
   commune: string,
-): HebergementJson | null {
+): Promise<HebergementJson | null> {
   const c = coordsOf(el)
   const tags = el.tags ?? {}
   const nom = tags.name
   if (!c || !nom) return null
+  const siteWeb = tags.website ? await verifyUrl(tags.website) : null
   return {
     nom,
     type: LABELS_HEBERGEMENT[tags.tourism ?? ''] ?? 'hébergement',
     adresse: buildAdresse(tags, commune),
     ...(tags.phone ? { telephone: tags.phone } : {}),
-    ...(tags.website ? (() => { const u = normalizeUrl(tags.website); return u ? { siteWeb: u } : {} })() : {}),
+    ...(siteWeb ? { siteWeb } : {}),
     latitude: c.lat,
     longitude: c.lon,
     distanceKm: Math.round(haversineKm(beachLat, beachLon, c.lat, c.lon) * 10) / 10,
@@ -181,24 +209,25 @@ function toHebergement(
   }
 }
 
-function toOffreCulturelle(
+async function toOffreCulturelle(
   el: OverpassElement,
   beachLat: number,
   beachLon: number,
   commune: string,
-): OffreCulturelleJson | null {
+): Promise<OffreCulturelleJson | null> {
   const c = coordsOf(el)
   const tags = el.tags ?? {}
   const nom = tags.name
   if (!c || !nom) return null
   const rawType = tags.tourism ?? tags.historic ?? tags.amenity ?? ''
+  const siteWeb = tags.website ? await verifyUrl(tags.website) : null
   return {
     nom,
     type: LABELS_CULTURE[rawType] ?? 'lieu culturel',
     adresse: buildAdresse(tags, commune),
     ...(tags.description ? { description: tags.description } : {}),
     ...(tags.phone ? { telephone: tags.phone } : {}),
-    ...(tags.website ? (() => { const u = normalizeUrl(tags.website); return u ? { siteWeb: u } : {} })() : {}),
+    ...(siteWeb ? { siteWeb } : {}),
     latitude: c.lat,
     longitude: c.lon,
     distanceKm: Math.round(haversineKm(beachLat, beachLon, c.lat, c.lon) * 10) / 10,
@@ -265,7 +294,7 @@ async function main() {
         TAGS_CULTURE.has(tags.amenity ?? '')
 
       if (isHeb && needsHeb && plage.hebergements.length < MAX_HEBERGEMENTS) {
-        const h = toHebergement(el, plage.latitude, plage.longitude, plage.commune)
+        const h = await toHebergement(el, plage.latitude, plage.longitude, plage.commune)
         if (h && !dejaPresent(plage.hebergements, h)) {
           plage.hebergements.push(h)
           hebAdded++
@@ -273,7 +302,7 @@ async function main() {
       }
 
       if (isCulture && needsOff && plage.offresCulturelles.length < MAX_OFFRES) {
-        const o = toOffreCulturelle(el, plage.latitude, plage.longitude, plage.commune)
+        const o = await toOffreCulturelle(el, plage.latitude, plage.longitude, plage.commune)
         if (o && !dejaPresent(plage.offresCulturelles, o)) {
           plage.offresCulturelles.push(o)
           offAdded++
