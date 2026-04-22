@@ -96,11 +96,11 @@ async function verifyUrl(raw: string): Promise<string | null> {
   const url = normalizeUrl(raw)
   if (!url) return null
 
-  async function tryFetch(method: 'HEAD' | 'GET'): Promise<boolean> {
+  async function tryFetch(checkedUrl: string, method: 'HEAD' | 'GET'): Promise<boolean> {
     const ctrl = new AbortController()
     const timer = setTimeout(() => ctrl.abort(), 5_000)
     try {
-      const r = await fetch(url, { method, signal: ctrl.signal, headers: { 'User-Agent': UA } })
+      const r = await fetch(checkedUrl, { method, signal: ctrl.signal, headers: { 'User-Agent': UA } })
       clearTimeout(timer)
       // 403 = serveur en ligne mais bloque les bots — on considère l'URL valide
       return r.ok || r.status === 403
@@ -110,9 +110,9 @@ async function verifyUrl(raw: string): Promise<string | null> {
     }
   }
 
-  if (await tryFetch('HEAD')) return url
+  if (await tryFetch(url, 'HEAD')) return url
   // Certains serveurs refusent HEAD (405) — on retente en GET
-  if (await tryFetch('GET')) return url
+  if (await tryFetch(url, 'GET')) return url
   console.log(`    [url-ko] ${url}`)
   return null
 }
