@@ -35,9 +35,69 @@
       "longitude": -2.3777,
       "distanceKm": 0.5,
       "accessiblePMR": true
+    },
+    {
+      "nom": "Le Bettina",
+      "type": "hôtel",
+      "adresse": "La Baule-Escoublac",
+      "latitude": 47.2801518,
+      "longitude": -2.4166726,
+      "distanceKm": 2.4,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Hôtel Escale Océania",
+      "type": "hôtel",
+      "adresse": "La Baule-Escoublac",
+      "latitude": 47.2607098,
+      "longitude": -2.340306,
+      "distanceKm": 4.7,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Sud Bretagne",
+      "type": "hôtel",
+      "adresse": "La Baule-Escoublac",
+      "latitude": 47.2599666,
+      "longitude": -2.3371227,
+      "distanceKm": 5,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Domaine Ker Juliette",
+      "type": "hôtel",
+      "adresse": "2 Avenue des Bleuets, 44380, Pornichet",
+      "telephone": "+33 2 40 11 22 00",
+      "siteWeb": "https://www.hotel-kerjuliette-bretagne.com/",
+      "latitude": 47.2449511,
+      "longitude": -2.3145656,
+      "distanceKm": 7.3,
+      "accessiblePMR": true
     }
   ],
-  "offresCulturelles": [],
+  "offresCulturelles": [
+    {
+      "nom": "Le Hublot",
+      "type": "cinéma",
+      "adresse": "La Baule-Escoublac",
+      "description": "Cinéma associatif",
+      "telephone": "+33240230470",
+      "siteWeb": "https://cinemahublot.com/",
+      "latitude": 47.2922705,
+      "longitude": -2.5096856,
+      "distanceKm": 9.2,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Théâtre Jean Bart",
+      "type": "théâtre",
+      "adresse": "La Baule-Escoublac",
+      "latitude": 47.2417009,
+      "longitude": -2.2773033,
+      "distanceKm": 9.8,
+      "accessiblePMR": true
+    }
+  ],
   "avis": [],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Plage_de_La_Baule-Escoublac_01.JPG/1280px-Plage_de_La_Baule-Escoublac_01.JPG"
 }

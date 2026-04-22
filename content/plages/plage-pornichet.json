@@ -22,7 +22,74 @@
     "PARKINGS_PMR",
     "PERSONNEL_FORME"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "Hôtel Escale Océania",
+      "type": "hôtel",
+      "adresse": "Pornichet",
+      "latitude": 47.2607098,
+      "longitude": -2.340306,
+      "distanceKm": 0.4,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Sud Bretagne",
+      "type": "hôtel",
+      "adresse": "Pornichet",
+      "latitude": 47.2599666,
+      "longitude": -2.3371227,
+      "distanceKm": 0.5,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Domaine Ker Juliette",
+      "type": "hôtel",
+      "adresse": "2 Avenue des Bleuets, 44380, Pornichet",
+      "telephone": "+33 2 40 11 22 00",
+      "siteWeb": "https://www.hotel-kerjuliette-bretagne.com/",
+      "latitude": 47.2449511,
+      "longitude": -2.3145656,
+      "distanceKm": 2.8,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Le Bettina",
+      "type": "hôtel",
+      "adresse": "Pornichet",
+      "latitude": 47.2801518,
+      "longitude": -2.4166726,
+      "distanceKm": 6.2,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Théâtre Jean Bart",
+      "type": "théâtre",
+      "adresse": "Pornichet",
+      "latitude": 47.2417009,
+      "longitude": -2.2773033,
+      "distanceKm": 5.2,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Inauguration de la bibliothèque municipale",
+      "type": "mémorial",
+      "adresse": "Pornichet",
+      "latitude": 47.2796229,
+      "longitude": -2.217492,
+      "distanceKm": 9.3,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Stèle Monument Américain",
+      "type": "mémorial",
+      "adresse": "Pornichet",
+      "latitude": 47.2688341,
+      "longitude": -2.213925,
+      "distanceKm": 9.4,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

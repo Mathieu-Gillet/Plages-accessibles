@@ -29,6 +29,27 @@
       "longitude": 4.1456,
       "distanceKm": 0.5,
       "accessiblePMR": true
+    },
+    {
+      "nom": "Splendid",
+      "type": "hôtel",
+      "adresse": "21 Boulevard Maréchal Juin, 30240, Le Grau-du-Roi",
+      "telephone": "+33 4 66 51 41 29",
+      "latitude": 43.5343027,
+      "longitude": 4.1371472,
+      "distanceKm": 6.4,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Les Corallines",
+      "type": "hôtel",
+      "adresse": "615 Allée de la Plage, 34280, La Grande-Motte",
+      "telephone": "+33 4 67 29 13 13",
+      "siteWeb": "https://www.thalasso-grandemotte.com",
+      "latitude": 43.5562741,
+      "longitude": 4.0959135,
+      "distanceKm": 9.4,
+      "accessiblePMR": true
     }
   ],
   "offresCulturelles": [],

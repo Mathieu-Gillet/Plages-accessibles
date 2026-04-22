@@ -22,7 +22,18 @@
     "PARKINGS_PMR",
     "PERSONNEL_FORME"
   ],
-  "hebergements": [],
+  "hebergements": [
+    {
+      "nom": "Ibis Quiberon Spa & Wellness",
+      "type": "hôtel",
+      "adresse": "Rue des Marronniers, 56170, Quiberon",
+      "siteWeb": "http://www.hotelibis-quiberon.com",
+      "latitude": 47.4779154,
+      "longitude": -3.1050688,
+      "distanceKm": 1.2,
+      "accessiblePMR": true
+    }
+  ],
   "offresCulturelles": [],
   "avis": []
 }
