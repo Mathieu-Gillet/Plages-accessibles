@@ -16,6 +16,8 @@ const USER_AGENT = 'Plages-Accessibles-Bot/1.0 (https://plages-accessibles.fr; f
 const WIKI_FR = 'https://fr.wikipedia.org/w/api.php'
 const COMMONS = 'https://commons.wikimedia.org/w/api.php'
 const THUMB_WIDTH = 1200
+// Photos antérieures à cette année seront ignorées.
+const MIN_PHOTO_YEAR = 2010
 
 interface PageImageResponse {
   query?: {
@@ -36,15 +38,38 @@ interface CommonsSearchResponse {
   }
 }
 
+interface ImageInfoItem {
+  thumburl?: string
+  url?: string
+  timestamp?: string
+  extmetadata?: {
+    DateTimeOriginal?: { value: string }
+    DateTime?: { value: string }
+  }
+}
+
 interface ImageInfoResponse {
   query?: {
-    pages?: Record<
-      string,
-      {
-        imageinfo?: Array<{ thumburl?: string; url?: string }>
-      }
-    >
+    pages?: Record<string, { imageinfo?: ImageInfoItem[] }>
   }
+}
+
+/** Extrait l'année depuis un timestamp ISO, EXIF ou date libre. */
+function extractYear(raw: string): number | null {
+  const m = raw.match(/(\d{4})/)
+  const y = m ? parseInt(m[1], 10) : null
+  return y && y >= 1900 && y <= new Date().getFullYear() ? y : null
+}
+
+/** Renvoie true si la photo est récente (>= MIN_PHOTO_YEAR) ou si aucune date n'est disponible. */
+function isPhotoRecent(ii: ImageInfoItem): boolean {
+  const raw =
+    ii.extmetadata?.DateTimeOriginal?.value ??
+    ii.extmetadata?.DateTime?.value ??
+    ii.timestamp
+  if (!raw) return true
+  const year = extractYear(raw)
+  return year === null || year >= MIN_PHOTO_YEAR
 }
 
 async function fetchJson<T>(url: string): Promise<T> {
@@ -91,7 +116,7 @@ async function tryCommonsIntitle(commune: string, term: string): Promise<string 
   searchUrl.searchParams.set('list', 'search')
   searchUrl.searchParams.set('srsearch', `intitle:${term} ${commune} filetype:bitmap`)
   searchUrl.searchParams.set('srnamespace', '6') // File namespace
-  searchUrl.searchParams.set('srlimit', '5')
+  searchUrl.searchParams.set('srlimit', '10') // Plus de candidats pour compenser les rejets
 
   try {
     const data = await fetchJson<CommonsSearchResponse>(searchUrl.toString())
@@ -106,14 +131,21 @@ async function tryCommonsIntitle(commune: string, term: string): Promise<string 
       infoUrl.searchParams.set('origin', '*')
       infoUrl.searchParams.set('titles', cand.title)
       infoUrl.searchParams.set('prop', 'imageinfo')
-      infoUrl.searchParams.set('iiprop', 'url')
+      infoUrl.searchParams.set('iiprop', 'url|timestamp|extmetadata')
+      infoUrl.searchParams.set('iiextmetadatafilter', 'DateTimeOriginal|DateTime')
       infoUrl.searchParams.set('iiurlwidth', String(THUMB_WIDTH))
 
       const info = await fetchJson<ImageInfoResponse>(infoUrl.toString())
       const pages = info.query?.pages ?? {}
       for (const page of Object.values(pages)) {
         const ii = page.imageinfo?.[0]
-        const url = ii?.thumburl ?? ii?.url
+        if (!ii) continue
+        if (!isPhotoRecent(ii)) {
+          const raw = ii.extmetadata?.DateTimeOriginal?.value ?? ii.extmetadata?.DateTime?.value ?? ii.timestamp
+          console.warn(`[wikimedia] photo trop ancienne ignorée : ${cand.title} (${raw})`)
+          continue
+        }
+        const url = ii.thumburl ?? ii.url
         if (url) return url
       }
     }
