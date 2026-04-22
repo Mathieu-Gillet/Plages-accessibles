@@ -6,13 +6,33 @@ on:
     # GitHub Actions schedules can drift by 5–15 min during peak load.
     - cron: '0 6 * * *'
   workflow_dispatch:  # Manual trigger button in the Actions tab — useful for testing.
+  pull_request:
+    types: [closed]
+    branches: [master]
 
 permissions:
-  contents: write       # Required to push the auto/import-* branch.
+  contents: write       # Required to push the auto/import-* branch and delete it after merge.
   pull-requests: write  # Required to open the PR.
 
 jobs:
+  cleanup:
+    # Supprime la branche auto/import-* dès que la PR est mergée.
+    if: >
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.merged == true &&
+      startsWith(github.event.pull_request.head.ref, 'auto/import-')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Supprimer la branche après merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="${{ github.event.pull_request.head.ref }}"
+          gh api -X DELETE "/repos/${{ github.repository }}/git/refs/heads/${BRANCH}"
+          echo "Branche ${BRANCH} supprimée."
+
   import:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
