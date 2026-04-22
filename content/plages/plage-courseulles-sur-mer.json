@@ -1,0 +1,30 @@
+{
+  "slug": "plage-courseulles-sur-mer",
+  "nom": "Plage de Courseulles-sur-Mer",
+  "description": "Plage du débarquement de Normandie (Juno Beach), labellisée Handiplage. Accès par rampe depuis la promenade, tiralos et fauteuils amphibies disponibles au poste de secours, douches et sanitaires PMR, parking adapté à l'entrée de la plage.",
+  "commune": "Courseulles-sur-Mer",
+  "codePostal": "14470",
+  "departement": "Calvados",
+  "region": "Normandie",
+  "latitude": 49.3376,
+  "longitude": -0.4598,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Courseulles-sur-Mer_Plage_10.jpg/1280px-Courseulles-sur-Mer_Plage_10.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-22",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "HIPPOCAMPE",
+    "RAMPE_ACCES",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "PARKINGS_PMR",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "plage-bandol",
+  "nom": "Plage de Bandol",
+  "description": "Plage méditerranéenne de la baie de Bandol, labellisée Handiplage niveau 3. Sable fin protégé, rampe d'accès béton, tiralos disponibles en saison, sanitaires PMR sur le front de mer, parking adapté à proximité du kiosque de plage.",
+  "commune": "Bandol",
+  "codePostal": "83150",
+  "departement": "Var",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.1358,
+  "longitude": 5.7531,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Plage_Renecros.jpg/1280px-Plage_Renecros.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-22",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "RAMPE_ACCES",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "PARKINGS_PMR",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

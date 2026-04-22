@@ -1,0 +1,30 @@
+{
+  "slug": "plage-cavalaire-sur-mer",
+  "nom": "Plage de Cavalaire-sur-Mer",
+  "description": "Plage varoise protégée de 4 km, labellisée Handiplage niveau 3. Sable fin sur faible pente, cheminements aménagés, tiralos et fauteuils Hippocampe en prêt à la capitainerie, douches et sanitaires accessibles, plusieurs parkings PMR face à la plage.",
+  "commune": "Cavalaire-sur-Mer",
+  "codePostal": "83240",
+  "departement": "Var",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.173,
+  "longitude": 6.5257,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Th%C3%A9o_van_Rysselberghe-Plage_de_Cavalaire-Mus%C3%A9e_de_Grenoble.jpg/1280px-Th%C3%A9o_van_Rysselberghe-Plage_de_Cavalaire-Mus%C3%A9e_de_Grenoble.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-22",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "HIPPOCAMPE",
+    "CHEMIN_ACCES",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "PARKINGS_PMR",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
