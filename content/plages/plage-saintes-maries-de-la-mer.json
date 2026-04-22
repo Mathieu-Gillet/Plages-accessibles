@@ -1,0 +1,27 @@
+{
+  "slug": "plage-saintes-maries-de-la-mer",
+  "nom": "Plage des Saintes-Maries-de-la-Mer",
+  "description": "Plage de Camargue au sable blond, labellisée Handiplage. Accès par cheminement sablé stabilisé, tiralos disponibles en saison au poste de secours, sanitaires PMR sur le front de mer. Cadre naturel exceptionnel entre étang et mer.",
+  "commune": "Saintes-Maries-de-la-Mer",
+  "codePostal": "13460",
+  "departement": "Bouches-du-Rhône",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.4527,
+  "longitude": 4.428,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Stes_Maries_de_la_Mer_plage_9906.jpg/1280px-Stes_Maries_de_la_Mer_plage_9906.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-22",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "CHEMIN_ACCES",
+    "SANITAIRES_ADAPTES",
+    "PARKINGS_PMR"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

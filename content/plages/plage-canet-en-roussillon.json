@@ -1,0 +1,30 @@
+{
+  "slug": "plage-canet-en-roussillon",
+  "nom": "Plage de Canet-en-Roussillon",
+  "description": "Plage catalane de 9 km en bord de Méditerranée, labellisée Handiplage niveau 3. Plusieurs accès PMR répartis sur le front de mer, tiralos et fauteuils Hippocampe disponibles à la maison de la plage, sanitaires et douches accessibles, parking PMR.",
+  "commune": "Canet-en-Roussillon",
+  "codePostal": "66140",
+  "departement": "Pyrénées-Orientales",
+  "region": "Occitanie",
+  "latitude": 42.7026,
+  "longitude": 3.0219,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/6/60/Canet-en-Roussillon_-_Sur_la_plage_%28CP_MTIL%29.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-22",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "HIPPOCAMPE",
+    "CHEMIN_ACCES",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "PARKINGS_PMR",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
