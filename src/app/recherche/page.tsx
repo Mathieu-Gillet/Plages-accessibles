@@ -13,7 +13,6 @@ interface SearchParams {
   departement?: string
   q?: string
   page?: string
-  [key: string]: string | undefined
 }
 
 export function generateMetadata({ searchParams }: { searchParams: SearchParams }) {
@@ -33,7 +32,7 @@ export default function PageRecherche({
 }: {
   searchParams: SearchParams
 }) {
-  const page = Math.max(1, parseInt(searchParams.page ?? '1', 10) || 1)
+  const page = Math.max(1, Math.min(500, parseInt(searchParams.page ?? '1', 10) || 1))
 
   const { plages, total } = searchPlages({
     region: searchParams.region,
