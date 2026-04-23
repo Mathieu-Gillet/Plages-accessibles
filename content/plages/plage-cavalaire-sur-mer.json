@@ -24,7 +24,19 @@
     "PARKINGS_PMR",
     "PERSONNEL_FORME"
   ],
-  "hebergements": [],
+  "hebergements": [
+    {
+      "nom": "Le Relais des Maures",
+      "type": "hôtel",
+      "adresse": "1 Avenue Charles Koecklin, 83820, Rayol-Canadel-sur-Mer",
+      "telephone": "+33494056127",
+      "siteWeb": "https://www.lerelaisdesmaures.fr/",
+      "latitude": 43.1585935,
+      "longitude": 6.4632825,
+      "distanceKm": 5.3,
+      "accessiblePMR": true
+    }
+  ],
   "offresCulturelles": [],
   "avis": []
 }

@@ -24,7 +24,109 @@
     "PARKINGS_PMR",
     "PERSONNEL_FORME"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "Ibis Nice Aéroport",
+      "type": "hôtel",
+      "adresse": "Nice",
+      "latitude": 43.6714179,
+      "longitude": 7.2240176,
+      "distanceKm": 1.9,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Ibis Nice Centre Gare",
+      "type": "hôtel",
+      "adresse": "Nice",
+      "latitude": 43.7036759,
+      "longitude": 7.2606098,
+      "distanceKm": 6.2,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Beau Rivage",
+      "type": "hôtel",
+      "adresse": "Nice",
+      "siteWeb": "https://www.hotelnicebeaurivage.com/",
+      "latitude": 43.69559,
+      "longitude": 7.2700035,
+      "distanceKm": 6.4,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Lakmi",
+      "type": "hôtel",
+      "adresse": "Nice",
+      "latitude": 43.702866,
+      "longitude": 7.2670729,
+      "distanceKm": 6.6,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Campanile",
+      "type": "hôtel",
+      "adresse": "Nice",
+      "telephone": "+33 4 93 26 20 60",
+      "siteWeb": "https://www.hotel-campanile-nice.fr/",
+      "latitude": 43.7020415,
+      "longitude": 7.2797827,
+      "distanceKm": 7.4,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Musée National du Sport",
+      "type": "musée",
+      "adresse": "06200, Nice",
+      "description": "Présentation des sports et de leur patrimoine respectif",
+      "telephone": "+33 4 89 22 44 00",
+      "siteWeb": "https://www.museedusport.fr/",
+      "latitude": 43.7062629,
+      "longitude": 7.1923789,
+      "distanceKm": 4.3,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Théâtre de Verdure",
+      "type": "théâtre",
+      "adresse": "Nice",
+      "latitude": 43.658189,
+      "longitude": 7.1189911,
+      "distanceKm": 6.7,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Musée de la photographie Charles Nègre",
+      "type": "musée",
+      "adresse": "Nice",
+      "telephone": "+33 4 97 13 42 20",
+      "siteWeb": "https://museephotographie.nice.fr/",
+      "latitude": 43.6959151,
+      "longitude": 7.2745989,
+      "distanceKm": 6.7,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Monument aux morts de Rauba-Capèu",
+      "type": "mémorial",
+      "adresse": "Nice",
+      "latitude": 43.6937162,
+      "longitude": 7.281109,
+      "distanceKm": 7.1,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Musée Franciscain",
+      "type": "musée",
+      "adresse": "Nice",
+      "description": "Le musée évoque notamment la vie franciscaine à Nice du XIIIe à nos jours. Nombreux documents et œuvres d’art.",
+      "telephone": "+334 93 81 00 04",
+      "latitude": 43.7201242,
+      "longitude": 7.2789108,
+      "distanceKm": 8.6,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

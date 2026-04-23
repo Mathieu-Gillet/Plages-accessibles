@@ -24,7 +24,32 @@
     "PARKINGS_PMR",
     "PERSONNEL_FORME"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "Villa Juno",
+      "type": "chambre d'hôtes",
+      "adresse": "Courseulles-sur-Mer",
+      "telephone": "+33 6 42 62 30 24",
+      "siteWeb": "https://villa-juno.fr",
+      "latitude": 49.3313365,
+      "longitude": -0.394902,
+      "distanceKm": 4.8,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Centre Juno Beach",
+      "type": "musée",
+      "adresse": "Courseulles-sur-Mer",
+      "description": "Lieu de mémoire et centre culturel en Normandie, France, le Centre Juno Beach rend hommage aux 45 000 Canadiens qui ont perdu la vie pendant la Seconde Guerre mondiale, dont 5 500 au cours de la Bataille de Normandie et 381 le Jour J.",
+      "telephone": "+33 2 31 37 32 17",
+      "siteWeb": "https://www.junobeach.org",
+      "latitude": 49.3364016,
+      "longitude": -0.4616733,
+      "distanceKm": 0.2,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

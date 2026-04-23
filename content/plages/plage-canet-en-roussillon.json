@@ -24,7 +24,68 @@
     "PARKINGS_PMR",
     "PERSONNEL_FORME"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "Les II Mas",
+      "type": "hôtel",
+      "adresse": "Canet-en-Roussillon",
+      "siteWeb": "https://www.les2mas.com/",
+      "latitude": 42.6915292,
+      "longitude": 2.9320752,
+      "distanceKm": 7.4,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Centre de Sculpture Romane",
+      "type": "musée",
+      "adresse": "66330, Cabestany",
+      "telephone": "+33468081531",
+      "siteWeb": "http://www.maitre-de-cabestany.com/",
+      "latitude": 42.6796573,
+      "longitude": 2.9373321,
+      "distanceKm": 7.4,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Méga Castillet",
+      "type": "cinéma",
+      "adresse": "Canet-en-Roussillon",
+      "telephone": "+33 4 68286738",
+      "siteWeb": "https://www.cine-movida.com/",
+      "latitude": 42.666265,
+      "longitude": 2.917586,
+      "distanceKm": 9.4,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Salle Marcel Oms",
+      "type": "cinéma",
+      "adresse": "Canet-en-Roussillon",
+      "latitude": 42.6968444,
+      "longitude": 2.9003879,
+      "distanceKm": 10,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "La Casa Musicale",
+      "type": "centre culturel",
+      "adresse": "Canet-en-Roussillon",
+      "latitude": 42.6960532,
+      "longitude": 2.8999761,
+      "distanceKm": 10,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Palais des congrès",
+      "type": "centre culturel",
+      "adresse": "Canet-en-Roussillon",
+      "latitude": 42.7030072,
+      "longitude": 2.8993262,
+      "distanceKm": 10,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

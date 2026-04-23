@@ -21,7 +21,19 @@
     "SANITAIRES_ADAPTES",
     "PARKINGS_PMR"
   ],
-  "hebergements": [],
+  "hebergements": [
+    {
+      "nom": "L'Estelle en Camargue",
+      "type": "hôtel",
+      "adresse": "Saintes-Maries-de-la-Mer",
+      "telephone": "+33 4 90 97 89 01",
+      "siteWeb": "https://www.hotelestelle.com/",
+      "latitude": 43.4704019,
+      "longitude": 4.3957623,
+      "distanceKm": 3.3,
+      "accessiblePMR": true
+    }
+  ],
   "offresCulturelles": [],
   "avis": []
 }
