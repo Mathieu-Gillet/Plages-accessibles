@@ -3,11 +3,18 @@ import Link from 'next/link'
 import { PlageCardResume } from './PlageCard'
 import type { PlageResume } from '@/types'
 
+interface SearchParams {
+  region?: string
+  departement?: string
+  q?: string
+  page?: string
+}
+
 interface ListePlagesProps {
   plages: PlageResume[]
   page: number
   totalPages: number
-  searchParams: Record<string, string | undefined>
+  searchParams: SearchParams
 }
 
 export function ListePlages({ plages, page, totalPages, searchParams }: ListePlagesProps) {
@@ -23,9 +30,9 @@ export function ListePlages({ plages, page, totalPages, searchParams }: ListePla
 
   function buildUrl(p: number) {
     const params = new URLSearchParams()
-    Object.entries(searchParams).forEach(([k, v]) => {
-      if (v && k !== 'page') params.set(k, v)
-    })
+    if (searchParams.region) params.set('region', searchParams.region)
+    if (searchParams.departement) params.set('departement', searchParams.departement)
+    if (searchParams.q) params.set('q', searchParams.q)
     if (p > 1) params.set('page', String(p))
     const str = params.toString()
     return `/recherche${str ? `?${str}` : ''}`
