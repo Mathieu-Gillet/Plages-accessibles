@@ -15,12 +15,13 @@ export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }))
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { slug: string }
-}): Metadata {
-  const plage = getPlageBySlug(params.slug)
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const plage = getPlageBySlug(slug)
   if (!plage) return { title: 'Plage introuvable' }
 
   return {
@@ -32,8 +33,9 @@ export function generateMetadata({
   }
 }
 
-export default function PagePlage({ params }: { params: { slug: string } }) {
-  const plage = getPlageBySlug(params.slug)
+export default async function PagePlage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const plage = getPlageBySlug(slug)
   if (!plage) notFound()
 
   return (

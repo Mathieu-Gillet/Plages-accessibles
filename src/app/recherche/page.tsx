@@ -15,11 +15,12 @@ interface SearchParams {
   page?: string
 }
 
-export function generateMetadata({ searchParams }: { searchParams: SearchParams }) {
-  const titre = searchParams.region
-    ? `Plages accessibles en ${searchParams.region}`
-    : searchParams.departement
-    ? `Plages accessibles dans le ${searchParams.departement}`
+export async function generateMetadata({ searchParams }: { searchParams: Promise<SearchParams> }) {
+  const sp = await searchParams
+  const titre = sp.region
+    ? `Plages accessibles en ${sp.region}`
+    : sp.departement
+    ? `Plages accessibles dans le ${sp.departement}`
     : 'Rechercher une plage accessible'
 
   return { title: titre }
@@ -27,22 +28,23 @@ export function generateMetadata({ searchParams }: { searchParams: SearchParams 
 
 const PAGE_SIZE = 12
 
-export default function PageRecherche({
+export default async function PageRecherche({
   searchParams,
 }: {
-  searchParams: SearchParams
+  searchParams: Promise<SearchParams>
 }) {
-  const page = Math.max(1, Math.min(500, parseInt(searchParams.page ?? '1', 10) || 1))
+  const sp = await searchParams
+  const page = Math.max(1, Math.min(500, parseInt(sp.page ?? '1', 10) || 1))
 
   const { plages, total } = searchPlages({
-    region: searchParams.region,
-    departement: searchParams.departement,
-    q: searchParams.q,
+    region: sp.region,
+    departement: sp.departement,
+    q: sp.q,
     page,
     pageSize: PAGE_SIZE,
   })
   const regions = getRegions()
-  const departements = getDepartements(searchParams.region)
+  const departements = getDepartements(sp.region)
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE))
 
   return (
@@ -57,7 +59,7 @@ export default function PageRecherche({
           <FiltresRecherche
             regions={regions}
             departements={departements}
-            searchParams={searchParams}
+            searchParams={sp}
           />
         </aside>
 
@@ -70,7 +72,7 @@ export default function PageRecherche({
           </p>
 
           <Suspense fallback={<div className="animate-pulse h-64 bg-ocean-pale rounded-xl" />}>
-            <ListePlages plages={plages} page={page} totalPages={totalPages} searchParams={searchParams} />
+            <ListePlages plages={plages} page={page} totalPages={totalPages} searchParams={sp} />
           </Suspense>
         </div>
       </div>
