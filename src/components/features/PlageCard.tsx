@@ -1,5 +1,6 @@
 // src/components/features/PlageCard.tsx
 import Link from 'next/link'
+import Image from 'next/image'
 import { MapPin, Star } from 'lucide-react'
 import { BadgeAccessibilite } from './BadgeAccessibilite'
 import { InfobulleNote } from './InfobulleNote'
@@ -19,10 +20,12 @@ export function PlageCardResume({ plage }: PlageCardProps) {
       {/* Photo */}
       <div className="h-44 bg-ocean-pale relative overflow-hidden rounded-t-2xl">
         {plage.photo ? (
-          <img
+          <Image
             src={plage.photo}
             alt={`Plage ${plage.nom}`}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-5xl" aria-hidden="true">
