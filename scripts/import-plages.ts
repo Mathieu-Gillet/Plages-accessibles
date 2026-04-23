@@ -16,6 +16,8 @@
 import { promises as fs } from 'node:fs'
 import path from 'node:path'
 import { handiplageSampleSource } from './sources/handiplage-sample'
+import { tourismeHandicapSource } from './sources/tourisme-handicap'
+import { acceslibreSource } from './sources/acceslibre'
 import type { Source } from './sources/types'
 import { validateCandidate, type Candidate } from './lib/validate-candidate'
 import { fetchBeachPhoto } from './lib/wikimedia'
@@ -24,8 +26,9 @@ const CONTENT_DIR = path.join(process.cwd(), 'content', 'plages')
 const MAX_PER_RUN = 5
 
 const SOURCES: Source[] = [
-  handiplageSampleSource,
-  // Add more adapters here once available (data.gouv.fr, tourisme-handicap, etc.)
+  tourismeHandicapSource,  // data.economie.gouv.fr — label Tourisme & Handicap (primary)
+  acceslibreSource,        // acceslibre.beta.gouv.fr — physical accessibility data (enrichment)
+  handiplageSampleSource,  // curated fallback — exhausted once live APIs are stable
 ]
 
 interface RunSummary {
