@@ -13,7 +13,7 @@ const securityHeaders = [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline'",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob: https://upload.wikimedia.org https://images.unsplash.com https://picsum.photos https://*.supabase.co",
+      "img-src 'self' data: blob: https://*.tile.openstreetmap.org https://upload.wikimedia.org https://images.unsplash.com https://picsum.photos https://*.supabase.co",
       "font-src 'self'",
       "connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com",
       "frame-ancestors 'none'",
