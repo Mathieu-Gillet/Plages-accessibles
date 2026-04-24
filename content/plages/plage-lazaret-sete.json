@@ -29,9 +29,71 @@
       "longitude": 3.6957,
       "distanceKm": 0.5,
       "accessiblePMR": true
+    },
+    {
+      "nom": "Hôtel de Paris",
+      "type": "hôtel",
+      "adresse": "Sète",
+      "latitude": 43.4024848,
+      "longitude": 3.6967805,
+      "distanceKm": 1,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Le Lazaret",
+      "type": "hôtel",
+      "adresse": "Sète",
+      "siteWeb": "https://www.lazaretsete.com/",
+      "latitude": 43.3941322,
+      "longitude": 3.6739621,
+      "distanceKm": 1.8,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Venezia",
+      "type": "hôtel",
+      "adresse": "20 Corniche de Neuburg, 34200, Sète",
+      "telephone": "+33 4 67 51 39 38",
+      "siteWeb": "https://www.hotel-sete.com/",
+      "latitude": 43.3931742,
+      "longitude": 3.6753356,
+      "distanceKm": 1.8,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Hotel de la Plage",
+      "type": "hôtel",
+      "adresse": "64 A Route de la Corniche de Neuburg, 34200, Sète",
+      "telephone": "+33 4 67 18 97 12",
+      "siteWeb": "https://hoteldelaplagesete.com",
+      "latitude": 43.3940609,
+      "longitude": 3.6657022,
+      "distanceKm": 2.2,
+      "accessiblePMR": true
     }
   ],
-  "offresCulturelles": [],
+  "offresCulturelles": [
+    {
+      "nom": "Musée international des Arts modestes",
+      "type": "musée",
+      "adresse": "27 Quai du Maréchal de Lattre de Tassigny, Sète",
+      "telephone": "+33 4 99 04 76 44",
+      "siteWeb": "https://miam.org/",
+      "latitude": 43.4060674,
+      "longitude": 3.6961935,
+      "distanceKm": 0.9,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Dock Sud",
+      "type": "centre culturel",
+      "adresse": "2 Quai de l'Aspirant Herber, 34200, Sète",
+      "latitude": 43.4015286,
+      "longitude": 3.6978733,
+      "distanceKm": 1.2,
+      "accessiblePMR": true
+    }
+  ],
   "avis": [],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Dikes_in_Frontignan_Plage_-_March_2022.jpg/1280px-Dikes_in_Frontignan_Plage_-_March_2022.jpg"
 }
