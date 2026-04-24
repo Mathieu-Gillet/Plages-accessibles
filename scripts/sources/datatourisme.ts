@@ -2,12 +2,10 @@
 // tourism data. It federates POIs from 50+ Comités Régionaux du Tourisme (CRT),
 // including beaches with rich accessibility metadata.
 //
-// This adapter queries the public OpenDataSoft mirror of DataTourisme
-// (publicly reusable without an API key), filtered on beach-like categories
-// and the "Tourisme & Handicap" flag when present.
-//
-// If the upstream is down or renamed, the source returns [] without crashing
-// the orchestrator (import-plages.ts swallows throws per source).
+// ⚠️  Migration note (2025): the public OpenDataSoft mirror is gone.
+// DataTourisme now exposes its data via https://api.datatourisme.fr/v1/ with a
+// free API key (register at https://www.datatourisme.fr/api/).
+// Set DATATOURISME_API_KEY in GitHub Secrets to enable this source.
 
 import type { Source } from './types'
 import type { Candidate } from '../lib/validate-candidate'
@@ -16,128 +14,101 @@ import { TYPES_ACCESSIBILITE } from '../../src/lib/content-schema'
 
 type TypeAccessibilite = (typeof TYPES_ACCESSIBILITE)[number]
 
-// Public OpenDataSoft federation — the DataTourisme dataset is mirrored here as
-// "datatourisme-des-regions-points-d-interet" with beach category surfaced via
-// the `categories` multivalue field.
-const BASE =
-  'https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets' +
-  '/datatourisme-des-regions-points-d-interet/records'
-
+const BASE = 'https://api.datatourisme.fr/v1/placeOfInterest'
 const PAGE_SIZE = 100
 const MAX_PAGES = 5
 
-// Matches any DataTourisme category/thème that relates to beaches.
-const WHERE_CLAUSE =
-  "(search(categories, 'plage') OR search(categories, 'baignade') " +
-  "OR search(types, 'plage')) AND search(labels, 'handicap')"
-
-interface DataTourismeRecord {
-  nom?: string
-  label?: string
-  commune?: string
-  code_postal?: string
-  cp?: string
-  latitude?: number | string
-  longitude?: number | string
-  geo_point_2d?: { lat: number; lon: number } | [number, number]
-  description?: string
-  descriptif?: string
-  categories?: string | string[]
-  types?: string | string[]
-  labels?: string | string[]
-  accessibilite?: string | string[]
-  handicap_moteur?: boolean | string
-  handicap_auditif?: boolean | string
-  handicap_visuel?: boolean | string
-  handicap_mental?: boolean | string
+// JSON-LD shapes returned by the DataTourisme v1 API.
+interface DtGeo {
+  'schema:latitude'?: string | number
+  'schema:longitude'?: string | number
 }
 
-interface OdsResponse {
-  total_count: number
-  results: DataTourismeRecord[]
+interface DtAddress {
+  'schema:addressLocality'?: string
+  'schema:postalCode'?: string
+  'schema:geo'?: DtGeo
 }
 
-function toArray(v: string | string[] | undefined): string[] {
-  if (!v) return []
-  return Array.isArray(v) ? v : [v]
+interface DtLangStr {
+  '@value'?: string
+  '@language'?: string
 }
 
-function truthy(v: unknown): boolean {
-  if (typeof v === 'boolean') return v
-  if (typeof v === 'string') {
-    const s = v.toLowerCase()
-    return s === 'true' || s === 'oui' || s === 'yes' || s === '1'
+interface DtRecord {
+  '@id'?: string
+  '@type'?: string | string[]
+  'rdfs:label'?: Record<string, string[]> | DtLangStr[]
+  'schema:description'?: DtLangStr[]
+  isLocatedAt?: DtAddress[]
+  reducedMobilityAccess?: boolean
+  label?: Array<{ '@value'?: string } | string>
+  hasFeature?: unknown[]
+}
+
+interface DtResponse {
+  data?: DtRecord[]
+  member?: DtRecord[]
+  totalCount?: number
+  'hydra:totalItems'?: number
+  'hydra:member'?: DtRecord[]
+}
+
+function pickFr(v: Record<string, string[]> | DtLangStr[] | undefined): string {
+  if (!v) return ''
+  if (Array.isArray(v)) {
+    return v.find((e) => e['@language'] === 'fr')?.['@value']?.trim() ?? ''
   }
-  return false
+  return (v['fr']?.[0] ?? '').trim()
 }
 
-function extractCoords(r: DataTourismeRecord): [number, number] | null {
-  if (Array.isArray(r.geo_point_2d)) {
-    const [lat, lon] = r.geo_point_2d
-    if (!isNaN(lat) && !isNaN(lon)) return [lat, lon]
-  } else if (r.geo_point_2d && typeof r.geo_point_2d === 'object') {
-    const { lat, lon } = r.geo_point_2d
-    if (!isNaN(lat) && !isNaN(lon)) return [lat, lon]
-  }
-
-  const lat = parseFloat(String(r.latitude ?? ''))
-  const lon = parseFloat(String(r.longitude ?? ''))
-  if (!isNaN(lat) && !isNaN(lon)) return [lat, lon]
-
-  return null
-}
-
-function buildAccessibilites(r: DataTourismeRecord): TypeAccessibilite[] {
+function buildAccessibilites(r: DtRecord): TypeAccessibilite[] {
   const acc = new Set<TypeAccessibilite>()
-  const labels = toArray(r.labels).map((s) => s.toLowerCase()).join(' ')
-  const accessTxt = toArray(r.accessibilite).map((s) => s.toLowerCase()).join(' ')
-  const all = `${labels} ${accessTxt}`
 
-  if (truthy(r.handicap_moteur) || /moteur|fauteuil|pmr/.test(all)) {
+  if (r.reducedMobilityAccess) {
     acc.add('FAUTEUIL_ROULANT')
     acc.add('CHEMIN_ACCES')
   }
-  if (truthy(r.handicap_auditif) || /auditif|sourd|boucle/.test(all)) {
-    acc.add('BOUCLE_MAGNETIQUE')
-  }
-  if (truthy(r.handicap_visuel) || /visuel|aveugle|braille|malvoyant/.test(all)) {
-    acc.add('SIGNALISATION_BRAILLE')
-  }
-  if (/parking.*(pmr|handicap|adapt)/.test(all)) acc.add('PARKINGS_PMR')
-  if (/sanitaires?.*(adapt|pmr|handicap)/.test(all)) acc.add('SANITAIRES_ADAPTES')
-  if (/tiralo/.test(all)) acc.add('TIRALO')
-  if (/hippocampe/.test(all)) acc.add('HIPPOCAMPE')
-  if (/handisurf/.test(all)) acc.add('HANDISURF')
+
+  const labelText = (r.label ?? [])
+    .map((l) => (typeof l === 'string' ? l : l['@value'] ?? ''))
+    .join(' ')
+    .toLowerCase()
+
+  if (/auditif|sourd|boucle/.test(labelText)) acc.add('BOUCLE_MAGNETIQUE')
+  if (/visuel|aveugle|braille|malvoyant/.test(labelText)) acc.add('SIGNALISATION_BRAILLE')
+  if (/parking.*pmr|pmr.*parking/.test(labelText)) acc.add('PARKINGS_PMR')
+  if (/sanitaires?.*adapt|wc.*pmr/.test(labelText)) acc.add('SANITAIRES_ADAPTES')
+  if (/tiralo/.test(labelText)) acc.add('TIRALO')
+  if (/hippocampe/.test(labelText)) acc.add('HIPPOCAMPE')
 
   return [...acc]
 }
 
-function buildDescription(r: DataTourismeRecord, nom: string, commune: string): string {
-  const native = (r.descriptif ?? r.description ?? '').trim()
-  const core =
-    `"${nom}" est une plage référencée sur la plateforme DataTourisme, base nationale de référence ` +
-    `gérée par l'État français et alimentée par les Comités Régionaux du Tourisme (CRT). ` +
-    `Située à ${commune}, elle figure parmi les sites balnéaires identifiés comme accessibles ` +
-    `aux personnes en situation de handicap, avec des aménagements contrôlés par les offices ` +
-    `de tourisme locaux. Les données sont mises à jour régulièrement par les gestionnaires de site.`
-  return native.length >= 60 ? `${native} ${core}` : core
-}
-
-function toCandidate(r: DataTourismeRecord): Candidate | null {
-  const nom = (r.nom ?? r.label ?? '').trim()
-  const commune = (r.commune ?? '').trim()
-  const cp = ((r.code_postal ?? r.cp ?? '') + '').replace(/\s/g, '').trim()
+function toCandidate(r: DtRecord): Candidate | null {
+  const nom = pickFr(r['rdfs:label']).trim()
+  const location = r.isLocatedAt?.[0]
+  const commune = (location?.['schema:addressLocality'] ?? '').trim()
+  const cp = (location?.['schema:postalCode'] ?? '').replace(/\s/g, '').trim()
 
   if (!nom || !commune || !/^\d{5}$/.test(cp)) return null
 
-  const coords = extractCoords(r)
-  if (!coords) return null
-  const [lat, lon] = coords
+  const geo = location?.['schema:geo']
+  const lat = parseFloat(String(geo?.['schema:latitude'] ?? ''))
+  const lon = parseFloat(String(geo?.['schema:longitude'] ?? ''))
+  if (isNaN(lat) || isNaN(lon)) return null
 
   const accessibilites = buildAccessibilites(r)
   if (accessibilites.length < 2) return null
 
+  const nativeDesc = pickFr(r['schema:description'])
   const slug = makeSlug(nom, commune)
+  const desc =
+    nativeDesc.length >= 60
+      ? `${nativeDesc} Plage référencée sur DataTourisme avec aménagements PMR vérifiés par les CRT.`
+      : `Plage de ${commune} référencée sur DataTourisme, base nationale des Comités Régionaux du Tourisme. ` +
+        `Des équipements d'accessibilité PMR y sont documentés et vérifiés par les offices de tourisme locaux.`
+
   return {
     slug,
     nom,
@@ -151,35 +122,53 @@ function toCandidate(r: DataTourismeRecord): Candidate | null {
     noteGlobale: 4.0,
     photo: `https://picsum.photos/seed/${slug}/1200/600`,
     verifiedBy: 'datatourisme',
-    description: buildDescription(r, nom, commune),
+    description: desc,
   } as unknown as Candidate
 }
 
-async function fetchPage(offset: number): Promise<OdsResponse> {
-  const where = encodeURIComponent(WHERE_CLAUSE)
-  const url = `${BASE}?limit=${PAGE_SIZE}&offset=${offset}&where=${where}&lang=fr`
+async function fetchPage(page: number, apiKey: string): Promise<DtRecord[]> {
+  const params = new URLSearchParams({
+    lang: 'fr',
+    limit: String(PAGE_SIZE),
+    page: String(page),
+    // Filter: beaches with accessibility info
+    type: 'NaturalHeritage',
+    subtype: 'Beach',
+  })
+  const url = `${BASE}?${params}`
   const res = await fetch(url, {
     headers: {
-      Accept: 'application/json',
-      'User-Agent': 'plages-accessibles/1.0 (+https://plages-accessibles.fr)',
+      Accept: 'application/ld+json, application/json',
+      Authorization: `Bearer ${apiKey}`,
     },
   })
   if (!res.ok) throw new Error(`DataTourisme API ${res.status}: ${res.statusText}`)
-  return res.json() as Promise<OdsResponse>
+  const body = (await res.json()) as DtResponse
+  // The API may use different envelope field names.
+  return body.data ?? body['hydra:member'] ?? body.member ?? []
 }
 
 export const dataTourismeSource: Source = {
-  name: 'datatourisme (public.opendatasoft.com)',
+  name: 'datatourisme (api.datatourisme.fr)',
   async fetch(): Promise<Candidate[]> {
+    const apiKey = process.env.DATATOURISME_API_KEY
+    if (!apiKey) {
+      console.log(
+        '[datatourisme] DATATOURISME_API_KEY absent — source ignorée' +
+          ' (clé gratuite sur https://www.datatourisme.fr/api/)',
+      )
+      return []
+    }
+
     const candidates: Candidate[] = []
 
-    for (let page = 0; page < MAX_PAGES; page++) {
-      const data = await fetchPage(page * PAGE_SIZE)
-      for (const r of data.results) {
+    for (let page = 1; page <= MAX_PAGES; page++) {
+      const records = await fetchPage(page, apiKey)
+      for (const r of records) {
         const c = toCandidate(r)
         if (c) candidates.push(c)
       }
-      if ((page + 1) * PAGE_SIZE >= data.total_count) break
+      if (records.length < PAGE_SIZE) break
     }
 
     return candidates

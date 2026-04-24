@@ -137,9 +137,11 @@ function toCandidate(r: AcceslibleRecord): Candidate | null {
   } as unknown as Candidate
 }
 
-async function fetchPage(page: number): Promise<AcceslibreResponse> {
+async function fetchPage(page: number, apiKey: string): Promise<AcceslibreResponse> {
   const url = `${BASE}?activite=plage&page_size=${PAGE_SIZE}&page=${page}`
-  const res = await fetch(url, { headers: { Accept: 'application/json' } })
+  const res = await fetch(url, {
+    headers: { Accept: 'application/json', Authorization: `Token ${apiKey}` },
+  })
   if (!res.ok) throw new Error(`Acceslibre API ${res.status}: ${res.statusText}`)
   return res.json() as Promise<AcceslibreResponse>
 }
@@ -147,10 +149,16 @@ async function fetchPage(page: number): Promise<AcceslibreResponse> {
 export const acceslibreSource: Source = {
   name: 'acceslibre (acceslibre.beta.gouv.fr)',
   async fetch(): Promise<Candidate[]> {
+    const apiKey = process.env.ACCESLIBRE_API_KEY
+    if (!apiKey) {
+      console.log('[acceslibre] ACCESLIBRE_API_KEY absent — source ignorée (clé gratuite sur acceslibre.beta.gouv.fr/api/docs/)')
+      return []
+    }
+
     const candidates: Candidate[] = []
 
     for (let page = 1; page <= MAX_PAGES; page++) {
-      const data = await fetchPage(page)
+      const data = await fetchPage(page, apiKey)
       for (const r of data.results) {
         const c = toCandidate(r)
         if (c) candidates.push(c)

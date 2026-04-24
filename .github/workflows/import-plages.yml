@@ -49,6 +49,10 @@ jobs:
 
       - name: Run import script
         id: import
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ACCESLIBRE_API_KEY: ${{ secrets.ACCESLIBRE_API_KEY }}
+          DATATOURISME_API_KEY: ${{ secrets.DATATOURISME_API_KEY }}
         run: npx tsx scripts/import-plages.ts
 
       - name: Bail out if no new beaches
@@ -132,7 +136,7 @@ jobs:
 
           ---
           _Workflow : \`.github/workflows/import-plages.yml\`_
-          _Source(s) consultée(s) : handiplage.fr (scraper) · tourisme-handicap (data.economie.gouv.fr) · acceslibre.beta.gouv.fr · datatourisme · OpenStreetMap (Overpass) · handiplage sample (fallback)_
+          _Source(s) consultée(s) : handiplage.fr (WP API + scraper) · tourisme-handicap (data.economie.gouv.fr) · acceslibre.beta.gouv.fr (clé requise) · datatourisme (api.datatourisme.fr, clé requise) · OpenStreetMap (Overpass) · handiplage sample (fallback)_
           EOF
           )
           gh pr create \

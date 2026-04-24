@@ -18,6 +18,7 @@ import { TYPES_ACCESSIBILITE } from '../../src/lib/content-schema'
 type TypeAccessibilite = (typeof TYPES_ACCESSIBILITE)[number]
 
 const ORIGIN = 'https://www.handiplage.fr'
+const WP_API = `${ORIGIN}/wp-json/wp/v2`
 const SITEMAP_CANDIDATES = [
   `${ORIGIN}/sitemap_index.xml`, // Yoast SEO default
   `${ORIGIN}/wp-sitemap.xml`,    // WordPress core default (>= 5.5)
@@ -29,18 +30,20 @@ const DIRECTORY_CANDIDATES = [
   `${ORIGIN}/annuaire/`,
 ]
 
-// Plausible URL shapes for a single beach page.
-const BEACH_URL_RE = /https?:\/\/(?:www\.)?handiplage\.fr\/(?:fiche-plage|les-plages|plage|plages|annuaire)\/[a-z0-9-]+\/?/gi
+// Plausible URL shapes for a single beach page — broad pattern to catch any path depth.
+const BEACH_URL_RE = /https?:\/\/(?:www\.)?handiplage\.fr\/(?:(?:fiche-plage|les-plages|plage|plages|annuaire)\/)?[a-z0-9][a-z0-9-]+\/?/gi
 
 const MAX_BEACHES_PER_RUN = 60 // handiplage.fr stays small; this is a safety cap.
 
-// Common browser-like headers — handiplage.fr's hosting blocks plain curl.
+// Browser-like headers — handiplage.fr blocks plain curl/wget user agents.
 const REQUEST_HEADERS = {
   'User-Agent':
     'Mozilla/5.0 (X11; Linux x86_64; plages-accessibles/1.0; +https://plages-accessibles.fr) ' +
-    'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36',
+    'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
   'Accept-Language': 'fr-FR,fr;q=0.9,en;q=0.5',
+  'Accept-Encoding': 'gzip, deflate, br',
+  'Cache-Control': 'no-cache',
 }
 
 async function fetchText(url: string): Promise<string | null> {
@@ -51,6 +54,48 @@ async function fetchText(url: string): Promise<string | null> {
   } catch {
     return null
   }
+}
+
+async function fetchJson<T>(url: string): Promise<T | null> {
+  try {
+    const res = await fetch(url, {
+      headers: { ...REQUEST_HEADERS, Accept: 'application/json' },
+      redirect: 'follow',
+    })
+    if (!res.ok) return null
+    return (await res.json()) as T
+  } catch {
+    return null
+  }
+}
+
+// WordPress post shape (only fields we use).
+interface WpPost {
+  link?: string
+  slug?: string
+  status?: string
+}
+
+/** Discover beach page URLs via the WordPress REST API (most reliable — no HTML parsing). */
+async function discoverViaWpApi(): Promise<string[]> {
+  const urls = new Set<string>()
+
+  // Try common WordPress post types for beaches.
+  const postTypes = ['plage', 'plages', 'beach', 'posts']
+  for (const type of postTypes) {
+    for (let page = 1; page <= 10; page++) {
+      const endpoint = `${WP_API}/${type}?per_page=100&page=${page}&status=publish`
+      const posts = await fetchJson<WpPost[]>(endpoint)
+      if (!posts || !Array.isArray(posts) || posts.length === 0) break
+      for (const p of posts) {
+        if (p.link && p.status === 'publish') urls.add(p.link)
+      }
+      if (posts.length < 100) break
+    }
+    if (urls.size > 0) break
+  }
+
+  return [...urls]
 }
 
 function extractSitemapUrls(xml: string): string[] {
@@ -307,7 +352,15 @@ async function parseBeachPage(url: string): Promise<Candidate | null> {
 export const handiplageLiveSource: Source = {
   name: 'handiplage.fr (live)',
   async fetch(): Promise<Candidate[]> {
-    let urls = await discoverViaSitemap()
+    // Strategy 1: WordPress REST API — JSON, less likely to be blocked than HTML scraping.
+    let urls = await discoverViaWpApi()
+
+    // Strategy 2: XML sitemap walk.
+    if (urls.length === 0) {
+      urls = await discoverViaSitemap()
+    }
+
+    // Strategy 3: HTML directory pages.
     if (urls.length === 0) {
       console.error('[handiplage.fr] sitemap vide ou inaccessible — fallback annuaire HTML')
       urls = await discoverViaDirectory()

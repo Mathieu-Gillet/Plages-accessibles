@@ -14,7 +14,7 @@ type TypeAccessibilite = (typeof TYPES_ACCESSIBILITE)[number]
 
 const BASE =
   'https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets' +
-  '/tourisme-et-handicap-etablissements-labellises/records'
+  '/etablissements-labellises-tourisme-et-handicap/records'
 
 const PAGE_SIZE = 100
 const MAX_PAGES = 5
@@ -120,7 +120,8 @@ function toCandidate(r: TourismeRecord): Candidate | null {
 }
 
 async function fetchPage(offset: number): Promise<OdsResponse> {
-  const where = encodeURIComponent("categorie like '%plage%'")
+  // ODS v2.1 uses search() instead of LIKE; field may be categorie or type_etablissement.
+  const where = encodeURIComponent("search(categorie, 'plage') OR search(type_etablissement, 'plage')")
   const url = `${BASE}?limit=${PAGE_SIZE}&offset=${offset}&where=${where}&lang=fr`
   const res = await fetch(url, { headers: { Accept: 'application/json' } })
   if (!res.ok) throw new Error(`Tourisme & Handicap API ${res.status}: ${res.statusText}`)
