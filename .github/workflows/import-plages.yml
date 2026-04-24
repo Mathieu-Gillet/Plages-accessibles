@@ -49,6 +49,8 @@ jobs:
 
       - name: Run import script
         id: import
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: npx tsx scripts/import-plages.ts
 
       - name: Bail out if no new beaches

@@ -24,6 +24,7 @@ import { dataTourismeSource } from './sources/datatourisme'
 import type { Source } from './sources/types'
 import { validateCandidate, type Candidate } from './lib/validate-candidate'
 import { fetchBeachPhoto } from './lib/wikimedia'
+import { generateDescription, isAiDescriptionAvailable } from './lib/ai-description'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'plages')
 const MAX_PER_RUN = 5
@@ -108,6 +109,12 @@ async function main(): Promise<void> {
     capped: 0,
   }
 
+  if (isAiDescriptionAvailable()) {
+    console.log('[ai-description] enrichissement actif (claude-haiku-4-5)')
+  } else {
+    console.log('[ai-description] ANTHROPIC_API_KEY absent — descriptions template conservées')
+  }
+
   const existingSlugs = await readExistingSlugs()
   console.log(`[index] ${existingSlugs.size} plage(s) déjà en base`)
 
@@ -121,7 +128,16 @@ async function main(): Promise<void> {
       continue
     }
 
-    const result = validateCandidate(candidate)
+    const aiDesc = await generateDescription({
+      nom: candidate.nom,
+      commune: candidate.commune,
+      accessibilites: (candidate.accessibilites ?? []) as Parameters<typeof generateDescription>[0]['accessibilites'],
+      nativeText: candidate.description,
+      verifiedBy: candidate.verifiedBy,
+    })
+    const enrichedCandidate = aiDesc ? { ...candidate, description: aiDesc } : candidate
+
+    const result = validateCandidate(enrichedCandidate)
     if (!result.ok) {
       summary.rejected.push({ slug: result.slug, reason: result.reason })
       continue
