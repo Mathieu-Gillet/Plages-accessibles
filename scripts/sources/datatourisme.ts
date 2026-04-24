@@ -14,7 +14,7 @@ import { TYPES_ACCESSIBILITE } from '../../src/lib/content-schema'
 
 type TypeAccessibilite = (typeof TYPES_ACCESSIBILITE)[number]
 
-const BASE = 'https://api.datatourisme.fr/v1/placeOfInterest'
+const BASE = 'https://api.datatourisme.fr/v1/catalog'
 const PAGE_SIZE = 100
 const MAX_PAGES = 5
 
@@ -133,6 +133,7 @@ async function fetchPage(page: number, apiKey: string): Promise<DtRecord[]> {
     page: String(page),
     type: 'NaturalHeritage',
     subtype: 'Beach',
+    api_key: apiKey,
   })
   const url = `${BASE}?${params}`
   const res = await fetch(url, {
