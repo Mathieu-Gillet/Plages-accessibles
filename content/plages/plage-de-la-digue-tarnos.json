@@ -1,0 +1,25 @@
+{
+  "slug": "plage-de-la-digue-tarnos",
+  "nom": "Plage de la Digue",
+  "description": "Il est possible pour les personnes à mobilité réduite de s'immerger à l'aide d'un tiralo, si les conditions de baignade le permettent (juillet / août seulement).. Plage \"Plage de la Digue\" située à Tarnos, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant limitée, sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=limited) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Tarnos",
+  "codePostal": "40220",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.5318153,
+  "longitude": -1.5212416,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Plage_du_Metro_mar%C3%A9e_montante.jpg/1280px-Plage_du_Metro_mar%C3%A9e_montante.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-24",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

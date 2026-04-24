@@ -1,0 +1,25 @@
+{
+  "slug": "plage-du-metro-tarnos",
+  "nom": "Plage du Métro",
+  "description": "Plage de sable fin, bordée par une dune. Baignade surveillée en été. Services à proximité. Plage \"Plage du Métro\" située à Tarnos, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant limitée, poste de secours, sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=limited) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Tarnos",
+  "codePostal": "40220",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.5591675,
+  "longitude": -1.5007225,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Plage_du_Metro_mar%C3%A9e_montante.jpg/1280px-Plage_du_Metro_mar%C3%A9e_montante.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-24",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
