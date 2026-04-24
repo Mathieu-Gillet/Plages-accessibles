@@ -1,0 +1,25 @@
+{
+  "slug": "ondres-ocean-ondres",
+  "nom": "Ondres Océan",
+  "description": "Plage de sable bordée par une dune. Baignade surveillée en été. Restaurants, commerces et services. Parking et accès front de mer PMR (pas la plage). Animaux admis sous conditions. Plage sans poubelle. Plage \"Ondres Océan\" située à Ondres, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant limitée, poste de secours, sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=limited) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Ondres",
+  "codePostal": "40440",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.5774218,
+  "longitude": -1.4882397,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Plage_d%27Ondres.JPG/1280px-Plage_d%27Ondres.JPG",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-24",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
