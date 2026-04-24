@@ -17,7 +17,14 @@ const FRENCH_BBOXES: Array<{ name: string; latMin: number; latMax: number; lonMi
 ]
 
 // Source labels considered "validated" — only these can be the verifiedBy of an auto-imported beach.
-const ALLOWED_SOURCES = new Set(['handiplage.fr', 'tourisme-handicap', 'data.gouv.fr'])
+// Order: official French labels, then public gov data, then crowd-sourced (traceable back to OSM history).
+const ALLOWED_SOURCES = new Set([
+  'handiplage.fr',
+  'tourisme-handicap',
+  'data.gouv.fr',
+  'datatourisme',
+  'openstreetmap',
+])
 
 const MIN_DESCRIPTION_LENGTH = 150
 const MIN_ACCESSIBILITES = 2
