@@ -131,20 +131,22 @@ async function fetchPage(page: number, apiKey: string): Promise<DtRecord[]> {
     lang: 'fr',
     limit: String(PAGE_SIZE),
     page: String(page),
-    // Filter: beaches with accessibility info
     type: 'NaturalHeritage',
     subtype: 'Beach',
+    // Some DataTourisme API versions accept the key as a query param.
+    apiKey,
   })
   const url = `${BASE}?${params}`
   const res = await fetch(url, {
     headers: {
       Accept: 'application/ld+json, application/json',
+      // Try both common header formats — the server will ignore the wrong one.
       Authorization: `Bearer ${apiKey}`,
+      'X-Api-Key': apiKey,
     },
   })
   if (!res.ok) throw new Error(`DataTourisme API ${res.status}: ${res.statusText}`)
   const body = (await res.json()) as DtResponse
-  // The API may use different envelope field names.
   return body.data ?? body['hydra:member'] ?? body.member ?? []
 }
 
