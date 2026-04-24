@@ -16,8 +16,11 @@
 import { promises as fs } from 'node:fs'
 import path from 'node:path'
 import { handiplageSampleSource } from './sources/handiplage-sample'
+import { handiplageLiveSource } from './sources/handiplage-live'
 import { tourismeHandicapSource } from './sources/tourisme-handicap'
 import { acceslibreSource } from './sources/acceslibre'
+import { openStreetMapSource } from './sources/openstreetmap'
+import { dataTourismeSource } from './sources/datatourisme'
 import type { Source } from './sources/types'
 import { validateCandidate, type Candidate } from './lib/validate-candidate'
 import { fetchBeachPhoto } from './lib/wikimedia'
@@ -25,10 +28,16 @@ import { fetchBeachPhoto } from './lib/wikimedia'
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'plages')
 const MAX_PER_RUN = 5
 
+// Order matters: inter-source dedup keeps the first occurrence of each slug.
+// We prioritise official labels (Handiplage, Tourisme & Handicap) over
+// crowd-sourced data (OSM), over curated fallbacks (sample list).
 const SOURCES: Source[] = [
-  tourismeHandicapSource,  // data.economie.gouv.fr — label Tourisme & Handicap (primary)
-  acceslibreSource,        // acceslibre.beta.gouv.fr — physical accessibility data (enrichment)
-  handiplageSampleSource,  // curated fallback — exhausted once live APIs are stable
+  handiplageLiveSource,    // handiplage.fr — HTML scraper, official Handiplage label
+  tourismeHandicapSource,  // data.economie.gouv.fr — label Tourisme & Handicap
+  acceslibreSource,        // acceslibre.beta.gouv.fr — physical accessibility data
+  dataTourismeSource,      // public.opendatasoft.com — DataTourisme national POI feed
+  openStreetMapSource,     // overpass-api.de — crowd-sourced wheelchair-tagged beaches
+  handiplageSampleSource,  // curated fallback — exhausted once live sources stabilise
 ]
 
 interface RunSummary {

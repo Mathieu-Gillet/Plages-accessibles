@@ -132,7 +132,7 @@ jobs:
 
           ---
           _Workflow : \`.github/workflows/import-plages.yml\`_
-          _Source(s) consultée(s) : tourisme-handicap (data.economie.gouv.fr) · acceslibre.beta.gouv.fr · handiplage.fr (fallback)_
+          _Source(s) consultée(s) : handiplage.fr (scraper) · tourisme-handicap (data.economie.gouv.fr) · acceslibre.beta.gouv.fr · datatourisme · OpenStreetMap (Overpass) · handiplage sample (fallback)_
           EOF
           )
           gh pr create \
