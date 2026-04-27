@@ -33,8 +33,8 @@ interface DtLocation {
 }
 
 interface DtDescriptionItem {
-  shortDescription?: string
-  description?: string
+  shortDescription?: string | Record<string, string | string[]>
+  description?: string | Record<string, string | string[]>
 }
 
 interface DtReviewValue {
@@ -59,14 +59,24 @@ interface DtAmenity {
 
 interface DtRecord {
   uuid?: string
-  label?: string
-  comment?: string
+  label?: string | Record<string, string | string[]>
+  comment?: string | Record<string, string | string[]>
   reducedMobilityAccess?: boolean
   isLocatedAt?: DtLocation[]
   hasDescription?: DtDescriptionItem[]
   hasReview?: DtReview[]
   hasMainRepresentation?: DtMedia[]
   isEquippedWith?: DtAmenity[]
+}
+
+// The API swagger says "string" but actually returns multilingual objects.
+function pickFr(v: string | Record<string, string | string[]> | undefined): string {
+  if (!v) return ''
+  if (typeof v === 'string') return v.trim()
+  const fr = v['fr']
+  if (typeof fr === 'string') return fr.trim()
+  if (Array.isArray(fr)) return (fr[0] ?? '').trim()
+  return ''
 }
 
 interface DtMeta {
@@ -115,7 +125,7 @@ function buildAccessibilites(r: DtRecord): TypeAccessibilite[] {
 }
 
 function toCandidate(r: DtRecord): Candidate | null {
-  const nom = (r.label ?? '').trim()
+  const nom = pickFr(r.label)
   const location = r.isLocatedAt?.[0]
   const address = location?.address?.[0]
   const commune = (address?.addressLocality ?? '').trim()
@@ -131,12 +141,10 @@ function toCandidate(r: DtRecord): Candidate | null {
   if (accessibilites.length < 2) return null
 
   // Best available description: short first, then long, then comment.
-  const nativeDesc = (
-    r.hasDescription?.[0]?.shortDescription ??
-    r.hasDescription?.[0]?.description ??
-    r.comment ??
-    ''
-  ).trim()
+  const nativeDesc =
+    pickFr(r.hasDescription?.[0]?.shortDescription) ||
+    pickFr(r.hasDescription?.[0]?.description) ||
+    pickFr(r.comment)
 
   const desc =
     nativeDesc.length >= 60
