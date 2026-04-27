@@ -211,18 +211,47 @@ export const dataTourismeSource: Source = {
 
     const candidates: Candidate[] = []
     let totalRaw = 0
+    const rejects = { nomCommune: 0, postal: 0, geo: 0, acc: 0 }
+    let sampleLogged = false
 
     for (let page = 1; page <= MAX_PAGES; page++) {
       const { records, hasNext } = await fetchPage(page, apiKey)
       totalRaw += records.length
+
       for (const r of records) {
+        // Log the first raw record so we can inspect the actual field names.
+        if (!sampleLogged) {
+          console.log('[datatourisme] sample record:', JSON.stringify(r, null, 2).slice(0, 800))
+          sampleLogged = true
+        }
+
+        const nom = pickFr(r.label)
+        const location = r.isLocatedAt?.[0]
+        const address = location?.address?.[0]
+        const commune = (address?.addressLocality ?? '').trim()
+        const cp = (address?.postalCode ?? '').replace(/\s/g, '').trim()
+
+        if (!nom || !commune) { rejects.nomCommune++; continue }
+        if (!/^\d{5}$/.test(cp)) { rejects.postal++; continue }
+
+        const lat = location?.geo?.latitude
+        const lon = location?.geo?.longitude
+        if (!lat || !lon || isNaN(lat) || isNaN(lon)) { rejects.geo++; continue }
+
+        const accessibilites = buildAccessibilites(r)
+        if (accessibilites.length < 2) { rejects.acc++; continue }
+
         const c = toCandidate(r)
         if (c) candidates.push(c)
       }
+
       if (!hasNext) break
     }
 
-    console.log(`[datatourisme] ${totalRaw} enregistrements bruts → ${candidates.length} candidat(s)`)
+    console.log(
+      `[datatourisme] ${totalRaw} bruts → rejets: nom/commune=${rejects.nomCommune}, ` +
+      `cp=${rejects.postal}, geo=${rejects.geo}, acc=${rejects.acc} → ${candidates.length} candidat(s)`,
+    )
     return candidates
   },
 }
