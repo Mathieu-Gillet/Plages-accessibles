@@ -69,11 +69,12 @@ interface DtRecord {
   isEquippedWith?: DtAmenity[]
 }
 
-// The API swagger says "string" but actually returns multilingual objects.
+// The API returns multilingual objects with either 'fr' or '@fr' (JSON-LD) keys.
 function pickFr(v: string | Record<string, string | string[]> | undefined): string {
   if (!v) return ''
   if (typeof v === 'string') return v.trim()
-  const fr = v['fr']
+  // DataTourisme uses both plain 'fr' and JSON-LD '@fr' language tags.
+  const fr = v['fr'] ?? v['@fr']
   if (typeof fr === 'string') return fr.trim()
   if (Array.isArray(fr)) return (fr[0] ?? '').trim()
   return ''
