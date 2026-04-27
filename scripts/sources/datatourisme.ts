@@ -131,6 +131,7 @@ function toCandidate(r: DtRecord): Candidate | null {
   const commune = (address?.addressLocality ?? '').trim()
   const cp = (address?.postalCode ?? '').replace(/\s/g, '').trim()
 
+  // Require at least nom + commune + a plausible French postal code.
   if (!nom || !commune || !/^\d{5}$/.test(cp)) return null
 
   const lat = location?.geo?.latitude
@@ -180,7 +181,6 @@ async function fetchPage(page: number, apiKey: string): Promise<{ records: DtRec
     page_size: String(PAGE_SIZE),
     page: String(page),
     type: 'Beach',
-    reduced_mobility_access: 'true',
   })
   const url = `${BASE}?${params}`
   const res = await fetch(url, {
@@ -210,9 +210,11 @@ export const dataTourismeSource: Source = {
     }
 
     const candidates: Candidate[] = []
+    let totalRaw = 0
 
     for (let page = 1; page <= MAX_PAGES; page++) {
       const { records, hasNext } = await fetchPage(page, apiKey)
+      totalRaw += records.length
       for (const r of records) {
         const c = toCandidate(r)
         if (c) candidates.push(c)
@@ -220,6 +222,7 @@ export const dataTourismeSource: Source = {
       if (!hasNext) break
     }
 
+    console.log(`[datatourisme] ${totalRaw} enregistrements bruts → ${candidates.length} candidat(s)`)
     return candidates
   },
 }
