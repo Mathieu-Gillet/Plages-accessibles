@@ -140,7 +140,7 @@ function toCandidate(r: DtRecord): Candidate | null {
   if (!lat || !lon || isNaN(lat) || isNaN(lon)) return null
 
   const accessibilites = buildAccessibilites(r)
-  if (accessibilites.length < 2) return null
+  if (accessibilites.length === 0) return null
 
   // Best available description: short first, then long, then comment.
   const nativeDesc =
@@ -240,7 +240,7 @@ export const dataTourismeSource: Source = {
         if (!lat || !lon || isNaN(lat) || isNaN(lon)) { rejects.geo++; continue }
 
         const accessibilites = buildAccessibilites(r)
-        if (accessibilites.length < 2) { rejects.acc++; continue }
+        if (accessibilites.length === 0) { rejects.acc++; continue }
 
         const c = toCandidate(r)
         if (c) candidates.push(c)

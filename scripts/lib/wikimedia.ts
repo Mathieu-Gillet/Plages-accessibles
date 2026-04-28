@@ -108,7 +108,7 @@ async function tryWikipediaPageImage(title: string): Promise<string | null> {
  * like "File:Plage_de_Cabourg.jpg" rather than random photos that happen to
  * mention the commune in their description.
  */
-async function tryCommonsIntitle(commune: string, term: string): Promise<string | null> {
+async function tryCommonsIntitle(commune: string, term: string, excludeUrls?: Set<string>): Promise<string | null> {
   const searchUrl = new URL(COMMONS)
   searchUrl.searchParams.set('action', 'query')
   searchUrl.searchParams.set('format', 'json')
@@ -146,7 +146,7 @@ async function tryCommonsIntitle(commune: string, term: string): Promise<string 
           continue
         }
         const url = ii.thumburl ?? ii.url
-        if (url) return url
+        if (url && !excludeUrls?.has(url)) return url
       }
     }
   } catch (err) {
@@ -158,21 +158,25 @@ async function tryCommonsIntitle(commune: string, term: string): Promise<string 
 /**
  * Best-effort photo resolver. Returns a direct upload.wikimedia.org URL or null.
  * Caller is responsible for falling back (e.g. picsum) if null is returned.
+ * Pass excludeUrls to avoid returning a photo already used by another beach.
  */
 export async function fetchBeachPhoto(opts: {
   nom: string
   commune: string
+  excludeUrls?: Set<string>
 }): Promise<string | null> {
+  const { excludeUrls } = opts
+
   // 1. Wikipedia article EXACTLY matching the beach name (best precision)
   const fromBeachArticle = await tryWikipediaPageImage(opts.nom)
-  if (fromBeachArticle) return fromBeachArticle
+  if (fromBeachArticle && !excludeUrls?.has(fromBeachArticle)) return fromBeachArticle
 
   // 2. Commons file with "plage" in its filename for this commune (high precision)
-  const fromCommonsFr = await tryCommonsIntitle(opts.commune, 'plage')
+  const fromCommonsFr = await tryCommonsIntitle(opts.commune, 'plage', excludeUrls)
   if (fromCommonsFr) return fromCommonsFr
 
   // 3. Same in English
-  const fromCommonsEn = await tryCommonsIntitle(opts.commune, 'beach')
+  const fromCommonsEn = await tryCommonsIntitle(opts.commune, 'beach', excludeUrls)
   if (fromCommonsEn) return fromCommonsEn
 
   // No reliable beach photo found — return null instead of misleading commune lead.
