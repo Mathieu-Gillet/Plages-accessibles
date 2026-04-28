@@ -1,0 +1,28 @@
+{
+  "slug": "plage-de-la-pointe-rouge-marseille-8e-arrondissement",
+  "nom": "Plage de la Pointe Rouge",
+  "description": "La plage de la Pointe Rouge est sableuse et étendue : elle précède le port de plaisance du même nom. Elle accueille un poste de secours, des consignes, des sanitaires, restaurants, buvettes et poubelles. Plage référencée sur DataTourisme avec aménagements PMR vérifiés par les CRT.",
+  "commune": "Marseille 8e Arrondissement",
+  "codePostal": "13008",
+  "departement": "Bouches-du-Rhône",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.2445,
+  "longitude": 5.37111,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Marseille%2C_la_plage_des_Catalans_%2813169643263%29.jpg/1280px-Marseille%2C_la_plage_des_Catalans_%2813169643263%29.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-04-28",
+  "verifiedBy": "datatourisme",
+  "accessibilites": [
+    "BOUCLE_MAGNETIQUE",
+    "PERSONNEL_FORME",
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES",
+    "SIGNALISATION_BRAILLE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
