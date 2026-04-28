@@ -8,64 +8,18 @@
   "region": "Nouvelle-Aquitaine",
   "latitude": 43.5773364,
   "longitude": -1.4883799,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Plage_d%27Ondres.JPG/1280px-Plage_d%27Ondres.JPG",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Beach_%5E_Mountain_-_Flickr_-_Gadjo_Niglo.jpg/1280px-Beach_%5E_Mountain_-_Flickr_-_Gadjo_Niglo.jpg",
   "photos": [],
   "noteGlobale": 4,
   "nombreAvis": 0,
   "actif": true,
-  "verifiedAt": "2026-04-24",
+  "verifiedAt": "2026-04-28",
   "verifiedBy": "openstreetmap",
   "accessibilites": [
     "CHEMIN_ACCES",
     "SABLE_COMPACT"
   ],
-  "hebergements": [
-    {
-      "nom": "Le Lodge",
-      "type": "hôtel",
-      "adresse": "1180 Avenue du 11 Novembre 1918, 40440, Ondres",
-      "telephone": "+33 5 59 45 27 02",
-      "siteWeb": "https://hotel-le-lodge.com/",
-      "latitude": 43.5689726,
-      "longitude": -1.4426154,
-      "distanceKm": 3.8,
-      "accessiblePMR": true
-    }
-  ],
-  "offresCulturelles": [
-    {
-      "nom": "L'Atalante",
-      "type": "cinéma",
-      "adresse": "Ondres",
-      "description": "L'Atalante, cinéma d'art et d'essai - Films, expositions, soirées. L’Atalante est un cinéma géré par une association, ouverte à tous ses spectateurs depuis sa création en 1990.",
-      "telephone": "+33 5 59 55 52 98",
-      "siteWeb": "https://atalante-cinema.org/",
-      "latitude": 43.4955453,
-      "longitude": -1.4713303,
-      "distanceKm": 9.2,
-      "accessiblePMR": true
-    },
-    {
-      "nom": "Musée Bonnat-Helleu",
-      "type": "musée",
-      "adresse": "Ondres",
-      "telephone": "+33 5 59 46 63 60",
-      "siteWeb": "https://mbh.bayonne.fr/",
-      "latitude": 43.4918696,
-      "longitude": -1.4721955,
-      "distanceKm": 9.6,
-      "accessiblePMR": true
-    },
-    {
-      "nom": "Musée Basque et de l'histoire de Bayonne",
-      "type": "musée",
-      "adresse": "Ondres",
-      "description": "Situé dans une demeure portuaire de la ville, le musée propose une collection exceptionnelle de plus de 2 000 objets retraçant l'histoire du Pays Basque.",
-      "latitude": 43.4910854,
-      "longitude": -1.473799,
-      "distanceKm": 9.7,
-      "accessiblePMR": true
-    }
-  ],
+  "hebergements": [],
+  "offresCulturelles": [],
   "avis": []
 }

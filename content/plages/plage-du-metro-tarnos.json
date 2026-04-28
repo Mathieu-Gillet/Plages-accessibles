@@ -8,123 +8,18 @@
   "region": "Nouvelle-Aquitaine",
   "latitude": 43.5591675,
   "longitude": -1.5007225,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Plage_du_Metro_mar%C3%A9e_montante.jpg/1280px-Plage_du_Metro_mar%C3%A9e_montante.jpg",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Arriv%C3%A9e_%C3%A0_Tarnos-Plage._Mer_d%C3%A9cha%C3%AEn%C3%A9e_-_panoramio.jpg/1280px-Arriv%C3%A9e_%C3%A0_Tarnos-Plage._Mer_d%C3%A9cha%C3%AEn%C3%A9e_-_panoramio.jpg",
   "photos": [],
   "noteGlobale": 4,
   "nombreAvis": 0,
   "actif": true,
-  "verifiedAt": "2026-04-24",
+  "verifiedAt": "2026-04-28",
   "verifiedBy": "openstreetmap",
   "accessibilites": [
     "CHEMIN_ACCES",
     "SABLE_COMPACT"
   ],
-  "hebergements": [
-    {
-      "nom": "Le Lodge",
-      "type": "hôtel",
-      "adresse": "1180 Avenue du 11 Novembre 1918, 40440, Ondres",
-      "telephone": "+33 5 59 45 27 02",
-      "siteWeb": "https://hotel-le-lodge.com/",
-      "latitude": 43.5689726,
-      "longitude": -1.4426154,
-      "distanceKm": 4.8,
-      "accessiblePMR": true
-    },
-    {
-      "nom": "Ibis Budget",
-      "type": "hôtel",
-      "adresse": "Tarnos",
-      "latitude": 43.4886905,
-      "longitude": -1.4572935,
-      "distanceKm": 8.6,
-      "accessiblePMR": true
-    },
-    {
-      "nom": "hotelF1",
-      "type": "hôtel",
-      "adresse": "Tarnos",
-      "latitude": 43.4895046,
-      "longitude": -1.4505586,
-      "distanceKm": 8.7,
-      "accessiblePMR": true
-    },
-    {
-      "nom": "Hôtel du Palais",
-      "type": "hôtel",
-      "adresse": "Avenue de l'Impératrice, 64200, Biarritz",
-      "telephone": "+33 173111234",
-      "siteWeb": "https://www.hyatt.com/en-US/hotel/france/hotel-du-louvre/paraz",
-      "latitude": 43.4864401,
-      "longitude": -1.5562146,
-      "distanceKm": 9.2,
-      "accessiblePMR": true
-    },
-    {
-      "nom": "Hôtel Mercure Le Président",
-      "type": "hôtel",
-      "adresse": "Tarnos",
-      "telephone": "+33 5 59 24 66 40",
-      "latitude": 43.4818119,
-      "longitude": -1.559779,
-      "distanceKm": 9.8,
-      "accessiblePMR": true
-    }
-  ],
-  "offresCulturelles": [
-    {
-      "nom": "L'Atalante",
-      "type": "cinéma",
-      "adresse": "Tarnos",
-      "description": "L'Atalante, cinéma d'art et d'essai - Films, expositions, soirées. L’Atalante est un cinéma géré par une association, ouverte à tous ses spectateurs depuis sa création en 1990.",
-      "telephone": "+33 5 59 55 52 98",
-      "siteWeb": "https://atalante-cinema.org/",
-      "latitude": 43.4955453,
-      "longitude": -1.4713303,
-      "distanceKm": 7.5,
-      "accessiblePMR": true
-    },
-    {
-      "nom": "Musée Basque et de l'histoire de Bayonne",
-      "type": "musée",
-      "adresse": "Tarnos",
-      "description": "Situé dans une demeure portuaire de la ville, le musée propose une collection exceptionnelle de plus de 2 000 objets retraçant l'histoire du Pays Basque.",
-      "latitude": 43.4910854,
-      "longitude": -1.473799,
-      "distanceKm": 7.9,
-      "accessiblePMR": true
-    },
-    {
-      "nom": "Méga CGR",
-      "type": "cinéma",
-      "adresse": "Allée de Glain, 64100, Bayonne",
-      "siteWeb": "https://www.cgrcinemas.fr/bayonne/",
-      "latitude": 43.4860379,
-      "longitude": -1.4701644,
-      "distanceKm": 8.5,
-      "accessiblePMR": true
-    },
-    {
-      "nom": "Villa Beatrix Enea Centre d'art contemporain",
-      "type": "galerie",
-      "adresse": "2 Rue Albert Le Barillier, Tarnos",
-      "description": "La villa Beatrix Enea héberge la direction de la Culture, de la Communication et du Jumelage. Depuis de nombreuses années, la Ville d'Anglet met en lumière les arts visuels et les démarches artistiques tant novatrices qu'éclectiques.",
-      "telephone": "+33 5 59 58 35 60",
-      "siteWeb": "https://www.anglet.fr/fiches-pratiques/detail-fiche/actualites/la-villa-beatrix-enea-de-sa-construction-a-nos-jours/",
-      "latitude": 43.482245,
-      "longitude": -1.513414,
-      "distanceKm": 8.6,
-      "accessiblePMR": true
-    },
-    {
-      "nom": "Pop-up d'Artistes",
-      "type": "galerie",
-      "adresse": "Avenue du Portou, 64990, Saint-Pierre-d'Irube",
-      "latitude": 43.480431,
-      "longitude": -1.4442573,
-      "distanceKm": 9.9,
-      "accessiblePMR": true
-    }
-  ],
+  "hebergements": [],
+  "offresCulturelles": [],
   "avis": []
 }
