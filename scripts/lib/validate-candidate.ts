@@ -52,6 +52,11 @@ function isInsideFrance(lat: number, lon: number): boolean {
   )
 }
 
+function upgradeHttps(url: string | undefined): string | undefined {
+  if (!url) return url
+  return url.startsWith('http://') ? 'https://' + url.slice(7) : url
+}
+
 export function validateCandidate(raw: Candidate): ValidationResult {
   // Quality gate 1 — source must be allowlisted
   if (!ALLOWED_SOURCES.has(raw.verifiedBy)) {
@@ -95,9 +100,9 @@ export function validateCandidate(raw: Candidate): ValidationResult {
     actif: raw.actif ?? true,
     noteGlobale: raw.noteGlobale ?? 0,
     nombreAvis: raw.nombreAvis ?? 0,
-    photos: raw.photos ?? [],
-    hebergements: raw.hebergements ?? [],
-    offresCulturelles: raw.offresCulturelles ?? [],
+    photos: (raw.photos ?? []).map((p) => (p.startsWith('http://') ? 'https://' + p.slice(7) : p)),
+    hebergements: (raw.hebergements ?? []).map((h) => ({ ...h, siteWeb: upgradeHttps(h.siteWeb) })),
+    offresCulturelles: (raw.offresCulturelles ?? []).map((o) => ({ ...o, siteWeb: upgradeHttps(o.siteWeb) })),
     avis: raw.avis ?? [],
   }
   const parsed = plageContentSchema.safeParse(draft)
