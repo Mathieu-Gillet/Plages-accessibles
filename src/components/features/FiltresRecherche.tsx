@@ -19,28 +19,48 @@ export function FiltresRecherche({
   searchParams,
 }: FiltresRechercheProps) {
   const router = useRouter()
+  const [q, setQ] = useState(searchParams.q ?? '')
   const [region, setRegion] = useState(searchParams.region ?? '')
   const [departement, setDepartement] = useState(searchParams.departement ?? '')
 
   function appliquer() {
     const params = new URLSearchParams()
-    if (searchParams.q) params.set('q', searchParams.q)
+    if (q.trim()) params.set('q', q.trim())
     if (region) params.set('region', region)
     if (departement) params.set('departement', departement)
     router.push(`/recherche?${params.toString()}`)
   }
 
   function reinitialiser() {
+    setQ('')
     setRegion('')
     setDepartement('')
-    const params = new URLSearchParams()
-    if (searchParams.q) params.set('q', searchParams.q)
-    router.push(`/recherche?${params.toString()}`)
+    router.push('/recherche')
+  }
+
+  function handleKeyDown(e: React.KeyboardEvent) {
+    if (e.key === 'Enter') appliquer()
   }
 
   return (
     <div className="bg-white rounded-2xl border border-sable-fonce p-5 space-y-5">
       <h2 className="font-bold text-ardoise text-lg">Filtrer par</h2>
+
+      {/* Recherche texte */}
+      <div>
+        <label htmlFor="filtre-q" className="block text-sm font-semibold text-ardoise mb-1">
+          Recherche
+        </label>
+        <input
+          id="filtre-q"
+          type="search"
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder="Commune, nom de plage…"
+          className="w-full border border-sable-fonce rounded-lg px-3 py-2 text-sm text-ardoise focus:outline-none focus:border-ocean"
+        />
+      </div>
 
       {/* Région */}
       <div>

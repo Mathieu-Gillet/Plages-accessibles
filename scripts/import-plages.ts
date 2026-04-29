@@ -25,6 +25,7 @@ import type { Source } from './sources/types'
 import { validateCandidate, type Candidate } from './lib/validate-candidate'
 import { fetchBeachPhoto } from './lib/wikimedia'
 import { generateDescription, isAiDescriptionAvailable } from './lib/ai-description'
+import { readAllBeaches, dedupBeaches } from './lib/dedup'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'plages')
 const MAX_PER_RUN = 5
@@ -49,88 +50,15 @@ interface RunSummary {
   deleted: string[]
 }
 
-interface BeachFile {
-  slug: string
-  file: string
-  photo?: string
-  latitude?: number
-  longitude?: number
-}
-
-async function readAllBeaches(): Promise<BeachFile[]> {
-  const files = await fs.readdir(CONTENT_DIR)
-  const beaches: BeachFile[] = []
-  for (const f of files.filter((f) => f.endsWith('.json'))) {
-    try {
-      const raw = await fs.readFile(path.join(CONTENT_DIR, f), 'utf8')
-      const data = JSON.parse(raw) as { photo?: string; latitude?: number; longitude?: number }
-      beaches.push({
-        slug: f.replace(/\.json$/, ''),
-        file: path.join(CONTENT_DIR, f),
-        photo: data.photo,
-        latitude: data.latitude,
-        longitude: data.longitude,
-      })
-    } catch { /* ignore malformed file */ }
-  }
-  return beaches
-}
-
 async function readExistingSlugs(): Promise<Set<string>> {
   const beaches = await readAllBeaches()
   return new Set(beaches.map((b) => b.slug))
 }
 
-/** Remove duplicate beach files already on disk (same photo URL or same GPS cell). */
 async function cleanupDuplicates(summary: RunSummary, dryRun: boolean): Promise<void> {
   const beaches = await readAllBeaches()
-
-  const deletedFiles = new Set<string>()
-
-  // 1. Dedup by identical photo URL (picsum uses unique slug-based seeds, skip those).
-  const byPhoto = new Map<string, BeachFile[]>()
-  for (const b of beaches) {
-    if (!b.photo || b.photo.includes('picsum.photos')) continue
-    const group = byPhoto.get(b.photo) ?? []
-    group.push(b)
-    byPhoto.set(b.photo, group)
-  }
-  for (const [, group] of byPhoto) {
-    if (group.length <= 1) continue
-    group.sort((a, b) => a.slug.localeCompare(b.slug))
-    for (const dupe of group.slice(1)) {
-      if (deletedFiles.has(dupe.file)) continue
-      if (!dryRun) await fs.unlink(dupe.file)
-      deletedFiles.add(dupe.file)
-      summary.deleted.push(dupe.slug)
-      console.log(`[dedup] doublon photo supprimé : ${dupe.slug}`)
-    }
-  }
-
-  // 2. Dedup by GPS proximity (±0.001° ≈ 100 m cell).
-  const geoKey = (b: BeachFile) =>
-    `${Math.round((b.latitude ?? 0) * 1000)},${Math.round((b.longitude ?? 0) * 1000)}`
-  const byGeo = new Map<string, BeachFile[]>()
-  for (const b of beaches) {
-    if (!b.latitude || !b.longitude) continue
-    const k = geoKey(b)
-    const group = byGeo.get(k) ?? []
-    group.push(b)
-    byGeo.set(k, group)
-  }
-  for (const [, group] of byGeo) {
-    if (group.length <= 1) continue
-    group.sort((a, b) => a.slug.localeCompare(b.slug))
-    for (const dupe of group.slice(1)) {
-      if (deletedFiles.has(dupe.file)) continue
-      try {
-        if (!dryRun) await fs.unlink(dupe.file)
-        deletedFiles.add(dupe.file)
-        summary.deleted.push(dupe.slug)
-        console.log(`[dedup] doublon GPS supprimé : ${dupe.slug}`)
-      } catch { /* already deleted */ }
-    }
-  }
+  const { deleted } = await dedupBeaches(beaches, dryRun)
+  summary.deleted.push(...deleted)
 }
 
 async function gatherCandidates(): Promise<Candidate[]> {

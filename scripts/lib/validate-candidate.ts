@@ -27,7 +27,12 @@ const ALLOWED_SOURCES = new Set([
 ])
 
 const MIN_DESCRIPTION_LENGTH = 150
-const MIN_ACCESSIBILITES = 2
+// DataTourisme records come from a Beach-typed POI filter; 1 feature is enough since the
+// enrichment workflow will fill in the rest. Other sources must document at least 2.
+const MIN_ACCESSIBILITES: Record<string, number> = {
+  datatourisme: 1,
+}
+const DEFAULT_MIN_ACCESSIBILITES = 2
 
 export interface Candidate extends Partial<PlageContent> {
   // A candidate must at least carry these fields from its source; everything else can be defaulted.
@@ -82,13 +87,14 @@ export function validateCandidate(raw: Candidate): ValidationResult {
     }
   }
 
-  // Quality gate 4 — at least 2 accessibility features
+  // Quality gate 4 — minimum accessibility features (source-dependent)
   const accessibilites = raw.accessibilites ?? []
-  if (accessibilites.length < MIN_ACCESSIBILITES) {
+  const minAcc = MIN_ACCESSIBILITES[raw.verifiedBy] ?? DEFAULT_MIN_ACCESSIBILITES
+  if (accessibilites.length < minAcc) {
     return {
       ok: false,
       slug: raw.slug,
-      reason: `pas assez d'accessibilités documentées (${accessibilites.length} < ${MIN_ACCESSIBILITES})`,
+      reason: `pas assez d'accessibilités documentées (${accessibilites.length} < ${minAcc})`,
     }
   }
 

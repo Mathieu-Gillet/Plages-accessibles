@@ -1,0 +1,51 @@
+name: Nettoyage des doublons
+
+on:
+  schedule:
+    # Chaque lundi à 07:00 UTC — après le run d'import du dimanche si lancé.
+    - cron: '0 7 * * 1'
+  workflow_dispatch:  # Bouton manuel dans l'onglet Actions.
+
+permissions:
+  contents: write
+
+jobs:
+  dedup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run dedup script
+        id: dedup
+        run: npx tsx scripts/dedup-plages.ts
+
+      - name: Bail out if nothing deleted
+        if: steps.dedup.outputs.deleted == '0'
+        run: |
+          echo "Aucun doublon détecté — rien à commiter."
+          exit 0
+
+      - name: Configure git
+        if: steps.dedup.outputs.deleted != '0'
+        run: |
+          git config user.name "plages-import-bot"
+          git config user.email "actions@users.noreply.github.com"
+
+      - name: Commit and push
+        if: steps.dedup.outputs.deleted != '0'
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          git add content/plages/
+          git commit -m "auto: suppression de ${{ steps.dedup.outputs.deleted }} doublon(s) — ${DATE}"
+          git push origin master
+          echo "${{ steps.dedup.outputs.deleted }} doublon(s) supprimé(s) et poussé(s) sur master."
