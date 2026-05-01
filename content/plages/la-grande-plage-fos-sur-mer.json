@@ -1,0 +1,28 @@
+{
+  "slug": "la-grande-plage-fos-sur-mer",
+  "nom": "La Grande Plage",
+  "description": "La Grande Plage de Fos-sur-Mer, labellisée Tourisme & Handicap Plage référencée sur DataTourisme avec aménagements PMR vérifiés par les CRT.",
+  "commune": "Fos-sur-Mer",
+  "codePostal": "13270",
+  "departement": "Bouches-du-Rhône",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.431014,
+  "longitude": 4.939728,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/La_grande_plage_de_Fos.jpg/1280px-La_grande_plage_de_Fos.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-05-01",
+  "verifiedBy": "datatourisme",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES",
+    "SIGNALISATION_BRAILLE",
+    "PERSONNEL_FORME",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

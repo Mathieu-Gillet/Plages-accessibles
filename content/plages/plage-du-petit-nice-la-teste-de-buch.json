@@ -1,0 +1,27 @@
+{
+  "slug": "plage-du-petit-nice-la-teste-de-buch",
+  "nom": "Plage du Petit Nice",
+  "description": "La plage du Petit Nice est labellisée Tourisme et Handicap ainsi que Handiplage compte tenu de ses équipements et personnels mis à disposition des personnes handicapées.\nLes places de stationnement réservées y sont clairement identifiées. Vous y trouverez une rampe de descente en pente douce entre le stationnement et la plage pour l’accessibilité aux fauteuils roulants. Des tiralos et des hippocampes (fauteuils adaptés au sable et à la mise à l’eau) sont d’ailleurs à disposition. Des vestiaires et sanitaires sont disponibles pour les personnes handicapées dans le poste de secours. Une aire de pique-nique est accessible à tous (parking gratuit, sanitaires publics, tables de pique-nique). Plage référencée sur DataTourisme avec aménagements PMR vérifiés par les CRT.",
+  "commune": "La Teste-de-Buch",
+  "codePostal": "33115",
+  "departement": "Gironde",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 44.55975,
+  "longitude": -1.24179,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Arcachon-poste-secours-plage-du-Moulleau-byRundvald.jpg/1280px-Arcachon-poste-secours-plage-du-Moulleau-byRundvald.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-05-01",
+  "verifiedBy": "datatourisme",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "plage-de-cazaux-lac-la-teste-de-buch",
+  "nom": "Plage de Cazaux lac",
+  "description": "Les eaux du lac sont réputées calmes et propices aux baignades en famille. La Plage de Cazaux Lac accueille en saison estivale le dispositif CAP 33, qui propose de nombreuses activités sportives. \nVous y trouvez un parking gratuit, des sanitaires publics, des tables de pique-nique et un boulodrome.\nAccès handi-plage par l’esplanade Jean Labat. Présence d’un tiralo et de sanitaires adaptés. Plage référencée sur DataTourisme avec aménagements PMR vérifiés par les CRT.",
+  "commune": "La Teste-de-Buch",
+  "codePostal": "33260",
+  "departement": "Gironde",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 44.5262791,
+  "longitude": -1.1711156,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Poste_de_secours_plage_de_Salie_Nord.jpg/1280px-Poste_de_secours_plage_de_Salie_Nord.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-05-01",
+  "verifiedBy": "datatourisme",
+  "accessibilites": [
+    "BOUCLE_MAGNETIQUE",
+    "PERSONNEL_FORME",
+    "SIGNALISATION_BRAILLE",
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "plage-centrale-de-capbreton-capbreton",
+  "nom": "Plage Centrale de Capbreton",
+  "description": "Plage de Capbreton référencée sur DataTourisme, base nationale des Comités Régionaux du Tourisme. Des équipements d'accessibilité PMR y sont documentés et vérifiés par les offices de tourisme locaux.",
+  "commune": "Capbreton",
+  "codePostal": "40130",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.65218,
+  "longitude": -1.4457478,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Plage_Santocha_%28Capbreton%29.jpg/1280px-Plage_Santocha_%28Capbreton%29.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-05-01",
+  "verifiedBy": "datatourisme",
+  "accessibilites": [
+    "PERSONNEL_FORME",
+    "BOUCLE_MAGNETIQUE",
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
