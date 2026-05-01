@@ -23,6 +23,16 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
+  "offresCulturelles": [
+    {
+      "nom": "Moulin de Lasveyras",
+      "type": "musée",
+      "adresse": "Angoisse",
+      "latitude": 45.4138152,
+      "longitude": 1.2597344,
+      "distanceKm": 7.6,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }
