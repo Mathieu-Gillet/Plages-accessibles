@@ -27,7 +27,10 @@ const ALLOWED_SOURCES = new Set([
 ])
 
 const MIN_DESCRIPTION_LENGTH = 150
-const MIN_ACCESSIBILITES = 2
+// Lowered from 2 to 1: priority is geographic coverage. A beach with a single
+// documented accessibility feature is still useful information for visitors
+// planning a trip — better than not listing it at all.
+const MIN_ACCESSIBILITES = 1
 
 export interface Candidate extends Partial<PlageContent> {
   // A candidate must at least carry these fields from its source; everything else can be defaulted.
