@@ -27,7 +27,18 @@ import { fetchBeachPhoto } from './lib/wikimedia'
 import { generateDescription, isAiDescriptionAvailable } from './lib/ai-description'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'plages')
-const MAX_PER_RUN = 5
+const MAX_PER_RUN = 10
+
+// GPS proximity cell used to detect that two beaches are "the same place".
+// Math.round(lat * GEO_CELL_FACTOR) buckets coordinates into ~equal cells.
+// 500 ≈ 0.002° ≈ ~200 m at French latitudes — wide enough to catch the same
+// beach mapped twice with slightly different OSM points or distinct names.
+const GEO_CELL_FACTOR = 500
+
+function geoCellKey(lat: number | undefined, lon: number | undefined): string | null {
+  if (typeof lat !== 'number' || typeof lon !== 'number') return null
+  return `${Math.round(lat * GEO_CELL_FACTOR)},${Math.round(lon * GEO_CELL_FACTOR)}`
+}
 
 // Order matters: inter-source dedup keeps the first occurrence of each slug.
 // We prioritise official labels (Handiplage, Tourisme & Handicap) over
@@ -76,11 +87,6 @@ async function readAllBeaches(): Promise<BeachFile[]> {
   return beaches
 }
 
-async function readExistingSlugs(): Promise<Set<string>> {
-  const beaches = await readAllBeaches()
-  return new Set(beaches.map((b) => b.slug))
-}
-
 /** Remove duplicate beach files already on disk (same photo URL or same GPS cell). */
 async function cleanupDuplicates(summary: RunSummary, dryRun: boolean): Promise<void> {
   const beaches = await readAllBeaches()
@@ -107,13 +113,11 @@ async function cleanupDuplicates(summary: RunSummary, dryRun: boolean): Promise<
     }
   }
 
-  // 2. Dedup by GPS proximity (±0.001° ≈ 100 m cell).
-  const geoKey = (b: BeachFile) =>
-    `${Math.round((b.latitude ?? 0) * 1000)},${Math.round((b.longitude ?? 0) * 1000)}`
+  // 2. Dedup by GPS proximity (~200 m cell — see GEO_CELL_FACTOR).
   const byGeo = new Map<string, BeachFile[]>()
   for (const b of beaches) {
-    if (!b.latitude || !b.longitude) continue
-    const k = geoKey(b)
+    const k = geoCellKey(b.latitude, b.longitude)
+    if (!k) continue
     const group = byGeo.get(k) ?? []
     group.push(b)
     byGeo.set(k, group)
@@ -198,14 +202,23 @@ async function main(): Promise<void> {
   // Remove duplicates already on disk before computing the slug index.
   await cleanupDuplicates(summary, dryRun)
 
-  const existingSlugs = await readExistingSlugs()
+  const remainingBeaches = await readAllBeaches()
+  const existingSlugs = new Set(remainingBeaches.map((b) => b.slug))
   console.log(`[index] ${existingSlugs.size} plage(s) déjà en base`)
+
+  // GPS cells already occupied by an existing beach — used to reject candidates
+  // that map onto the same physical place (different OSM nodes / different
+  // verbatim names). This is what prevents the daily "same beach in a loop"
+  // bug after cleanupDuplicates removes one of two near-duplicate files.
+  const occupiedGeoCells = new Set<string>()
+  for (const b of remainingBeaches) {
+    const k = geoCellKey(b.latitude, b.longitude)
+    if (k) occupiedGeoCells.add(k)
+  }
 
   // Collect every photo URL already in use so new beaches don't reuse them.
   const usedPhotos = new Set<string>(
-    (await readAllBeaches())
-      .map((b) => b.photo)
-      .filter((p): p is string => !!p),
+    remainingBeaches.map((b) => b.photo).filter((p): p is string => !!p),
   )
 
   const candidates = await gatherCandidates()
@@ -215,6 +228,12 @@ async function main(): Promise<void> {
   for (const candidate of candidates) {
     if (existingSlugs.has(candidate.slug)) {
       summary.skippedDuplicates.push(candidate.slug)
+      continue
+    }
+
+    const candidateCell = geoCellKey(candidate.latitude, candidate.longitude)
+    if (candidateCell && occupiedGeoCells.has(candidateCell)) {
+      summary.skippedDuplicates.push(`${candidate.slug} (GPS proche d'une plage existante)`)
       continue
     }
 
@@ -254,6 +273,7 @@ async function main(): Promise<void> {
       await writeBeach(finalPlage.slug, finalPlage)
     }
     summary.added.push(finalPlage.slug)
+    if (candidateCell) occupiedGeoCells.add(candidateCell)
     qualifiedCount++
   }
 

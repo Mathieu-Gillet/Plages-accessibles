@@ -23,17 +23,23 @@ const OVERPASS_ENDPOINTS = [
   'https://overpass.openstreetmap.fr/api/interpreter',
 ]
 
-// Only fetch beaches explicitly tagged with some wheelchair accessibility level.
-// `limited` is kept because it still indicates _some_ accessibility effort — the
-// validator quality gate will then reject those with <2 features.
+// Fetch beaches with ANY accessibility-related tag, not just `wheelchair`.
+// Goal: maximise geographic coverage. The validator only enforces ≥1 documented
+// feature, so a beach with parking PMR or accessible toilets but no wheelchair
+// tag is still worth surfacing to visitors planning a trip.
 const OVERPASS_QUERY = `
 [out:json][timeout:60];
 area["ISO3166-1"="FR"]["admin_level"="2"]->.fr;
 (
-  nwr(area.fr)["natural"="beach"]["wheelchair"~"yes|designated|limited"];
-  nwr(area.fr)["leisure"="beach_resort"]["wheelchair"~"yes|designated|limited"];
+  nwr(area.fr)["natural"="beach"]["wheelchair"];
+  nwr(area.fr)["natural"="beach"]["toilets:wheelchair"="yes"];
+  nwr(area.fr)["natural"="beach"]["parking:disabled"="yes"];
+  nwr(area.fr)["natural"="beach"]["capacity:disabled"];
+  nwr(area.fr)["natural"="beach"]["tactile_paving"="yes"];
+  nwr(area.fr)["leisure"="beach_resort"]["wheelchair"];
+  nwr(area.fr)["leisure"="beach_resort"]["toilets:wheelchair"="yes"];
 );
-out center tags 500;
+out center tags 1000;
 `.trim()
 
 interface OverpassTags {
@@ -123,13 +129,15 @@ function buildDescription(nom: string, commune: string, t: OverpassTags): string
   if (t.surface === 'sand' || t.surface === 'fine_sand') feats.push('sable fin')
 
   const featStr = feats.length > 0 ? feats.join(', ') : 'aménagements pour personnes à mobilité réduite'
+  const tagMention = t.wheelchair
+    ? `La mention d'accessibilité (tag wheelchair=${t.wheelchair}) indique un effort `
+    : `Les tags d'accessibilité renseignés indiquent un effort `
   const core =
     `Plage "${nom}" située à ${commune}, répertoriée sur OpenStreetMap comme accessible ` +
     `aux personnes en situation de handicap. Équipements et caractéristiques renseignés ` +
     `par les contributeurs locaux : ${featStr}. Les données OpenStreetMap sont mises à jour ` +
     `en continu par la communauté et vérifiées par recoupement avec les informations terrain. ` +
-    `La mention d'accessibilité (tag wheelchair=${t.wheelchair ?? 'yes'}) indique un effort ` +
-    `d'aménagement pour l'accueil des PMR sur ce site balnéaire.`
+    `${tagMention}d'aménagement pour l'accueil des PMR sur ce site balnéaire.`
 
   return native.trim().length >= 40 ? `${native.trim()} ${core}` : core
 }
@@ -148,7 +156,7 @@ function toCandidate(e: OverpassElement): Candidate | null {
   const [lat, lon] = coords
 
   const accessibilites = mapAccessibilites(t)
-  if (accessibilites.length < 2) return null
+  if (accessibilites.length < 1) return null
 
   const slug = makeSlug(nom, commune)
   return {
