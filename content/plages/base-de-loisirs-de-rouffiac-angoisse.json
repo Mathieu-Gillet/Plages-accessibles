@@ -1,0 +1,28 @@
+{
+  "slug": "base-de-loisirs-de-rouffiac-angoisse",
+  "nom": "Base de Loisirs de Rouffiac",
+  "description": "Au cœur d'un parc boisé de 100ha, en bordure de l'un des plus grands plans d'eau du Périgord, ce complexe touristique permet la pratique de nombreuses activités sportives. Rouffiac est un petit monde qu’il faut prendre le temps de découvrir. Plage référencée sur DataTourisme avec aménagements PMR vérifiés par les CRT.",
+  "commune": "Angoisse",
+  "codePostal": "24270",
+  "departement": "Dordogne",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 45.4144224,
+  "longitude": 1.16277553,
+  "photo": "https://cdt64.media.tourinsoft.eu/upload/Plage---0M7A2524--Camping---Base-de-Rouffiac-Declic-Decolle.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-05-01",
+  "verifiedBy": "datatourisme",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME",
+    "SIGNALISATION_BRAILLE",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

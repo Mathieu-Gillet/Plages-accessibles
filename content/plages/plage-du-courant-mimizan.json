@@ -1,0 +1,27 @@
+{
+  "slug": "plage-du-courant-mimizan",
+  "nom": "Plage du Courant",
+  "description": "Plage bien adaptée pour les enfants surveillée du 4 juillet au 31 août tous les jours\nTapis d'accès pour personne à mobilité réduite Plage référencée sur DataTourisme avec aménagements PMR vérifiés par les CRT.",
+  "commune": "Mimizan",
+  "codePostal": "40200",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 44.2099454,
+  "longitude": -1.287444,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Mimizan_l%27%C3%A9pave_du_Virgo_plage_de_Lespecier.jpg/1280px-Mimizan_l%27%C3%A9pave_du_Virgo_plage_de_Lespecier.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-05-01",
+  "verifiedBy": "datatourisme",
+  "accessibilites": [
+    "PERSONNEL_FORME",
+    "BOUCLE_MAGNETIQUE",
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
