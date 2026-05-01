@@ -154,9 +154,12 @@ function toCandidate(r: DtRecord): Candidate | null {
       : `Plage de ${commune} référencée sur DataTourisme, base nationale des Comités Régionaux du Tourisme. ` +
         `Des équipements d'accessibilité PMR y sont documentés et vérifiés par les offices de tourisme locaux.`
 
-  // Use the main representation photo if available.
-  const photo =
-    r.hasMainRepresentation?.[0]?.hasRelatedResource?.[0]?.locator
+  // Use the main representation photo if available. JSON-LD sometimes wraps
+  // `locator` in an array (e.g. for multilingual variants) — coerce to string.
+  const rawLocator: unknown = r.hasMainRepresentation?.[0]?.hasRelatedResource?.[0]?.locator
+  const photo: string | undefined = Array.isArray(rawLocator)
+    ? (typeof rawLocator[0] === 'string' ? rawLocator[0] : undefined)
+    : (typeof rawLocator === 'string' ? rawLocator : undefined)
 
   const slug = makeSlug(nom, commune)
   return {

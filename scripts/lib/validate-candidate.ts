@@ -26,7 +26,10 @@ const ALLOWED_SOURCES = new Set([
   'openstreetmap',
 ])
 
-const MIN_DESCRIPTION_LENGTH = 150
+// Lowered from 150 to 120: short native descriptions from DataTourisme/OSM
+// (e.g. "La Grande Plage de Fos-sur-Mer" at 140 chars) were being rejected
+// despite being legitimate. 120 still filters out one-liners and stubs.
+const MIN_DESCRIPTION_LENGTH = 120
 // Lowered from 2 to 1: priority is geographic coverage. A beach with a single
 // documented accessibility feature is still useful information for visitors
 // planning a trip — better than not listing it at all.
