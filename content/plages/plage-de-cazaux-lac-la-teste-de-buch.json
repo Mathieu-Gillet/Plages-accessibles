@@ -23,6 +23,19 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
+  "offresCulturelles": [
+    {
+      "nom": "Musée municipal de Sanguinet - Musée de France",
+      "type": "musée",
+      "adresse": "Allée du Musée, 40460, Sanguinet",
+      "description": "website=*https://www.musee-lac-sanguinet.fr/",
+      "telephone": "+33 5 58 78 02 33",
+      "siteWeb": "https://musee-lac-sanguinet.fr/",
+      "latitude": 44.4827529,
+      "longitude": -1.0752228,
+      "distanceKm": 9,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

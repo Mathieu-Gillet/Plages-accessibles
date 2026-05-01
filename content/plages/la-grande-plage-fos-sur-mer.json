@@ -22,7 +22,84 @@
     "PERSONNEL_FORME",
     "BOUCLE_MAGNETIQUE"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "Ariane Hôtel",
+      "type": "hôtel",
+      "adresse": "Fos-sur-Mer",
+      "latitude": 43.4548048,
+      "longitude": 4.9467334,
+      "distanceKm": 2.7,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Résid'Artel",
+      "type": "hôtel",
+      "adresse": "Fos-sur-Mer",
+      "latitude": 43.454579,
+      "longitude": 4.9461969,
+      "distanceKm": 2.7,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "B&B Hôtel",
+      "type": "hôtel",
+      "adresse": "Fos-sur-Mer",
+      "telephone": "+33 8 92 70 25 30",
+      "siteWeb": "https://www.hotel-bb.com/de/hotels/martigues-port-de-bouc.htm",
+      "latitude": 43.4048755,
+      "longitude": 4.984154,
+      "distanceKm": 4.6,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Hôtel Ibis",
+      "type": "hôtel",
+      "adresse": "Avenue Louis Sammut, 13500, Martigues",
+      "latitude": 43.4062422,
+      "longitude": 5.0479823,
+      "distanceKm": 9.2,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Centre d'Arts Plastiques Fernand Léger",
+      "type": "centre culturel",
+      "adresse": "1 Avenue du Général de Gaulle, 13110, Port-de-Bouc",
+      "siteWeb": "https://www.centrefernandleger.com/",
+      "latitude": 43.4077895,
+      "longitude": 4.978156,
+      "distanceKm": 4,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Halle Polyvalente",
+      "type": "centre culturel",
+      "adresse": "Fos-sur-Mer",
+      "latitude": 43.504121,
+      "longitude": 4.9876654,
+      "distanceKm": 9,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Musée d'histoire de Martigues",
+      "type": "musée",
+      "adresse": "Fos-sur-Mer",
+      "latitude": 43.4056973,
+      "longitude": 5.048238,
+      "distanceKm": 9.2,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Théâtre des Salins",
+      "type": "théâtre",
+      "adresse": "Fos-sur-Mer",
+      "latitude": 43.407167,
+      "longitude": 5.0513077,
+      "distanceKm": 9.4,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

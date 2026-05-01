@@ -21,7 +21,50 @@
     "FAUTEUIL_ROULANT",
     "CHEMIN_ACCES"
   ],
-  "hebergements": [],
+  "hebergements": [
+    {
+      "nom": "L'auberge du Diu Biban",
+      "type": "hôtel",
+      "adresse": "866 Avenue du Touring Club de France, 40150, Soorts-Hossegor",
+      "latitude": 43.6619064,
+      "longitude": -1.4269147,
+      "distanceKm": 1.9,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Le Pavillon Bleu",
+      "type": "hôtel",
+      "adresse": "1053 Avenue du Touring Club de France, 40150, Soorts-Hossegor",
+      "telephone": "+33 5 58 41 99 50",
+      "siteWeb": "https://www.pavillonbleu.fr/",
+      "latitude": 43.663668,
+      "longitude": -1.4271172,
+      "distanceKm": 2,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Les Acanthes",
+      "type": "appartement meublé",
+      "adresse": "13 Avenue des Écureuils, 40150, Soorts-Hossegor",
+      "telephone": "+33 5 58 43 78 09",
+      "siteWeb": "https://www.les-acanthes.fr/",
+      "latitude": 43.682245,
+      "longitude": -1.427029,
+      "distanceKm": 3.7,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Le Lodge",
+      "type": "hôtel",
+      "adresse": "1180 Avenue du 11 Novembre 1918, 40440, Ondres",
+      "telephone": "+33 5 59 45 27 02",
+      "siteWeb": "https://hotel-le-lodge.com/",
+      "latitude": 43.5689726,
+      "longitude": -1.4426154,
+      "distanceKm": 9.3,
+      "accessiblePMR": true
+    }
+  ],
   "offresCulturelles": [],
   "avis": []
 }
