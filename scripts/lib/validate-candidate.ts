@@ -24,6 +24,7 @@ const ALLOWED_SOURCES = new Set([
   'data.gouv.fr',
   'datatourisme',
   'openstreetmap',
+  'claude-research',
 ])
 
 // Lowered from 150 to 120: short native descriptions from DataTourisme/OSM
