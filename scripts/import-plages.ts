@@ -21,6 +21,7 @@ import { tourismeHandicapSource } from './sources/tourisme-handicap'
 import { acceslibreSource } from './sources/acceslibre'
 import { openStreetMapSource } from './sources/openstreetmap'
 import { dataTourismeSource } from './sources/datatourisme'
+import { claudeResearchSource } from './sources/claude-research'
 import type { Source } from './sources/types'
 import { validateCandidate, type Candidate } from './lib/validate-candidate'
 import { fetchBeachPhoto } from './lib/wikimedia'
@@ -50,6 +51,7 @@ const SOURCES: Source[] = [
   dataTourismeSource,      // public.opendatasoft.com — DataTourisme national POI feed
   openStreetMapSource,     // overpass-api.de — crowd-sourced wheelchair-tagged beaches
   handiplageSampleSource,  // curated fallback — exhausted once live sources stabilise
+  claudeResearchSource,    // last resort: Claude API suggests known accessible beaches
 ]
 
 interface RunSummary {
