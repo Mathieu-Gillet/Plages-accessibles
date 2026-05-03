@@ -181,7 +181,7 @@ export default async function PagePlage({ params }: { params: Promise<{ slug: st
       </div>
 
       {/* Avis */}
-      <AvisSection avis={plage.avis} />
+      <AvisSection avis={plage.avis} nom={plage.nom} slug={plage.slug} />
     </article>
   )
 }
