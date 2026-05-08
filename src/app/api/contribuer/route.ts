@@ -9,8 +9,8 @@ const ContributePayloadSchema = z.object({
   codePostal: z.string().regex(/^\d{5}$/, 'Code postal à 5 chiffres'),
   departement: z.string().min(2).max(200),
   region: z.enum(REGIONS_FRANCE),
-  latitude: z.number().min(-90).max(90),
-  longitude: z.number().min(-180).max(180),
+  latitude: z.number().min(-90).max(90).optional(),
+  longitude: z.number().min(-180).max(180).optional(),
   accessibilites: z.array(z.enum(TYPES_ACCESSIBILITE)).default([]),
   photo: z
     .string()
@@ -19,6 +19,9 @@ const ContributePayloadSchema = z.object({
     .optional()
     .or(z.literal('')),
   noteContributeur: z.string().max(500).optional(),
+  premierAvisNote: z.number().int().min(1).max(5).optional(),
+  premierAvisAuteur: z.string().max(100).optional(),
+  premierAvisCommentaire: z.string().max(2000).optional(),
 })
 
 const GITHUB_REPO = 'Mathieu-Gillet/Plages-accessibles'
@@ -65,6 +68,21 @@ export async function POST(req: Request) {
   const slug = slugify(`${data.nom}-${data.commune}`)
   const timestamp = Date.now()
   const branch = `contribution/${slug}-${timestamp}`
+  const today = new Date().toISOString().slice(0, 10)
+
+  const hasGps = data.latitude !== undefined && data.longitude !== undefined
+  const hasPremierAvis = data.premierAvisNote !== undefined
+
+  const avis = hasPremierAvis
+    ? [
+        {
+          note: data.premierAvisNote!,
+          auteur: data.premierAvisAuteur || undefined,
+          commentaire: data.premierAvisCommentaire || undefined,
+          date: today,
+        },
+      ]
+    : []
 
   const plageJson = {
     slug,
@@ -74,19 +92,19 @@ export async function POST(req: Request) {
     codePostal: data.codePostal,
     departement: data.departement,
     region: data.region,
-    latitude: data.latitude,
-    longitude: data.longitude,
+    latitude: data.latitude ?? 0,
+    longitude: data.longitude ?? 0,
     photo: data.photo || null,
     photos: [],
-    noteGlobale: 0,
-    nombreAvis: 0,
+    noteGlobale: data.premierAvisNote ?? 0,
+    nombreAvis: hasPremierAvis ? 1 : 0,
     actif: false,
     verifiedAt: null,
     verifiedBy: null,
     accessibilites: data.accessibilites,
     hebergements: [],
     offresCulturelles: [],
-    avis: [],
+    avis,
   }
 
   // 1. Get SHA of base branch
@@ -136,6 +154,10 @@ export async function POST(req: Request) {
     ? data.accessibilites.join(', ')
     : '—'
 
+  const etoiles = hasPremierAvis
+    ? '★'.repeat(data.premierAvisNote!) + '☆'.repeat(5 - data.premierAvisNote!)
+    : ''
+
   const prBody = [
     `## Nouvelle plage proposée`,
     ``,
@@ -145,7 +167,7 @@ export async function POST(req: Request) {
     `| **Commune** | ${data.commune} (${data.codePostal}) |`,
     `| **Département** | ${data.departement} |`,
     `| **Région** | ${data.region} |`,
-    `| **Coordonnées** | ${data.latitude}, ${data.longitude} |`,
+    `| **Coordonnées** | ${hasGps ? `${data.latitude}, ${data.longitude}` : '⚠️ non renseignées — à compléter avant merge'} |`,
     `| **Équipements** | ${accessibilitesLabel} |`,
     ``,
     `### Description`,
@@ -153,12 +175,23 @@ export async function POST(req: Request) {
     data.description,
     ``,
     data.noteContributeur
-      ? `### Note du contributeur\n\n${data.noteContributeur}\n`
+      ? `### Source du contributeur\n\n${data.noteContributeur}\n`
       : '',
+    hasPremierAvis ? [
+      `### ⭐ Premier avis du contributeur`,
+      ``,
+      `> **Note :** ${etoiles} (${data.premierAvisNote}/5)`,
+      data.premierAvisAuteur ? `> **Auteur :** ${data.premierAvisAuteur}` : '',
+      data.premierAvisCommentaire ? `>\n> *"${data.premierAvisCommentaire}"*` : '',
+      ``,
+      `*Cet avis est inclus dans le fichier JSON et sera publié automatiquement dès le merge.*`,
+    ].filter(Boolean).join('\n') : '',
+    ``,
     `---`,
     `*Contribution soumise via le formulaire du site — à vérifier avant merge.*`,
-    `*Le fichier \`content/plages/${slug}.json\` contient \`actif: false\` — la plage ne sera visible qu'après vérification et merge.*`,
-  ].filter(Boolean).join('\n')
+    `*\`actif: false\` — la plage ne sera visible qu'après activation manuelle.*`,
+    hasGps ? '' : `*\`latitude: 0, longitude: 0\` — les coordonnées GPS sont à renseigner avant de merger.*`,
+  ].filter((line) => line !== undefined && line !== null).join('\n')
 
   const prRes = await fetch(`${GITHUB_API}/repos/${GITHUB_REPO}/pulls`, {
     method: 'POST',
