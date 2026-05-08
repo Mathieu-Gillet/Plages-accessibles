@@ -1,0 +1,27 @@
+{
+  "slug": "plage-de-malo-les-bains-dunkerque",
+  "nom": "Plage de Malo-les-Bains",
+  "description": "La Plage de Dunkerque est une vaste étendue de sable fin et sombre, labellisée station nautique 4 étoiles et reconnue comme l'une des plus grandes plages d'Europe",
+  "commune": "Dunkerque",
+  "codePostal": "59240",
+  "departement": "Nord",
+  "region": "Hauts-de-France",
+  "latitude": 0,
+  "longitude": 0,
+  "photo": null,
+  "photos": [],
+  "noteGlobale": 0,
+  "nombreAvis": 0,
+  "actif": false,
+  "verifiedAt": null,
+  "verifiedBy": null,
+  "accessibilites": [
+    "SABLE_COMPACT",
+    "PARKINGS_PMR",
+    "CHEMIN_ACCES",
+    "FAUTEUIL_ROULANT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
