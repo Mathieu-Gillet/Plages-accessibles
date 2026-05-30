@@ -1,0 +1,24 @@
+{
+  "slug": "plage-des-sources-du-lac-eclaron-braucourt-sainte-liviere",
+  "nom": "Plage des Sources du Lac",
+  "description": "Tout l'été, les amateurs de baignade ou de bain de soleil viennent profiter de l'une des six plages aménagées. \n\nLa plage d'Eclaron (Sources du Lac) située dans le \"vieux Der\" est proche du Camping Yelloh! Village et accessible aux personnes à mobilité réduite. Gratuit.\n\nPlage surveillée en juillet et août uniquement. Plage référencée sur DataTourisme avec aménagements PMR vérifiés par les CRT.",
+  "commune": "Éclaron-Braucourt-Sainte-Livière",
+  "codePostal": "52290",
+  "departement": "Haute-Marne",
+  "region": "Grand Est",
+  "latitude": 48.5706245,
+  "longitude": 4.84668653,
+  "photo": "https://adt52.media.tourinsoft.eu/upload/Plage-des-Sources-Eclaron-inondee-Pascal-Philippe-Coll-OT-Lac-du-Der.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-05-30",
+  "verifiedBy": "datatourisme",
+  "accessibilites": [
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
