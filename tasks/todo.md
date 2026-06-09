@@ -11,11 +11,21 @@
 - [ ] **Reste 1 HIGH** (Next < 16, GHSA-3x4c-7xq6-9pq8 + GHSA-q4gf-8mx6-v5v3) → résolution dans Étape 5 (Next 15 puis 16)
 
 ## Étape 2 — Fonctionnalités manquantes
-- [ ] Modèle Prisma `Suggestion` + `POST /api/suggestions` + brancher `src/app/contribuer/page.tsx:31` (retire le `setTimeout` mock)
-- [ ] Page `/mentions-legales` (lien dans Footer cassé)
-- [ ] Page `/contact` (lien dans Footer cassé)
-- [ ] Rate-limit sur `POST /api/plages/[slug]/avis` (par IP via `x-forwarded-for`)
+- [x] ~~Modèle Prisma `Suggestion`~~ → remplacé par `POST /api/contribuer` (PR GitHub automatique, livré PR #41/#42)
+- [x] Page `/mentions-legales` (lien dans Footer cassé) — livrée 2026-06-09
+- [x] Page `/contact` (lien dans Footer cassé) — livrée 2026-06-09
+- [x] Rate-limit + honeypot sur `POST /api/avis` et `POST /api/contribuer` (par IP via `x-forwarded-for`) — livré 2026-06-09
 - [ ] Validation client : `commentaire` longueur min/max dans `AvisSection`
+
+## Étape 2bis — Revue de code 2026-06-09 (LIVRÉE)
+- [x] Fix critique : `/api/contribuer` générait `verifiedAt: null` rejeté par le schéma Zod → build du site cassé après merge d'une contribution
+- [x] Schéma : garde-fou « plage active ⇒ coordonnées ≠ (0,0) »
+- [x] Assets Leaflet manquants (`public/leaflet/*.png`) → marqueurs POI cassés ; copie depuis node_modules + script corrigé (plus de dépendance réseau)
+- [x] Recherche texte : la région n'était pas cherchée + insensibilité aux accents
+- [x] SEO : `robots.ts`, `sitemap.ts`, `metadataBase`, canonical + JSON-LD schema.org `Beach` sur les pages plage
+- [x] Footer : URL GitHub placeholder corrigée
+- [x] README : noms d'équipements erronés (`SABLE_COMPACTE` → `SABLE_COMPACT`, `BOUCLE_INDUCTIVE` → `BOUCLE_MAGNETIQUE`)
+- [x] Tuiles OSM : URL canonique (sous-domaines `{s}` dépréciés) + CSP ajustée
 
 ## Étape 3 — Robustesse & qualité
 - [ ] Wrapper `safeQuery()` dans `src/lib/` pour remplacer les `try/catch { return [] }` silencieux et logguer

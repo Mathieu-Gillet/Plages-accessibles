@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { clientIp, isHoneypotTriggered, isRateLimited } from '@/lib/anti-spam'
 
 const AvisPayloadSchema = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/, 'Slug invalide'),
@@ -22,6 +23,14 @@ export async function POST(req: Request) {
     body = await req.json()
   } catch {
     return Response.json({ error: 'Corps de requête invalide' }, { status: 400 })
+  }
+
+  // Bots fill the hidden field: pretend success so they don't adapt.
+  if (isHoneypotTriggered(body)) {
+    return Response.json({ ok: true }, { status: 200 })
+  }
+  if (isRateLimited(clientIp(req), 5)) {
+    return Response.json({ error: 'Trop de requêtes, réessayez plus tard' }, { status: 429 })
   }
 
   const parsed = AvisPayloadSchema.safeParse(body)

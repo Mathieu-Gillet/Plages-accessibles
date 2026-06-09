@@ -1,6 +1,7 @@
 import { z } from 'zod'
 import { TYPES_ACCESSIBILITE } from '@/lib/content-schema'
 import { REGIONS_FRANCE } from '@/types'
+import { clientIp, isHoneypotTriggered, isRateLimited } from '@/lib/anti-spam'
 
 const ContributePayloadSchema = z.object({
   nom: z.string().min(2).max(200),
@@ -45,6 +46,15 @@ export async function POST(req: Request) {
     return Response.json({ error: 'Corps de requête invalide' }, { status: 400 })
   }
 
+  // Bots fill the hidden field: pretend success so they don't adapt.
+  if (isHoneypotTriggered(body)) {
+    return Response.json({ ok: true }, { status: 201 })
+  }
+  // Stricter than /api/avis: each call creates a branch + PR on GitHub.
+  if (isRateLimited(clientIp(req), 3)) {
+    return Response.json({ error: 'Trop de requêtes, réessayez plus tard' }, { status: 429 })
+  }
+
   const parsed = ContributePayloadSchema.safeParse(body)
   if (!parsed.success) {
     return Response.json({ error: 'Données invalides', details: parsed.error.flatten() }, { status: 400 })
@@ -84,6 +94,9 @@ export async function POST(req: Request) {
       ]
     : []
 
+  // verifiedAt/verifiedBy are intentionally omitted: the content schema
+  // only accepts date strings, a literal `null` would break the site build
+  // once the contribution PR is merged.
   const plageJson = {
     slug,
     nom: data.nom,
@@ -99,8 +112,6 @@ export async function POST(req: Request) {
     noteGlobale: data.premierAvisNote ?? 0,
     nombreAvis: hasPremierAvis ? 1 : 0,
     actif: false,
-    verifiedAt: null,
-    verifiedBy: null,
     accessibilites: data.accessibilites,
     hebergements: [],
     offresCulturelles: [],

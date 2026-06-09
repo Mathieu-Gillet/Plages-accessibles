@@ -80,12 +80,17 @@ export const plageContentSchema = z.object({
   nombreAvis: z.number().int().min(0).default(0),
   actif: z.boolean().default(true),
   // Traçabilité éditoriale (audit recommandation) :
-  verifiedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
-  verifiedBy: z.string().optional(),
+  verifiedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable().optional(),
+  verifiedBy: z.string().nullable().optional(),
   accessibilites: z.array(accessibiliteSchema).default([]),
   hebergements: z.array(hebergementSchema).default([]),
   offresCulturelles: z.array(offreCulturelleSchema).default([]),
   avis: z.array(avisSchema).default([]),
-})
+}).refine(
+  // (0, 0) is the placeholder used by contribution PRs lacking GPS coords;
+  // it must be filled in before a beach goes live on the map.
+  (p) => !p.actif || p.latitude !== 0 || p.longitude !== 0,
+  { message: 'Une plage active doit avoir des coordonnées GPS renseignées (lat/lon ≠ 0,0)', path: ['latitude'] },
+)
 
 export type PlageContent = z.infer<typeof plageContentSchema>

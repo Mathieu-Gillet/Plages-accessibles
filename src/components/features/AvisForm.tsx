@@ -14,6 +14,7 @@ export function AvisForm({ slug, nom }: AvisFormProps) {
   const [hovered, setHovered] = useState(0)
   const [auteur, setAuteur] = useState('')
   const [commentaire, setCommentaire] = useState('')
+  const [website, setWebsite] = useState('') // honeypot — humans never see this field
   const [status, setStatus] = useState<Status>('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -34,6 +35,7 @@ export function AvisForm({ slug, nom }: AvisFormProps) {
           note,
           auteur: auteur.trim() || undefined,
           commentaire: commentaire.trim() || undefined,
+          website: website || undefined,
         }),
       })
 
@@ -67,6 +69,20 @@ export function AvisForm({ slug, nom }: AvisFormProps) {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
+      {/* Honeypot anti-spam : caché aux humains et aux lecteurs d'écran */}
+      <div aria-hidden="true" className="absolute -left-[9999px] top-auto h-0 overflow-hidden">
+        <label htmlFor="avis-website">Ne pas remplir ce champ</label>
+        <input
+          id="avis-website"
+          type="text"
+          name="website"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       {/* Note */}
       <fieldset className="mb-4">
         <legend className="text-sm font-semibold text-ardoise mb-2">

@@ -41,7 +41,7 @@ export function Footer() {
         <p>
           Fait avec ❤️ pour rendre la mer accessible à tous ·{' '}
           <a
-            href="https://github.com/votre-orga/plages-accessibles"
+            href="https://github.com/Mathieu-Gillet/Plages-accessibles"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white"

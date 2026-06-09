@@ -156,14 +156,19 @@ export interface SearchFilter {
   pageSize?: number
 }
 
+/** Lowercase + strip diacritics so "cote d'azur" matches "Côte d'Azur". */
+function normalize(s: string): string {
+  return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+}
+
 export function searchPlages(filter: SearchFilter): { plages: PlageResume[]; total: number } {
   const { region, departement, q, page = 1, pageSize = 12 } = filter
-  const needle = q?.trim().toLowerCase()
+  const needle = q ? normalize(q.trim()) : undefined
   const filtered = loadAll().filter((p) => {
     if (region && p.region !== region) return false
     if (departement && p.departement !== departement) return false
     if (needle) {
-      const haystack = `${p.nom} ${p.commune} ${p.departement}`.toLowerCase()
+      const haystack = normalize(`${p.nom} ${p.commune} ${p.departement} ${p.region}`)
       if (!haystack.includes(needle)) return false
     }
     return true
