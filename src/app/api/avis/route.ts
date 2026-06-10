@@ -3,12 +3,18 @@ import { clientIp, isHoneypotTriggered, isRateLimited } from '@/lib/anti-spam'
 import {
   GITHUB_REPO,
   GitHubApiError,
+  countOpenPullRequests,
   createBranch,
   createPullRequest,
   getBaseSha,
   getFile,
   putFile,
 } from '@/lib/github'
+
+// Global backstop: the in-memory rate limit is per serverless instance, so a
+// distributed bot can bypass it. Once this many review PRs sit unreviewed,
+// refuse new submissions instead of letting the repo fill up with branches.
+const MAX_PENDING_PRS = 10
 
 const AvisPayloadSchema = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/, 'Slug invalide'),
@@ -130,6 +136,13 @@ export async function POST(req: Request) {
   const path = `content/plages/${slug}.json`
 
   try {
+    if ((await countOpenPullRequests(pat, 'avis/')) >= MAX_PENDING_PRS) {
+      return Response.json(
+        { error: 'Trop d’avis en attente de validation, réessayez dans quelques jours' },
+        { status: 429 },
+      )
+    }
+
     // 1. Load the current beach file — also validates the slug really exists.
     const file = await getFile(pat, path)
     if (!file) {
