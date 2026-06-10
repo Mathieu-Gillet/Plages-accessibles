@@ -4,18 +4,19 @@ import { useState } from 'react'
 
 interface AvisFormProps {
   slug: string
-  nom: string
 }
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
-export function AvisForm({ slug, nom }: AvisFormProps) {
+export function AvisForm({ slug }: AvisFormProps) {
   const [note, setNote] = useState(0)
   const [hovered, setHovered] = useState(0)
   const [auteur, setAuteur] = useState('')
   const [commentaire, setCommentaire] = useState('')
+  const [website, setWebsite] = useState('') // honeypot — humans never see this field
   const [status, setStatus] = useState<Status>('idle')
   const [errorMessage, setErrorMessage] = useState('')
+  const [prUrl, setPrUrl] = useState('')
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -30,18 +31,18 @@ export function AvisForm({ slug, nom }: AvisFormProps) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           slug,
-          nom,
           note,
           auteur: auteur.trim() || undefined,
           commentaire: commentaire.trim() || undefined,
+          website: website || undefined,
         }),
       })
 
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}))
-        throw new Error(data.error ?? 'Erreur réseau')
-      }
+      const data = await res.json().catch(() => ({})) as { prUrl?: string; error?: string }
 
+      if (!res.ok) throw new Error(data.error ?? 'Erreur réseau')
+
+      setPrUrl(data.prUrl ?? '')
       setStatus('success')
     } catch (err) {
       setErrorMessage(err instanceof Error ? err.message : 'Une erreur est survenue')
@@ -57,8 +58,19 @@ export function AvisForm({ slug, nom }: AvisFormProps) {
       >
         <p className="text-green-800 font-semibold text-lg mb-1">Merci pour votre retour !</p>
         <p className="text-green-700 text-sm">
-          Votre avis a bien été transmis. Il sera examiné avant publication.
+          Votre avis a bien été transmis : une proposition de publication a été créée
+          automatiquement. Il apparaîtra sur cette page après vérification.
         </p>
+        {prUrl && (
+          <a
+            href={prUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-3 text-sm font-semibold text-green-800 underline hover:no-underline"
+          >
+            Suivre la proposition sur GitHub ↗
+          </a>
+        )}
       </div>
     )
   }
@@ -67,6 +79,20 @@ export function AvisForm({ slug, nom }: AvisFormProps) {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
+      {/* Honeypot anti-spam : caché aux humains et aux lecteurs d'écran */}
+      <div aria-hidden="true" className="absolute -left-[9999px] top-auto h-0 overflow-hidden">
+        <label htmlFor="avis-website">Ne pas remplir ce champ</label>
+        <input
+          id="avis-website"
+          type="text"
+          name="website"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       {/* Note */}
       <fieldset className="mb-4">
         <legend className="text-sm font-semibold text-ardoise mb-2">

@@ -280,6 +280,7 @@ function isValidUrl(s: string): boolean {
 
 export function ContributeForm() {
   const [form, setForm] = useState<FormData>(INITIAL)
+  const [website, setWebsite] = useState('') // honeypot — humans never see this field
   const [avisHovered, setAvisHovered] = useState(0)
   const [errors, setErrors] = useState<FieldErrors>({})
   const [status, setStatus] = useState<Status>('idle')
@@ -337,6 +338,7 @@ export function ContributeForm() {
           premierAvisNote: form.premierAvisNote || undefined,
           premierAvisAuteur: form.premierAvisAuteur.trim() || undefined,
           premierAvisCommentaire: form.premierAvisCommentaire.trim() || undefined,
+          website: website || undefined,
         }),
       })
 
@@ -382,6 +384,20 @@ export function ContributeForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-6">
+      {/* Honeypot anti-spam : caché aux humains et aux lecteurs d'écran */}
+      <div aria-hidden="true" className="absolute -left-[9999px] top-auto h-0 overflow-hidden">
+        <label htmlFor="cf-website">Ne pas remplir ce champ</label>
+        <input
+          id="cf-website"
+          type="text"
+          name="website"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       {/* Section : Informations générales */}
       <section className="bg-white rounded-2xl border border-sable-fonce p-6">
         <h2 className="font-bold text-ardoise text-lg mb-4">Informations générales</h2>

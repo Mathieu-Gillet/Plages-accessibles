@@ -3,11 +3,10 @@ import { AvisForm } from './AvisForm'
 
 interface AvisSectionProps {
   avis: Avis[]
-  nom: string
   slug: string
 }
 
-export function AvisSection({ avis, nom, slug }: AvisSectionProps) {
+export function AvisSection({ avis, slug }: AvisSectionProps) {
   return (
     <section aria-labelledby="titre-avis" className="mt-12">
       <h2 id="titre-avis" className="text-2xl font-bold text-ardoise mb-6">
@@ -48,7 +47,7 @@ export function AvisSection({ avis, nom, slug }: AvisSectionProps) {
           Vous avez visité cette plage ? Votre retour nous aide à fiabiliser les
           informations d&apos;accessibilité pour les autres visiteurs.
         </p>
-        <AvisForm slug={slug} nom={nom} />
+        <AvisForm slug={slug} />
       </div>
     </section>
   )

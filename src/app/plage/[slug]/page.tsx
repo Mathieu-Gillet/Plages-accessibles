@@ -10,6 +10,8 @@ import { AvisSection } from '@/components/features/AvisSection'
 import { formatNote } from '@/lib/utils'
 import { MapPin } from 'lucide-react'
 import { InfobulleNote } from '@/components/features/InfobulleNote'
+import { SITE_URL } from '@/lib/site'
+import type { PlageDetail } from '@/types'
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }))
@@ -27,9 +29,46 @@ export async function generateMetadata({
   return {
     title: `${plage.nom} — Plage accessible à ${plage.commune}`,
     description: plage.description ?? `Découvrez les équipements d'accessibilité disponibles sur la plage de ${plage.nom} à ${plage.commune}.`,
+    alternates: { canonical: `${SITE_URL}/plage/${plage.slug}` },
     openGraph: {
       images: plage.photo ? [{ url: plage.photo }] : [],
     },
+  }
+}
+
+/** schema.org structured data — enables rich results (rating, map pin) on search engines. */
+function buildJsonLd(plage: PlageDetail) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Beach',
+    name: plage.nom,
+    url: `${SITE_URL}/plage/${plage.slug}`,
+    description: plage.description ?? undefined,
+    image: plage.photo ?? undefined,
+    isAccessibleForFree: true,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: plage.commune,
+      postalCode: plage.codePostal,
+      addressRegion: plage.region,
+      addressCountry: 'FR',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: plage.latitude,
+      longitude: plage.longitude,
+    },
+    ...(plage.nombreAvis > 0 && plage.noteGlobale > 0
+      ? {
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: plage.noteGlobale,
+            reviewCount: plage.nombreAvis,
+            bestRating: 5,
+            worstRating: 0,
+          },
+        }
+      : {}),
   }
 }
 
@@ -40,6 +79,10 @@ export default async function PagePlage({ params }: { params: Promise<{ slug: st
 
   return (
     <article className="max-w-6xl mx-auto px-4 py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd(plage)) }}
+      />
       {/* En-tête */}
       <header className="mb-8">
         {plage.photo && (
@@ -181,7 +224,7 @@ export default async function PagePlage({ params }: { params: Promise<{ slug: st
       </div>
 
       {/* Avis */}
-      <AvisSection avis={plage.avis} nom={plage.nom} slug={plage.slug} />
+      <AvisSection avis={plage.avis} slug={plage.slug} />
     </article>
   )
 }

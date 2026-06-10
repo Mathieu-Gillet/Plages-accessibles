@@ -6,6 +6,7 @@ import { Header } from '@/components/features/Header'
 import { Footer } from '@/components/features/Footer'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { SITE_URL } from '@/lib/site'
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -14,6 +15,7 @@ const nunito = Nunito({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Plages Accessibles — Trouver une plage adaptée en France',
     template: '%s | Plages Accessibles',

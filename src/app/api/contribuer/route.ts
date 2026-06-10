@@ -1,6 +1,14 @@
 import { z } from 'zod'
 import { TYPES_ACCESSIBILITE } from '@/lib/content-schema'
 import { REGIONS_FRANCE } from '@/types'
+import { clientIp, isHoneypotTriggered, isRateLimited } from '@/lib/anti-spam'
+import {
+  GitHubApiError,
+  createBranch,
+  createPullRequest,
+  getBaseSha,
+  putFile,
+} from '@/lib/github'
 
 const ContributePayloadSchema = z.object({
   nom: z.string().min(2).max(200),
@@ -24,10 +32,6 @@ const ContributePayloadSchema = z.object({
   premierAvisCommentaire: z.string().max(2000).optional(),
 })
 
-const GITHUB_REPO = 'Mathieu-Gillet/Plages-accessibles'
-const GITHUB_API = 'https://api.github.com'
-const BASE_BRANCH = 'master'
-
 function slugify(text: string): string {
   return text
     .normalize('NFD')
@@ -45,6 +49,15 @@ export async function POST(req: Request) {
     return Response.json({ error: 'Corps de requête invalide' }, { status: 400 })
   }
 
+  // Bots fill the hidden field: pretend success so they don't adapt.
+  if (isHoneypotTriggered(body)) {
+    return Response.json({ ok: true }, { status: 201 })
+  }
+  // Stricter than /api/avis: each call creates a branch + PR on GitHub.
+  if (isRateLimited(clientIp(req), 3)) {
+    return Response.json({ error: 'Trop de requêtes, réessayez plus tard' }, { status: 429 })
+  }
+
   const parsed = ContributePayloadSchema.safeParse(body)
   if (!parsed.success) {
     return Response.json({ error: 'Données invalides', details: parsed.error.flatten() }, { status: 400 })
@@ -56,13 +69,6 @@ export async function POST(req: Request) {
   if (!pat) {
     console.error('[api/contribuer] Missing env var: GITHUB_PAT')
     return Response.json({ error: 'Configuration serveur manquante' }, { status: 500 })
-  }
-
-  const githubHeaders = {
-    Authorization: `Bearer ${pat}`,
-    Accept: 'application/vnd.github+json',
-    'X-GitHub-Api-Version': '2022-11-28',
-    'Content-Type': 'application/json',
   }
 
   const slug = slugify(`${data.nom}-${data.commune}`)
@@ -84,6 +90,9 @@ export async function POST(req: Request) {
       ]
     : []
 
+  // verifiedAt/verifiedBy are intentionally omitted: the content schema
+  // only accepts date strings, a literal `null` would break the site build
+  // once the contribution PR is merged.
   const plageJson = {
     slug,
     nom: data.nom,
@@ -99,57 +108,12 @@ export async function POST(req: Request) {
     noteGlobale: data.premierAvisNote ?? 0,
     nombreAvis: hasPremierAvis ? 1 : 0,
     actif: false,
-    verifiedAt: null,
-    verifiedBy: null,
     accessibilites: data.accessibilites,
     hebergements: [],
     offresCulturelles: [],
     avis,
   }
 
-  // 1. Get SHA of base branch
-  const refRes = await fetch(
-    `${GITHUB_API}/repos/${GITHUB_REPO}/git/ref/heads/${BASE_BRANCH}`,
-    { headers: githubHeaders }
-  )
-  if (!refRes.ok) {
-    console.error('[api/contribuer] GitHub ref error:', refRes.status)
-    return Response.json({ error: 'Erreur GitHub (lecture branche)' }, { status: 502 })
-  }
-  const refData = await refRes.json() as { object: { sha: string } }
-  const sha = refData.object.sha
-
-  // 2. Create new branch
-  const branchRes = await fetch(`${GITHUB_API}/repos/${GITHUB_REPO}/git/refs`, {
-    method: 'POST',
-    headers: githubHeaders,
-    body: JSON.stringify({ ref: `refs/heads/${branch}`, sha }),
-  })
-  if (!branchRes.ok) {
-    console.error('[api/contribuer] GitHub branch error:', branchRes.status)
-    return Response.json({ error: 'Erreur GitHub (création branche)' }, { status: 502 })
-  }
-
-  // 3. Create file on that branch
-  const fileContent = Buffer.from(JSON.stringify(plageJson, null, 2) + '\n').toString('base64')
-  const fileRes = await fetch(
-    `${GITHUB_API}/repos/${GITHUB_REPO}/contents/content/plages/${slug}.json`,
-    {
-      method: 'PUT',
-      headers: githubHeaders,
-      body: JSON.stringify({
-        message: `feat(content): contribution plage "${data.nom}" (${data.commune})`,
-        content: fileContent,
-        branch,
-      }),
-    }
-  )
-  if (!fileRes.ok) {
-    console.error('[api/contribuer] GitHub file error:', fileRes.status)
-    return Response.json({ error: 'Erreur GitHub (création fichier)' }, { status: 502 })
-  }
-
-  // 4. Open Pull Request
   const accessibilitesLabel = data.accessibilites.length > 0
     ? data.accessibilites.join(', ')
     : '—'
@@ -193,21 +157,27 @@ export async function POST(req: Request) {
     hasGps ? '' : `*\`latitude: 0, longitude: 0\` — les coordonnées GPS sont à renseigner avant de merger.*`,
   ].filter((line) => line !== undefined && line !== null).join('\n')
 
-  const prRes = await fetch(`${GITHUB_API}/repos/${GITHUB_REPO}/pulls`, {
-    method: 'POST',
-    headers: githubHeaders,
-    body: JSON.stringify({
+  try {
+    const baseSha = await getBaseSha(pat)
+    await createBranch(pat, branch, baseSha)
+    await putFile(pat, {
+      path: `content/plages/${slug}.json`,
+      branch,
+      content: JSON.stringify(plageJson, null, 2) + '\n',
+      message: `feat(content): contribution plage "${data.nom}" (${data.commune})`,
+    })
+    const prUrl = await createPullRequest(pat, {
       title: `Nouvelle plage : ${data.nom} (${data.commune})`,
       head: branch,
-      base: BASE_BRANCH,
       body: prBody,
-    }),
-  })
-  if (!prRes.ok) {
-    console.error('[api/contribuer] GitHub PR error:', prRes.status)
-    return Response.json({ error: 'Erreur GitHub (création PR)' }, { status: 502 })
+    })
+    return Response.json({ ok: true, prUrl }, { status: 201 })
+  } catch (err) {
+    if (err instanceof GitHubApiError) {
+      console.error(`[api/contribuer] ${err.message}`)
+      return Response.json({ error: `Erreur GitHub (${err.step})` }, { status: 502 })
+    }
+    console.error('[api/contribuer] Unexpected error:', err)
+    return Response.json({ error: 'Erreur interne' }, { status: 500 })
   }
-
-  const pr = await prRes.json() as { html_url: string }
-  return Response.json({ ok: true, prUrl: pr.html_url }, { status: 201 })
 }
