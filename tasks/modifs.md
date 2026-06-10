@@ -67,3 +67,19 @@ Tour complet du code demandé par l'utilisateur : identifier les problèmes et l
 - `npm run lint` : 0 erreur (2 warnings pré-existants hors périmètre).
 - Schéma testé via tsx : draft (0,0) accepté, plage active (0,0) refusée, `verifiedAt: null` toléré.
 - JSON-LD vérifié dans le HTML généré de `/plage/plage-la-baule`.
+
+## 2026-06-10 — Avis publiés automatiquement via PR GitHub
+
+### Contexte
+Demande utilisateur : fermer la boucle des avis. Avant, un avis partait en simple email et exigeait une édition manuelle du JSON. Désormais le flux est identique aux contributions : PR automatique.
+
+### Changements
+- `src/lib/github.ts` (NEW) : helpers GitHub REST partagés (`getBaseSha`, `createBranch`, `getFile`, `putFile`, `createPullRequest`, `GitHubApiError`) — déduplique ~70 lignes entre les deux routes.
+- `src/app/api/avis/route.ts` : réécrit. Lit `content/plages/{slug}.json` sur GitHub (valide l'existence du slug → 404 sinon), ajoute l'avis au tableau `avis`, incrémente `nombreAvis`, laisse `noteGlobale` intacte (elle mesure l'équipement, pas la moyenne des avis), crée branche `avis/{slug}-{ts}` + PR. L'email Resend devient une notification optionnelle best-effort (avec lien vers la PR). Rate-limit resserré à 3/h (chaque appel crée une PR). Le `nom` n'est plus accepté du client : il est lu depuis le fichier (source de confiance).
+- `src/app/api/contribuer/route.ts` : refactor sur `src/lib/github.ts` (comportement identique).
+- `src/components/features/AvisForm.tsx` + `AvisSection.tsx` : prop `nom` supprimée, affichage du lien « Suivre la proposition sur GitHub » au succès.
+- `.env.example` : `GITHUB_PAT` requis pour les deux flux ; Resend documenté comme optionnel.
+
+### Vérification
+- `npm run build` (50 pages) + `npm run lint` : OK (2 warnings pré-existants).
+- Test d'intégration avec GitHub mocké (tsx) : happy path 201 + prUrl ; avis ajouté + `nombreAvis` 65→66 + `noteGlobale` inchangée ; slug inconnu → 404 ; honeypot → faux 201 sans appel GitHub ; 4e appel même IP → 429.

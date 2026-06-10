@@ -26,6 +26,7 @@
 - [x] Footer : URL GitHub placeholder corrigée
 - [x] README : noms d'équipements erronés (`SABLE_COMPACTE` → `SABLE_COMPACT`, `BOUCLE_INDUCTIVE` → `BOUCLE_MAGNETIQUE`)
 - [x] Tuiles OSM : URL canonique (sous-domaines `{s}` dépréciés) + CSP ajustée
+- [x] Avis publiés automatiquement : `/api/avis` ouvre une PR GitHub (comme `/api/contribuer`), email Resend rétrogradé en notification optionnelle — livré 2026-06-10
 
 ## Étape 3 — Robustesse & qualité
 - [ ] Wrapper `safeQuery()` dans `src/lib/` pour remplacer les `try/catch { return [] }` silencieux et logguer
