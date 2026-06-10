@@ -7,11 +7,21 @@
 ---
 
 ## Contexte Projet
-complète le
 
-## Project Overview
+**Plages Accessibles** (https://plages-accessibles.fr) — annuaire collaboratif des plages françaises accessibles aux personnes en situation de handicap. Carte de France interactive, recherche par région/département/texte, page détail par plage (équipements, hébergements et offres culturelles à proximité, avis).
 
-Je voudrais mettre en place un site web qui référence l'ensemble des plages les plus accessibles aux personnes en situations de handicap, voici mes idées de bases : je voudrais un le plus simple possible, avec simplement une carte de France avec les points les mieux notés. La possibilité de faire une recherche par département, par région puis cela nous sort une liste. On pourrait alors avoir accès à une page sur la plage en question, avec les diverses informations sur celle ci, comme les types d'accessibilités disponibles, la carte google maps, mais aussi les hôtes à proximités, et possiblement les offres culturelles à proximités. L'idée est de crée de site d'abord avec claude code, génère moi donc pour commencer les divers fichiers, hormis le fichier claude.md que je vais générer de mon côté. Donne moi des indications sur la marche à suivre pour rendre ce site utile au plus grand nombre.
+État au 2026-06-10 :
+- **Stack** : Next.js 15 (App Router, SSG), TypeScript 5 strict, Tailwind 3, Leaflet/React-Leaflet 4, Zod 3, React 18. Déployé sur Vercel.
+- **Pas de base de données** : chaque plage = un fichier JSON dans `content/plages/` (~35 plages), validé par Zod au build (`src/lib/content-schema.ts`). Prisma/Supabase ont été abandonnés au profit de cette architecture file-based.
+- **GitHub = back-office** : les formulaires du site (`/api/contribuer`, `/api/avis`) créent des branches + Pull Requests via l'API GitHub (`src/lib/github.ts`, secret `GITHUB_PAT`). Rien n'est publié sans review humaine + merge.
+- **Pipelines quotidiens** (GitHub Actions, cron 06:00 UTC) :
+  - `import-plages.yml` → `scripts/import-plages.ts` : agrège 7 sources (Handiplage, Tourisme & Handicap, AccesLibre, DataTourisme, OSM, sample, Claude API), valide, déduplique (slug + GPS ~200 m), enrichit descriptions (Claude Haiku) et photos (Wikimedia), ouvre une PR `auto/import-*` (max 10 plages/jour).
+  - `enrich-pois.yml` → `scripts/enrich-pois.ts` : hébergements + offres culturelles accessibles via OSM Overpass (rayon 10 km, `wheelchair=yes/designated`), PR `auto/enrich-*`.
+- **Anti-spam** : honeypot + rate-limit IP en mémoire (`src/lib/anti-spam.ts`) — best-effort sur serverless.
+- **SEO** : robots.ts, sitemap.ts, JSON-LD schema.org `Beach`, metadataBase.
+- **Suivi** : roadmap dans `tasks/todo.md`, historique dans `tasks/modifs.md`, leçons dans `tasks/lessons.md`.
+
+Reste à faire (voir `PLAN.md`) : CI de validation sur les PRs (aucun garde-fou avant merge aujourd'hui), tests (Vitest), durcissement anti-spam, migrations majeures (React 19, Next 16, Tailwind 4, Zod 4).
 ---
 
 ## Interdictions Absolues
