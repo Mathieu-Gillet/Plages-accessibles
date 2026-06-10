@@ -4,11 +4,18 @@ import { REGIONS_FRANCE } from '@/types'
 import { clientIp, isHoneypotTriggered, isRateLimited } from '@/lib/anti-spam'
 import {
   GitHubApiError,
+  countOpenPullRequests,
   createBranch,
   createPullRequest,
   getBaseSha,
+  getFile,
   putFile,
 } from '@/lib/github'
+
+// Global backstop: the in-memory rate limit is per serverless instance, so a
+// distributed bot can bypass it. Once this many contribution PRs sit
+// unreviewed, refuse new submissions instead of flooding the repo.
+const MAX_PENDING_PRS = 10
 
 const ContributePayloadSchema = z.object({
   nom: z.string().min(2).max(200),
@@ -158,6 +165,22 @@ export async function POST(req: Request) {
   ].filter((line) => line !== undefined && line !== null).join('\n')
 
   try {
+    if ((await countOpenPullRequests(pat, 'contribution/')) >= MAX_PENDING_PRS) {
+      return Response.json(
+        { error: 'Trop de propositions en attente de validation, réessayez dans quelques jours' },
+        { status: 429 },
+      )
+    }
+
+    // A beach with this slug already in the catalog would make putFile fail
+    // with an opaque 422 — answer with a clear conflict instead.
+    if (await getFile(pat, `content/plages/${slug}.json`)) {
+      return Response.json(
+        { error: 'Cette plage existe déjà dans l’annuaire' },
+        { status: 409 },
+      )
+    }
+
     const baseSha = await getBaseSha(pat)
     await createBranch(pat, branch, baseSha)
     await putFile(pat, {

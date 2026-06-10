@@ -1,0 +1,41 @@
+name: CI
+
+# Safety net for every PR — auto-import, auto-enrich, contributions, reviews
+# and code changes alike. `npm run build` validates every content/plages/*.json
+# through the Zod schema, so a bad content file fails here instead of breaking
+# the production deploy after merge.
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type-check
+        run: npx tsc --noEmit
+
+      - name: Build (validates all content via Zod)
+        run: npm run build

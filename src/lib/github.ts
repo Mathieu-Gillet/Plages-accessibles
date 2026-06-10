@@ -83,6 +83,17 @@ export async function putFile(
   if (!res.ok) throw new GitHubApiError('write file', res.status)
 }
 
+/** Number of open PRs whose head branch starts with `prefix`. */
+export async function countOpenPullRequests(pat: string, prefix: string): Promise<number> {
+  const res = await fetch(
+    `${GITHUB_API}/repos/${GITHUB_REPO}/pulls?state=open&per_page=100`,
+    { headers: headers(pat) },
+  )
+  if (!res.ok) throw new GitHubApiError('list pull requests', res.status)
+  const prs = (await res.json()) as Array<{ head: { ref: string } }>
+  return prs.filter((pr) => pr.head.ref.startsWith(prefix)).length
+}
+
 /** Open a pull request against the base branch. Returns its html URL. */
 export async function createPullRequest(
   pat: string,
