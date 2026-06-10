@@ -9,7 +9,7 @@
   "latitude": 47.2886,
   "longitude": -2.3877,
   "noteGlobale": 4.7,
-  "nombreAvis": 65,
+  "nombreAvis": 66,
   "actif": true,
   "verifiedAt": "2026-04-16",
   "verifiedBy": "seed",
@@ -98,6 +98,13 @@
       "accessiblePMR": true
     }
   ],
-  "avis": [],
+  "avis": [
+    {
+      "note": 5,
+      "commentaire": "Parfait !!!",
+      "auteur": "Mathieu",
+      "date": "2026-06-10"
+    }
+  ],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Plage_de_La_Baule-Escoublac_01.JPG/1280px-Plage_de_La_Baule-Escoublac_01.JPG"
 }
