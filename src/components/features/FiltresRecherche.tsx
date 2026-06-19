@@ -128,7 +128,7 @@ export function FiltresRecherche({
       <div className="flex flex-col gap-2 pt-2">
         <button
           type="submit"
-          className="w-full bg-ocean text-white font-bold py-2 rounded-lg hover:bg-ocean-clair transition-colors"
+          className="w-full bg-ocean text-white font-bold py-2 rounded-lg hover:bg-ocean-fonce transition-colors"
         >
           Appliquer les filtres
         </button>

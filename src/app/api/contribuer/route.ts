@@ -2,6 +2,7 @@ import { z } from 'zod'
 import { TYPES_ACCESSIBILITE } from '@/lib/content-schema'
 import { REGIONS_FRANCE } from '@/types'
 import { clientIp, isHoneypotTriggered, isRateLimited } from '@/lib/anti-spam'
+import { slugify } from '@/lib/utils'
 import {
   GitHubApiError,
   countOpenPullRequests,
@@ -39,13 +40,13 @@ const ContributePayloadSchema = z.object({
   premierAvisCommentaire: z.string().max(2000).optional(),
 })
 
-function slugify(text: string): string {
-  return text
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
+/** Neutralise user values injected into a GitHub Markdown table cell. */
+function escapeCell(value: string): string {
+  return value
+    .replace(/[\r\n]+/g, ' ')
+    .replace(/\|/g, '\\|')
+    .replace(/[<>]/g, '')
+    .trim()
 }
 
 export async function POST(req: Request) {
@@ -112,7 +113,11 @@ export async function POST(req: Request) {
     longitude: data.longitude ?? 0,
     photo: data.photo || null,
     photos: [],
-    noteGlobale: data.premierAvisNote ?? 0,
+    // noteGlobale is the *aggregate* rating published in the schema.org
+    // AggregateRating rich-snippet — never a single contributor's score. Keep it
+    // at 0 (no rating shown) until the beach is activated and has a real basis;
+    // the contributor's own rating still lives in `avis`/`nombreAvis` below.
+    noteGlobale: 0,
     nombreAvis: hasPremierAvis ? 1 : 0,
     actif: false,
     accessibilites: data.accessibilites,
@@ -134,9 +139,9 @@ export async function POST(req: Request) {
     ``,
     `| Champ | Valeur |`,
     `|---|---|`,
-    `| **Nom** | ${data.nom} |`,
-    `| **Commune** | ${data.commune} (${data.codePostal}) |`,
-    `| **Département** | ${data.departement} |`,
+    `| **Nom** | ${escapeCell(data.nom)} |`,
+    `| **Commune** | ${escapeCell(data.commune)} (${data.codePostal}) |`,
+    `| **Département** | ${escapeCell(data.departement)} |`,
     `| **Région** | ${data.region} |`,
     `| **Coordonnées** | ${hasGps ? `${data.latitude}, ${data.longitude}` : '⚠️ non renseignées — à compléter avant merge'} |`,
     `| **Équipements** | ${accessibilitesLabel} |`,

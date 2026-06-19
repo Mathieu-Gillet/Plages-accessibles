@@ -12,7 +12,7 @@
 
 import type { Source } from './types'
 import type { Candidate } from '../lib/validate-candidate'
-import { makeSlug, regionFromCodePostal, departementFromCodePostal } from '../lib/geo'
+import { makeSlug, regionFromCodePostal, departementFromCodePostal, reverseGeocode } from '../lib/geo'
 import { TYPES_ACCESSIBILITE } from '../../src/lib/content-schema'
 
 type TypeAccessibilite = (typeof TYPES_ACCESSIBILITE)[number]
@@ -142,18 +142,29 @@ function buildDescription(nom: string, commune: string, t: OverpassTags): string
   return native.trim().length >= 40 ? `${native.trim()} ${core}` : core
 }
 
-function toCandidate(e: OverpassElement): Candidate | null {
+async function toCandidate(e: OverpassElement): Promise<Candidate | null> {
   const t = e.tags ?? {}
   const nom = (t['name:fr'] ?? t.name ?? '').trim()
-  const commune = (t['addr:city'] ?? '').trim()
-  const cp = (t['addr:postcode'] ?? '').replace(/\s/g, '').trim()
-
-  // Skip entries missing the bare minimum we can't reverse-geocode offline.
-  if (!nom || !commune || !/^\d{5}$/.test(cp)) return null
+  if (!nom) return null
 
   const coords = getCoords(e)
   if (!coords) return null
   const [lat, lon] = coords
+
+  let commune = (t['addr:city'] ?? '').trim()
+  let cp = (t['addr:postcode'] ?? '').replace(/\s/g, '').trim()
+
+  // The majority of OSM beach nodes carry no addr:* tags. Rather than discard
+  // these (the single biggest source of dropped candidates), recover the
+  // commune/postcode from the coordinates via the free government geocoder.
+  if (!commune || !/^\d{5}$/.test(cp)) {
+    const geo = await reverseGeocode(lat, lon)
+    if (geo) {
+      if (!commune) commune = geo.commune
+      if (!/^\d{5}$/.test(cp)) cp = geo.codePostal
+    }
+  }
+  if (!commune || !/^\d{5}$/.test(cp)) return null
 
   const accessibilites = mapAccessibilites(t)
   if (accessibilites.length < 1) return null
@@ -179,6 +190,10 @@ function toCandidate(e: OverpassElement): Candidate | null {
 async function queryOverpass(): Promise<OverpassResponse> {
   let lastErr: Error | null = null
   for (const endpoint of OVERPASS_ENDPOINTS) {
+    // Abort a hung endpoint so the job moves on to the next mirror instead of
+    // blocking the whole run (Overpass can stall indefinitely under load).
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), 90_000)
     try {
       const res = await fetch(endpoint, {
         method: 'POST',
@@ -188,6 +203,7 @@ async function queryOverpass(): Promise<OverpassResponse> {
           'User-Agent': 'plages-accessibles/1.0 (+https://plages-accessibles.fr)',
         },
         body: `data=${encodeURIComponent(OVERPASS_QUERY)}`,
+        signal: controller.signal,
       })
       if (!res.ok) {
         lastErr = new Error(`Overpass ${endpoint} HTTP ${res.status}`)
@@ -196,6 +212,8 @@ async function queryOverpass(): Promise<OverpassResponse> {
       return res.json() as Promise<OverpassResponse>
     } catch (err) {
       lastErr = err as Error
+    } finally {
+      clearTimeout(timeout)
     }
   }
   throw lastErr ?? new Error('All Overpass endpoints failed')
@@ -206,8 +224,9 @@ export const openStreetMapSource: Source = {
   async fetch(): Promise<Candidate[]> {
     const data = await queryOverpass()
     const candidates: Candidate[] = []
+    // Sequential to stay polite to the reverse-geocoding API (no key, shared IP).
     for (const el of data.elements) {
-      const c = toCandidate(el)
+      const c = await toCandidate(el)
       if (c) candidates.push(c)
     }
     return candidates

@@ -8,6 +8,12 @@
 const hits = new Map<string, number[]>()
 
 export function clientIp(req: Request): string {
+  // Prefer `x-real-ip`, which the hosting platform (Vercel) sets to the actual
+  // connecting IP. A client-supplied `x-forwarded-for` can be spoofed to dodge
+  // the per-IP limit, so it's only a last-resort fallback (and we take the
+  // left-most entry, the original client, when we must use it).
+  const realIp = req.headers.get('x-real-ip')?.trim()
+  if (realIp) return realIp
   const fwd = req.headers.get('x-forwarded-for')
   return fwd?.split(',')[0]?.trim() || 'unknown'
 }

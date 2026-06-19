@@ -59,7 +59,7 @@ export default function PageAPropos() {
         <div className="flex gap-4 pt-6">
           <Link
             href="/contribuer"
-            className="bg-ocean text-white px-6 py-3 rounded-xl font-bold hover:bg-ocean-clair transition-colors"
+            className="bg-ocean text-white px-6 py-3 rounded-xl font-bold hover:bg-ocean-fonce transition-colors"
           >
             Contribuer
           </Link>

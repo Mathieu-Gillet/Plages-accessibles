@@ -168,3 +168,43 @@ export function regionFromCodePostal(codePostal: string): string {
 export function departementFromCodePostal(codePostal: string): string {
   return DEPT_TO_NAME[deptCode(codePostal)] ?? codePostal
 }
+
+/**
+ * Reverse-geocode GPS coordinates to a French commune + code postal using the
+ * free, key-less government API (api-adresse.data.gouv.fr).
+ *
+ * This unblocks the biggest silent yield bottleneck: many `natural=beach` nodes
+ * in OpenStreetMap (and other sources) carry no `addr:city`/`addr:postcode`
+ * tags and were being dropped before validation. With this we can recover the
+ * commune/postcode from the coordinates instead of discarding the candidate.
+ *
+ * Returns null on any failure (network, timeout, no result) — callers must keep
+ * their existing "skip if still unknown" behaviour as a fallback.
+ */
+export async function reverseGeocode(
+  lat: number,
+  lon: number,
+): Promise<{ commune: string; codePostal: string } | null> {
+  const url = `https://api-adresse.data.gouv.fr/reverse/?lat=${lat}&lon=${lon}&type=municipality`
+  const controller = new AbortController()
+  const timeout = setTimeout(() => controller.abort(), 8000)
+  try {
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'plages-accessibles/1.0 (+https://plages-accessibles.fr)' },
+      signal: controller.signal,
+    })
+    if (!res.ok) return null
+    const data = (await res.json()) as {
+      features?: Array<{ properties?: { city?: string; postcode?: string } }>
+    }
+    const props = data.features?.[0]?.properties
+    const commune = props?.city?.trim()
+    const codePostal = props?.postcode?.replace(/\s/g, '').trim()
+    if (!commune || !codePostal || !/^\d{5}$/.test(codePostal)) return null
+    return { commune, codePostal }
+  } catch {
+    return null
+  } finally {
+    clearTimeout(timeout)
+  }
+}

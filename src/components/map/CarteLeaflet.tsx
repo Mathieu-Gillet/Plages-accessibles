@@ -17,7 +17,9 @@ L.Icon.Default.mergeOptions({
 
 // Icône personnalisée bleue
 function creerIconePlage(note: number) {
-  const couleur = note >= 4.5 ? '#16a34a' : note >= 3.5 ? '#0077b6' : '#f59e0b'
+  // amber-700 (#b45309) instead of amber-500: white text on it reaches ~4.9:1
+  // (vs ~1.9:1 on #f59e0b), so the note inside the marker stays legible.
+  const couleur = note >= 4.5 ? '#16a34a' : note >= 3.5 ? '#0077b6' : '#b45309'
   return L.divIcon({
     html: `<div style="
       background: ${couleur};
@@ -89,7 +91,7 @@ export default function CarteLeaflet({
               <p className="font-bold text-ardoise text-base leading-tight">{plage.nom}</p>
               <p className="text-xs text-ardoise-clair mt-0.5">{plage.commune}</p>
               {plage.noteGlobale > 0 && (
-                <p className="text-sm font-bold mt-2 flex items-center gap-1" style={{ color: '#f59e0b' }}>
+                <p className="text-sm font-bold mt-2 flex items-center gap-1" style={{ color: '#b45309' }}>
                   <span aria-hidden="true">★</span>
                   <span>{formatNote(plage.noteGlobale)}</span>
                   <span className="text-ardoise-clair font-normal text-xs">/ 5</span>
@@ -120,7 +122,7 @@ export default function CarteLeaflet({
         >
           <Popup>
             <p className="font-semibold text-sm">{poi.nom}</p>
-            <p className="text-xs text-gray-500 capitalize">{poi.type}</p>
+            <p className="text-xs text-ardoise-clair capitalize">{poi.type}</p>
           </Popup>
         </Marker>
       ))}

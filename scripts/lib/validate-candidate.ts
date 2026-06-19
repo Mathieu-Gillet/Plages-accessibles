@@ -89,7 +89,7 @@ export function validateCandidate(raw: Candidate): ValidationResult {
     }
   }
 
-  // Quality gate 4 — at least 2 accessibility features
+  // Quality gate 4 — at least MIN_ACCESSIBILITES documented accessibility feature(s)
   const accessibilites = raw.accessibilites ?? []
   if (accessibilites.length < MIN_ACCESSIBILITES) {
     return {

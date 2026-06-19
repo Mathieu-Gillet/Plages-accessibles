@@ -31,6 +31,11 @@ function escHtml(s: string): string {
     .replace(/"/g, '&quot;')
 }
 
+/** Neutralise a user value injected into a GitHub Markdown table cell. */
+function escCell(s: string): string {
+  return s.replace(/[\r\n]+/g, ' ').replace(/\|/g, '\\|').replace(/[<>]/g, '').trim()
+}
+
 /** Best-effort admin notification — a missing Resend config never blocks the PR flow. */
 async function notifyByEmail(opts: {
   nom: string
@@ -193,7 +198,7 @@ export async function POST(req: Request) {
       `|---|---|`,
       `| **Plage** | [${nom}](https://github.com/${GITHUB_REPO}/blob/master/${path}) (\`${slug}\`) |`,
       `| **Note** | ${etoiles} (${note}/5) |`,
-      `| **Auteur** | ${auteur ?? 'Anonyme'} |`,
+      `| **Auteur** | ${auteur ? escCell(auteur) : 'Anonyme'} |`,
       `| **Date** | ${today} |`,
       ``,
       commentaire ? `### Commentaire\n\n> ${commentaire.replace(/\n/g, '\n> ')}\n` : '',

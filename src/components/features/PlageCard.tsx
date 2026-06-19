@@ -75,7 +75,7 @@ export function PlageCardResume({ plage }: PlageCardProps) {
 
         <Link
           href={`/plage/${plage.slug}`}
-          className="mt-4 block text-center bg-ocean text-white py-2 rounded-lg font-semibold text-sm hover:bg-ocean-clair transition-colors"
+          className="mt-4 block text-center bg-ocean text-white py-2 rounded-lg font-semibold text-sm hover:bg-ocean-fonce transition-colors"
           aria-label={`Voir les détails de la plage ${plage.nom}`}
         >
           Voir la plage
