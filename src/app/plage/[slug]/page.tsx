@@ -36,6 +36,20 @@ export async function generateMetadata({
   }
 }
 
+/**
+ * Serialise JSON-LD for safe inline injection into a <script> tag.
+ * Beach names/descriptions come from the (user-driven) contribution flow, so a
+ * value containing `</script>` could otherwise break out of the block and run
+ * arbitrary JS. Escaping `<`, `>` and `&` to their \u escapes keeps the JSON
+ * valid while neutralising any HTML-significant character.
+ */
+function serializeJsonLd(data: unknown): string {
+  return JSON.stringify(data)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026')
+}
+
 /** schema.org structured data — enables rich results (rating, map pin) on search engines. */
 function buildJsonLd(plage: PlageDetail) {
   return {
@@ -81,7 +95,7 @@ export default async function PagePlage({ params }: { params: Promise<{ slug: st
     <article className="max-w-6xl mx-auto px-4 py-10">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd(plage)) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(buildJsonLd(plage)) }}
       />
       {/* En-tête */}
       <header className="mb-8">

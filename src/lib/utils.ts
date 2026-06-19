@@ -14,7 +14,7 @@ export function slugify(text: string): string {
     .replace(/[^a-z0-9\s-]/g, '')
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-')
-    .trim()
+    .replace(/^-+|-+$/g, '') // strip leading/trailing hyphens (e.g. "!Plage" \u2192 "plage")
 }
 
 export function formatNote(note: number): string {
