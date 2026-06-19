@@ -28,13 +28,16 @@ import { fetchBeachPhoto } from './lib/wikimedia'
 import { generateDescription, isAiDescriptionAvailable } from './lib/ai-description'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'plages')
-const MAX_PER_RUN = 10
+// Daily write cap. Overridable via env so a weekend catch-up run can use a
+// higher value (the CI validates content before merge, so a higher cap is safe).
+const MAX_PER_RUN = Number(process.env.MAX_PER_RUN) || 25
 
 // GPS proximity cell used to detect that two beaches are "the same place".
 // Math.round(lat * GEO_CELL_FACTOR) buckets coordinates into ~equal cells.
-// 500 ≈ 0.002° ≈ ~200 m at French latitudes — wide enough to catch the same
-// beach mapped twice with slightly different OSM points or distinct names.
-const GEO_CELL_FACTOR = 500
+// 1000 ≈ 0.001° ≈ ~100 m at French latitudes — tight enough to merge the same
+// beach mapped twice, without collapsing genuinely distinct adjacent beaches on
+// a dense coastline (Côte d'Azur, Vendée) where a 200 m cell over-merged.
+const GEO_CELL_FACTOR = 1000
 
 function geoCellKey(lat: number | undefined, lon: number | undefined): string | null {
   if (typeof lat !== 'number' || typeof lon !== 'number') return null
@@ -239,6 +242,14 @@ async function main(): Promise<void> {
       continue
     }
 
+    // Stop here once the daily cap is reached: no point spending AI-description,
+    // Wikimedia photo and validation budget on candidates we won't write today.
+    // (Previously the AI call ran for every candidate, even the capped tail.)
+    if (qualifiedCount >= MAX_PER_RUN) {
+      summary.capped++
+      continue
+    }
+
     const aiDesc = await generateDescription({
       nom: candidate.nom,
       commune: candidate.commune,
@@ -251,11 +262,6 @@ async function main(): Promise<void> {
     const result = validateCandidate(enrichedCandidate)
     if (!result.ok) {
       summary.rejected.push({ slug: result.slug, reason: result.reason })
-      continue
-    }
-
-    if (qualifiedCount >= MAX_PER_RUN) {
-      summary.capped++
       continue
     }
 

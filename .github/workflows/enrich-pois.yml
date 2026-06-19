@@ -2,8 +2,10 @@ name: Enrichissement quotidien des POIs accessibles
 
 on:
   schedule:
-    # 06:00 UTC = 08:00 Paris été / 07:00 Paris hiver.
-    - cron: '0 6 * * *'
+    # 07:00 UTC — décalé d'1 h après l'import (06:00) pour ne pas tourner en
+    # parallèle sur la même base ni ouvrir des PRs concurrentes, et pour éviter
+    # deux salves de requêtes Overpass simultanées.
+    - cron: '0 7 * * *'
   workflow_dispatch:  # Bouton de déclenchement manuel dans l'onglet Actions.
   pull_request:
     types: [closed]
@@ -33,6 +35,12 @@ jobs:
   enrich:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    # Bound the job (sequential Overpass calls grow with the catalogue) and never
+    # run two enrich jobs at once against the same auto/enrich-* branch.
+    timeout-minutes: 20
+    concurrency:
+      group: enrich-pois
+      cancel-in-progress: false
     steps:
       - name: Checkout
         uses: actions/checkout@v4

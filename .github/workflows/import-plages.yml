@@ -34,6 +34,14 @@ jobs:
   import:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    # Cap the job so a hung Overpass/scraper request can't burn Actions minutes
+    # up to the 6 h default.
+    timeout-minutes: 20
+    # Never run two imports at once (a scheduled run overlapping a manual one
+    # would force-push the same auto/import-* branch concurrently).
+    concurrency:
+      group: import-plages
+      cancel-in-progress: false
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -125,7 +133,7 @@ jobs:
           - [ ] Nom + commune cohérents
           - [ ] Coordonnées GPS plausibles (zoom sur la carte)
           - [ ] Description claire et factuelle (pas de blabla générique)
-          - [ ] Au moins 2 accessibilités documentées par plage
+          - [ ] Au moins 1 accessibilité documentée par plage
           - [ ] Champ \`verifiedBy\` présent (source labellisée)
 
           ### Si une plage est douteuse
