@@ -313,6 +313,11 @@ export function ContributeForm() {
     const fieldErrors = validate(form)
     if (Object.keys(fieldErrors).length > 0) {
       setErrors(fieldErrors)
+      // Move focus to the first field in error so screen-reader / keyboard users
+      // get an explicit, located signal instead of a silently rejected submit.
+      const order = ['nom', 'commune', 'codePostal', 'departement', 'region', 'latitude', 'longitude', 'description', 'photo']
+      const first = order.find((f) => fieldErrors[f])
+      if (first) requestAnimationFrame(() => document.getElementById(`cf-${first}`)?.focus())
       return
     }
 
@@ -366,7 +371,7 @@ export function ContributeForm() {
             href={prUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-ocean text-white font-bold py-2 px-5 rounded-xl hover:bg-ocean-clair transition-colors text-sm"
+            className="inline-block bg-ocean text-white font-bold py-2 px-5 rounded-xl hover:bg-ocean-fonce transition-colors text-sm"
           >
             Voir la proposition sur GitHub ↗
           </a>
@@ -379,6 +384,14 @@ export function ContributeForm() {
     `w-full border rounded-lg px-3 py-2 text-sm text-ardoise placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-ocean ${
       errors[field] ? 'border-red-400' : 'border-sable-fonce'
     }`
+
+  // Shared ARIA wiring so screen readers announce required state, the invalid
+  // state, and read the matching error message (linked by id).
+  const fieldA11y = (field: string, required = false) => ({
+    'aria-required': required || undefined,
+    'aria-invalid': errors[field] ? true : undefined,
+    'aria-describedby': errors[field] ? `cf-${field}-error` : undefined,
+  })
 
   const avisDisplay = avisHovered > 0 ? avisHovered : form.premierAvisNote
 
@@ -414,8 +427,9 @@ export function ContributeForm() {
               maxLength={200}
               placeholder="Ex : Grande Plage de Biarritz"
               className={inputClass('nom')}
+              {...fieldA11y('nom', true)}
             />
-            {errors.nom && <p className="text-red-600 text-xs mt-1">{errors.nom}</p>}
+            {errors.nom && <p id="cf-nom-error" role="alert" className="text-red-600 text-xs mt-1">{errors.nom}</p>}
           </div>
 
           <div>
@@ -430,8 +444,9 @@ export function ContributeForm() {
               maxLength={200}
               placeholder="Ex : Biarritz"
               className={inputClass('commune')}
+              {...fieldA11y('commune', true)}
             />
-            {errors.commune && <p className="text-red-600 text-xs mt-1">{errors.commune}</p>}
+            {errors.commune && <p id="cf-commune-error" role="alert" className="text-red-600 text-xs mt-1">{errors.commune}</p>}
           </div>
 
           <div>
@@ -447,8 +462,9 @@ export function ContributeForm() {
               placeholder="Ex : 64200"
               inputMode="numeric"
               className={inputClass('codePostal')}
+              {...fieldA11y('codePostal', true)}
             />
-            {errors.codePostal && <p className="text-red-600 text-xs mt-1">{errors.codePostal}</p>}
+            {errors.codePostal && <p id="cf-codePostal-error" role="alert" className="text-red-600 text-xs mt-1">{errors.codePostal}</p>}
           </div>
 
           <div>
@@ -460,13 +476,14 @@ export function ContributeForm() {
               value={form.departement}
               onChange={(e) => handleDepartementChange(e.target.value)}
               className={inputClass('departement')}
+              {...fieldA11y('departement', true)}
             >
               <option value="">— Sélectionner —</option>
               {DEPARTEMENTS.map((d) => (
                 <option key={d.code} value={d.nom}>{d.code} — {d.nom}</option>
               ))}
             </select>
-            {errors.departement && <p className="text-red-600 text-xs mt-1">{errors.departement}</p>}
+            {errors.departement && <p id="cf-departement-error" role="alert" className="text-red-600 text-xs mt-1">{errors.departement}</p>}
           </div>
 
           <div>
@@ -478,13 +495,14 @@ export function ContributeForm() {
               value={form.region}
               onChange={(e) => set('region', e.target.value)}
               className={inputClass('region')}
+              {...fieldA11y('region', true)}
             >
               <option value="">— Sélectionner —</option>
               {REGIONS_FRANCE.map((r) => (
                 <option key={r} value={r}>{r}</option>
               ))}
             </select>
-            {errors.region && <p className="text-red-600 text-xs mt-1">{errors.region}</p>}
+            {errors.region && <p id="cf-region-error" role="alert" className="text-red-600 text-xs mt-1">{errors.region}</p>}
             {form.region && !errors.region && (
               <p className="text-xs text-green-600 mt-1">Auto-rempli depuis le département.</p>
             )}
@@ -523,8 +541,9 @@ export function ContributeForm() {
               onChange={(e) => set('latitude', e.target.value)}
               placeholder="Ex : 43.4848"
               className={inputClass('latitude')}
+              {...fieldA11y('latitude')}
             />
-            {errors.latitude && <p className="text-red-600 text-xs mt-1">{errors.latitude}</p>}
+            {errors.latitude && <p id="cf-latitude-error" role="alert" className="text-red-600 text-xs mt-1">{errors.latitude}</p>}
           </div>
           <div>
             <label htmlFor="cf-longitude" className="block text-sm font-semibold text-ardoise mb-1">
@@ -538,8 +557,9 @@ export function ContributeForm() {
               onChange={(e) => set('longitude', e.target.value)}
               placeholder="Ex : -1.5614"
               className={inputClass('longitude')}
+              {...fieldA11y('longitude')}
             />
-            {errors.longitude && <p className="text-red-600 text-xs mt-1">{errors.longitude}</p>}
+            {errors.longitude && <p id="cf-longitude-error" role="alert" className="text-red-600 text-xs mt-1">{errors.longitude}</p>}
           </div>
         </div>
       </section>
@@ -561,10 +581,11 @@ export function ContributeForm() {
           rows={5}
           placeholder="Ex : Plage labellisée Handiplage avec chemin d'accès aménagé, fauteuils amphibies disponibles en saison, parkings PMR à 50 m…"
           className={`${inputClass('description')} resize-y`}
+          {...fieldA11y('description', true)}
         />
         <div className="flex justify-between items-center mt-1">
           {errors.description
-            ? <p className="text-red-600 text-xs">{errors.description}</p>
+            ? <p id="cf-description-error" role="alert" className="text-red-600 text-xs">{errors.description}</p>
             : <span />}
           <p className={`text-xs ml-auto ${form.description.length < 150 ? 'text-ardoise-clair' : 'text-green-600'}`}>
             {form.description.length}/3000
@@ -609,8 +630,9 @@ export function ContributeForm() {
               onChange={(e) => set('photo', e.target.value)}
               placeholder="https://upload.wikimedia.org/…"
               className={inputClass('photo')}
+              {...fieldA11y('photo')}
             />
-            {errors.photo && <p className="text-red-600 text-xs mt-1">{errors.photo}</p>}
+            {errors.photo && <p id="cf-photo-error" role="alert" className="text-red-600 text-xs mt-1">{errors.photo}</p>}
             <p className="text-xs text-ardoise-clair mt-1">URL publique en HTTPS (Wikimedia Commons recommandé).</p>
           </div>
 
@@ -714,7 +736,7 @@ export function ContributeForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full bg-ocean text-white font-bold py-3 px-6 rounded-xl hover:bg-ocean-clair transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-base"
+        className="w-full bg-ocean text-white font-bold py-3 px-6 rounded-xl hover:bg-ocean-fonce transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-base"
       >
         {status === 'loading' ? 'Envoi en cours…' : 'Soumettre la plage'}
       </button>

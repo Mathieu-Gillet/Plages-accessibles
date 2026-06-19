@@ -1,6 +1,9 @@
 'use client'
 import dynamic from 'next/dynamic'
 import { useState, useMemo } from 'react'
+import Link from 'next/link'
+import { MapPin, List } from 'lucide-react'
+import { formatNote } from '@/lib/utils'
 import type { PlageResume } from '@/types'
 
 const CarteLeaflet = dynamic(() => import('../map/CarteLeaflet'), {
@@ -42,19 +45,80 @@ interface CarteAccueilProps {
 
 export function CarteAccueil({ plages }: CarteAccueilProps) {
   const [filtre, setFiltre] = useState<FiltreNote>('toutes')
+  const [vue, setVue] = useState<'carte' | 'liste'>('carte')
 
   const plagesFiltrees = useMemo(() => filtrerParNote(plages, filtre), [plages, filtre])
 
   return (
     <div className="w-full space-y-3">
-      <div className="w-full h-[500px] rounded-xl overflow-hidden shadow-md">
-        <CarteLeaflet
-          plages={plagesFiltrees}
-          hauteur="500px"
-          centreInitial={[46.8, 2.3]}
-          zoomInitial={6}
-        />
+      {/* Toggle carte / liste — la vue liste est l'alternative accessible au
+          clavier et aux lecteurs d'écran de la carte Leaflet (RGAA 1.1). */}
+      <div
+        className="inline-flex rounded-lg border border-ocean overflow-hidden"
+        role="group"
+        aria-label="Choisir l'affichage des plages"
+      >
+        <button
+          type="button"
+          onClick={() => setVue('carte')}
+          aria-pressed={vue === 'carte'}
+          className={`inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold ${
+            vue === 'carte' ? 'bg-ocean text-white' : 'bg-white text-ocean'
+          }`}
+        >
+          <MapPin size={16} aria-hidden="true" /> Carte
+        </button>
+        <button
+          type="button"
+          onClick={() => setVue('liste')}
+          aria-pressed={vue === 'liste'}
+          className={`inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold border-l border-ocean ${
+            vue === 'liste' ? 'bg-ocean text-white' : 'bg-white text-ocean'
+          }`}
+        >
+          <List size={16} aria-hidden="true" /> Liste
+        </button>
       </div>
+
+      {vue === 'carte' ? (
+        <div className="w-full h-[500px] rounded-xl overflow-hidden shadow-md">
+          <CarteLeaflet
+            plages={plagesFiltrees}
+            hauteur="500px"
+            centreInitial={[46.8, 2.3]}
+            zoomInitial={6}
+          />
+        </div>
+      ) : (
+        <div className="w-full rounded-xl border border-ocean-pale overflow-hidden">
+          {plagesFiltrees.length === 0 ? (
+            <p className="p-4 text-ardoise-clair">Aucune plage ne correspond à ce filtre.</p>
+          ) : (
+            <ul className="divide-y divide-ocean-pale max-h-[500px] overflow-y-auto" aria-label="Liste des plages accessibles">
+              {plagesFiltrees.map((p) => (
+                <li key={p.id}>
+                  <Link
+                    href={`/plage/${p.slug}`}
+                    className="flex items-center justify-between gap-3 px-4 py-3 hover:bg-ocean-pale focus-visible:bg-ocean-pale"
+                  >
+                    <span className="min-w-0">
+                      <span className="block font-semibold text-ardoise truncate">{p.nom}</span>
+                      <span className="block text-sm text-ardoise-clair truncate">
+                        {p.commune} · {p.departement}
+                      </span>
+                    </span>
+                    {p.noteGlobale > 0 && (
+                      <span className="shrink-0 text-sm font-semibold text-ocean" aria-label={`Note ${formatNote(p.noteGlobale)} sur 5`}>
+                        ★ {formatNote(p.noteGlobale)}
+                      </span>
+                    )}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
 
       <div className="flex flex-wrap gap-2" role="group" aria-label="Filtrer les plages par note">
         {FILTRES.map(({ value, label }) => {
@@ -74,7 +138,7 @@ export function CarteAccueil({ plages }: CarteAccueilProps) {
             </button>
           )
         })}
-        <span className="self-center text-xs text-gray-400 ml-1">
+        <span className="self-center text-xs text-ardoise-clair ml-1">
           {plagesFiltrees.length} plage{plagesFiltrees.length !== 1 ? 's' : ''}
         </span>
       </div>

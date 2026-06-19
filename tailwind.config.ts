@@ -16,6 +16,9 @@ const config: Config = {
         ocean: {
           DEFAULT: '#0077b6',
           clair: '#00b4d8',
+          // Darker shade for button hover/active states: white text on #005f92
+          // reaches ~7.8:1 (vs ~2.2:1 on ocean-clair), passing WCAG AA.
+          fonce: '#005f92',
           pale: '#caf0f8',
         },
         sable: {

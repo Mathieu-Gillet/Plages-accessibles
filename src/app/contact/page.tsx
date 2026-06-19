@@ -24,7 +24,7 @@ export default function PageContact() {
           </p>
           <Link
             href="/contribuer"
-            className="inline-block bg-ocean text-white font-bold py-2 px-5 rounded-xl hover:bg-ocean-clair transition-colors text-sm"
+            className="inline-block bg-ocean text-white font-bold py-2 px-5 rounded-xl hover:bg-ocean-fonce transition-colors text-sm"
           >
             Suggérer une plage
           </Link>

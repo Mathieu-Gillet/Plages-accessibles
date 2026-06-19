@@ -98,16 +98,24 @@ export function AvisForm({ slug }: AvisFormProps) {
         <legend className="text-sm font-semibold text-ardoise mb-2">
           Note <span className="text-red-500" aria-hidden="true">*</span>
         </legend>
-        <div className="flex gap-1" role="group" aria-label="Choisir une note de 1 à 5">
+        <div
+          className="flex gap-1"
+          role="radiogroup"
+          aria-label="Choisir une note de 1 à 5"
+          aria-required="true"
+          aria-invalid={note === 0 && status !== 'idle'}
+          aria-describedby="avis-note-error"
+        >
           {[1, 2, 3, 4, 5].map((i) => (
             <button
               key={i}
               type="button"
+              role="radio"
               onClick={() => setNote(i)}
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(0)}
               aria-label={`${i} étoile${i > 1 ? 's' : ''} sur 5`}
-              aria-pressed={note === i}
+              aria-checked={note === i}
               className="text-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocean rounded transition-transform hover:scale-110"
             >
               <span aria-hidden="true">
@@ -116,9 +124,9 @@ export function AvisForm({ slug }: AvisFormProps) {
             </button>
           ))}
         </div>
-        {note === 0 && status !== 'idle' && (
-          <p className="text-red-600 text-xs mt-1">Veuillez sélectionner une note.</p>
-        )}
+        <p id="avis-note-error" className="text-red-600 text-xs mt-1" aria-live="assertive">
+          {note === 0 && status !== 'idle' ? 'Veuillez sélectionner une note.' : ''}
+        </p>
       </fieldset>
 
       {/* Auteur */}
@@ -166,7 +174,7 @@ export function AvisForm({ slug }: AvisFormProps) {
       <button
         type="submit"
         disabled={note === 0 || status === 'loading'}
-        className="bg-ocean text-white font-bold px-5 py-2 rounded-lg text-sm hover:bg-ocean-clair transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="bg-ocean text-white font-bold px-5 py-2 rounded-lg text-sm hover:bg-ocean-fonce transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === 'loading' ? 'Envoi en cours…' : 'Envoyer mon avis'}
       </button>

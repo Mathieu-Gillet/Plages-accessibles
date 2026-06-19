@@ -38,7 +38,7 @@ export function RechercheRapide() {
       />
       <button
         type="submit"
-        className="bg-ocean text-white px-5 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-ocean-clair transition-colors"
+        className="bg-ocean text-white px-5 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-ocean-fonce transition-colors"
         aria-label="Lancer la recherche"
       >
         <Search size={18} aria-hidden="true" />

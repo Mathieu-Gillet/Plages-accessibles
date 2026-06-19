@@ -38,7 +38,7 @@ export function Header() {
           <li>
             <Link
               href="/contribuer"
-              className="bg-ocean text-white px-4 py-2 rounded-lg hover:bg-ocean-clair transition-colors"
+              className="bg-ocean text-white px-4 py-2 rounded-lg hover:bg-ocean-fonce transition-colors"
             >
               Contribuer
             </Link>
