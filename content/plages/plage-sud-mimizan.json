@@ -1,0 +1,27 @@
+{
+  "slug": "plage-sud-mimizan",
+  "nom": "Plage Sud",
+  "description": "Plage principale du côté sud de Mimizan surveillée du 13 juin au 13 septembre tous les jours Plage référencée sur DataTourisme avec aménagements PMR vérifiés par les CRT.",
+  "commune": "Mimizan",
+  "codePostal": "40200",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 44.205312,
+  "longitude": -1.2993264,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Mimizan_Plage_Nord_les_commerces_%283%29.JPG",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-20",
+  "verifiedBy": "datatourisme",
+  "accessibilites": [
+    "PERSONNEL_FORME",
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
