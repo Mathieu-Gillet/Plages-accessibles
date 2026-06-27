@@ -1,14 +1,21 @@
 name: CI
 
-# Safety net for every PR — auto-import, auto-enrich, contributions, reviews
-# and code changes alike. `npm run build` validates every content/plages/*.json
-# through the Zod schema, so a bad content file fails here instead of breaking
-# the production deploy after merge.
+# Safety net for every PR — public contributions, reviews and code changes alike.
+# `npm run build` validates every content/plages/*.json through the Zod schema, so
+# a bad content file fails here instead of breaking the production deploy.
+#
+# Public submission PRs (created by the site forms via the GITHUB_PAT, branch
+# prefixes `contribution/` and `avis/`) are merged automatically once `validate`
+# passes — see the `auto-merge` job below. Human code PRs are NOT auto-merged.
 
 on:
   pull_request:
   push:
     branches: [master]
+
+permissions:
+  contents: write       # auto-merge needs to push the squash-merge to master
+  pull-requests: write  # auto-merge needs to merge + delete the head branch
 
 concurrency:
   group: ci-${{ github.ref }}
@@ -42,3 +49,22 @@ jobs:
 
       - name: Build (validates all content via Zod)
         run: npm run build
+
+  auto-merge:
+    # Auto-merge public submissions once validation passes. Restricted to the
+    # branch prefixes the site forms create, so human code PRs still need a
+    # manual merge. Fork PRs get a read-only token, so the merge step is a no-op
+    # for them even if they were named with these prefixes.
+    needs: validate
+    if: >
+      github.event_name == 'pull_request' &&
+      (startsWith(github.head_ref, 'contribution/') || startsWith(github.head_ref, 'avis/'))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Squash-merge the validated submission
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          gh pr merge "$PR" --repo "${{ github.repository }}" --squash --delete-branch
+          echo "PR #$PR mergée automatiquement après CI verte."

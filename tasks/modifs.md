@@ -1,5 +1,33 @@
 # Modifications — Plages Accessibles
 
+## 2026-06-27 — Autonomie du site + réparation des sources d'import
+
+### Contexte
+Le pipeline trouvait des plages mais les PR `auto/*` n'étaient jamais mergées (11 PR ouvertes, 7 imports rejouant les 2 mêmes plages chaque jour) → rien n'arrivait sur le site. Plusieurs connecteurs étaient cassés (schémas d'API changés).
+
+### Nettoyage
+- Merge des 2 PR fraîches (#93 import, #94 enrich), fermeture des 9 doublons, suppression de toutes les branches `auto/*` + `audit/2026-06-19-fixes`. Il ne reste que `master`.
+
+### Connecteurs réparés
+- **`scripts/sources/tourisme-handicap.ts`** : le dataset OpenDataSoft avait changé de schéma (`categorie`/`handicap_*` → `nom_du_professionnel`/`handicaps_attribues`/`coordonnees_geographiques`) → requête `where=search('plage')`, mapping réécrit, filtre « vraie plage » (coords + nom + activité nature). **0 → 40 plages.**
+- **`scripts/sources/handiplage-live.ts`** : le scraper HTML visait `wp/v2/*` (404, ne renvoyait que des articles de blog). Réécrit pour consommer l'API GeoDirectory JSON `geodir/v2/plages-accessibles` (~221 fiches). **0 → 208 plages.**
+- **`scripts/lib/geo.ts` `reverseGeocode`** : `api-adresse.data.gouv.fr/reverse` (adresse la plus proche) renvoie vide au-dessus de l'eau/sable → bascule sur `geo.api.gouv.fr/communes` (point-dans-polygone) avec l'ancien en secours. Débloque handiplage **et** OSM (**7 → 45**).
+- **`scripts/sources/acceslibre.ts`** : schéma d'auth `Token` → `Api-Key` (reste inactif tant que `ACCESLIBRE_API_KEY` n'est pas ajouté en secret — l'API est fermée sans clé).
+- **`scripts/lib/geo.ts`** : ajout `cleanBeachName`/`titleCaseFr` (noms `PLAGE DE …` / `Commune - Plage de Commune` → propres) + tests. Bilan : **33 → 306 candidats** uniques en dry-run (plafond 25/jour).
+
+### Autonomie (plus de validation manuelle)
+- **`.github/workflows/import-plages.yml`** et **`enrich-pois.yml`** : suppression des branches/PR `auto/*` et des jobs cleanup. Le job valide (lint + tsc + tests + build) puis **commit direct sur `master`** (`git pull --rebase` + push). Groupe de concurrence `content-master` partagé pour sérialiser les push.
+- **`.github/workflows/ci.yml`** : ajout d'un job `auto-merge` qui squash-merge les PR `contribution/*` et `avis/*` dès que `validate` passe (les PR de code humaines ne sont pas auto-mergées).
+
+### Vérification
+- `npx tsc --noEmit`, `npm run lint` (0 erreur), `npm test` (39 tests, dont nouveaux), `npm run build` (37 pages) : OK.
+- Dry-run import local : 306 candidats, 0 rejet, noms/slugs propres vérifiés.
+- Connecteurs testés en réel : tourisme-handicap 40, handiplage 208.
+
+### Actions utilisateur restantes
+- **Crédit Anthropic épuisé** (descriptions IA + source claude-research échouent, fallback template). Recharger pour réactiver.
+- **`ACCESLIBRE_API_KEY`** : ajouter le secret pour activer la source acceslibre.
+
 ## 2026-04-16 — Étape 1 : Sécurité immédiate
 
 ### Contexte

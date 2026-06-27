@@ -139,8 +139,10 @@ function toCandidate(r: AcceslibleRecord): Candidate | null {
 
 async function fetchPage(page: number, apiKey: string): Promise<AcceslibreResponse> {
   const url = `${BASE}?activite=plage&page_size=${PAGE_SIZE}&page=${page}`
+  // Acceslibre's Swagger requires the "Api-Key" auth scheme, not "Token"
+  // (a "Token …" header is silently ignored → 403 "authentification non fournie").
   const res = await fetch(url, {
-    headers: { Accept: 'application/json', Authorization: `Token ${apiKey}` },
+    headers: { Accept: 'application/json', Authorization: `Api-Key ${apiKey}` },
   })
   if (!res.ok) throw new Error(`Acceslibre API ${res.status}: ${res.statusText}`)
   return res.json() as Promise<AcceslibreResponse>

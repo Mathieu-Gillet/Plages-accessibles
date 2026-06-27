@@ -1,13 +1,25 @@
 // Adapter for the "Tourisme & Handicap" national label dataset published by the
 // Direction Générale des Entreprises (DGE) on data.economie.gouv.fr.
 //
-// API: OpenDataSoft v2.1  — no authentication required, updated daily.
-// Only records whose `categorie` field contains "plage" (case-insensitive) are kept.
-// Up to 5 pages × 100 records = 500 results per run (the dataset has ~200 plage records).
+// API: OpenDataSoft Explore v2.1 — no authentication required, updated regularly.
+//
+// The dataset schema changed (mid-2026): the old `categorie`/`handicap_moteur`
+// fields no longer exist and the previous query returned HTTP 400
+// (ODSQLError: "Unknown field: categorie"). The current fields are:
+//   nom_du_professionnel, ville, code_postal_du_professionnel,
+//   coordonnees_geographiques ({lon,lat} | null), handicaps_attribues
+//   (e.g. ["AUDITIF","MENTAL","MOTEUR","VISUEL"]), activite_du_professionnel.
+//
+// There is no dedicated "plage" category, so we full-text search 'plage' and
+// then keep only genuine beaches: a free-text match also returns cinemas,
+// campsites and tourist offices located in towns named "…-Plage", so we require
+// (a) GPS present, (b) the name to mention "plage", and (c) an outdoor/nature
+// activity. This trades a little recall for precision — we never want to publish
+// a cinema as a wheelchair-accessible beach.
 
 import type { Source } from './types'
 import type { Candidate } from '../lib/validate-candidate'
-import { makeSlug, regionFromCodePostal, departementFromCodePostal } from '../lib/geo'
+import { makeSlug, regionFromCodePostal, departementFromCodePostal, cleanBeachName, titleCaseFr } from '../lib/geo'
 import { TYPES_ACCESSIBILITE } from '../../src/lib/content-schema'
 
 type TypeAccessibilite = (typeof TYPES_ACCESSIBILITE)[number]
@@ -19,24 +31,24 @@ const BASE =
 const PAGE_SIZE = 100
 const MAX_PAGES = 5
 
+// Activities that designate an actual beach / outdoor bathing site. Everything
+// else returned by the full-text search (Office de tourisme, Camping, Hôtel,
+// Restauration, Lieu de visite, Etablissement de loisir…) is discarded.
+const BEACH_ACTIVITIES = new Set([
+  'Sortie nature',
+  'Sport de nature',
+  'Sport nautique',
+])
+
+const NAME_LOOKS_LIKE_BEACH = /\bplages?\b/i
+
 interface TourismeRecord {
-  denomination?: string
-  nom_commercial?: string
-  commune?: string
-  code_postal?: string
-  latitude?: number | string
-  longitude?: number | string
-  categorie?: string
-  description?: string
-  handicap_moteur?: boolean | string
-  handicap_auditif?: boolean | string
-  handicap_visuel?: boolean | string
-  handicap_mental?: boolean | string
-  // Some exports use these alternate keys
-  moteur?: boolean | string
-  auditif?: boolean | string
-  visuel?: boolean | string
-  mental?: boolean | string
+  nom_du_professionnel?: string
+  ville?: string
+  code_postal_du_professionnel?: string
+  coordonnees_geographiques?: { lon: number; lat: number } | null
+  handicaps_attribues?: string[]
+  activite_du_professionnel?: string
 }
 
 interface OdsResponse {
@@ -44,64 +56,56 @@ interface OdsResponse {
   results: TourismeRecord[]
 }
 
-function bool(v: boolean | string | undefined): boolean {
-  if (typeof v === 'boolean') return v
-  if (typeof v === 'string') return v.toLowerCase() === 'true' || v === '1' || v === 'oui'
-  return false
-}
-
-function buildAccessibilites(r: TourismeRecord): TypeAccessibilite[] {
+function buildAccessibilites(handicaps: string[]): TypeAccessibilite[] {
   const acc: TypeAccessibilite[] = []
-  const moteur = bool(r.handicap_moteur ?? r.moteur)
-  const auditif = bool(r.handicap_auditif ?? r.auditif)
-  const visuel = bool(r.handicap_visuel ?? r.visuel)
-  const mental = bool(r.handicap_mental ?? r.mental)
-
-  if (moteur) {
+  if (handicaps.includes('MOTEUR')) {
     acc.push('FAUTEUIL_ROULANT', 'CHEMIN_ACCES', 'PARKINGS_PMR', 'SANITAIRES_ADAPTES')
   }
-  if (auditif) acc.push('BOUCLE_MAGNETIQUE')
-  if (visuel) acc.push('SIGNALISATION_BRAILLE')
-  // Deduplicate while preserving order
+  if (handicaps.includes('AUDITIF')) acc.push('BOUCLE_MAGNETIQUE')
+  if (handicaps.includes('VISUEL')) acc.push('SIGNALISATION_BRAILLE')
+  if (handicaps.includes('MENTAL')) acc.push('PERSONNEL_FORME')
   return [...new Set(acc)]
 }
 
-function buildDescription(r: TourismeRecord, commune: string): string {
-  if (r.description && r.description.trim().length >= 150) return r.description.trim()
-
-  const flags: string[] = []
-  if (bool(r.handicap_moteur ?? r.moteur)) flags.push('moteur')
-  if (bool(r.handicap_auditif ?? r.auditif)) flags.push('auditif')
-  if (bool(r.handicap_visuel ?? r.visuel)) flags.push('visuel')
-  if (bool(r.handicap_mental ?? r.mental)) flags.push('mental')
-
-  const nom = r.denomination ?? r.nom_commercial ?? 'Plage'
-  const handicapsStr = flags.length > 0 ? flags.join(', ') : 'moteur'
-  const base = r.description?.trim() ?? ''
-  const extra =
-    `Établissement labellisé Tourisme & Handicap (${handicapsStr}) à ${commune}. ` +
-    `La plage "${nom}" répond aux critères officiels du label national géré par l'ATD ` +
-    `(Association Tourisme & Handicap) et contrôlé par les services de la DGE. ` +
-    `Des équipements et aménagements adaptés sont disponibles sur place pour permettre ` +
-    `l'accueil des personnes en situation de handicap dans les meilleures conditions.`
-  return base ? `${base} ${extra}` : extra
+function buildDescription(nom: string, commune: string, handicaps: string[]): string {
+  const labels: Record<string, string> = {
+    MOTEUR: 'moteur',
+    AUDITIF: 'auditif',
+    VISUEL: 'visuel',
+    MENTAL: 'mental',
+  }
+  const handicapsStr =
+    handicaps.map((h) => labels[h]).filter(Boolean).join(', ') || 'moteur'
+  return (
+    `La plage "${nom}" à ${commune} est labellisée Tourisme & Handicap pour les handicaps : ` +
+    `${handicapsStr}. Ce label national, géré par l'Association Tourisme & Handicap (ATD) et ` +
+    `contrôlé par les services de la Direction Générale des Entreprises, garantit la fiabilité ` +
+    `des informations sur l'accessibilité et la présence d'équipements et d'aménagements adaptés ` +
+    `pour l'accueil des personnes en situation de handicap sur ce site balnéaire.`
+  )
 }
 
 function toCandidate(r: TourismeRecord): Candidate | null {
-  const nom = (r.denomination ?? r.nom_commercial ?? '').trim()
-  const commune = (r.commune ?? '').trim()
-  const cp = (r.code_postal ?? '').trim()
-  const lat = parseFloat(String(r.latitude ?? ''))
-  const lon = parseFloat(String(r.longitude ?? ''))
+  const rawNom = (r.nom_du_professionnel ?? '').trim()
+  const commune = titleCaseFr((r.ville ?? '').trim())
+  const cp = (r.code_postal_du_professionnel ?? '').replace(/\s/g, '').trim()
+  const geo = r.coordonnees_geographiques
+  const activite = (r.activite_du_professionnel ?? '').trim()
+  const handicaps = r.handicaps_attribues ?? []
 
-  if (!nom || !commune || !cp || isNaN(lat) || isNaN(lon)) return null
+  // Precision filters — keep only genuine beaches with usable coordinates.
+  if (!rawNom || !commune || !/^\d{5}$/.test(cp) || !geo) return null
+  if (!NAME_LOOKS_LIKE_BEACH.test(rawNom)) return null
+  if (!BEACH_ACTIVITIES.has(activite)) return null
 
-  const accessibilites = buildAccessibilites(r)
+  const nom = cleanBeachName(rawNom)
+
+  const accessibilites = buildAccessibilites(handicaps)
   if (accessibilites.length === 0) return null
 
   const slug = makeSlug(nom, commune)
-  // Cast via unknown: TS6 excess property check on object literals doesn't recognise
-  // fields inherited through Partial<PlageContent> in interface extension.
+  // Cast via unknown: TS excess-property check on object literals doesn't
+  // recognise fields inherited through Partial<PlageContent>.
   return {
     slug,
     nom,
@@ -109,19 +113,18 @@ function toCandidate(r: TourismeRecord): Candidate | null {
     codePostal: cp,
     departement: departementFromCodePostal(cp),
     region: regionFromCodePostal(cp),
-    latitude: lat,
-    longitude: lon,
+    latitude: geo.lat,
+    longitude: geo.lon,
     accessibilites,
     noteGlobale: 4.0,
     photo: `https://picsum.photos/seed/${slug}/1200/600`,
     verifiedBy: 'tourisme-handicap',
-    description: buildDescription(r, commune),
+    description: buildDescription(nom, commune, handicaps),
   } as unknown as Candidate
 }
 
 async function fetchPage(offset: number): Promise<OdsResponse> {
-  // ODS v2.1 uses search() instead of LIKE; field may be categorie or type_etablissement.
-  const where = encodeURIComponent("search(categorie, 'plage') OR search(type_etablissement, 'plage')")
+  const where = encodeURIComponent("search('plage')")
   const url = `${BASE}?limit=${PAGE_SIZE}&offset=${offset}&where=${where}&lang=fr`
   const res = await fetch(url, { headers: { Accept: 'application/json' } })
   if (!res.ok) throw new Error(`Tourisme & Handicap API ${res.status}: ${res.statusText}`)
@@ -139,7 +142,6 @@ export const tourismeHandicapSource: Source = {
         const c = toCandidate(r)
         if (c) candidates.push(c)
       }
-      // Stop early if we've retrieved all available records
       if ((page + 1) * PAGE_SIZE >= data.total_count) break
     }
 
