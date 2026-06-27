@@ -1,0 +1,28 @@
+{
+  "slug": "dijon-talant",
+  "nom": "Dijon",
+  "description": "Plage labellisée Handiplage à Talant. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Dijon\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Talant",
+  "codePostal": "21240",
+  "departement": "Côte-d'Or",
+  "region": "Bourgogne-Franche-Comté",
+  "latitude": 47.3251425,
+  "longitude": 5.0083282,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Dijon_-_Palais_des_Ducs_et_des_%C3%89tats_de_Bourgogne_-_01.jpg/1280px-Dijon_-_Palais_des_Ducs_et_des_%C3%89tats_de_Bourgogne_-_01.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

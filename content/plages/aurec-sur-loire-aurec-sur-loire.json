@@ -1,0 +1,25 @@
+{
+  "slug": "aurec-sur-loire-aurec-sur-loire",
+  "nom": "Aurec-sur-Loire",
+  "description": "Plage labellisée Handiplage à Aurec-sur-Loire. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Aurec-sur-Loire\" : parkings pmr, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Aurec-sur-Loire",
+  "codePostal": "43110",
+  "departement": "Haute-Loire",
+  "region": "Auvergne-Rhône-Alpes",
+  "latitude": 45.365561240026,
+  "longitude": 4.194159507752,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Aurec-sur-Loire_Vue_g%C3%A9n%C3%A9rale.JPG/1280px-Aurec-sur-Loire_Vue_g%C3%A9n%C3%A9rale.JPG",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

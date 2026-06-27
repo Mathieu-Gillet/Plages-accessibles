@@ -1,0 +1,29 @@
+{
+  "slug": "plage-du-lac-bruges",
+  "nom": "Plage du Lac",
+  "description": "Plage labellisée Handiplage à Bruges. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage du Lac\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Bruges",
+  "codePostal": "33520",
+  "departement": "Gironde",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 44.878124267481,
+  "longitude": -0.578917993774,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Blankenberge_Beach_R01.jpg/1280px-Blankenberge_Beach_R01.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

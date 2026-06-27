@@ -1,0 +1,31 @@
+{
+  "slug": "plage-le-plan-d-eau-la-bernerie-en-retz",
+  "nom": "Plage le plan d’eau",
+  "description": "Plage labellisée Handiplage à La Bernerie-en-Retz. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage le plan d’eau\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "La Bernerie-en-Retz",
+  "codePostal": "44760",
+  "departement": "Loire-Atlantique",
+  "region": "Pays de la Loire",
+  "latitude": 47.0771413,
+  "longitude": -2.0359035,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/La_grande_Plage.JPG/1280px-La_grande_Plage.JPG",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

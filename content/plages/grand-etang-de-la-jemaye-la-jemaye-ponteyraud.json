@@ -1,0 +1,29 @@
+{
+  "slug": "grand-etang-de-la-jemaye-la-jemaye-ponteyraud",
+  "nom": "Grand Etang de La Jemaye",
+  "description": "Plage labellisée Handiplage à La Jemaye-Ponteyraud. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Grand Etang de La Jemaye\" : parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, boucle magnetique, signalisation braille. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "La Jemaye-Ponteyraud",
+  "codePostal": "24410",
+  "departement": "Dordogne",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 45.160979525298,
+  "longitude": 0.278348922729,
+  "photo": "https://picsum.photos/seed/grand-etang-de-la-jemaye-la-jemaye-ponteyraud/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE",
+    "SIGNALISATION_BRAILLE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

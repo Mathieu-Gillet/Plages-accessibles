@@ -1,0 +1,31 @@
+{
+  "slug": "plage-de-bernieres-sur-mer-bernieres-sur-mer",
+  "nom": "Plage de Bernières sur Mer",
+  "description": "Plage labellisée Handiplage à Bernières-sur-Mer. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de Bernières sur Mer\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Bernières-sur-Mer",
+  "codePostal": "14990",
+  "departement": "Calvados",
+  "region": "Normandie",
+  "latitude": 49.334896800952,
+  "longitude": -0.424711704254,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Totem_JunoBeach-BernieresSurMer.jpg/1280px-Totem_JunoBeach-BernieresSurMer.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

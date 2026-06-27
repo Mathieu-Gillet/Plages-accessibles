@@ -1,0 +1,29 @@
+{
+  "slug": "lac-de-gurson-carsac-de-gurson",
+  "nom": "Lac de Gurson",
+  "description": "Plage labellisée Handiplage à Carsac-de-Gurson. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Lac de Gurson\" : parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, boucle magnetique, signalisation braille. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Carsac-de-Gurson",
+  "codePostal": "24610",
+  "departement": "Dordogne",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 44.939074051269,
+  "longitude": 0.075499048053,
+  "photo": "https://picsum.photos/seed/lac-de-gurson-carsac-de-gurson/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE",
+    "SIGNALISATION_BRAILLE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "plage-du-jai-nord-marignane",
+  "nom": "Plage du Jaî Nord",
+  "description": "Plage labellisée Handiplage à Marignane. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage du Jaî Nord\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, boucle magnetique, signalisation braille. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Marignane",
+  "codePostal": "13700",
+  "departement": "Bouches-du-Rhône",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.42275232976,
+  "longitude": 5.178874413062,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/La_plage_de_carry_022.jpg/1280px-La_plage_de_carry_022.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE",
+    "SIGNALISATION_BRAILLE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

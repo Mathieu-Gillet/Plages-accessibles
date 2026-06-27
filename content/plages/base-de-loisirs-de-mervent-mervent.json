@@ -1,0 +1,25 @@
+{
+  "slug": "base-de-loisirs-de-mervent-mervent",
+  "nom": "Base de loisirs de Mervent",
+  "description": "Plage labellisée Handiplage à Mervent. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Base de loisirs de Mervent\" : boucle magnetique, signalisation braille. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Mervent",
+  "codePostal": "85200",
+  "departement": "Vendée",
+  "region": "Pays de la Loire",
+  "latitude": 46.519820644713,
+  "longitude": -0.751469135284,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Plage_SW_from_Pointe_All%C3%A8gre_kz01.jpg/1280px-Plage_SW_from_Pointe_All%C3%A8gre_kz01.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "BOUCLE_MAGNETIQUE",
+    "SIGNALISATION_BRAILLE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

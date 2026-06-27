@@ -1,0 +1,33 @@
+{
+  "slug": "grande-plage-saint-gilles-croix-de-vie",
+  "nom": "Grande Plage",
+  "description": "Plage labellisée Handiplage à Saint-Gilles-Croix-de-Vie. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Grande Plage\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces, signalisation braille, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Gilles-Croix-de-Vie",
+  "codePostal": "85800",
+  "departement": "Vendée",
+  "region": "Pays de la Loire",
+  "latitude": 46.6904898,
+  "longitude": -1.9391077,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/La_grande_plage%2C_Saint-Gilles-Croix-de-Vie_%2835190203911%29.jpg/1280px-La_grande_plage%2C_Saint-Gilles-Croix-de-Vie_%2835190203911%29.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "SIGNALISATION_BRAILLE",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

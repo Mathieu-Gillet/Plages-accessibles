@@ -1,0 +1,31 @@
+{
+  "slug": "plage-des-mottets-viviers-du-lac",
+  "nom": "Plage des Mottets",
+  "description": "Plage labellisée Handiplage à Viviers-du-Lac. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage des Mottets\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, boucle magnetique, signalisation braille. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Viviers-du-Lac",
+  "codePostal": "73420",
+  "departement": "Savoie",
+  "region": "Auvergne-Rhône-Alpes",
+  "latitude": 45.6487689,
+  "longitude": 5.8908039,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Crue_Lac_du_Bourget_2023_-_Plage_et_restaurant_du_Lido.JPG/1280px-Crue_Lac_du_Bourget_2023_-_Plage_et_restaurant_du_Lido.JPG",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE",
+    "SIGNALISATION_BRAILLE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

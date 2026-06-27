@@ -1,0 +1,32 @@
+{
+  "slug": "plage-de-la-boirie-saint-denis-doleron",
+  "nom": "Plage de la Boirie",
+  "description": "Plage labellisée Handiplage à Saint-Denis-d'Oléron. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de la Boirie\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces, signalisation braille, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Denis-d'Oléron",
+  "codePostal": "17650",
+  "departement": "Charente-Maritime",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 46.0334545,
+  "longitude": -1.3728764,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Cabines_de_plage_%C3%A0_Saint_Denys.JPG/1280px-Cabines_de_plage_%C3%A0_Saint_Denys.JPG",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "SIGNALISATION_BRAILLE",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

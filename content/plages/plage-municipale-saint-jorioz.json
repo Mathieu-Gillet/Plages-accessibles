@@ -1,0 +1,31 @@
+{
+  "slug": "plage-municipale-saint-jorioz",
+  "nom": "Plage Municipale",
+  "description": "Plage labellisée Handiplage à Saint-Jorioz. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage Municipale\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Jorioz",
+  "codePostal": "74410",
+  "departement": "Haute-Savoie",
+  "region": "Auvergne-Rhône-Alpes",
+  "latitude": 45.843868631995,
+  "longitude": 6.172664165497,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Passerelle_sur_le_Laudon_Plage_de_St-Jorioz_%28novembre_2022%29.JPG/1280px-Passerelle_sur_le_Laudon_Plage_de_St-Jorioz_%28novembre_2022%29.JPG",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "plage-des-minimes-la-rochelle",
+  "nom": "Plage des Minimes",
+  "description": "Plage labellisée Handiplage à La Rochelle. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage des Minimes\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, chemin acces, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "La Rochelle",
+  "codePostal": "17000",
+  "departement": "Charente-Maritime",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 46.1396919,
+  "longitude": -1.171898,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Plage_des_Minimes_%40_La_Rochelle_%288381457291%29.jpg/1280px-Plage_des_Minimes_%40_La_Rochelle_%288381457291%29.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

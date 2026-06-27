@@ -1,0 +1,30 @@
+{
+  "slug": "grande-plage-saint-georges-de-didonne",
+  "nom": "Grande Plage",
+  "description": "Plage labellisée Handiplage à Saint-Georges-de-Didonne. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Grande Plage\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, sanitaires adaptes, chemin acces, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Georges-de-Didonne",
+  "codePostal": "17110",
+  "departement": "Charente-Maritime",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 45.58953458597,
+  "longitude": -0.989319864096,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Plages_de_Saint-Georges-de-Didonne_%282%29.JPG/1280px-Plages_de_Saint-Georges-de-Didonne_%282%29.JPG",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

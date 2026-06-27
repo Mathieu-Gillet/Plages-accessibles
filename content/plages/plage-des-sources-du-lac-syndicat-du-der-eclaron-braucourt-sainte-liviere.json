@@ -1,0 +1,30 @@
+{
+  "slug": "plage-des-sources-du-lac-syndicat-du-der-eclaron-braucourt-sainte-liviere",
+  "nom": "Plage des Sources du Lac Syndicat du Der",
+  "description": "Plage labellisée Handiplage à Éclaron-Braucourt-Sainte-Livière. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage des Sources du Lac Syndicat du Der\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, chemin acces, boucle magnetique, signalisation braille. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Éclaron-Braucourt-Sainte-Livière",
+  "codePostal": "52290",
+  "departement": "Haute-Marne",
+  "region": "Grand Est",
+  "latitude": 48.5675554,
+  "longitude": 4.8464512,
+  "photo": "https://picsum.photos/seed/plage-des-sources-du-lac-syndicat-du-der-eclaron-braucourt-sainte-liviere/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE",
+    "SIGNALISATION_BRAILLE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

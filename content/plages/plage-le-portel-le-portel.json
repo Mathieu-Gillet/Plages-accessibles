@@ -1,0 +1,31 @@
+{
+  "slug": "plage-le-portel-le-portel",
+  "nom": "Plage Le Portel",
+  "description": "Plage labellisée Handiplage à Le Portel. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage Le Portel\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Le Portel",
+  "codePostal": "62480",
+  "departement": "Pas-de-Calais",
+  "region": "Hauts-de-France",
+  "latitude": 50.708715931017,
+  "longitude": 1.569671630859,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Plage_de_LE_PORTEL.jpg/1280px-Plage_de_LE_PORTEL.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

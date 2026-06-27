@@ -1,0 +1,29 @@
+{
+  "slug": "plage-cayeux-sur-mer-cayeux-sur-mer",
+  "nom": "Plage Cayeux sur Mer",
+  "description": "Plage labellisée Handiplage à Cayeux-sur-Mer. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage Cayeux sur Mer\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Cayeux-sur-Mer",
+  "codePostal": "80410",
+  "departement": "Somme",
+  "region": "Hauts-de-France",
+  "latitude": 50.183521263477,
+  "longitude": 1.494054794312,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Cayeux-sur-Mer_Plage_7.jpg/1280px-Cayeux-sur-Mer_Plage_7.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
