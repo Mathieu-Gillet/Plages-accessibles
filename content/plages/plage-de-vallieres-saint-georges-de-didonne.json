@@ -25,7 +25,36 @@
     "CHEMIN_ACCES",
     "BOUCLE_MAGNETIQUE"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "Rêve de Sable",
+      "type": "hôtel",
+      "adresse": "Saint-Georges-de-Didonne",
+      "latitude": 45.6230973,
+      "longitude": -1.0220183,
+      "distanceKm": 1.9,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Hôtel Foncillon",
+      "type": "hôtel",
+      "adresse": "Saint-Georges-de-Didonne",
+      "latitude": 45.6200931,
+      "longitude": -1.0338136,
+      "distanceKm": 2.3,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Espace d'Art contemporain",
+      "type": "centre culturel",
+      "adresse": "19 Quai Amiral Meyer, Saint-Georges-de-Didonne",
+      "latitude": 45.6206927,
+      "longitude": -1.0304614,
+      "distanceKm": 2.1,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

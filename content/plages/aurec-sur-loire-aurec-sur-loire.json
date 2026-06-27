@@ -20,6 +20,16 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
+  "offresCulturelles": [
+    {
+      "nom": "La Forge",
+      "type": "théâtre",
+      "adresse": "92 Rue de la République, 42500, Aurec-sur-Loire",
+      "latitude": 45.3955709,
+      "longitude": 4.3145342,
+      "distanceKm": 10,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

@@ -25,7 +25,100 @@
     "BOUCLE_MAGNETIQUE",
     "SIGNALISATION_BRAILLE"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "Hôtel Villa Marlioz",
+      "type": "hôtel",
+      "adresse": "Viviers-du-Lac",
+      "latitude": 45.6726197,
+      "longitude": 5.9115316,
+      "distanceKm": 3.1,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "B&B Hotel Aix-les-Bains",
+      "type": "hôtel",
+      "adresse": "Viviers-du-Lac",
+      "siteWeb": "https://www.hotel-bb.com/fr/hotel/aix-les-bains",
+      "latitude": 45.7158768,
+      "longitude": 5.9230824,
+      "distanceKm": 7.9,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Ibis Budget Chambéry Centre Ville",
+      "type": "hôtel",
+      "adresse": "Viviers-du-Lac",
+      "siteWeb": "https://www.accorhotels.com/fr/hotel-2548-ibis-budget-chambery-centre-ville-ex-etap-hotel/index.shtml",
+      "latitude": 45.575988,
+      "longitude": 5.9101475,
+      "distanceKm": 8.2,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Kyriad Chambéry Centre - Curial hotel",
+      "type": "hôtel",
+      "adresse": "73000, Chambéry",
+      "telephone": "+33 4 79361364",
+      "siteWeb": "https://www.kyriad.com/en/hotels/kyriad-chambery-centre-curial",
+      "latitude": 45.5638151,
+      "longitude": 5.9270634,
+      "distanceKm": 9.9,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Cinéma Les Toiles du Lac",
+      "type": "cinéma",
+      "adresse": "14 Avenue Daniel Rops, 73100, Aix-les-Bains",
+      "siteWeb": "https://www.lestoilesdulac.com/",
+      "latitude": 45.6929551,
+      "longitude": 5.8948456,
+      "distanceKm": 4.9,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "L'Astrée",
+      "type": "cinéma",
+      "adresse": "73000, Chambéry",
+      "telephone": "+33 4 79334053",
+      "siteWeb": "https://www.forum-cinemas.com/astree/",
+      "latitude": 45.5661064,
+      "longitude": 5.9230203,
+      "distanceKm": 9.5,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Musée Savoisien",
+      "type": "musée",
+      "adresse": "73000, Chambéry",
+      "siteWeb": "https://www.musee-savoisien.fr/",
+      "latitude": 45.5654698,
+      "longitude": 5.9227157,
+      "distanceKm": 9.6,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Galerie Eurêka",
+      "type": "musée",
+      "adresse": "Place François Mitterrand, 73000, Chambéry",
+      "telephone": "+33 4 79 60 04 25",
+      "siteWeb": "https://www.chambery.fr/90-la-galerie-eureka.htm",
+      "latitude": 45.5639725,
+      "longitude": 5.9245004,
+      "distanceKm": 9.8,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "CinéMalraux",
+      "type": "cinéma",
+      "adresse": "58 Place de la Brigade de Savoie, 73000, Chambéry",
+      "latitude": 45.5635113,
+      "longitude": 5.9254073,
+      "distanceKm": 9.9,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

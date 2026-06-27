@@ -24,7 +24,55 @@
     "CHEMIN_ACCES",
     "BOUCLE_MAGNETIQUE"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "Hôtel Ibis Thalassa",
+      "type": "hôtel",
+      "adresse": "83400, Hyères",
+      "latitude": 43.0573522,
+      "longitude": 6.1481417,
+      "distanceKm": 1.3,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Riviéra Beach Club",
+      "type": "hôtel",
+      "adresse": "Hyères",
+      "latitude": 43.043826,
+      "longitude": 6.1481264,
+      "distanceKm": 1.6,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "chambres d'Hotes",
+      "type": "chambre d'hôtes",
+      "adresse": "Hyères",
+      "latitude": 42.9991302,
+      "longitude": 6.2035416,
+      "distanceKm": 8.3,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Musée du Niel",
+      "type": "musée",
+      "adresse": "6 Route du Port du Niel, 83400, Hyères",
+      "latitude": 43.0361529,
+      "longitude": 6.1263381,
+      "distanceKm": 1.9,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Musée de la Mine de Cap Garonne",
+      "type": "musée",
+      "adresse": "1000 Chemin du Baou Rouge, 83220, Le Pradet",
+      "siteWeb": "https://www.mine-capgaronne.fr/",
+      "latitude": 43.0815767,
+      "longitude": 6.0324224,
+      "distanceKm": 8.8,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

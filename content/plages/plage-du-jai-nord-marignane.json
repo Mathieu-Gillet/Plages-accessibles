@@ -25,7 +25,19 @@
     "BOUCLE_MAGNETIQUE",
     "SIGNALISATION_BRAILLE"
   ],
-  "hebergements": [],
+  "hebergements": [
+    {
+      "nom": "Hilton Garden Inn Marseille Provence Airport",
+      "type": "hôtel",
+      "adresse": "Aéroport Marseille Provence BP 50, 13700, Marignane",
+      "telephone": "+33 4 42 78 42 78",
+      "siteWeb": "https://www.hilton.com/en/hotels/mrsmagi-hilton-garden-inn-marseille-provence-airport/",
+      "latitude": 43.4465412,
+      "longitude": 5.2275287,
+      "distanceKm": 4.7,
+      "accessiblePMR": true
+    }
+  ],
   "offresCulturelles": [],
   "avis": []
 }

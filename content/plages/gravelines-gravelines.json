@@ -24,7 +24,39 @@
     "CHEMIN_ACCES",
     "BOUCLE_MAGNETIQUE"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "Hôtel du Beffroi",
+      "type": "hôtel",
+      "adresse": "2 Place Albert Denvers, 59820, Gravelines",
+      "siteWeb": "https://www.hoteldubeffroi.com",
+      "latitude": 50.98686,
+      "longitude": 2.1261228,
+      "distanceKm": 2.2,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Hôtel Premiere Classe",
+      "type": "hôtel",
+      "adresse": "Gravelines",
+      "latitude": 50.9964,
+      "longitude": 2.204153,
+      "distanceKm": 6.7,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Espace Tourville",
+      "type": "centre culturel",
+      "adresse": "Gravelines",
+      "telephone": "+33 3 28 21 22 40",
+      "siteWeb": "https://espacetourville.com/",
+      "latitude": 50.9864535,
+      "longitude": 2.1182069,
+      "distanceKm": 2,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

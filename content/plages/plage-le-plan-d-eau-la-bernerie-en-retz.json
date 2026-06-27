@@ -25,7 +25,69 @@
     "CHEMIN_ACCES",
     "BOUCLE_MAGNETIQUE"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "Le Grand Large",
+      "type": "hôtel",
+      "adresse": "La Bernerie-en-Retz",
+      "latitude": 47.0790289,
+      "longitude": -2.0381598,
+      "distanceKm": 0.3,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Hôtel de Nantes",
+      "type": "hôtel",
+      "adresse": "La Bernerie-en-Retz",
+      "latitude": 47.0810349,
+      "longitude": -2.038059,
+      "distanceKm": 0.5,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Golden Tulip Pornic Suites",
+      "type": "hôtel",
+      "adresse": "La Bernerie-en-Retz",
+      "siteWeb": "https://pornic.goldentulip.com",
+      "latitude": 47.1212669,
+      "longitude": -2.084579,
+      "distanceKm": 6.1,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "La Rêverie",
+      "type": "chambre d'hôtes",
+      "adresse": "La Bernerie-en-Retz",
+      "siteWeb": "https://www.lareverie-pornic.fr/",
+      "latitude": 47.1192244,
+      "longitude": -2.1163474,
+      "distanceKm": 7.7,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Ciné Toiles de Retz",
+      "type": "cinéma",
+      "adresse": "1 Rue du Chaudron, 44210, Pornic",
+      "telephone": "+33 2 72 92 31 70",
+      "siteWeb": "https://www.cinemapornic.fr",
+      "latitude": 47.1121723,
+      "longitude": -2.0753378,
+      "distanceKm": 4.9,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Cinéma Saint-Joseph",
+      "type": "cinéma",
+      "adresse": "14 Rue Notre-Dame, La Bernerie-en-Retz",
+      "telephone": "+33240821134",
+      "siteWeb": "https://www.cinestjoseph44.fr/",
+      "latitude": 47.1142385,
+      "longitude": -2.1277863,
+      "distanceKm": 8.1,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

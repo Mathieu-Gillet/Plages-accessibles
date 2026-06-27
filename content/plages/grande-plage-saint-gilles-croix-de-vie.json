@@ -28,6 +28,39 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
+  "offresCulturelles": [
+    {
+      "nom": "La Maison du pêcheur",
+      "type": "musée",
+      "adresse": "22 Rue du Maroc, 85800, Saint-Gilles-Croix-de-Vie",
+      "latitude": 46.695334,
+      "longitude": -1.9382255,
+      "distanceKm": 0.5,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "L'Atelier de la Sardine",
+      "type": "musée",
+      "adresse": "1 Chemin des Gabelous, 85800, Saint-Gilles-Croix-de-Vie",
+      "telephone": "+33 2 51 55 68 08",
+      "siteWeb": "https://www.laperledesdieux.com/",
+      "latitude": 46.7001703,
+      "longitude": -1.9327941,
+      "distanceKm": 1.2,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Atelier Henry Simon – Les Rimajures",
+      "type": "centre culturel",
+      "adresse": "75 Boulevard Georges Pompidou, Saint-Gilles-Croix-de-Vie",
+      "description": "Situé à Saint Gilles Croix de Vie, l’Atelier Henry Simon - Les Rimajures se veut être un lieu de rencontres et d’échanges privilégiés autour de l’art.",
+      "telephone": "+33251607325",
+      "siteWeb": "https://www.saintgillescroixdevie.fr/listes/atelier-henry-simon-les-rimajures/",
+      "latitude": 46.7014961,
+      "longitude": -1.945836,
+      "distanceKm": 1.3,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

@@ -23,7 +23,109 @@
     "SANITAIRES_ADAPTES",
     "BOUCLE_MAGNETIQUE"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "City Résidence Appart Hôtel Bordeaux",
+      "type": "hôtel",
+      "adresse": "Bruges",
+      "latitude": 44.8554407,
+      "longitude": -0.5666789,
+      "distanceKm": 2.7,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Hôtel du Parc",
+      "type": "hôtel",
+      "adresse": "10 Rue de la Verrerie, Bruges",
+      "siteWeb": "https://www.hotelduparc-bordeaux.com/",
+      "latitude": 44.8496851,
+      "longitude": -0.5741136,
+      "distanceKm": 3.2,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Adagio Bordeaux Gambetta",
+      "type": "hôtel",
+      "adresse": "Bruges",
+      "latitude": 44.8398646,
+      "longitude": -0.5828923,
+      "distanceKm": 4.3,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Hôtel Burdigala",
+      "type": "hôtel",
+      "adresse": "115 Rue Georges Bonnac, Bruges",
+      "telephone": "+33 5 56 90 16 16",
+      "siteWeb": "https://www.burdigala.com/",
+      "latitude": 44.839882,
+      "longitude": -0.5867171,
+      "distanceKm": 4.3,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Ibis",
+      "type": "hôtel",
+      "adresse": "35 Cours du Maréchal Juin, 33000, Bordeaux",
+      "latitude": 44.8363088,
+      "longitude": -0.5829385,
+      "distanceKm": 4.7,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Musée du Vin et du Négoce",
+      "type": "musée",
+      "adresse": "41 Rue Borie, 33300, Bruges",
+      "telephone": "+33 5 56 90 19 13",
+      "siteWeb": "https://www.museeduvinbordeaux.com/",
+      "latitude": 44.854628,
+      "longitude": -0.5693905,
+      "distanceKm": 2.7,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "La Pergola",
+      "type": "théâtre",
+      "adresse": "Rue Fernand Cazeres, 33200, Bordeaux",
+      "telephone": "+33 5 56 02 62 04",
+      "siteWeb": "https://www.bordeaux.fr/l25/theatre-la-pergola",
+      "latitude": 44.8511583,
+      "longitude": -0.6157831,
+      "distanceKm": 4.2,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "UGC",
+      "type": "cinéma",
+      "adresse": "Bruges",
+      "latitude": 44.8405439,
+      "longitude": -0.5819358,
+      "distanceKm": 4.2,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Cinéma La Lanterne",
+      "type": "cinéma",
+      "adresse": "151 Boulevard Albert 1er, 33130, Bègles",
+      "description": "Cinéma associatif et Art-et-Essai de deux écrans de la ville de Bègles.",
+      "telephone": "+33 9 78 80 88 79",
+      "latitude": 44.8131612,
+      "longitude": -0.5639856,
+      "distanceKm": 7.3,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Megarama Le Pian-Médoc",
+      "type": "cinéma",
+      "adresse": "Route de Pauillac, 33290, Le Pian-Médoc",
+      "siteWeb": "https://pian.megarama.fr/",
+      "latitude": 44.9571289,
+      "longitude": -0.6311776,
+      "distanceKm": 9.7,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

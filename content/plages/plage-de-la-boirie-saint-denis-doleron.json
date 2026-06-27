@@ -26,7 +26,19 @@
     "SIGNALISATION_BRAILLE",
     "BOUCLE_MAGNETIQUE"
   ],
-  "hebergements": [],
+  "hebergements": [
+    {
+      "nom": "Terres de France - Les hameaux des Marines",
+      "type": "hôtel",
+      "adresse": "251 Rue des Seulières, 17650, Saint Denis d'Oléron",
+      "telephone": "+33 5 46 75 21 59",
+      "siteWeb": "https://www.hameauxdesmarines.com/",
+      "latitude": 46.0132028,
+      "longitude": -1.3909822,
+      "distanceKm": 2.7,
+      "accessiblePMR": true
+    }
+  ],
   "offresCulturelles": [],
   "avis": []
 }

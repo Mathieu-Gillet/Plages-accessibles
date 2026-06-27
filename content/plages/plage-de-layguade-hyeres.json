@@ -24,7 +24,36 @@
     "CHEMIN_ACCES",
     "BOUCLE_MAGNETIQUE"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "Hôtel Ibis Thalassa",
+      "type": "hôtel",
+      "adresse": "83400, Hyères",
+      "latitude": 43.0573522,
+      "longitude": 6.1481417,
+      "distanceKm": 5.6,
+      "accessiblePMR": true
+    },
+    {
+      "nom": "Riviéra Beach Club",
+      "type": "hôtel",
+      "adresse": "Hyères",
+      "latitude": 43.043826,
+      "longitude": 6.1481264,
+      "distanceKm": 7.1,
+      "accessiblePMR": true
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Musée du Niel",
+      "type": "musée",
+      "adresse": "6 Route du Port du Niel, 83400, Hyères",
+      "latitude": 43.0361529,
+      "longitude": 6.1263381,
+      "distanceKm": 8.5,
+      "accessiblePMR": true
+    }
+  ],
   "avis": []
 }

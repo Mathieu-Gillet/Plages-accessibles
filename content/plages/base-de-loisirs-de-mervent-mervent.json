@@ -19,7 +19,18 @@
     "BOUCLE_MAGNETIQUE",
     "SIGNALISATION_BRAILLE"
   ],
-  "hebergements": [],
+  "hebergements": [
+    {
+      "nom": "Auberge du Lac",
+      "type": "hôtel",
+      "adresse": "le lac, 85200, Sérigné",
+      "telephone": "+33 2 51 00 21 21",
+      "latitude": 46.5260358,
+      "longitude": -0.8079927,
+      "distanceKm": 4.4,
+      "accessiblePMR": true
+    }
+  ],
   "offresCulturelles": [],
   "avis": []
 }
