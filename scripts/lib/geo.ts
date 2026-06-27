@@ -14,6 +14,51 @@ export function makeSlug(nom: string, commune: string): string {
   return slugify(`${nom}-${commune}`)
 }
 
+// French particles kept lowercase by titleCaseFr (unless they start the name).
+const LOWER_WORDS = new Set([
+  'de', 'des', 'du', 'la', 'le', 'les', 'l', 'd', 'sur', 'et', 'aux', 'au', 'à', 'a', 'en', 'sous', 'lès',
+])
+
+/** Title-case a French name: "PLAGE DE L'ALMANARRE" → "Plage de l'Almanarre". */
+export function titleCaseFr(input: string): string {
+  const tokens = input.toLowerCase().match(/[a-zà-ÿ]+|[^a-zà-ÿ]+/gi) ?? []
+  let wordIndex = 0
+  return tokens
+    .map((tok) => {
+      if (!/[a-zà-ÿ]/i.test(tok)) return tok // separators / punctuation
+      const isFirst = wordIndex === 0
+      wordIndex++
+      if (!isFirst && LOWER_WORDS.has(tok)) return tok
+      return tok.charAt(0).toUpperCase() + tok.slice(1)
+    })
+    .join('')
+}
+
+/**
+ * Normalise a noisy source beach name into a clean display name.
+ *
+ * Source feeds (handiplage.fr, Tourisme & Handicap) often wrap the real beach
+ * name with the commune or a service label, e.g.
+ *   "Bernières sur Mer - Plage de Bernières sur Mer" → "Plage de Bernières sur Mer"
+ *   "Plage du Prévent - Poste de Secours de Santocha"  → "Plage du Prévent"
+ *   "PLAGE DE L'ALMANARRE"                              → "Plage de l'Almanarre"
+ *
+ * Strategy: keep the " - "/" – " segment that mentions "plage" (or the first
+ * segment otherwise), then title-case it only when it is mostly uppercase so
+ * already well-cased names are left untouched.
+ */
+export function cleanBeachName(raw: string): string {
+  const segments = raw.split(/\s+[-–]\s+/).map((s) => s.trim()).filter(Boolean)
+  let name = segments.find((s) => /\bplages?\b/i.test(s)) ?? segments[0] ?? raw.trim()
+
+  const letters = name.replace(/[^a-zà-ÿ]/gi, '')
+  const upper = name.replace(/[^A-ZÀ-Þ]/g, '')
+  if (letters.length > 0 && upper.length / letters.length > 0.6) {
+    name = titleCaseFr(name)
+  }
+  return name.replace(/\s+/g, ' ').trim()
+}
+
 // Maps département code (first 2–3 digits of code postal) to region name.
 const DEPT_TO_REGION: Record<string, string> = {
   '01': 'Auvergne-Rhône-Alpes',
@@ -171,40 +216,59 @@ export function departementFromCodePostal(codePostal: string): string {
 
 /**
  * Reverse-geocode GPS coordinates to a French commune + code postal using the
- * free, key-less government API (api-adresse.data.gouv.fr).
+ * free, key-less government APIs.
  *
- * This unblocks the biggest silent yield bottleneck: many `natural=beach` nodes
- * in OpenStreetMap (and other sources) carry no `addr:city`/`addr:postcode`
- * tags and were being dropped before validation. With this we can recover the
- * commune/postcode from the coordinates instead of discarding the candidate.
+ * This unblocks the biggest silent yield bottleneck: many beach/lake points
+ * (OpenStreetMap `natural=beach` nodes, handiplage.fr fiches) carry no
+ * commune/postcode and were being dropped before validation.
+ *
+ * Primary: geo.api.gouv.fr point-in-polygon lookup — returns the commune whose
+ * boundary CONTAINS the point. This is essential for beaches and lakes, which
+ * sit far from any addressed road: the address-based reverse geocoder
+ * (api-adresse.data.gouv.fr) returns nothing for them. The address geocoder is
+ * kept only as a fallback for the rare case the boundary API is unavailable.
  *
  * Returns null on any failure (network, timeout, no result) — callers must keep
  * their existing "skip if still unknown" behaviour as a fallback.
  */
-export async function reverseGeocode(
-  lat: number,
-  lon: number,
-): Promise<{ commune: string; codePostal: string } | null> {
-  const url = `https://api-adresse.data.gouv.fr/reverse/?lat=${lat}&lon=${lon}&type=municipality`
+const GEO_HEADERS = { 'User-Agent': 'plages-accessibles/1.0 (+https://plages-accessibles.fr)' }
+
+async function fetchJsonWithTimeout(url: string, ms: number): Promise<unknown | null> {
   const controller = new AbortController()
-  const timeout = setTimeout(() => controller.abort(), 8000)
+  const timeout = setTimeout(() => controller.abort(), ms)
   try {
-    const res = await fetch(url, {
-      headers: { 'User-Agent': 'plages-accessibles/1.0 (+https://plages-accessibles.fr)' },
-      signal: controller.signal,
-    })
+    const res = await fetch(url, { headers: GEO_HEADERS, signal: controller.signal })
     if (!res.ok) return null
-    const data = (await res.json()) as {
-      features?: Array<{ properties?: { city?: string; postcode?: string } }>
-    }
-    const props = data.features?.[0]?.properties
-    const commune = props?.city?.trim()
-    const codePostal = props?.postcode?.replace(/\s/g, '').trim()
-    if (!commune || !codePostal || !/^\d{5}$/.test(codePostal)) return null
-    return { commune, codePostal }
+    return await res.json()
   } catch {
     return null
   } finally {
     clearTimeout(timeout)
   }
+}
+
+export async function reverseGeocode(
+  lat: number,
+  lon: number,
+): Promise<{ commune: string; codePostal: string } | null> {
+  // Primary: commune boundary lookup (works for points over water/sand).
+  const communes = (await fetchJsonWithTimeout(
+    `https://geo.api.gouv.fr/communes?lat=${lat}&lon=${lon}&fields=nom,codesPostaux&format=json`,
+    8000,
+  )) as Array<{ nom?: string; codesPostaux?: string[] }> | null
+  const c = communes?.[0]
+  const cp = c?.codesPostaux?.find((p) => /^\d{5}$/.test(p))
+  if (c?.nom && cp) return { commune: c.nom.trim(), codePostal: cp }
+
+  // Fallback: nearest-address reverse geocoder (only resolves near roads).
+  const data = (await fetchJsonWithTimeout(
+    `https://api-adresse.data.gouv.fr/reverse/?lat=${lat}&lon=${lon}&type=municipality`,
+    8000,
+  )) as { features?: Array<{ properties?: { city?: string; postcode?: string } }> } | null
+  const props = data?.features?.[0]?.properties
+  const commune = props?.city?.trim()
+  const codePostal = props?.postcode?.replace(/\s/g, '').trim()
+  if (commune && codePostal && /^\d{5}$/.test(codePostal)) return { commune, codePostal }
+
+  return null
 }

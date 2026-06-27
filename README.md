@@ -14,7 +14,7 @@ Annuaire collaboratif et gratuit des plages françaises accessibles aux personne
 - **Leaflet + React-Leaflet** (carte interactive OpenStreetMap)
 - **Zod** (validation du contenu au build : un fichier invalide = build cassé, jamais de données corrompues en prod)
 - **Aucune base de données** — chaque plage est un fichier JSON dans `content/plages/`, versionné dans Git
-- **GitHub comme back-office** — les contributions et avis du site ouvrent automatiquement des Pull Requests à reviewer avant merge
+- **GitHub comme back-office** — pipeline autonome : l'import quotidien valide et commite directement sur `master` ; les contributions/avis du site ouvrent des Pull Requests mergées automatiquement dès que la CI est verte (aucun merge manuel)
 - **Vercel** (hébergement, Analytics, Speed Insights)
 
 ---
@@ -80,8 +80,9 @@ scripts/
     └── geo.ts                ← Helpers géographiques (slug, région, département)
 
 .github/workflows/
-├── import-plages.yml         ← Cron quotidien : nouvelles plages → PR automatique
-└── enrich-pois.yml           ← Cron quotidien : POIs accessibles → PR automatique
+├── import-plages.yml         ← Cron quotidien : nouvelles plages → commit direct master
+├── enrich-pois.yml           ← Cron quotidien : POIs accessibles → commit direct master
+└── ci.yml                    ← Validation + auto-merge des PR publiques (contribution/avis)
 ```
 
 ---
@@ -100,25 +101,30 @@ scripts/
 
 ## Comment le contenu arrive sur le site
 
-Trois canaux, tous convergent vers une Pull Request reviewée avant merge :
+Le site est **autonome** : aucun merge manuel n'est requis. Tout contenu est validé
+automatiquement (lint + types + tests + build Zod) avant publication, puis arrive
+sur `master` ; Vercel redéploie. Il n'y a plus de branches `auto/*` ni de PR à
+reviewer pour le contenu généré.
 
 ### 1. Pipeline d'import automatique (quotidien)
 
 `.github/workflows/import-plages.yml` exécute chaque jour `scripts/import-plages.ts` :
 
-1. Déduplique les plages existantes (photo identique, GPS à ~200 m)
+1. Déduplique les plages existantes (photo identique, GPS à ~100 m)
 2. Interroge les sources par ordre de fiabilité (labels officiels → OSM → IA)
-3. Valide chaque candidat (GPS en France, ≥ 2 équipements, description ≥ 150 car.)
+3. Valide chaque candidat (GPS en France, ≥ 1 équipement, description ≥ 120 car.)
 4. Réécrit la description via Claude Haiku (si `ANTHROPIC_API_KEY` présent)
 5. Cherche une vraie photo sur Wikimedia Commons
-6. Écrit les JSON (max 10/jour) et ouvre une **PR `auto/import-*`** avec checklist de review
+6. Écrit les JSON (max 25/jour), **valide le tout puis commite directement sur `master`**
 
-`.github/workflows/enrich-pois.yml` complète de la même façon les hébergements et offres culturelles accessibles (source OSM, tags `wheelchair=yes/designated`, rayon 10 km) via des **PR `auto/enrich-*`**.
+`.github/workflows/enrich-pois.yml` complète de la même façon les hébergements et offres culturelles accessibles (source OSM, tags `wheelchair=yes/designated`, rayon 10 km), validés puis commités directement sur `master`.
 
 ### 2. Formulaires du site (visiteurs)
 
-- **/contribuer** → `POST /api/contribuer` → PR `contribution/*` (plage créée avec `actif: false`, activée à la review)
+- **/contribuer** → `POST /api/contribuer` → PR `contribution/*` (plage créée avec `actif: false`, activée par l'admin)
 - **Avis sur une page plage** → `POST /api/avis` → PR `avis/*` (+ notification email optionnelle via Resend)
+
+Ces PR publiques sont **mergées automatiquement dès que la CI est verte** (job `auto-merge` de `.github/workflows/ci.yml`, limité aux préfixes `contribution/` et `avis/`). Les plages contribuées restent `actif: false` jusqu'à activation par l'admin ; les avis sont publiés au merge.
 
 Protection anti-spam : honeypot + rate-limit par IP. Le `GITHUB_PAT` côté serveur est requis.
 
