@@ -1,0 +1,27 @@
+{
+  "slug": "plage-de-la-guerlie-pressignac",
+  "nom": "Plage de la Guerlie",
+  "description": "Plage labellisée Handiplage à Pressignac. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de la Guerlie\" : parkings pmr, douches accessibles, sanitaires adaptes, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Pressignac",
+  "codePostal": "16150",
+  "departement": "Charente",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 45.80378697262,
+  "longitude": 0.707961022854,
+  "photo": "https://picsum.photos/seed/plage-de-la-guerlie-pressignac/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

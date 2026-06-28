@@ -1,0 +1,29 @@
+{
+  "slug": "plage-du-centre-saint-leu",
+  "nom": "Plage du Centre",
+  "description": "Plage labellisée Handiplage à Saint-Leu. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage du Centre\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Leu",
+  "codePostal": "97416",
+  "departement": "La Réunion",
+  "region": "La Réunion",
+  "latitude": -21.17241798899198,
+  "longitude": 55.28679462436556,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/St.Leu-plage.jpg/1280px-St.Leu-plage.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

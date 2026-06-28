@@ -1,0 +1,29 @@
+{
+  "slug": "plage-du-ster-penmarch",
+  "nom": "Plage du Ster",
+  "description": "Plage labellisée Handiplage à Penmarch. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage du Ster\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Penmarch",
+  "codePostal": "29760",
+  "departement": "Finistère",
+  "region": "Bretagne",
+  "latitude": 47.80381158915,
+  "longitude": -4.31395398999,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/027_Plage_du_St%C3%AAr.jpg/1280px-027_Plage_du_St%C3%AAr.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

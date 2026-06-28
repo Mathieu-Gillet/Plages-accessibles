@@ -1,0 +1,31 @@
+{
+  "slug": "plage-publique-du-centre-mauguio",
+  "nom": "Plage publique du Centre",
+  "description": "Plage labellisée Handiplage à Mauguio. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage publique du Centre\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, signalisation braille, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Mauguio",
+  "codePostal": "34130",
+  "departement": "Hérault",
+  "region": "Occitanie",
+  "latitude": 43.543197873874,
+  "longitude": 3.975430727005,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Carnon-Plage%2C_Mauguio%2C_France_%28Unsplash%29.jpg/1280px-Carnon-Plage%2C_Mauguio%2C_France_%28Unsplash%29.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "SIGNALISATION_BRAILLE",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

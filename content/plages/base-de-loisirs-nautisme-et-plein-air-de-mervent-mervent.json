@@ -1,0 +1,28 @@
+{
+  "slug": "base-de-loisirs-nautisme-et-plein-air-de-mervent-mervent",
+  "nom": "Base de loisirs nautisme et plein-air de Mervent",
+  "description": "Plage labellisée Handiplage à Mervent. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Base de loisirs nautisme et plein-air de Mervent\" : parkings pmr, sanitaires adaptes, chemin acces, boucle magnetique, signalisation braille. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Mervent",
+  "codePostal": "85200",
+  "departement": "Vendée",
+  "region": "Pays de la Loire",
+  "latitude": 46.52280311334934,
+  "longitude": -0.756983757019043,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Granul%C3%A9s_plastiques_industriels_sur_une_plage_de_la_c%C3%B4te_Aquitaine.JPG/1280px-Granul%C3%A9s_plastiques_industriels_sur_une_plage_de_la_c%C3%B4te_Aquitaine.JPG",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE",
+    "SIGNALISATION_BRAILLE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

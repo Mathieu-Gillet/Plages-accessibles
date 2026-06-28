@@ -1,0 +1,27 @@
+{
+  "slug": "lac-chambon-plage-ouest-chambon-sur-lac",
+  "nom": "Lac Chambon plage Ouest",
+  "description": "Plage labellisée Handiplage à Chambon-sur-Lac. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Lac Chambon plage Ouest\" : parkings pmr, sanitaires adaptes, chemin acces, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Chambon-sur-Lac",
+  "codePostal": "63790",
+  "departement": "Puy-de-Dôme",
+  "region": "Auvergne-Rhône-Alpes",
+  "latitude": 45.574738,
+  "longitude": 2.915287,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Chambon_%28commune_d%27%C3%89guzon-Chant%C3%B4me%29_-_Plages_de_Chambon_et_Foug%C3%A8res.jpg/1280px-Chambon_%28commune_d%27%C3%89guzon-Chant%C3%B4me%29_-_Plages_de_Chambon_et_Foug%C3%A8res.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

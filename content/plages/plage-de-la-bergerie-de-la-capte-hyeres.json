@@ -1,0 +1,30 @@
+{
+  "slug": "plage-de-la-bergerie-de-la-capte-hyeres",
+  "nom": "Plage de la bergerie / de la Capte",
+  "description": "Plage labellisée Handiplage à Hyères. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de la bergerie / de la Capte\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Hyères",
+  "codePostal": "83400",
+  "departement": "Var",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.050214427617,
+  "longitude": 6.149581319574,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Hy%C3%A8res_-_Plage_de_l%27Almanarre%2C_posidonies%2C_suite_temp%C3%AAte_Ciar%C3%A1n_2023.jpg/1280px-Hy%C3%A8res_-_Plage_de_l%27Almanarre%2C_posidonies%2C_suite_temp%C3%AAte_Ciar%C3%A1n_2023.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

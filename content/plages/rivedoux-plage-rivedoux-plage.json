@@ -1,0 +1,30 @@
+{
+  "slug": "rivedoux-plage-rivedoux-plage",
+  "nom": "Rivedoux Plage",
+  "description": "Plage labellisée Handiplage à Rivedoux-Plage. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Rivedoux Plage\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, chemin acces, boucle magnetique, signalisation braille. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Rivedoux-Plage",
+  "codePostal": "17940",
+  "departement": "Charente-Maritime",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 46.157614358886,
+  "longitude": -1.264715194702,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rivedoux_Plage_%28196358237%29.jpeg/1280px-Rivedoux_Plage_%28196358237%29.jpeg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE",
+    "SIGNALISATION_BRAILLE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

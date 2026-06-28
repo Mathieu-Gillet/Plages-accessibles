@@ -1,0 +1,28 @@
+{
+  "slug": "plage-pont-tournant-saint-cyprien",
+  "nom": "Plage Pont tournant",
+  "description": "Plage labellisée Handiplage à Saint-Cyprien. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage Pont tournant\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Cyprien",
+  "codePostal": "66750",
+  "departement": "Pyrénées-Orientales",
+  "region": "Occitanie",
+  "latitude": 42.614013182861,
+  "longitude": 3.039951324463,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/St-Cyprien--plage-sud.jpg/1280px-St-Cyprien--plage-sud.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

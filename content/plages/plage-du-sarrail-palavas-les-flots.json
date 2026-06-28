@@ -1,0 +1,31 @@
+{
+  "slug": "plage-du-sarrail-palavas-les-flots",
+  "nom": "Plage du Sarrail",
+  "description": "Plage labellisée Handiplage à Palavas-les-Flots. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage du Sarrail\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, signalisation braille, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Palavas-les-Flots",
+  "codePostal": "34250",
+  "departement": "Hérault",
+  "region": "Occitanie",
+  "latitude": 43.530084674833,
+  "longitude": 3.940358161926,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Palavas-les-Flots_-_plage_des_coquilles_-_bo%C3%AEte_%C3%A0_livres.jpg/1280px-Palavas-les-Flots_-_plage_des_coquilles_-_bo%C3%AEte_%C3%A0_livres.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "SIGNALISATION_BRAILLE",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

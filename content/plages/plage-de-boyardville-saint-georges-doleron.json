@@ -1,0 +1,28 @@
+{
+  "slug": "plage-de-boyardville-saint-georges-doleron",
+  "nom": "Plage de Boyardville",
+  "description": "Plage labellisée Handiplage à Saint-Georges-d'Oléron. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de Boyardville\" : parkings pmr, douches accessibles, sanitaires adaptes, boucle magnetique, signalisation braille. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Georges-d'Oléron",
+  "codePostal": "17190",
+  "departement": "Charente-Maritime",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 45.9691315,
+  "longitude": -1.2381325,
+  "photo": "https://picsum.photos/seed/plage-de-boyardville-saint-georges-doleron/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "BOUCLE_MAGNETIQUE",
+    "SIGNALISATION_BRAILLE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "plage-de-saint-pierre-saint-pierre",
+  "nom": "Plage de Saint Pierre",
+  "description": "Plage labellisée Handiplage à Saint-Pierre. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de Saint Pierre\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Pierre",
+  "codePostal": "97410",
+  "departement": "La Réunion",
+  "region": "La Réunion",
+  "latitude": -21.344290875409598,
+  "longitude": 55.473747253417976,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Saint-Pierre-Quib%C3%A9ron_Plage_2.jpg/1280px-Saint-Pierre-Quib%C3%A9ron_Plage_2.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "plage-de-l-oasis-rouge-le-grau-du-roi",
+  "nom": "Plage de l’Oasis Rouge",
+  "description": "Plage labellisée Handiplage à Le Grau-du-Roi. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de l’Oasis Rouge\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Le Grau-du-Roi",
+  "codePostal": "30240",
+  "departement": "Gard",
+  "region": "Occitanie",
+  "latitude": 43.54794001234,
+  "longitude": 4.121696949005,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Grau_du_roi_plage.jpg/1280px-Grau_du_roi_plage.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

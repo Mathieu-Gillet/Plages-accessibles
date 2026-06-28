@@ -1,0 +1,27 @@
+{
+  "slug": "plage-centrale-agora-sainte-marie-la-mer",
+  "nom": "Plage Centrale Agora",
+  "description": "Plage labellisée Handiplage à Sainte-Marie-la-Mer. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage Centrale Agora\" : parkings pmr, douches accessibles, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Sainte-Marie-la-Mer",
+  "codePostal": "66470",
+  "departement": "Pyrénées-Orientales",
+  "region": "Occitanie",
+  "latitude": 42.734262954965,
+  "longitude": 3.037140369415,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Lever_du_soleil_sur_la_plage_ste_Marie_la_mer.jpg/1280px-Lever_du_soleil_sur_la_plage_ste_Marie_la_mer.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

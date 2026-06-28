@@ -1,0 +1,27 @@
+{
+  "slug": "plage-de-lastioulles-tremouille",
+  "nom": "Plage de Lastioulles",
+  "description": "Plage labellisée Handiplage à Trémouille. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de Lastioulles\" : parkings pmr, sanitaires adaptes, boucle magnetique, signalisation braille. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Trémouille",
+  "codePostal": "15270",
+  "departement": "Cantal",
+  "region": "Auvergne-Rhône-Alpes",
+  "latitude": 45.40095480675765,
+  "longitude": 2.663218975067139,
+  "photo": "https://picsum.photos/seed/plage-de-lastioulles-tremouille/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "BOUCLE_MAGNETIQUE",
+    "SIGNALISATION_BRAILLE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "les-bains-plage-du-poste-de-secours-balaruc-les-bains",
+  "nom": "les-Bains Plage du poste de secours",
+  "description": "Plage labellisée Handiplage à Balaruc-les-Bains. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"les-Bains Plage du poste de secours\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, signalisation braille, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Balaruc-les-Bains",
+  "codePostal": "34540",
+  "departement": "Hérault",
+  "region": "Occitanie",
+  "latitude": 43.4382371,
+  "longitude": 3.6783997,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Balaruc-les-Bains_Plage_2012.JPG/1280px-Balaruc-les-Bains_Plage_2012.JPG",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "SIGNALISATION_BRAILLE",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

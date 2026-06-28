@@ -1,0 +1,27 @@
+{
+  "slug": "plage-de-la-concurrence-la-rochelle",
+  "nom": "Plage de la Concurrence",
+  "description": "Plage labellisée Handiplage à La Rochelle. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de la Concurrence\" : parkings pmr, sanitaires adaptes, boucle magnetique, signalisation braille. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "La Rochelle",
+  "codePostal": "17000",
+  "departement": "Charente-Maritime",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 46.15496863958993,
+  "longitude": -1.1602807044982912,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Plage-rochelle.jpg/1280px-Plage-rochelle.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "BOUCLE_MAGNETIQUE",
+    "SIGNALISATION_BRAILLE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

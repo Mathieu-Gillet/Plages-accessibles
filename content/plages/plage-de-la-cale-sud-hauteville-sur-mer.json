@@ -1,0 +1,31 @@
+{
+  "slug": "plage-de-la-cale-sud-hauteville-sur-mer",
+  "nom": "Plage de la Cale Sud",
+  "description": "Plage labellisée Handiplage à Hauteville-sur-Mer. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de la Cale Sud\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Hauteville-sur-Mer",
+  "codePostal": "50590",
+  "departement": "Manche",
+  "region": "Normandie",
+  "latitude": 48.970639563977,
+  "longitude": -1.561024188995,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Hauteville-sur-Mer_-_Panorama_de_la_plage.jpg/1280px-Hauteville-sur-Mer_-_Panorama_de_la_plage.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

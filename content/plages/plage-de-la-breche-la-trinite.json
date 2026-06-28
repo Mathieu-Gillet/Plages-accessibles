@@ -1,0 +1,31 @@
+{
+  "slug": "plage-de-la-breche-la-trinite",
+  "nom": "Plage de la Brèche",
+  "description": "Plage labellisée Handiplage à La Trinité. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de la Brèche\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, signalisation braille, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "La Trinité",
+  "codePostal": "97220",
+  "departement": "Martinique",
+  "region": "Martinique",
+  "latitude": 14.738470291831,
+  "longitude": -60.963091850281,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Plage_de_Pointe_Rouge_%28La_Trinit%C3%A9%2C_Martinique%29_-_01.jpg/1280px-Plage_de_Pointe_Rouge_%28La_Trinit%C3%A9%2C_Martinique%29_-_01.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "SIGNALISATION_BRAILLE",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

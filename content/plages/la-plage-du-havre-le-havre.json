@@ -1,0 +1,32 @@
+{
+  "slug": "la-plage-du-havre-le-havre",
+  "nom": "La plage du Havre",
+  "description": "Plage labellisée Handiplage à Le Havre. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"La plage du Havre\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Le Havre",
+  "codePostal": "76600",
+  "departement": "Seine-Maritime",
+  "region": "Normandie",
+  "latitude": 49.4954994,
+  "longitude": 0.0929172,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Le_Havre_-_76600_-_2024.07.05_-_Boulevard_de_Strasbourg_en_direction_de_la_plage_avant_le_passage_du_relais_de_la_flamme_olympique_%C2%A9_Anthony_Levrot.jpg/1280px-Le_Havre_-_76600_-_2024.07.05_-_Boulevard_de_Strasbourg_en_direction_de_la_plage_avant_le_passage_du_relais_de_la_flamme_olympique_%C2%A9_Anthony_Levrot.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

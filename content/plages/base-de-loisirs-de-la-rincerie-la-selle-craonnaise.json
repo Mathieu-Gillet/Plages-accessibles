@@ -1,0 +1,29 @@
+{
+  "slug": "base-de-loisirs-de-la-rincerie-la-selle-craonnaise",
+  "nom": "Base de loisirs de la Rincerie",
+  "description": "Plage labellisée Handiplage à La Selle-Craonnaise. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Base de loisirs de la Rincerie\" : parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, boucle magnetique, signalisation braille. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "La Selle-Craonnaise",
+  "codePostal": "53800",
+  "departement": "Mayenne",
+  "region": "Pays de la Loire",
+  "latitude": 47.863564712943,
+  "longitude": -1.062026023865,
+  "photo": "https://picsum.photos/seed/base-de-loisirs-de-la-rincerie-la-selle-craonnaise/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-28",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE",
+    "SIGNALISATION_BRAILLE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
