@@ -1,0 +1,30 @@
+{
+  "slug": "plage-centrale-notre-dame-de-monts",
+  "nom": "Plage Centrale",
+  "description": "Plage labellisée Handiplage à Notre-Dame-de-Monts. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage Centrale\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Notre-Dame-de-Monts",
+  "codePostal": "85690",
+  "departement": "Vendée",
+  "region": "Pays de la Loire",
+  "latitude": 46.829369337843,
+  "longitude": -2.144820473077,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Notre-Dame-de-Monts_plageBraie.JPG/1280px-Notre-Dame-de-Monts_plageBraie.JPG",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-29",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

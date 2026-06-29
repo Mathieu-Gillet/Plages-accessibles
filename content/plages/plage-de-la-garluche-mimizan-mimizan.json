@@ -1,0 +1,26 @@
+{
+  "slug": "plage-de-la-garluche-mimizan-mimizan",
+  "nom": "Plage de la Garluche Mimizan",
+  "description": "Plage labellisée Handiplage à Mimizan. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de la Garluche Mimizan\" : parkings pmr, sanitaires adaptes, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Mimizan",
+  "codePostal": "40200",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 44.2195685,
+  "longitude": -1.296176,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/6/67/Mimizan_plage_nord_casemate.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-29",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

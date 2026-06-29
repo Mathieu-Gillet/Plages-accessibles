@@ -1,0 +1,29 @@
+{
+  "slug": "clairvaux-les-lacs-clairvaux-les-lacs",
+  "nom": "Clairvaux-les-lacs",
+  "description": "Plage labellisée Handiplage à Clairvaux-les-Lacs. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Clairvaux-les-lacs\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Clairvaux-les-Lacs",
+  "codePostal": "39130",
+  "departement": "Jura",
+  "region": "Bourgogne-Franche-Comté",
+  "latitude": 46.576754546849,
+  "longitude": 5.750141143799,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Clairvaux-les-Lacs_-_Panneau_direction_plage_%28juil_2018%29.jpg/1280px-Clairvaux-les-Lacs_-_Panneau_direction_plage_%28juil_2018%29.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-29",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

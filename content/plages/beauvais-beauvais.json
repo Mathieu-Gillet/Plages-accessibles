@@ -1,0 +1,30 @@
+{
+  "slug": "beauvais-beauvais",
+  "nom": "Beauvais",
+  "description": "Plage labellisée Handiplage à Beauvais. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Beauvais\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, signalisation braille. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Beauvais",
+  "codePostal": "60000",
+  "departement": "Oise",
+  "region": "Hauts-de-France",
+  "latitude": 49.455205837372,
+  "longitude": 2.060022354126,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Beauvais_Cathedral_Exterior_1%2C_Picardy%2C_France_-_Diliff.jpg/1280px-Beauvais_Cathedral_Exterior_1%2C_Picardy%2C_France_-_Diliff.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-29",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "SIGNALISATION_BRAILLE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "baignade-de-la-grande-ile-de-marsac-marsac",
+  "nom": "Baignade de la Grande Ile de Marsac",
+  "description": "Plage labellisée Handiplage à Marsac. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Baignade de la Grande Ile de Marsac\" : parkings pmr, sanitaires adaptes. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Marsac",
+  "codePostal": "16570",
+  "departement": "Charente",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 45.7417265,
+  "longitude": 0.0873623,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Pacific_Partnership_2023-_Sailors_Volunteer_at_a_Beach_Cleanup_Event_in_Tonga_%288130163%29.jpg/1280px-Pacific_Partnership_2023-_Sailors_Volunteer_at_a_Beach_Cleanup_Event_in_Tonga_%288130163%29.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-29",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "plage-des-salins-hyeres",
+  "nom": "Plage des Salins",
+  "description": "Plage labellisée Handiplage à Hyères. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage des Salins\" : parkings pmr, sanitaires adaptes, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Hyères",
+  "codePostal": "83400",
+  "departement": "Var",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.11439264285,
+  "longitude": 6.197190284729,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Plage%2C_Hy%C3%A8res_-_panoramio_%281%29.jpg/1280px-Plage%2C_Hy%C3%A8res_-_panoramio_%281%29.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-29",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

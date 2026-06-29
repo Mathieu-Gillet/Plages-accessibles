@@ -1,0 +1,29 @@
+{
+  "slug": "plage-de-penvins-sarzeau",
+  "nom": "Plage de Penvins",
+  "description": "Plage labellisée Handiplage à Sarzeau. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de Penvins\" : hippocampe, fauteuil roulant, parkings pmr, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Sarzeau",
+  "codePostal": "56370",
+  "departement": "Morbihan",
+  "region": "Bretagne",
+  "latitude": 47.4971791,
+  "longitude": -2.6843323,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Plage_du_Roaliguen_%28Sarzeau%2C56%29_-_01.jpg/1280px-Plage_du_Roaliguen_%28Sarzeau%2C56%29_-_01.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-29",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "HIPPOCAMPE",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

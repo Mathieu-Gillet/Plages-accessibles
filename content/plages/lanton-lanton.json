@@ -1,0 +1,31 @@
+{
+  "slug": "lanton-lanton",
+  "nom": "Lanton",
+  "description": "Plage labellisée Handiplage à Lanton. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Lanton\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Lanton",
+  "codePostal": "33138",
+  "departement": "Gironde",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 44.699996797157,
+  "longitude": -1.042794585228,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Eglise_Lanton_02.jpg/1280px-Eglise_Lanton_02.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-29",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

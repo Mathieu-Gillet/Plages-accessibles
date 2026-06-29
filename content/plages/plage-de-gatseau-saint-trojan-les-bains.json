@@ -1,0 +1,27 @@
+{
+  "slug": "plage-de-gatseau-saint-trojan-les-bains",
+  "nom": "Plage de Gatseau",
+  "description": "Plage labellisée Handiplage à Saint-Trojan-les-Bains. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de Gatseau\" : parkings pmr, sanitaires adaptes, chemin acces, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Trojan-les-Bains",
+  "codePostal": "17370",
+  "departement": "Charente-Maritime",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 45.81192638566717,
+  "longitude": -1.2234628200531008,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/SAINT_TROJAN_LES_BAINS-_OLERON_ISLAND-_PLAGE_DE_GATSEAU_%2822174502635%29.jpg/1280px-SAINT_TROJAN_LES_BAINS-_OLERON_ISLAND-_PLAGE_DE_GATSEAU_%2822174502635%29.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-29",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

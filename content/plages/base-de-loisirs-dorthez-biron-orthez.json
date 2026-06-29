@@ -1,0 +1,30 @@
+{
+  "slug": "base-de-loisirs-dorthez-biron-orthez",
+  "nom": "Base de Loisirs d'Orthez-Biron",
+  "description": "Plage labellisée Handiplage à Orthez. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Base de Loisirs d'Orthez-Biron\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Orthez",
+  "codePostal": "64300",
+  "departement": "Pyrénées-Atlantiques",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.473415,
+  "longitude": -0.756525,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Sunset_Coucher_de_soleil_-_Cap_Ferret_Bassin_d%27Arcachon_Ocean_Pecheur_Fisherman_Beach_Plage_Waves_Vagues_Water_Eau_Boat_Bateau_Oiseau_Birds_bleu_orange_Claouey_Aquitaine_Gironde_Bordeaux_Voile_-_Picture_Image_Photography.jpg/1280px-thumbnail.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-29",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

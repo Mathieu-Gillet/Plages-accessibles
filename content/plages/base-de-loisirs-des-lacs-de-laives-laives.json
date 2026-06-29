@@ -1,0 +1,30 @@
+{
+  "slug": "base-de-loisirs-des-lacs-de-laives-laives",
+  "nom": "Base de loisirs des lacs de Laives",
+  "description": "Plage labellisée Handiplage à Laives. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Base de loisirs des lacs de Laives\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Laives",
+  "codePostal": "71240",
+  "departement": "Saône-et-Loire",
+  "region": "Bourgogne-Franche-Comté",
+  "latitude": 46.671496964618,
+  "longitude": 4.833297729492,
+  "photo": "https://picsum.photos/seed/base-de-loisirs-des-lacs-de-laives-laives/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-29",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "baignade-de-marsac-sarzay",
+  "nom": "Baignade de Marsac",
+  "description": "Plage labellisée Handiplage à Sarzay. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Baignade de Marsac\" : parkings pmr, sanitaires adaptes. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Sarzay",
+  "codePostal": "36230",
+  "departement": "Indre",
+  "region": "Centre-Val de Loire",
+  "latitude": 46.603354,
+  "longitude": 1.8883335,
+  "photo": "https://picsum.photos/seed/baignade-de-marsac-sarzay/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-29",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

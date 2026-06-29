@@ -1,0 +1,29 @@
+{
+  "slug": "plage-de-champigny-saint-chamas",
+  "nom": "plage de champigny",
+  "description": "Plage labellisée Handiplage à Saint-Chamas. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"plage de champigny\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, chemin acces, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Chamas",
+  "codePostal": "13250",
+  "departement": "Bouches-du-Rhône",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.515389215737,
+  "longitude": 5.118089318276,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/St_Chamas_Plage_de_Merveille_.jpg/1280px-St_Chamas_Plage_de_Merveille_.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-29",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
