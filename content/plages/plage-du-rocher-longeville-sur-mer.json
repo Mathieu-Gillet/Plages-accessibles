@@ -1,0 +1,31 @@
+{
+  "slug": "plage-du-rocher-longeville-sur-mer",
+  "nom": "Plage du Rocher",
+  "description": "Plage labellisée Handiplage à Longeville-sur-Mer. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage du Rocher\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Longeville-sur-Mer",
+  "codePostal": "85560",
+  "departement": "Vendée",
+  "region": "Pays de la Loire",
+  "latitude": 46.400287509668,
+  "longitude": -1.505936980248,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Longeville-sur-Mer_Plage_de_la_Carti%C3%A8re_aux_Chats_%282%29.jpg/1280px-Longeville-sur-Mer_Plage_de_la_Carti%C3%A8re_aux_Chats_%282%29.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-30",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

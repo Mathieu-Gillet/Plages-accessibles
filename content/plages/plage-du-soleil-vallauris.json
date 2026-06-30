@@ -1,0 +1,30 @@
+{
+  "slug": "plage-du-soleil-vallauris",
+  "nom": "Plage du soleil",
+  "description": "Plage labellisée Handiplage à Vallauris. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage du soleil\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Vallauris",
+  "codePostal": "06220",
+  "departement": "Alpes-Maritimes",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.564737538556,
+  "longitude": 7.072271111285,
+  "photo": "https://picsum.photos/seed/plage-du-soleil-vallauris/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-30",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

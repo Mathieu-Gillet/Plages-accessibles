@@ -1,0 +1,28 @@
+{
+  "slug": "plage-de-bellangenet-clohars-carnoet",
+  "nom": "plage de Bellangenet",
+  "description": "Plage labellisée Handiplage à Clohars-Carnoët. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"plage de Bellangenet\" : hippocampe, fauteuil roulant, parkings pmr, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Clohars-Carnoët",
+  "codePostal": "29360",
+  "departement": "Finistère",
+  "region": "Bretagne",
+  "latitude": 47.766171609196,
+  "longitude": -3.556229285896,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Gauguin_Sur_la_plage_en_Bretagne.jpg/1280px-Gauguin_Sur_la_plage_en_Bretagne.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-30",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "HIPPOCAMPE",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

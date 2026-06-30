@@ -1,0 +1,32 @@
+{
+  "slug": "plage-de-l-anse-du-stole-ploemeur",
+  "nom": "plage de l’anse du Stole",
+  "description": "Plage labellisée Handiplage à Ploemeur. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"plage de l’anse du Stole\" : hippocampe, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces, personnel forme, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Ploemeur",
+  "codePostal": "56270",
+  "departement": "Morbihan",
+  "region": "Bretagne",
+  "latitude": 47.702592295793,
+  "longitude": -3.422133922577,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/084_Ploemeur_Plage_des_Kaolins.jpg/1280px-084_Ploemeur_Plage_des_Kaolins.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-30",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "HIPPOCAMPE",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

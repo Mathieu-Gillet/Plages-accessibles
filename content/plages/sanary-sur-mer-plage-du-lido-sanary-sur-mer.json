@@ -1,0 +1,31 @@
+{
+  "slug": "sanary-sur-mer-plage-du-lido-sanary-sur-mer",
+  "nom": "Sanary sur Mer plage du Lido",
+  "description": "Plage labellisée Handiplage à Sanary-sur-Mer. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Sanary sur Mer plage du Lido\" : hippocampe, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Sanary-sur-Mer",
+  "codePostal": "83110",
+  "departement": "Var",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.13698178676,
+  "longitude": 5.776374489069,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Saint-Nazaire_-_Plage_de_Saint-Marc_-_bo%C3%AEte_%C3%A0_livres.jpg/1280px-Saint-Nazaire_-_Plage_de_Saint-Marc_-_bo%C3%AEte_%C3%A0_livres.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-30",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "HIPPOCAMPE",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "plage-du-prevent-poste-de-secours-de-santocha-capbreton",
+  "nom": "Plage du Prévent Poste de Secours de Santocha",
+  "description": "Plage labellisée Handiplage à Capbreton. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage du Prévent Poste de Secours de Santocha\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, personnel forme, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Capbreton",
+  "codePostal": "40130",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.646348741442,
+  "longitude": -1.445054200027,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Capbreton_plage_de_l%27Estacade_ann%C3%A9es_1930.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-30",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

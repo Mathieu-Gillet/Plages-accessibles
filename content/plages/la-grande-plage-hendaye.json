@@ -1,0 +1,30 @@
+{
+  "slug": "la-grande-plage-hendaye",
+  "nom": "La Grande Plage",
+  "description": "Plage labellisée Handiplage à Hendaye. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"La Grande Plage\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Hendaye",
+  "codePostal": "64700",
+  "departement": "Pyrénées-Atlantiques",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.372250414822716,
+  "longitude": -1.7809224128723147,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/St%C3%A8le_en_hommage_%C3%A0_Henry_Martinet_-_Hendaye-Plage.jpg/1280px-St%C3%A8le_en_hommage_%C3%A0_Henry_Martinet_-_Hendaye-Plage.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-30",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

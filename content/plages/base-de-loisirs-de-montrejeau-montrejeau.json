@@ -1,0 +1,30 @@
+{
+  "slug": "base-de-loisirs-de-montrejeau-montrejeau",
+  "nom": "Base de Loisirs de Montréjeau",
+  "description": "Plage labellisée Handiplage à Montréjeau. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Base de Loisirs de Montréjeau\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Montréjeau",
+  "codePostal": "31210",
+  "departement": "Haute-Garonne",
+  "region": "Occitanie",
+  "latitude": 43.078856607924,
+  "longitude": 0.565581321716,
+  "photo": "https://picsum.photos/seed/base-de-loisirs-de-montrejeau-montrejeau/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-30",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

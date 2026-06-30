@@ -1,0 +1,29 @@
+{
+  "slug": "plage-de-villes-martin-saint-nazaire",
+  "nom": "Plage de Villès Martin",
+  "description": "Plage labellisée Handiplage à Saint-Nazaire. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de Villès Martin\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Nazaire",
+  "codePostal": "44600",
+  "departement": "Loire-Atlantique",
+  "region": "Pays de la Loire",
+  "latitude": 47.257249977978,
+  "longitude": -2.227746248245,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Plage_de_Saint-Nazaire_-_panoramio.jpg/1280px-Plage_de_Saint-Nazaire_-_panoramio.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-30",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

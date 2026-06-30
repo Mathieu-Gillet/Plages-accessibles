@@ -1,0 +1,30 @@
+{
+  "slug": "meaux-meaux",
+  "nom": "Meaux",
+  "description": "Plage labellisée Handiplage à Meaux. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Meaux\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Meaux",
+  "codePostal": "77100",
+  "departement": "Seine-et-Marne",
+  "region": "Île-de-France",
+  "latitude": 48.947396887047,
+  "longitude": 2.893673784653,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Meaux_140708_01.jpg/1280px-Meaux_140708_01.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-30",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

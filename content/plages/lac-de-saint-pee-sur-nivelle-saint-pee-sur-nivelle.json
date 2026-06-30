@@ -1,0 +1,30 @@
+{
+  "slug": "lac-de-saint-pee-sur-nivelle-saint-pee-sur-nivelle",
+  "nom": "Lac de Saint Pée sur Nivelle",
+  "description": "Plage labellisée Handiplage à Saint-Pée-sur-Nivelle. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Lac de Saint Pée sur Nivelle\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Pée-sur-Nivelle",
+  "codePostal": "64310",
+  "departement": "Pyrénées-Atlantiques",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.347753118496,
+  "longitude": -1.521799564362,
+  "photo": "https://picsum.photos/seed/lac-de-saint-pee-sur-nivelle-saint-pee-sur-nivelle/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-30",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

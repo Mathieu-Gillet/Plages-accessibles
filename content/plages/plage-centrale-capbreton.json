@@ -1,0 +1,32 @@
+{
+  "slug": "plage-centrale-capbreton",
+  "nom": "Plage Centrale",
+  "description": "Plage labellisée Handiplage à Capbreton. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage Centrale\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces, personnel forme, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Capbreton",
+  "codePostal": "40130",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.652889973616,
+  "longitude": -1.445636780609,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Central_beach_of_Capbreton.jpg/1280px-Central_beach_of_Capbreton.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-30",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

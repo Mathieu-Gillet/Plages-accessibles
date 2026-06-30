@@ -1,0 +1,30 @@
+{
+  "slug": "plage-d-ilbarritz-bidart",
+  "nom": "plage d’Ilbarritz",
+  "description": "Plage labellisée Handiplage à Bidart. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"plage d’Ilbarritz\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, rampe acces, chemin acces, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Bidart",
+  "codePostal": "64210",
+  "departement": "Pyrénées-Atlantiques",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.461532348558436,
+  "longitude": -1.575717329978943,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Plage_du_Centre_2.jpg/1280px-Plage_du_Centre_2.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-06-30",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
