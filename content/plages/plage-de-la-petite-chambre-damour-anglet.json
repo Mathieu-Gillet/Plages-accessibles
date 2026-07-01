@@ -1,0 +1,31 @@
+{
+  "slug": "plage-de-la-petite-chambre-damour-anglet",
+  "nom": "Plage de la petite chambre d'amour",
+  "description": "Plage labellisée Handiplage à Anglet. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de la petite chambre d'amour\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Anglet",
+  "codePostal": "64600",
+  "departement": "Pyrénées-Atlantiques",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.495660634396394,
+  "longitude": -1.545105278491974,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Plage_de_la_Chambre_d%27Amour_Anglet_France.jpg/1280px-Plage_de_la_Chambre_d%27Amour_Anglet_France.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-01",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

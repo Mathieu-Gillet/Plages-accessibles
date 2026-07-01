@@ -1,0 +1,30 @@
+{
+  "slug": "plage-de-socoa-ciboure",
+  "nom": "Plage de Socoa",
+  "description": "Plage labellisée Handiplage à Ciboure. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de Socoa\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Ciboure",
+  "codePostal": "64500",
+  "departement": "Pyrénées-Atlantiques",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.38958092619,
+  "longitude": -1.682453155518,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Socoa-Ciboure%2C_pr%C3%A8s_de_la_plage.JPG/1280px-Socoa-Ciboure%2C_pr%C3%A8s_de_la_plage.JPG",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-01",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

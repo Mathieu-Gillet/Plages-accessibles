@@ -1,0 +1,31 @@
+{
+  "slug": "mont-de-marsan-saint-pierre-du-mont",
+  "nom": "Mont de Marsan",
+  "description": "Plage labellisée Handiplage à Saint-Pierre-du-Mont. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Mont de Marsan\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Pierre-du-Mont",
+  "codePostal": "40280",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.879655126895,
+  "longitude": -0.536350607872,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Confluent_Mont_de_Marsan.JPG/1280px-Confluent_Mont_de_Marsan.JPG",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-01",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

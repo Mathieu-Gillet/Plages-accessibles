@@ -1,0 +1,32 @@
+{
+  "slug": "plage-berlioz-roquebrune-cap-martin",
+  "nom": "Plage Berlioz",
+  "description": "Plage labellisée Handiplage à Roquebrune-Cap-Martin. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage Berlioz\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces, signalisation braille, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Roquebrune-Cap-Martin",
+  "codePostal": "06190",
+  "departement": "Alpes-Maritimes",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.762160407009,
+  "longitude": 7.484892010689,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Plage_du_Buse%2C_Roquebrune-Cap-Martin_in_July_2020.jpg/1280px-Plage_du_Buse%2C_Roquebrune-Cap-Martin_in_July_2020.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-01",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "SIGNALISATION_BRAILLE",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

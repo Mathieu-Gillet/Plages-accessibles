@@ -1,0 +1,31 @@
+{
+  "slug": "plage-de-la-digue-du-port-saint-jean-de-luz",
+  "nom": "Plage de la digue du port",
+  "description": "Plage labellisée Handiplage à Saint-Jean-de-Luz. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de la digue du port\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, signalisation braille, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Jean-de-Luz",
+  "codePostal": "64500",
+  "departement": "Pyrénées-Atlantiques",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.387990390575,
+  "longitude": -1.666842699051,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/San_Juan_de_Luz%2C_Saint-Jean-de-Luz%2C_Donibane-Lohizune_-_Plage_de_Saint-Jean-de-Luz%2C_Panorama.jpg/1280px-San_Juan_de_Luz%2C_Saint-Jean-de-Luz%2C_Donibane-Lohizune_-_Plage_de_Saint-Jean-de-Luz%2C_Panorama.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-01",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "SIGNALISATION_BRAILLE",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

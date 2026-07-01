@@ -1,0 +1,29 @@
+{
+  "slug": "neuvic-neuvic",
+  "nom": "Neuvic",
+  "description": "Plage labellisée Handiplage à Neuvic. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Neuvic\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Neuvic",
+  "codePostal": "19160",
+  "departement": "Corrèze",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 45.38805280142,
+  "longitude": 2.290799617767,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Plage_de_Neuvic%2C_Corr%C3%A8ze%2C_Lac_de_la_Triouzoune-1548.jpg/1280px-Plage_de_Neuvic%2C_Corr%C3%A8ze%2C_Lac_de_la_Triouzoune-1548.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-01",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

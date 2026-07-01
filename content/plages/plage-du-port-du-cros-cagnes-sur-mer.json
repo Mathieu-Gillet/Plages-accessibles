@@ -1,0 +1,32 @@
+{
+  "slug": "plage-du-port-du-cros-cagnes-sur-mer",
+  "nom": "Plage du Port du Cros",
+  "description": "Plage labellisée Handiplage à Cagnes-sur-Mer. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage du Port du Cros\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, signalisation braille, personnel forme, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Cagnes-sur-Mer",
+  "codePostal": "06800",
+  "departement": "Alpes-Maritimes",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.650340666594,
+  "longitude": 7.151694595814,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Cagnes-sur-Mer_%2806%29_Plage_335.jpg/1280px-Cagnes-sur-Mer_%2806%29_Plage_335.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-01",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "SIGNALISATION_BRAILLE",
+    "PERSONNEL_FORME",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

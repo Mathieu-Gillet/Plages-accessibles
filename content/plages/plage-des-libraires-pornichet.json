@@ -1,0 +1,33 @@
+{
+  "slug": "plage-des-libraires-pornichet",
+  "nom": "Plage des libraires",
+  "description": "Plage labellisée Handiplage à Pornichet. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage des libraires\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces, signalisation braille, personnel forme. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Pornichet",
+  "codePostal": "44380",
+  "departement": "Loire-Atlantique",
+  "region": "Pays de la Loire",
+  "latitude": 47.26598735092688,
+  "longitude": -2.3462357564395124,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/La_plage_des_Libraires_et_le_boulevard_des_Oc%C3%A9anides_%C3%A0_Pornichet.jpg/1280px-La_plage_des_Libraires_et_le_boulevard_des_Oc%C3%A9anides_%C3%A0_Pornichet.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-01",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "SIGNALISATION_BRAILLE",
+    "PERSONNEL_FORME"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
