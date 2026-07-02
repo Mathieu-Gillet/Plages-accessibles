@@ -1,0 +1,29 @@
+{
+  "slug": "plage-de-sciotot-les-pieux",
+  "nom": "Plage de Sciotot",
+  "description": "Plage labellisée Handiplage à Les Pieux. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de Sciotot\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Les Pieux",
+  "codePostal": "50340",
+  "departement": "Manche",
+  "region": "Normandie",
+  "latitude": 49.50119316009,
+  "longitude": -1.845502395776,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Les_Pieux_%28Manche%2C_Fr%29_plage.jpg/1280px-Les_Pieux_%28Manche%2C_Fr%29_plage.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

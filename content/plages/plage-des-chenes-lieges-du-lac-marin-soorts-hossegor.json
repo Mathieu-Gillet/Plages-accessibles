@@ -1,0 +1,30 @@
+{
+  "slug": "plage-des-chenes-lieges-du-lac-marin-soorts-hossegor",
+  "nom": "Plage des Chênes-lièges du Lac marin",
+  "description": "Plage labellisée Handiplage à Soorts-Hossegor. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage des Chênes-lièges du Lac marin\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Soorts-Hossegor",
+  "codePostal": "40150",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.663379846074,
+  "longitude": -1.431728767618,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Y%C3%A9go_ligne_H1_Soorts-Hossegor_Plage_Centrale.JPG/1280px-Y%C3%A9go_ligne_H1_Soorts-Hossegor_Plage_Centrale.JPG",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "plage-de-la-noeveillard-pornic",
+  "nom": "Plage de la Noeveillard",
+  "description": "Plage labellisée Handiplage à Pornic. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de la Noeveillard\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Pornic",
+  "codePostal": "44210",
+  "departement": "Loire-Atlantique",
+  "region": "Pays de la Loire",
+  "latitude": 47.110520183307,
+  "longitude": -2.116361723755,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/La_plage_de_noeveillard_a_pornic_-_panoramio.jpg/1280px-La_plage_de_noeveillard_a_pornic_-_panoramio.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

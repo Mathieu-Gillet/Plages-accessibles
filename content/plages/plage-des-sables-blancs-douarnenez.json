@@ -1,0 +1,26 @@
+{
+  "slug": "plage-des-sables-blancs-douarnenez",
+  "nom": "Plage des Sables Blancs",
+  "description": "Plage labellisée Handiplage à Douarnenez. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage des Sables Blancs\" : parkings pmr, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Douarnenez",
+  "codePostal": "29100",
+  "departement": "Finistère",
+  "region": "Bretagne",
+  "latitude": 48.10216177414885,
+  "longitude": -4.353139400482179,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Sur_la_plage_%C3%A0_Douarnenez._G.38433.jpg/1280px-Sur_la_plage_%C3%A0_Douarnenez._G.38433.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

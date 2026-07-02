@@ -1,0 +1,30 @@
+{
+  "slug": "cucq-stella-plage-cucq",
+  "nom": "Cucq -Stella Plage",
+  "description": "Plage labellisée Handiplage à Cucq. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Cucq -Stella Plage\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Cucq",
+  "codePostal": "62780",
+  "departement": "Pas-de-Calais",
+  "region": "Hauts-de-France",
+  "latitude": 50.47991646626839,
+  "longitude": 1.5759587287902832,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Les_voies_de_Stella-Plage_-_Cucq.png/1280px-Les_voies_de_Stella-Plage_-_Cucq.png",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

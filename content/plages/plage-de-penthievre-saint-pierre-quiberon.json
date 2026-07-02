@@ -1,0 +1,30 @@
+{
+  "slug": "plage-de-penthievre-saint-pierre-quiberon",
+  "nom": "plage de Penthièvre",
+  "description": "Plage labellisée Handiplage à Saint-Pierre-Quiberon. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"plage de Penthièvre\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Pierre-Quiberon",
+  "codePostal": "56510",
+  "departement": "Morbihan",
+  "region": "Bretagne",
+  "latitude": 47.55599827375,
+  "longitude": -3.136576924896,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Morbihan_Saint-Pierre-Quiberon_Plage_Du_Petit_Rohu_Baigneuse_23092016_-_panoramio_-_rene_boulay.jpg/1280px-Morbihan_Saint-Pierre-Quiberon_Plage_Du_Petit_Rohu_Baigneuse_23092016_-_panoramio_-_rene_boulay.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

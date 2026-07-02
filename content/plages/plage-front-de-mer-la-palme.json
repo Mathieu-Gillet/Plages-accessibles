@@ -1,0 +1,29 @@
+{
+  "slug": "plage-front-de-mer-la-palme",
+  "nom": "Plage Front de mer",
+  "description": "Plage labellisée Handiplage à La Palme. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage Front de mer\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "La Palme",
+  "codePostal": "11480",
+  "departement": "Aude",
+  "region": "Occitanie",
+  "latitude": 42.976463266501,
+  "longitude": 3.046146451221,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/8/82/PLAGE_DU_ROUET_La_Palme_2012_07_23_0038_Romero_G._%28Moyen%29.JPG",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

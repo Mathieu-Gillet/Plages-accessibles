@@ -1,0 +1,28 @@
+{
+  "slug": "barneville-plage-barneville-carteret",
+  "nom": "Barneville Plage",
+  "description": "Plage labellisée Handiplage à Barneville-Carteret. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Barneville Plage\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Barneville-Carteret",
+  "codePostal": "50270",
+  "departement": "Manche",
+  "region": "Normandie",
+  "latitude": 49.36679825256247,
+  "longitude": -1.7700058221817019,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Barneville-plage.jpg/1280px-Barneville-plage.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

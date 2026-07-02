@@ -1,0 +1,28 @@
+{
+  "slug": "plage-de-uhabia-bidart",
+  "nom": "plage de Uhabia",
+  "description": "Plage labellisée Handiplage à Bidart. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"plage de Uhabia\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Bidart",
+  "codePostal": "64210",
+  "departement": "Pyrénées-Atlantiques",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.431452736202,
+  "longitude": -1.597936900519,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Bidart-plage-Erretegia.jpeg/1280px-Bidart-plage-Erretegia.jpeg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

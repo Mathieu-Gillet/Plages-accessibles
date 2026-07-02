@@ -1,0 +1,30 @@
+{
+  "slug": "plage-de-pors-carn-penmarch",
+  "nom": "Plage de Pors Carn",
+  "description": "Plage labellisée Handiplage à Penmarch. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de Pors Carn\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Penmarch",
+  "codePostal": "29760",
+  "departement": "Finistère",
+  "region": "Bretagne",
+  "latitude": 47.830060930514,
+  "longitude": -4.350174540527,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Plage_de_Porz_Carn_%289597777025%29.jpg/1280px-Plage_de_Porz_Carn_%289597777025%29.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

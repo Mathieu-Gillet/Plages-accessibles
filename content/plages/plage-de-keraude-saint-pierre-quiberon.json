@@ -1,0 +1,30 @@
+{
+  "slug": "plage-de-keraude-saint-pierre-quiberon",
+  "nom": "plage de Kéraude",
+  "description": "Plage labellisée Handiplage à Saint-Pierre-Quiberon. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"plage de Kéraude\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Pierre-Quiberon",
+  "codePostal": "56510",
+  "departement": "Morbihan",
+  "region": "Bretagne",
+  "latitude": 47.521652278736,
+  "longitude": -3.129914317703,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/006_Saint-Pierre-Quiberon_Plage_du_Fozo.jpg/1280px-006_Saint-Pierre-Quiberon_Plage_du_Fozo.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

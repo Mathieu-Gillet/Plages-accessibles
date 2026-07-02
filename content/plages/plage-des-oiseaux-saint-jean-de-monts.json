@@ -1,0 +1,29 @@
+{
+  "slug": "plage-des-oiseaux-saint-jean-de-monts",
+  "nom": "plage des Oiseaux",
+  "description": "Plage labellisée Handiplage à Saint-Jean-de-Monts. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"plage des Oiseaux\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Jean-de-Monts",
+  "codePostal": "85160",
+  "departement": "Vendée",
+  "region": "Pays de la Loire",
+  "latitude": 46.781427541533,
+  "longitude": -2.068900752399,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Plage_de_Saint_Jean_de_Monts_depuis_l%27estacade.jpg/1280px-Plage_de_Saint_Jean_de_Monts_depuis_l%27estacade.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

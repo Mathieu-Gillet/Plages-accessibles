@@ -1,0 +1,31 @@
+{
+  "slug": "plage-sud-soorts-hossegor",
+  "nom": "Plage Sud",
+  "description": "Plage labellisée Handiplage à Soorts-Hossegor. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage Sud\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Soorts-Hossegor",
+  "codePostal": "40150",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.663502148155,
+  "longitude": -1.442701220512,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Y%C3%A9go_ligne_H2_Soorts-Hossegor_Plage_centrale.JPG/1280px-Y%C3%A9go_ligne_H2_Soorts-Hossegor_Plage_centrale.JPG",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

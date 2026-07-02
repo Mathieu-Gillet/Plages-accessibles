@@ -1,0 +1,28 @@
+{
+  "slug": "parc-plage-faverolles-sur-cher",
+  "nom": "Parc plage",
+  "description": "Plage labellisée Handiplage à Faverolles-sur-Cher. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Parc plage\" : parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Faverolles-sur-Cher",
+  "codePostal": "41400",
+  "departement": "Loir-et-Cher",
+  "region": "Centre-Val de Loire",
+  "latitude": 47.340451414852,
+  "longitude": 1.183435772601,
+  "photo": "https://picsum.photos/seed/parc-plage-faverolles-sur-cher/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

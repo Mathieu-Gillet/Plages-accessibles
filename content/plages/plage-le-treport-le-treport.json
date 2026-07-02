@@ -1,0 +1,30 @@
+{
+  "slug": "plage-le-treport-le-treport",
+  "nom": "plage le Tréport",
+  "description": "Plage labellisée Handiplage à Le Tréport. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"plage le Tréport\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Le Tréport",
+  "codePostal": "76470",
+  "departement": "Seine-Maritime",
+  "region": "Normandie",
+  "latitude": 50.063078641908,
+  "longitude": 1.368246759796,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Cabanons_sur_la_plage_%28Le_Tr%C3%A9port%29.jpg/1280px-Cabanons_sur_la_plage_%28Le_Tr%C3%A9port%29.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

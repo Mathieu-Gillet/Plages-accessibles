@@ -1,0 +1,30 @@
+{
+  "slug": "plage-du-lac-de-charmes-changey",
+  "nom": "plage du lac de charmes",
+  "description": "Plage labellisée Handiplage à Changey. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"plage du lac de charmes\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Changey",
+  "codePostal": "52360",
+  "departement": "Haute-Marne",
+  "region": "Grand Est",
+  "latitude": 47.913090056548,
+  "longitude": 5.380750839282,
+  "photo": "https://picsum.photos/seed/plage-du-lac-de-charmes-changey/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

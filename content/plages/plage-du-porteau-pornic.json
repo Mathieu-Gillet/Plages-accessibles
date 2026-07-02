@@ -1,0 +1,28 @@
+{
+  "slug": "plage-du-porteau-pornic",
+  "nom": "Plage du Porteau",
+  "description": "Plage labellisée Handiplage à Pornic. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage du Porteau\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Pornic",
+  "codePostal": "44210",
+  "departement": "Loire-Atlantique",
+  "region": "Pays de la Loire",
+  "latitude": 47.113572431024,
+  "longitude": -2.147058982617,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Pornic_-_Plage_du_port.jpg/1280px-Pornic_-_Plage_du_port.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

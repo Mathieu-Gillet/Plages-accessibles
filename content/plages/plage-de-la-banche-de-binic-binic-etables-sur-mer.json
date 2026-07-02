@@ -1,0 +1,30 @@
+{
+  "slug": "plage-de-la-banche-de-binic-binic-etables-sur-mer",
+  "nom": "plage de la Banche de Binic",
+  "description": "Plage labellisée Handiplage à Binic-Étables-sur-Mer. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"plage de la Banche de Binic\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Binic-Étables-sur-Mer",
+  "codePostal": "22520",
+  "departement": "Côtes-d'Armor",
+  "region": "Bretagne",
+  "latitude": 48.597247893475,
+  "longitude": -2.823769593341,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Binic_Plage_057.jpg/1280px-Binic_Plage_057.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

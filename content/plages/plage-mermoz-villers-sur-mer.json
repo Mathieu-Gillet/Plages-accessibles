@@ -1,0 +1,28 @@
+{
+  "slug": "plage-mermoz-villers-sur-mer",
+  "nom": "plage Mermoz",
+  "description": "Plage labellisée Handiplage à Villers-sur-Mer. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"plage Mermoz\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Villers-sur-Mer",
+  "codePostal": "14640",
+  "departement": "Calvados",
+  "region": "Normandie",
+  "latitude": 49.323569589434,
+  "longitude": -0.006330013275,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Villers-sur-Mer_%2814%29_Plage_977.jpg/1280px-Villers-sur-Mer_%2814%29_Plage_977.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

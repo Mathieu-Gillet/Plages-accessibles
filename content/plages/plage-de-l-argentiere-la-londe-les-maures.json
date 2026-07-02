@@ -1,0 +1,30 @@
+{
+  "slug": "plage-de-l-argentiere-la-londe-les-maures",
+  "nom": "Plage de l’Argentière",
+  "description": "Plage labellisée Handiplage à La Londe-les-Maures. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de l’Argentière\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, sanitaires adaptes, chemin acces, boucle magnetique. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "La Londe-les-Maures",
+  "codePostal": "83250",
+  "departement": "Var",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.121393026398,
+  "longitude": 6.264106035233,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Plage_du_Pellegrin%2C_La_Londe-les-Maures_%2811572607355%29.jpg/1280px-Plage_du_Pellegrin%2C_La_Londe-les-Maures_%2811572607355%29.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-02",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
