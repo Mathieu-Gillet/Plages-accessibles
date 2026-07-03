@@ -1,0 +1,28 @@
+{
+  "slug": "plage-des-marines-cogolin",
+  "nom": "Plage des Marines",
+  "description": "Plage labellisée Handiplage à Cogolin. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage des Marines\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Cogolin",
+  "codePostal": "83310",
+  "departement": "Var",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.263030464442,
+  "longitude": 6.591657400131,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Plage_de_la_Moutte_-_juillet_2021.jpg/1280px-Plage_de_la_Moutte_-_juillet_2021.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

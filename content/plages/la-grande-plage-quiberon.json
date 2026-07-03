@@ -1,0 +1,30 @@
+{
+  "slug": "la-grande-plage-quiberon",
+  "nom": "La Grande Plage",
+  "description": "Plage labellisée Handiplage à Quiberon. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"La Grande Plage\" : hippocampe, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Quiberon",
+  "codePostal": "56170",
+  "departement": "Morbihan",
+  "region": "Bretagne",
+  "latitude": 47.479401414853,
+  "longitude": -3.119506287356,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Quiberon_%2C_la_promenade_de_la_plage_-_panoramio.jpg/1280px-Quiberon_%2C_la_promenade_de_la_plage_-_panoramio.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "HIPPOCAMPE",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

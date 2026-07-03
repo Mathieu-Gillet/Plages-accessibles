@@ -1,0 +1,28 @@
+{
+  "slug": "plage-centrale-vieux-boucau-les-bains",
+  "nom": "plage centrale",
+  "description": "Plage labellisée Handiplage à Vieux-Boucau-les-Bains. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"plage centrale\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, rampe acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Vieux-Boucau-les-Bains",
+  "codePostal": "40480",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.788197614228,
+  "longitude": -1.413513422012,
+  "photo": "https://picsum.photos/seed/plage-centrale-vieux-boucau-les-bains/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

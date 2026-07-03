@@ -1,0 +1,29 @@
+{
+  "slug": "plage-gros-pin-grimaud",
+  "nom": "Plage \"Gros Pin\"",
+  "description": "Plage labellisée Handiplage à Grimaud. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage \"Gros Pin\"\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Grimaud",
+  "codePostal": "83310",
+  "departement": "Var",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.284495428333,
+  "longitude": 6.59655519342,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Plage_%28Port_Grimaud%29_%282%29.jpg/1280px-Plage_%28Port_Grimaud%29_%282%29.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

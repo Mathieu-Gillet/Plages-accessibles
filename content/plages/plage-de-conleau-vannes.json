@@ -1,0 +1,29 @@
+{
+  "slug": "plage-de-conleau-vannes",
+  "nom": "Plage de Conleau",
+  "description": "Plage labellisée Handiplage à Vannes. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de Conleau\" : hippocampe, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Vannes",
+  "codePostal": "56000",
+  "departement": "Morbihan",
+  "region": "Bretagne",
+  "latitude": 47.627910039289,
+  "longitude": -2.777802944183,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Vannes_-_Presqu%27%C3%AEle_de_Conleau_-_Plage_02.jpg/1280px-Vannes_-_Presqu%27%C3%AEle_de_Conleau_-_Plage_02.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "HIPPOCAMPE",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

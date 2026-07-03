@@ -1,0 +1,28 @@
+{
+  "slug": "plage-ruppione-pietrosella",
+  "nom": "plage Ruppione",
+  "description": "Plage labellisée Handiplage à Pietrosella. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"plage Ruppione\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Pietrosella",
+  "codePostal": "20166",
+  "departement": "Corse-du-Sud",
+  "region": "Corse",
+  "latitude": 41.833284647486,
+  "longitude": 8.784577846527,
+  "photo": "https://picsum.photos/seed/plage-ruppione-pietrosella/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "plage-du-trez-hir-plougonvelin",
+  "nom": "Plage du Trez Hir",
+  "description": "Plage labellisée Handiplage à Plougonvelin. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage du Trez Hir\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Plougonvelin",
+  "codePostal": "29217",
+  "departement": "Finistère",
+  "region": "Bretagne",
+  "latitude": 48.346816119316,
+  "longitude": -4.704251289368,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/4/40/Bretagne_coast_beach_boats_2011.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

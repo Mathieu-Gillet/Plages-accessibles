@@ -1,0 +1,31 @@
+{
+  "slug": "plage-du-loup-villeneuve-loubet",
+  "nom": "Plage du Loup",
+  "description": "Plage labellisée Handiplage à Villeneuve-Loubet. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage du Loup\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Villeneuve-Loubet",
+  "codePostal": "06270",
+  "departement": "Alpes-Maritimes",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.641505460327,
+  "longitude": 7.143908143044,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Beach_of_Villeneuve-Loubet_with_snow_on_the_Alps.jpg/1280px-Beach_of_Villeneuve-Loubet_with_snow_on_the_Alps.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

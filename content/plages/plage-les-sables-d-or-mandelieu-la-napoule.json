@@ -1,0 +1,31 @@
+{
+  "slug": "plage-les-sables-d-or-mandelieu-la-napoule",
+  "nom": "Plage Les sables d’Or",
+  "description": "Plage labellisée Handiplage à Mandelieu-la-Napoule. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage Les sables d’Or\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Mandelieu-la-Napoule",
+  "codePostal": "06210",
+  "departement": "Alpes-Maritimes",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.533678255014,
+  "longitude": 6.950740814209,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Mandelieu_-_La_Plage_de_la_Raguette_-_Copie.jpg/1280px-Mandelieu_-_La_Plage_de_la_Raguette_-_Copie.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

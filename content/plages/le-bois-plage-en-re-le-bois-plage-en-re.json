@@ -1,0 +1,29 @@
+{
+  "slug": "le-bois-plage-en-re-le-bois-plage-en-re",
+  "nom": "Le Bois Plage en Ré",
+  "description": "Plage labellisée Handiplage à Le Bois-Plage-en-Ré. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Le Bois Plage en Ré\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Le Bois-Plage-en-Ré",
+  "codePostal": "17580",
+  "departement": "Charente-Maritime",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 46.173998634681,
+  "longitude": -1.384567022323,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/17051-Le_Bois-Plage-en-R%C3%A9-Routes-Hydro.png/1280px-17051-Le_Bois-Plage-en-R%C3%A9-Routes-Hydro.png",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

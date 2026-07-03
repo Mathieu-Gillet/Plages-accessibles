@@ -1,0 +1,31 @@
+{
+  "slug": "plage-de-la-fighiere-villeneuve-loubet",
+  "nom": "Plage de la Fighière",
+  "description": "Plage labellisée Handiplage à Villeneuve-Loubet. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de la Fighière\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Villeneuve-Loubet",
+  "codePostal": "06270",
+  "departement": "Alpes-Maritimes",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.636987520221,
+  "longitude": 7.140094041824,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Bd_tabarly_garden_beach.jpg/1280px-Bd_tabarly_garden_beach.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

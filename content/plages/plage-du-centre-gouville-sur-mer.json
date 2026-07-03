@@ -1,0 +1,29 @@
+{
+  "slug": "plage-du-centre-gouville-sur-mer",
+  "nom": "Plage du Centre",
+  "description": "Plage labellisée Handiplage à Gouville-sur-Mer. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage du Centre\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Gouville-sur-Mer",
+  "codePostal": "50200",
+  "departement": "Manche",
+  "region": "Normandie",
+  "latitude": 49.09549431402,
+  "longitude": -1.609840393066,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Gouville_plage.JPG/1280px-Gouville_plage.JPG",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

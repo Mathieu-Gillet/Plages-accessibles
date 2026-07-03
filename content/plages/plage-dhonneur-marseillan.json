@@ -1,0 +1,30 @@
+{
+  "slug": "plage-dhonneur-marseillan",
+  "nom": "Plage d'Honneur",
+  "description": "Plage labellisée Handiplage à Marseillan. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage d'Honneur\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, rampe acces, chemin acces, signalisation braille. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Marseillan",
+  "codePostal": "34340",
+  "departement": "Hérault",
+  "region": "Occitanie",
+  "latitude": 43.315591826486,
+  "longitude": 3.553163100488,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Marseillan-plage-002.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES",
+    "SIGNALISATION_BRAILLE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

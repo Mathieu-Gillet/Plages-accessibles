@@ -1,0 +1,29 @@
+{
+  "slug": "plage-de-la-cale-gouville-sur-mer",
+  "nom": "Plage de la Cale",
+  "description": "Plage labellisée Handiplage à Gouville-sur-Mer. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de la Cale\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Gouville-sur-Mer",
+  "codePostal": "50200",
+  "departement": "Manche",
+  "region": "Normandie",
+  "latitude": 49.098200386409,
+  "longitude": -1.609497070313,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Nuages_sur_la_plage.jpg/1280px-Nuages_sur_la_plage.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

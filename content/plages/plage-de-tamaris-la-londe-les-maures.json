@@ -1,0 +1,26 @@
+{
+  "slug": "plage-de-tamaris-la-londe-les-maures",
+  "nom": "Plage de Tamaris",
+  "description": "Plage labellisée Handiplage à La Londe-les-Maures. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de Tamaris\" : parkings pmr, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "La Londe-les-Maures",
+  "codePostal": "83250",
+  "departement": "Var",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.11761148949579,
+  "longitude": 6.249804496765138,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/La_Londe-les-Maures_-_Plage_des_Bormettes.webp",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

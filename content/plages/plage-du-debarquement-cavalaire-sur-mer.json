@@ -1,0 +1,30 @@
+{
+  "slug": "plage-du-debarquement-cavalaire-sur-mer",
+  "nom": "Plage du débarquement",
+  "description": "Plage labellisée Handiplage à Cavalaire-sur-Mer. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage du débarquement\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Cavalaire-sur-Mer",
+  "codePostal": "83240",
+  "departement": "Var",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.183897900843,
+  "longitude": 6.543731689453,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Th%C3%A9o_Van_Rysselberghe_-_Plage_de_Cavalaire.jpg/1280px-Th%C3%A9o_Van_Rysselberghe_-_Plage_de_Cavalaire.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

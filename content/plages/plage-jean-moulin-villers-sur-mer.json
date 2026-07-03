@@ -1,0 +1,30 @@
+{
+  "slug": "plage-jean-moulin-villers-sur-mer",
+  "nom": "plage Jean Moulin",
+  "description": "Plage labellisée Handiplage à Villers-sur-Mer. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"plage Jean Moulin\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Villers-sur-Mer",
+  "codePostal": "14640",
+  "departement": "Calvados",
+  "region": "Normandie",
+  "latitude": 49.330598379122,
+  "longitude": 0.011370766683,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Villers-sur-Mer_%2814%29_Plage_754.jpg/1280px-Villers-sur-Mer_%2814%29_Plage_754.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-03",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
