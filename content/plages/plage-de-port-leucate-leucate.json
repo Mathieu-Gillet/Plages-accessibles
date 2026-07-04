@@ -1,0 +1,25 @@
+{
+  "slug": "plage-de-port-leucate-leucate",
+  "nom": "Plage de Port-Leucate",
+  "description": "Plage \"Plage de Port-Leucate\" située à Leucate, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Leucate",
+  "codePostal": "11370",
+  "departement": "Aude",
+  "region": "Occitanie",
+  "latitude": 42.8583418,
+  "longitude": 3.0460438,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Leucate_plage_jcb.jpg/1280px-Leucate_plage_jcb.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-04",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

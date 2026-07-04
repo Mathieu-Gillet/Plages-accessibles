@@ -1,0 +1,30 @@
+{
+  "slug": "grande-plage-des-becs-saint-hilaire-de-riez",
+  "nom": "Grande plage des Becs",
+  "description": "Plage labellisée Handiplage à Saint-Hilaire-de-Riez. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Grande plage des Becs\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Hilaire-de-Riez",
+  "codePostal": "85270",
+  "departement": "Vendée",
+  "region": "Pays de la Loire",
+  "latitude": 46.75644551102998,
+  "longitude": -2.0320410102329123,
+  "photo": "https://picsum.photos/seed/grande-plage-des-becs-saint-hilaire-de-riez/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-04",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "plage-des-libraires-poste-de-secours-mondain-pornichet",
+  "nom": "Plage des Libraires (poste de Secours Mondain)",
+  "description": "Plage labellisée Handiplage à Pornichet. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage des Libraires (poste de Secours Mondain)\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Pornichet",
+  "codePostal": "44380",
+  "departement": "Loire-Atlantique",
+  "region": "Pays de la Loire",
+  "latitude": 47.26391235541829,
+  "longitude": -2.3444062520430746,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Plage_%28Pornichet%29_%2804%29.jpg/1280px-Plage_%28Pornichet%29_%2804%29.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-04",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

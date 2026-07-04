@@ -1,0 +1,29 @@
+{
+  "slug": "grande-plage-les-sables-dolonne",
+  "nom": "Grande Plage",
+  "description": "Plage labellisée Handiplage à Les Sables-d'Olonne. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Grande Plage\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Les Sables-d'Olonne",
+  "codePostal": "85100",
+  "departement": "Vendée",
+  "region": "Pays de la Loire",
+  "latitude": 46.493255427319255,
+  "longitude": -1.7779397964477541,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Les_Sables-d%27Olonne_Plage_870.jpg/1280px-Les_Sables-d%27Olonne_Plage_870.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-04",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

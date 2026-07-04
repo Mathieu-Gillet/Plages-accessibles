@@ -1,0 +1,30 @@
+{
+  "slug": "audenge-audenge",
+  "nom": "Audenge",
+  "description": "Plage labellisée Handiplage à Audenge. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Audenge\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Audenge",
+  "codePostal": "33980",
+  "departement": "Gironde",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 44.679097645690064,
+  "longitude": -1.0193366178111065,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Audg_-_Mairie_W.jpg/1280px-Audg_-_Mairie_W.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-04",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

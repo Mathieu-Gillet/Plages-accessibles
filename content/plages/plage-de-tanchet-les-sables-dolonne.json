@@ -1,0 +1,29 @@
+{
+  "slug": "plage-de-tanchet-les-sables-dolonne",
+  "nom": "Plage de Tanchet",
+  "description": "Plage labellisée Handiplage à Les Sables-d'Olonne. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de Tanchet\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Les Sables-d'Olonne",
+  "codePostal": "85100",
+  "departement": "Vendée",
+  "region": "Pays de la Loire",
+  "latitude": 46.48429158421803,
+  "longitude": -1.7651939392089844,
+  "photo": "https://picsum.photos/seed/plage-de-tanchet-les-sables-dolonne/1200/600",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-04",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

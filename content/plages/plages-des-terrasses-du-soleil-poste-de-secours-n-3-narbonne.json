@@ -1,0 +1,25 @@
+{
+  "slug": "plages-des-terrasses-du-soleil-poste-de-secours-n-3-narbonne",
+  "nom": "Plages des Terrasses du Soleil - Poste de secours n°3",
+  "description": "Fauteuil Tiralo disponible au poste de secours Plage \"Plages des Terrasses du Soleil - Poste de secours n°3\" située à Narbonne, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Narbonne",
+  "codePostal": "11100",
+  "departement": "Aude",
+  "region": "Occitanie",
+  "latitude": 43.1541299,
+  "longitude": 3.1639296,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Narbonne_-%29_Narbonne_Plage_-_panoramio.jpg/1280px-Narbonne_-%29_Narbonne_Plage_-_panoramio.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-04",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

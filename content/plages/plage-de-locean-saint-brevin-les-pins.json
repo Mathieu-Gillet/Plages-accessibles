@@ -1,0 +1,30 @@
+{
+  "slug": "plage-de-locean-saint-brevin-les-pins",
+  "nom": "Plage de l'Océan",
+  "description": "Plage labellisée Handiplage à Saint-Brevin-les-Pins. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de l'Océan\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Saint-Brevin-les-Pins",
+  "codePostal": "44250",
+  "departement": "Loire-Atlantique",
+  "region": "Pays de la Loire",
+  "latitude": 47.2495166,
+  "longitude": -2.1691495,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Saint-Brevin-les-Pins_-_appartements_au_bord_de_la_plage.jpg/1280px-Saint-Brevin-les-Pins_-_appartements_au_bord_de_la_plage.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-04",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

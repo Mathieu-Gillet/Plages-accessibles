@@ -1,0 +1,28 @@
+{
+  "slug": "libourne-libourne",
+  "nom": "Libourne",
+  "description": "Plage labellisée Handiplage à Libourne. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Libourne\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Libourne",
+  "codePostal": "33500",
+  "departement": "Gironde",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 44.95011487913521,
+  "longitude": -0.2424287796020508,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Libourne_Pont_de_Pierre.jpg/1280px-Libourne_Pont_de_Pierre.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-04",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "plage-bonne-source-pornichet",
+  "nom": "Plage Bonne source",
+  "description": "Plage labellisée Handiplage à Pornichet. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage Bonne source\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Pornichet",
+  "codePostal": "44380",
+  "departement": "Loire-Atlantique",
+  "region": "Pays de la Loire",
+  "latitude": 47.25039741261817,
+  "longitude": -2.331386804580689,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Plage_de_La_Baule_-_Pornichet_-_panoramio.jpg/1280px-Plage_de_La_Baule_-_Pornichet_-_panoramio.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-04",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

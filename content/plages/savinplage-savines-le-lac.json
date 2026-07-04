@@ -1,0 +1,25 @@
+{
+  "slug": "savinplage-savines-le-lac",
+  "nom": "Savin'Plage",
+  "description": "Plage \"Savin'Plage\" située à Savines-le-Lac, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Savines-le-Lac",
+  "codePostal": "05160",
+  "departement": "Hautes-Alpes",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 44.5237009,
+  "longitude": 6.3978631,
+  "photo": "https://picsum.photos/seed/savinplage-savines-le-lac/1200/600",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-04",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "plage-des-tremouilles-chorges",
+  "nom": "Plage des Tremouilles",
+  "description": "Plage \"Plage des Tremouilles\" située à Chorges, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Chorges",
+  "codePostal": "05230",
+  "departement": "Hautes-Alpes",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 44.5087461,
+  "longitude": 6.3137342,
+  "photo": "https://picsum.photos/seed/plage-des-tremouilles-chorges/1200/600",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-04",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

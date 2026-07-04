@@ -1,0 +1,28 @@
+{
+  "slug": "plage-du-grand-travers-acces-50-la-grande-motte",
+  "nom": "Plage du Grand Travers accès 50",
+  "description": "Plage labellisée Handiplage à La Grande-Motte. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage du Grand Travers accès 50\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "La Grande-Motte",
+  "codePostal": "34280",
+  "departement": "Hérault",
+  "region": "Occitanie",
+  "latitude": 43.5582844,
+  "longitude": 4.0518989,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Vue_sur_l%27acc%C3%A8s_d%27une_des_plages_de_La_Grande-Motte.jpg/1280px-Vue_sur_l%27acc%C3%A8s_d%27une_des_plages_de_La_Grande-Motte.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-04",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

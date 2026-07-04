@@ -1,0 +1,29 @@
+{
+  "slug": "plage-de-lion-sur-mer-lion-sur-mer",
+  "nom": "Plage de Lion sur Mer",
+  "description": "Plage labellisée Handiplage à Lion-sur-Mer. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de Lion sur Mer\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Lion-sur-Mer",
+  "codePostal": "14780",
+  "departement": "Calvados",
+  "region": "Normandie",
+  "latitude": 49.301736381663005,
+  "longitude": -0.3126651048660279,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Carte_des_sept_capitaineries_generalles_du_Languedoc%2C_des_lieux_qui_les_composent%2C_des_redoutes_et_signaux_qui_ont_est%C3%A9_establis_sur_la_coste%2C_avec_les_sondes_des_plages_-_Faite_par_le_Sieur_de_Massanes..._-_btv1b532730736.jpg/1280px-thumbnail.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-04",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

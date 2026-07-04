@@ -1,0 +1,29 @@
+{
+  "slug": "ouistreham-ouistreham",
+  "nom": "Ouistreham",
+  "description": "Plage labellisée Handiplage à Ouistreham. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Ouistreham\" : tiralo, fauteuil roulant, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Ouistreham",
+  "codePostal": "14150",
+  "departement": "Calvados",
+  "region": "Normandie",
+  "latitude": 49.2882899,
+  "longitude": -0.2579257,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Ouistreham-Capitainerie-du-port.JPG/1280px-Ouistreham-Capitainerie-du-port.JPG",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-04",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
