@@ -1,0 +1,24 @@
+{
+  "slug": "conche-de-cadet-meschers-sur-gironde",
+  "nom": "Conche de Cadet",
+  "description": "acces uniquement par escaliers depuis le haut de la falaise Plage \"Conche de Cadet\" située à Meschers-sur-Gironde, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=no) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Meschers-sur-Gironde",
+  "codePostal": "17132",
+  "departement": "Charente-Maritime",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 45.5580893,
+  "longitude": -0.9634056,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Plage_Meschers_1009827.jpg/1280px-Plage_Meschers_1009827.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

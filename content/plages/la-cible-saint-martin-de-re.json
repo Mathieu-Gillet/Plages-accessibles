@@ -1,0 +1,27 @@
+{
+  "slug": "la-cible-saint-martin-de-re",
+  "nom": "La Cible",
+  "description": "Plage \"La Cible\" située à Saint-Martin-de-Ré, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant, douches, sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Saint-Martin-de-Ré",
+  "codePostal": "17410",
+  "departement": "Charente-Maritime",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 46.2048066,
+  "longitude": -1.3544935,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Plage_de_Saint-Martin-de-R%C3%A9.jpg/1280px-Plage_de_Saint-Martin-de-R%C3%A9.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES",
+    "DOUCHES_ACCESSIBLES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

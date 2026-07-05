@@ -1,0 +1,25 @@
+{
+  "slug": "uhabia-bidart",
+  "nom": "Uhabia",
+  "description": "Accès possible aux PMR jusqu'au poste de secours. Des tiralos sont mis à disposition en saison. Plage \"Uhabia\" située à Bidart, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant limitée, poste de secours, sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=limited) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Bidart",
+  "codePostal": "64210",
+  "departement": "Pyrénées-Atlantiques",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.4315602,
+  "longitude": -1.6001466,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Bidart_Bassilour_Uhabia.jpg/1280px-Bidart_Bassilour_Uhabia.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

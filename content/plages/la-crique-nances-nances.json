@@ -1,0 +1,25 @@
+{
+  "slug": "la-crique-nances-nances",
+  "nom": "\"La Crique\" - Nances",
+  "description": "Plage \"\"La Crique\" - Nances\" située à Nances, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Nances",
+  "codePostal": "73470",
+  "departement": "Savoie",
+  "region": "Auvergne-Rhône-Alpes",
+  "latitude": 45.5733293,
+  "longitude": 5.7994262,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Plage_du_Havre_%2854007994182%29.jpg/1280px-Plage_du_Havre_%2854007994182%29.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

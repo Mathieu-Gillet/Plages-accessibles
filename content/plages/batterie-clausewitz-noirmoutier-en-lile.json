@@ -1,0 +1,24 @@
+{
+  "slug": "batterie-clausewitz-noirmoutier-en-lile",
+  "nom": "Batterie Clausewitz",
+  "description": "Plage \"Batterie Clausewitz\" située à Noirmoutier-en-l'Île, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=no) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Noirmoutier-en-l'Île",
+  "codePostal": "85330",
+  "departement": "Vendée",
+  "region": "Pays de la Loire",
+  "latitude": 47.0249043,
+  "longitude": -2.3054603,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Noirmoutier-en-l%27%C3%8Ele_-_Plage_des_Dames_-_03.jpg/1280px-Noirmoutier-en-l%27%C3%8Ele_-_Plage_des_Dames_-_03.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

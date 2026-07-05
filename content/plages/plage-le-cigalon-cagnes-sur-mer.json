@@ -1,0 +1,25 @@
+{
+  "slug": "plage-le-cigalon-cagnes-sur-mer",
+  "nom": "Plage le Cigalon",
+  "description": "Plage \"Plage le Cigalon\" située à Cagnes-sur-Mer, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Cagnes-sur-Mer",
+  "codePostal": "06800",
+  "departement": "Alpes-Maritimes",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.6561131,
+  "longitude": 7.1634583,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Boulevard_de_la_Plage.jpg/1280px-Boulevard_de_la_Plage.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

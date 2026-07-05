@@ -1,0 +1,25 @@
+{
+  "slug": "plage-du-grazel-gruissan",
+  "nom": "Plage du Grazel",
+  "description": "Fauteuil tiralo disponible au poste de secours Plage \"Plage du Grazel\" située à Gruissan, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Gruissan",
+  "codePostal": "11430",
+  "departement": "Aude",
+  "region": "Occitanie",
+  "latitude": 43.1119429,
+  "longitude": 3.1100461,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Plage%2C_%C3%8Ele_Saint-Martin%2C_Gruissan_cf02.jpg/1280px-Plage%2C_%C3%8Ele_Saint-Martin%2C_Gruissan_cf02.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

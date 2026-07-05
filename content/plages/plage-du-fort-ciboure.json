@@ -1,0 +1,25 @@
+{
+  "slug": "plage-du-fort-ciboure",
+  "nom": "Plage du Fort",
+  "description": "Petite plage de sable fin. Accessible en voiture depuis le parking des dériveurs. Plage située à l'entrée du port et derrière le fort, proximité des restaurants. Baignade surveillée en été. Plage \"Plage du Fort\" située à Ciboure, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant limitée, sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=limited) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Ciboure",
+  "codePostal": "64500",
+  "departement": "Pyrénées-Atlantiques",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.3959165,
+  "longitude": -1.6822066,
+  "photo": "https://picsum.photos/seed/plage-du-fort-ciboure/1200/600",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

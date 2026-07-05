@@ -1,0 +1,25 @@
+{
+  "slug": "handiplage-espace-claude-et-therese-faivre-cagnes-sur-mer",
+  "nom": "Handiplage – Espace Claude et Thérèse Faivre",
+  "description": "Plage \"Handiplage – Espace Claude et Thérèse Faivre\" située à Cagnes-sur-Mer, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant, poste de secours. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Cagnes-sur-Mer",
+  "codePostal": "06800",
+  "departement": "Alpes-Maritimes",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.6563897,
+  "longitude": 7.1737914,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Promenade_de_la_Plage%2C_Cagnes-sur-Mer_2013-12-10_01-32.jpg/1280px-Promenade_de_la_Plage%2C_Cagnes-sur-Mer_2013-12-10_01-32.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

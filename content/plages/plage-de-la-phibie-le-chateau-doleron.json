@@ -1,0 +1,26 @@
+{
+  "slug": "plage-de-la-phibie-le-chateau-doleron",
+  "nom": "Plage de la Phibie",
+  "description": "Plage \"Plage de la Phibie\" située à Le Château-d'Oléron, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant, sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Le Château-d'Oléron",
+  "codePostal": "17480",
+  "departement": "Charente-Maritime",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 45.8905406,
+  "longitude": -1.1961675,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Le_ch%C3%A2teau_Bertaud_vu_depuis_la_plage_de_la_Foux.jpg/1280px-Le_ch%C3%A2teau_Bertaud_vu_depuis_la_plage_de_la_Foux.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

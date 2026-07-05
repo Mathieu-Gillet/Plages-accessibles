@@ -1,0 +1,26 @@
+{
+  "slug": "plage-des-chenes-lieges-soorts-hossegor",
+  "nom": "Plage des Chènes Lièges",
+  "description": "Tiralos disponibles sur les plages blanche et chênes lièges. Plage \"Plage des Chènes Lièges\" située à Soorts-Hossegor, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant, sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Soorts-Hossegor",
+  "codePostal": "40150",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.6646165,
+  "longitude": -1.4311201,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Notre_Dame_Beach%2C_Soorts-Hossegor.jpg/1280px-Notre_Dame_Beach%2C_Soorts-Hossegor.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

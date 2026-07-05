@@ -1,0 +1,26 @@
+{
+  "slug": "plage-de-la-vieille-saint-mandrier-sur-mer",
+  "nom": "Plage de la Vieille",
+  "description": "Plage \"Plage de la Vieille\" située à Saint-Mandrier-sur-Mer, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant, sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Saint-Mandrier-sur-Mer",
+  "codePostal": "83430",
+  "departement": "Var",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.0830781,
+  "longitude": 5.9214413,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Plage%2C_Saint-Mandrier-sur-Mer_-_panoramio.jpg/1280px-Plage%2C_Saint-Mandrier-sur-Mer_-_panoramio.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

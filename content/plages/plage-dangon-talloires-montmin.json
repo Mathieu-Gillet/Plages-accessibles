@@ -1,0 +1,25 @@
+{
+  "slug": "plage-dangon-talloires-montmin",
+  "nom": "Plage d'Angon",
+  "description": "Plage \"Plage d'Angon\" située à Talloires-Montmin, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Talloires-Montmin",
+  "codePostal": "74210",
+  "departement": "Haute-Savoie",
+  "region": "Auvergne-Rhône-Alpes",
+  "latitude": 45.8237639,
+  "longitude": 6.2219396,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Plage_de_Doussard-1_%282017%29.jpg/1280px-Plage_de_Doussard-1_%282017%29.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

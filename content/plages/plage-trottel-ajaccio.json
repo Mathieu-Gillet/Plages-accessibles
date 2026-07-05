@@ -1,0 +1,26 @@
+{
+  "slug": "plage-trottel-ajaccio",
+  "nom": "Plage Trottel",
+  "description": "Plage \"Plage Trottel\" située à Ajaccio, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant, sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Ajaccio",
+  "codePostal": "20000",
+  "departement": "Corse-du-Sud",
+  "region": "Corse",
+  "latitude": 41.9124324,
+  "longitude": 8.7257521,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Corsica_Ajaccio_Golfe_Plage_du_Ricanto.jpg/1280px-Corsica_Ajaccio_Golfe_Plage_du_Ricanto.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

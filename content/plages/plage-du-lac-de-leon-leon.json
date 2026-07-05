@@ -1,0 +1,26 @@
+{
+  "slug": "plage-du-lac-de-leon-leon",
+  "nom": "Plage du Lac de Léon",
+  "description": "En période estivale, une zone de baignade surveillée est délimitée Plage \"Plage du Lac de Léon\" située à Léon, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant, sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Léon",
+  "codePostal": "40550",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.8869021,
+  "longitude": -1.319504,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/The_waves_plage_de_Lette_Blanche_L%C3%A9on.jpg/1280px-The_waves_plage_de_Lette_Blanche_L%C3%A9on.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

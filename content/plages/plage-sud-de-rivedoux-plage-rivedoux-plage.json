@@ -1,0 +1,26 @@
+{
+  "slug": "plage-sud-de-rivedoux-plage-rivedoux-plage",
+  "nom": "Plage sud de Rivedoux-plage",
+  "description": "Plage \"Plage sud de Rivedoux-plage\" située à Rivedoux-Plage, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant, poste de secours, sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Rivedoux-Plage",
+  "codePostal": "17940",
+  "departement": "Charente-Maritime",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 46.1576552,
+  "longitude": -1.2638126,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Rivedoux_Plage_%28196491355%29.jpeg/1280px-Rivedoux_Plage_%28196491355%29.jpeg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

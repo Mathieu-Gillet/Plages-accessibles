@@ -1,0 +1,26 @@
+{
+  "slug": "plage-sud-point-dor-soorts-hossegor",
+  "nom": "Plage Sud (Point d'Or)",
+  "description": "Plage \"Plage Sud (Point d'Or)\" située à Soorts-Hossegor, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant, sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Soorts-Hossegor",
+  "codePostal": "40150",
+  "departement": "Landes",
+  "region": "Nouvelle-Aquitaine",
+  "latitude": 43.6600694,
+  "longitude": -1.4448329,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Le_Ch%E2%80%99ti_Blockhaus_sur_la_plage_d%E2%80%99Audresselles.jpg/1280px-Le_Ch%E2%80%99ti_Blockhaus_sur_la_plage_d%E2%80%99Audresselles.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

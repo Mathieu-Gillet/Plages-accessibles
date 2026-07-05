@@ -1,0 +1,24 @@
+{
+  "slug": "baignade-de-la-villette-paris",
+  "nom": "Baignade de la Villette",
+  "description": "Plage \"Baignade de la Villette\" située à Paris, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant limitée. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=limited) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Paris",
+  "codePostal": "75001",
+  "departement": "Paris",
+  "region": "Île-de-France",
+  "latitude": 48.8856628,
+  "longitude": 2.3745753,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Paris_Plages_2013_DSC_0822w.jpg/1280px-Paris_Plages_2013_DSC_0822w.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

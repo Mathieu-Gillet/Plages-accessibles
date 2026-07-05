@@ -1,0 +1,25 @@
+{
+  "slug": "berck-plage-berck",
+  "nom": "Berck Plage",
+  "description": "Plage \"Berck Plage\" située à Berck, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant limitée, sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=limited) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Berck",
+  "codePostal": "62600",
+  "departement": "Pas-de-Calais",
+  "region": "Hauts-de-France",
+  "latitude": 50.4045583,
+  "longitude": 1.5589479,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Cerfs_volants_plage_Berck_2025.jpg/1280px-Cerfs_volants_plage_Berck_2025.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

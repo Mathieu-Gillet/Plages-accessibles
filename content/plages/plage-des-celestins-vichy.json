@@ -1,0 +1,26 @@
+{
+  "slug": "plage-des-celestins-vichy",
+  "nom": "Plage des Célestins",
+  "description": "Plage \"Plage des Célestins\" située à Vichy, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant, sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Vichy",
+  "codePostal": "03200",
+  "departement": "Allier",
+  "region": "Auvergne-Rhône-Alpes",
+  "latitude": 46.1185179,
+  "longitude": 3.4220335,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Plage_des_C%C3%A9lestins%2C_Vichy%2C_la_nuit_%282%29.jpg/1280px-Plage_des_C%C3%A9lestins%2C_Vichy%2C_la_nuit_%282%29.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

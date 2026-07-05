@@ -1,0 +1,24 @@
+{
+  "slug": "la-plage-cavalaire-sur-mer",
+  "nom": "La Plage",
+  "description": "Plage \"La Plage\" située à Cavalaire-sur-Mer, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant limitée. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=limited) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Cavalaire-sur-Mer",
+  "codePostal": "83240",
+  "departement": "Var",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.1865266,
+  "longitude": 6.5492527,
+  "photo": "https://upload.wikimedia.org/wikipedia/fr/6/65/La_Plage.png",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-05",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
