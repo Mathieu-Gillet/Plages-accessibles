@@ -1,0 +1,26 @@
+{
+  "slug": "moulins-bain-moulins",
+  "nom": "Moulins Bain",
+  "description": "Plage \"Moulins Bain\" située à Moulins, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant, sable fin. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Moulins",
+  "codePostal": "03000",
+  "departement": "Allier",
+  "region": "Auvergne-Rhône-Alpes",
+  "latitude": 46.5589598,
+  "longitude": 3.3251294,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Plage_du_Moulin_%28%C3%89tables-sur-Mer%2C_22%29_-_01.jpg/1280px-Plage_du_Moulin_%28%C3%89tables-sur-Mer%2C_22%29_-_01.jpg",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-06",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES",
+    "SABLE_COMPACT"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}

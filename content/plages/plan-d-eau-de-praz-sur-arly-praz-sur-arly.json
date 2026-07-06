@@ -1,0 +1,25 @@
+{
+  "slug": "plan-d-eau-de-praz-sur-arly-praz-sur-arly",
+  "nom": "Plan d’eau de Praz sur Arly",
+  "description": "Baignade surveillée du 1 juillet au 31 août Plage \"Plan d’eau de Praz sur Arly\" située à Praz-sur-Arly, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Praz-sur-Arly",
+  "codePostal": "74120",
+  "departement": "Haute-Savoie",
+  "region": "Auvergne-Rhône-Alpes",
+  "latitude": 45.8380937,
+  "longitude": 6.5808402,
+  "photo": "https://picsum.photos/seed/plan-d-eau-de-praz-sur-arly-praz-sur-arly/1200/600",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-06",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
