@@ -1,6 +1,7 @@
 // src/lib/utils.ts
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
+import type { NiveauAccessibilite } from '@/types'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -30,4 +31,29 @@ export function etoiles(note: number): string {
 export function distanceLabel(km: number): string {
   if (km < 1) return `${Math.round(km * 1000)} m`
   return `${km.toFixed(1)} km`
+}
+
+/**
+ * Badge d'accessibilité d'un POI voisin (hébergement / lieu culturel).
+ * Honnête par construction : on ne revendique « Accessible PMR » que pour un
+ * niveau confirmé ; « partiel » et « à vérifier » sont visuellement distincts.
+ * Rétrocompat : les POIs sans `niveauAccessibilite` retombent sur le booléen
+ * `accessiblePMR` historique (true → confirmé, false → aucun badge).
+ */
+export function accessibiliteBadge(
+  niveau: NiveauAccessibilite | undefined,
+  accessiblePMR: boolean,
+): { text: string; className: string } | null {
+  const effectif: NiveauAccessibilite | null =
+    niveau ?? (accessiblePMR ? 'confirme' : null)
+  switch (effectif) {
+    case 'confirme':
+      return { text: '♿ Accessible PMR', className: 'text-vert-accessible' }
+    case 'partiel':
+      return { text: '♿ Accès partiel', className: 'text-amber-700' }
+    case 'inconnu':
+      return { text: 'Accessibilité à vérifier', className: 'text-ardoise-clair' }
+    default:
+      return null
+  }
 }

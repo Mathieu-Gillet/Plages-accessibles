@@ -13,6 +13,31 @@ const MAX_HEBERGEMENTS = 5       // maximum par plage
 const MAX_OFFRES = 5
 const SEUIL = 3                  // on enrichit si la catégorie a moins de N entrées
 
+// Niveau d'accessibilité PMR déduit du tag OSM `wheelchair`.
+type NiveauAccessibilite = 'confirme' | 'partiel' | 'inconnu'
+
+// Priorité d'affichage : on remplit d'abord avec les POIs à l'accessibilité
+// confirmée, puis partielle, puis inconnue — sans jamais dépasser le plafond.
+const PRIORITE: Record<NiveauAccessibilite, number> = { confirme: 0, partiel: 1, inconnu: 2 }
+
+/**
+ * Traduit le tag OSM `wheelchair` en niveau d'accessibilité.
+ * `no` renvoie null → le POI est explicitement NON accessible, on ne le liste pas.
+ */
+function niveauFromWheelchair(wheelchair: string | undefined): NiveauAccessibilite | null {
+  switch ((wheelchair ?? '').trim().toLowerCase()) {
+    case 'yes':
+    case 'designated':
+      return 'confirme'
+    case 'limited':
+      return 'partiel'
+    case 'no':
+      return null
+    default:
+      return 'inconnu'
+  }
+}
+
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 interface HebergementJson {
@@ -25,6 +50,7 @@ interface HebergementJson {
   longitude: number
   distanceKm: number
   accessiblePMR: boolean
+  niveauAccessibilite: NiveauAccessibilite
 }
 
 interface OffreCulturelleJson {
@@ -38,6 +64,7 @@ interface OffreCulturelleJson {
   longitude: number
   distanceKm: number
   accessiblePMR: boolean
+  niveauAccessibilite: NiveauAccessibilite
 }
 
 interface PlageJson {
@@ -155,17 +182,18 @@ const TAGS_CULTURE = new Set(Object.keys(LABELS_CULTURE))
 // ── Requête Overpass ──────────────────────────────────────────────────────────
 
 async function queryOverpass(lat: number, lon: number): Promise<OverpassElement[]> {
+  // Plus de filtre `wheelchair` dans la requête : on récupère tous les POIs des
+  // types visés, puis on classe chacun (confirmé / partiel / inconnu) en code à
+  // partir de son tag `wheelchair`. C'est ce qui débloque les plages qui
+  // n'avaient AUCUN POI (les établissements tagués `wheelchair` sont rares en
+  // zone rurale). Les POIs explicitement `wheelchair=no` sont écartés ensuite.
   const q = `
-[out:json][timeout:30];
+[out:json][timeout:60];
 (
-  node["tourism"~"^(hotel|hostel|guest_house|motel|apartment)$"]["wheelchair"~"^(yes|designated)$"](around:${RAYON_M},${lat},${lon});
-  way["tourism"~"^(hotel|hostel|guest_house|motel|apartment)$"]["wheelchair"~"^(yes|designated)$"](around:${RAYON_M},${lat},${lon});
-  node["tourism"~"^(museum|gallery)$"]["wheelchair"~"^(yes|designated)$"](around:${RAYON_M},${lat},${lon});
-  way["tourism"~"^(museum|gallery)$"]["wheelchair"~"^(yes|designated)$"](around:${RAYON_M},${lat},${lon});
-  node["historic"~"^(castle|monument|memorial|ruins)$"]["wheelchair"~"^(yes|designated)$"](around:${RAYON_M},${lat},${lon});
-  way["historic"~"^(castle|monument|memorial|ruins)$"]["wheelchair"~"^(yes|designated)$"](around:${RAYON_M},${lat},${lon});
-  node["amenity"~"^(theatre|cinema|arts_centre)$"]["wheelchair"~"^(yes|designated)$"](around:${RAYON_M},${lat},${lon});
-  way["amenity"~"^(theatre|cinema|arts_centre)$"]["wheelchair"~"^(yes|designated)$"](around:${RAYON_M},${lat},${lon});
+  nwr["tourism"~"^(hotel|hostel|guest_house|motel|apartment)$"](around:${RAYON_M},${lat},${lon});
+  nwr["tourism"~"^(museum|gallery)$"](around:${RAYON_M},${lat},${lon});
+  nwr["historic"~"^(castle|monument|memorial|ruins)$"](around:${RAYON_M},${lat},${lon});
+  nwr["amenity"~"^(theatre|cinema|arts_centre)$"](around:${RAYON_M},${lat},${lon});
 );
 out center;
 `.trim()
@@ -183,6 +211,37 @@ out center;
   return json.elements ?? []
 }
 
+// ── Pré-classement ────────────────────────────────────────────────────────────
+
+/**
+ * Filtre les éléments d'un type donné (hébergement / culture), écarte ceux sans
+ * nom, sans coordonnées ou explicitement `wheelchair=no`, et les trie par
+ * priorité d'accessibilité (confirmé → partiel → inconnu) puis distance.
+ */
+function rankElements(
+  elements: OverpassElement[],
+  isType: (tags: Record<string, string>) => boolean,
+  beachLat: number,
+  beachLon: number,
+): OverpassElement[] {
+  const ranked: Array<{ el: OverpassElement; priorite: number; dist: number }> = []
+  for (const el of elements) {
+    const tags = el.tags ?? {}
+    if (!isType(tags) || !tags.name) continue
+    const c = coordsOf(el)
+    if (!c) continue
+    const niveau = niveauFromWheelchair(tags.wheelchair)
+    if (niveau === null) continue // wheelchair=no
+    ranked.push({
+      el,
+      priorite: PRIORITE[niveau],
+      dist: haversineKm(beachLat, beachLon, c.lat, c.lon),
+    })
+  }
+  ranked.sort((a, b) => a.priorite - b.priorite || a.dist - b.dist)
+  return ranked.map(r => r.el)
+}
+
 // ── Mapping OSM → types JSON ──────────────────────────────────────────────────
 
 async function toHebergement(
@@ -195,6 +254,8 @@ async function toHebergement(
   const tags = el.tags ?? {}
   const nom = tags.name
   if (!c || !nom) return null
+  const niveau = niveauFromWheelchair(tags.wheelchair)
+  if (niveau === null) return null // wheelchair=no → non listé
   const siteWeb = tags.website ? await verifyUrl(tags.website) : null
   return {
     nom,
@@ -205,7 +266,8 @@ async function toHebergement(
     latitude: c.lat,
     longitude: c.lon,
     distanceKm: Math.round(haversineKm(beachLat, beachLon, c.lat, c.lon) * 10) / 10,
-    accessiblePMR: true,
+    accessiblePMR: niveau === 'confirme',
+    niveauAccessibilite: niveau,
   }
 }
 
@@ -219,6 +281,8 @@ async function toOffreCulturelle(
   const tags = el.tags ?? {}
   const nom = tags.name
   if (!c || !nom) return null
+  const niveau = niveauFromWheelchair(tags.wheelchair)
+  if (niveau === null) return null // wheelchair=no → non listé
   const rawType = tags.tourism ?? tags.historic ?? tags.amenity ?? ''
   const siteWeb = tags.website ? await verifyUrl(tags.website) : null
   return {
@@ -231,7 +295,8 @@ async function toOffreCulturelle(
     latitude: c.lat,
     longitude: c.lon,
     distanceKm: Math.round(haversineKm(beachLat, beachLon, c.lat, c.lon) * 10) / 10,
-    accessiblePMR: true,
+    accessiblePMR: niveau === 'confirme',
+    niveauAccessibilite: niveau,
   }
 }
 
@@ -285,23 +350,28 @@ async function main() {
     let hebAdded = 0
     let offAdded = 0
 
-    for (const el of elements) {
-      const tags = el.tags ?? {}
-      const isHeb = TAGS_HEBERGEMENT.has(tags.tourism ?? '')
-      const isCulture =
-        TAGS_CULTURE.has(tags.tourism ?? '') ||
-        TAGS_CULTURE.has(tags.historic ?? '') ||
-        TAGS_CULTURE.has(tags.amenity ?? '')
+    // Pré-classe les éléments par priorité d'accessibilité puis distance, pour
+    // ne construire (et ne vérifier les URLs de) que les meilleurs candidats.
+    const isHeb = (t: Record<string, string>) => TAGS_HEBERGEMENT.has(t.tourism ?? '')
+    const isCulture = (t: Record<string, string>) =>
+      TAGS_CULTURE.has(t.tourism ?? '') ||
+      TAGS_CULTURE.has(t.historic ?? '') ||
+      TAGS_CULTURE.has(t.amenity ?? '')
 
-      if (isHeb && needsHeb && plage.hebergements.length < MAX_HEBERGEMENTS) {
+    if (needsHeb) {
+      for (const el of rankElements(elements, isHeb, plage.latitude, plage.longitude)) {
+        if (plage.hebergements.length >= MAX_HEBERGEMENTS) break
         const h = await toHebergement(el, plage.latitude, plage.longitude, plage.commune)
         if (h && !dejaPresent(plage.hebergements, h)) {
           plage.hebergements.push(h)
           hebAdded++
         }
       }
+    }
 
-      if (isCulture && needsOff && plage.offresCulturelles.length < MAX_OFFRES) {
+    if (needsOff) {
+      for (const el of rankElements(elements, isCulture, plage.latitude, plage.longitude)) {
+        if (plage.offresCulturelles.length >= MAX_OFFRES) break
         const o = await toOffreCulturelle(el, plage.latitude, plage.longitude, plage.commune)
         if (o && !dejaPresent(plage.offresCulturelles, o)) {
           plage.offresCulturelles.push(o)

@@ -1,9 +1,10 @@
 // src/components/features/HebergementCard.tsx
 import { Phone, Globe, MapPin } from 'lucide-react'
-import { distanceLabel } from '@/lib/utils'
+import { distanceLabel, accessibiliteBadge } from '@/lib/utils'
 import type { Hebergement } from '@/types'
 
 export function HebergementCard({ hebergement: h }: { hebergement: Hebergement }) {
+  const badge = accessibiliteBadge(h.niveauAccessibilite, h.accessiblePMR)
   return (
     <div className="bg-sable rounded-xl p-4 border border-sable-fonce">
       <div className="flex items-start justify-between gap-2">
@@ -15,8 +16,8 @@ export function HebergementCard({ hebergement: h }: { hebergement: Hebergement }
           <span className="text-xs font-semibold text-ocean bg-ocean-pale px-2 py-1 rounded-full">
             {distanceLabel(h.distanceKm)}
           </span>
-          {h.accessiblePMR && (
-            <p className="text-xs text-vert-accessible font-semibold mt-1">♿ PMR</p>
+          {badge && (
+            <p className={`text-xs ${badge.className} font-semibold mt-1`}>{badge.text}</p>
           )}
         </div>
       </div>

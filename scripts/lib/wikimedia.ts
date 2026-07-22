@@ -19,6 +19,64 @@ const THUMB_WIDTH = 1200
 // Photos antérieures à cette année seront ignorées.
 const MIN_PHOTO_YEAR = 2010
 
+// Off-topic filename tokens. When a Wikipedia/Commons filename contains one of
+// these (town hall, church, bridge, station, statue, museum…) it is almost
+// certainly NOT a beach photo — this is exactly the failure mode where a
+// commune's Wikipedia lead image (its mairie/église) got picked for a beach
+// whose name equals the commune (e.g. "Audg_-_Mairie_W.jpg" for Audenge).
+// Tokens are anchored to filename separators (start, `_`, `-`, space, `(`) so
+// "pont" matches "..._Pont_de_..." but not "Pontarlier", and "place" does not
+// match "Palace". `\b` is unusable here because `_` counts as a word char.
+const OFF_TOPIC_TOKENS =
+  /(?:^|[-_ (])(mairie|hotel[-_ ]?de[-_ ]?ville|town[-_ ]?hall|eglise|église|church|cathedrale|cathédrale|chapelle|abbaye|capitainerie|gare|monument|memorial|mémorial|statue|place|rue|pont|chateau|château|castle|mus[eé]e|museum|panneau)(?:[-_ )]|$)/i
+// Beach/water tokens. A filename carrying one of these overrides an off-topic
+// match ("Plage_du_Pont_d'Yeu" contains "pont" but is a legitimate beach photo).
+const BEACH_TOKENS =
+  /(plage|beach|\bmer\b|sable|dune|littoral|baie|rivage|\blac\b|plan[-_ ]?d.?eau|[eé]tang|c[oô]te|front[-_ ]?de[-_ ]?mer|seaside|shore|coast|marine)/i
+
+/** Decode the trailing filename from an upload.wikimedia.org / thumbnail URL. */
+function filenameOf(url: string): string {
+  try {
+    const last = url.split('/').filter(Boolean).pop() ?? ''
+    return decodeURIComponent(last)
+  } catch {
+    return url
+  }
+}
+
+/**
+ * True when a photo URL is clearly off-topic for a beach (mairie, église, pont…)
+ * and carries no beach/water keyword to redeem it. Used to reject misleading
+ * hero photos before they are published.
+ */
+export function isOffTopicPhoto(url: string): boolean {
+  const fn = filenameOf(url)
+  return OFF_TOPIC_TOKENS.test(fn) && !BEACH_TOKENS.test(fn)
+}
+
+/** Lowercase + strip diacritics and leading "plage de/du/des/d'" article. */
+function normalizeName(s: string): string {
+  return s
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/^(plage|plan d.?eau|lac|baignade|base de loisirs)\s+(de\s+la\s+|de\s+l.?|du\s+|des\s+|de\s+|d.?)?/i, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim()
+}
+
+/**
+ * True when the beach "name" is really just the commune name (very common for
+ * Handiplage records where nom === commune). In that case, querying the
+ * Wikipedia article of that name returns the COMMUNE article, whose lead image
+ * is a town hall / church — never a beach. We skip that step for these.
+ */
+function beachNameIsJustCommune(nom: string, commune: string): boolean {
+  const n = normalizeName(nom)
+  const c = normalizeName(commune)
+  return n === c || n === '' || n === 'plage'
+}
+
 interface PageImageResponse {
   query?: {
     pages?: Record<
@@ -146,7 +204,7 @@ async function tryCommonsIntitle(commune: string, term: string, excludeUrls?: Se
           continue
         }
         const url = ii.thumburl ?? ii.url
-        if (url && !excludeUrls?.has(url)) return url
+        if (url && !excludeUrls?.has(url) && !isOffTopicPhoto(url)) return url
       }
     }
   } catch (err) {
@@ -167,9 +225,15 @@ export async function fetchBeachPhoto(opts: {
 }): Promise<string | null> {
   const { excludeUrls } = opts
 
-  // 1. Wikipedia article EXACTLY matching the beach name (best precision)
-  const fromBeachArticle = await tryWikipediaPageImage(opts.nom)
-  if (fromBeachArticle && !excludeUrls?.has(fromBeachArticle)) return fromBeachArticle
+  // 1. Wikipedia article EXACTLY matching the beach name (best precision).
+  // Skipped when the beach name is just the commune name — that article's lead
+  // image is the town hall/church, not a beach (the Audenge/Gravelines bug).
+  if (!beachNameIsJustCommune(opts.nom, opts.commune)) {
+    const fromBeachArticle = await tryWikipediaPageImage(opts.nom)
+    if (fromBeachArticle && !excludeUrls?.has(fromBeachArticle) && !isOffTopicPhoto(fromBeachArticle)) {
+      return fromBeachArticle
+    }
+  }
 
   // 2. Commons file with "plage" in its filename for this commune (high precision)
   const fromCommonsFr = await tryCommonsIntitle(opts.commune, 'plage', excludeUrls)

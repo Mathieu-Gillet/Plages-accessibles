@@ -31,6 +31,11 @@ export const accessibiliteSchema = z.union([
   }),
 ])
 
+// Accessibility confidence of a nearby POI, derived from OSM's `wheelchair` tag:
+//   confirme = wheelchair yes/designated · partiel = limited · inconnu = untagged.
+// Optional so the ~200 POIs enriched before this field still validate.
+export const niveauAccessibiliteSchema = z.enum(['confirme', 'partiel', 'inconnu'])
+
 export const hebergementSchema = z.object({
   nom: z.string().min(1),
   type: z.string().min(1),
@@ -42,6 +47,7 @@ export const hebergementSchema = z.object({
   longitude: z.number(),
   distanceKm: z.number().min(0),
   accessiblePMR: z.boolean().default(false),
+  niveauAccessibilite: niveauAccessibiliteSchema.optional(),
 })
 
 export const offreCulturelleSchema = z.object({
@@ -55,6 +61,7 @@ export const offreCulturelleSchema = z.object({
   longitude: z.number(),
   distanceKm: z.number().min(0),
   accessiblePMR: z.boolean().default(false),
+  niveauAccessibilite: niveauAccessibiliteSchema.optional(),
 })
 
 export const avisSchema = z.object({

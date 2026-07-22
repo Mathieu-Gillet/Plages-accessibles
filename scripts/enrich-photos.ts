@@ -11,7 +11,7 @@
 
 import { promises as fs } from 'node:fs'
 import path from 'node:path'
-import { fetchBeachPhoto } from './lib/wikimedia'
+import { fetchBeachPhoto, isOffTopicPhoto } from './lib/wikimedia'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'plages')
 
@@ -28,8 +28,17 @@ function isPlaceholder(url: string | null | undefined): boolean {
   return url.includes('picsum.photos')
 }
 
-function isWikimedia(url: string | null | undefined): boolean {
-  return !!url && url.includes('upload.wikimedia.org')
+/** Neutral placeholder — deterministic per beach, better than a misleading photo. */
+function placeholderFor(slug: string): string {
+  return `https://picsum.photos/seed/${slug}/1200/600`
+}
+
+/**
+ * A photo needs (re)fetching when it is a placeholder OR an off-topic Wikimedia
+ * image (mairie/église/pont…) that slipped in before the relevance filter existed.
+ */
+function needsEnrichment(url: string | null | undefined): boolean {
+  return isPlaceholder(url) || (!!url && isOffTopicPhoto(url))
 }
 
 async function main(): Promise<void> {
@@ -39,23 +48,21 @@ async function main(): Promise<void> {
   let enriched = 0
   let skipped = 0
   let notFound = 0
+  let cleaned = 0
 
   for (const file of files) {
     const full = path.join(CONTENT_DIR, file)
     const data = JSON.parse(await fs.readFile(full, 'utf8')) as BeachJson
 
-    if (!force && isWikimedia(data.photo)) {
-      console.log(`[skip] ${data.slug} déjà sur wikimedia`)
-      skipped++
-      continue
-    }
-    if (!force && data.photo && !isPlaceholder(data.photo)) {
-      console.log(`[skip] ${data.slug} a déjà une photo non-placeholder`)
+    // In non-force mode, only touch beaches that actually need it: placeholder
+    // photos and off-topic Wikimedia images (mairie/église/…).
+    if (!force && !needsEnrichment(data.photo)) {
       skipped++
       continue
     }
 
-    process.stdout.write(`[fetch] ${data.slug} ... `)
+    const wasOffTopic = !!data.photo && isOffTopicPhoto(data.photo)
+    process.stdout.write(`[fetch] ${data.slug}${wasOffTopic ? ' (hors-sujet)' : ''} ... `)
     const url = await fetchBeachPhoto({ nom: data.nom, commune: data.commune })
 
     if (url) {
@@ -63,6 +70,13 @@ async function main(): Promise<void> {
       await fs.writeFile(full, JSON.stringify(data, null, 2) + '\n', 'utf8')
       console.log('OK')
       enriched++
+    } else if (wasOffTopic) {
+      // No reliable beach photo found — a neutral placeholder is still better
+      // than a misleading town-hall/church photo.
+      data.photo = placeholderFor(data.slug)
+      await fs.writeFile(full, JSON.stringify(data, null, 2) + '\n', 'utf8')
+      console.log('hors-sujet remplacé par placeholder')
+      cleaned++
     } else {
       console.log('rien trouvé (placeholder conservé)')
       notFound++
@@ -72,7 +86,9 @@ async function main(): Promise<void> {
     await new Promise((r) => setTimeout(r, 300))
   }
 
-  console.log(`\nEnrichies : ${enriched}  |  Skippées : ${skipped}  |  Sans photo réelle : ${notFound}`)
+  console.log(
+    `\nEnrichies : ${enriched}  |  Hors-sujet nettoyées : ${cleaned}  |  Skippées : ${skipped}  |  Sans photo réelle : ${notFound}`,
+  )
 }
 
 main().catch((err) => {

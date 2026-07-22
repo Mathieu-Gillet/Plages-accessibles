@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { slugify, formatNote, etoiles, distanceLabel } from '@/lib/utils'
+import { slugify, formatNote, etoiles, distanceLabel, accessibiliteBadge } from '@/lib/utils'
 
 describe('slugify', () => {
   it('lowercases and replaces spaces with hyphens', () => {
@@ -52,5 +52,28 @@ describe('distanceLabel', () => {
   it('uses kilometres with one decimal at or above 1 km', () => {
     expect(distanceLabel(2.4)).toBe('2.4 km')
     expect(distanceLabel(1)).toBe('1.0 km')
+  })
+})
+
+describe('accessibiliteBadge', () => {
+  it('rend un badge vert pour un niveau confirmé', () => {
+    const b = accessibiliteBadge('confirme', true)
+    expect(b?.text).toBe('♿ Accessible PMR')
+    expect(b?.className).toContain('vert')
+  })
+
+  it('rend un badge ambre distinct pour un accès partiel', () => {
+    const b = accessibiliteBadge('partiel', false)
+    expect(b?.text).toBe('♿ Accès partiel')
+    expect(b?.className).toContain('amber')
+  })
+
+  it("signale honnêtement une accessibilité à vérifier quand inconnue", () => {
+    expect(accessibiliteBadge('inconnu', false)?.text).toBe('Accessibilité à vérifier')
+  })
+
+  it('rétrocompat : sans niveau, retombe sur le booléen accessiblePMR', () => {
+    expect(accessibiliteBadge(undefined, true)?.text).toBe('♿ Accessible PMR')
+    expect(accessibiliteBadge(undefined, false)).toBeNull()
   })
 })

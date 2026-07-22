@@ -74,6 +74,8 @@ export interface PlageDetail extends PlageResume {
   avis: Avis[]
 }
 
+export type NiveauAccessibilite = 'confirme' | 'partiel' | 'inconnu'
+
 export interface Hebergement {
   id: string
   nom: string
@@ -86,6 +88,7 @@ export interface Hebergement {
   longitude: number
   distanceKm: number
   accessiblePMR: boolean
+  niveauAccessibilite?: NiveauAccessibilite
 }
 
 export interface OffreCulturelle {
@@ -100,6 +103,7 @@ export interface OffreCulturelle {
   longitude: number
   distanceKm: number
   accessiblePMR: boolean
+  niveauAccessibilite?: NiveauAccessibilite
 }
 
 export interface Avis {

@@ -1,5 +1,27 @@
 # Modifications — Plages Accessibles
 
+## 2026-07-22 — Audit qualité contenu : photos, POIs, descriptions (branche `claude/audit-plages-improvements-nmefqp`)
+
+### Contexte
+Audit du contenu réel (266 plages) : 6 photos Wikimedia hors-sujet (mairie/église/place-de-Toulouse), 82 % des plages sans aucun hébergement ni offre culturelle, et 195 descriptions figées sur le template Handiplage identique.
+
+### Action 1 — Photos hors-sujet
+- **`scripts/lib/wikimedia.ts`** : nouveau filtre `isOffTopicPhoto()` (rejette les noms de fichier `mairie|église|pont|capitainerie|place|…` sauf s'ils contiennent un mot plage/eau) appliqué aux 3 résolveurs ; l'étape « image d'article Wikipedia » est désormais **sautée quand `nom === commune`** (cause racine du bug : l'article de la commune renvoie sa mairie). Test `tests/wikimedia.test.ts`.
+- **`scripts/enrich-photos.ts`** : détecte les photos hors-sujet déjà en base comme « à ré-enrichir » et, faute de remplacement, retombe sur un placeholder neutre plutôt que garder une mairie. Passage local : **6 photos hors-sujet nettoyées** (0 restante). Remplacements réels reportés au cron (Wikimedia 403 dans la session).
+
+### Action 2 — POIs à proximité (assouplissement du filtre d'accessibilité)
+- **`src/lib/content-schema.ts`** + **`src/types/index.ts`** : champ optionnel `niveauAccessibilite` (`confirme|partiel|inconnu`), rétrocompatible (200+ fiches existantes valident sans).
+- **`scripts/enrich-pois.ts`** : la requête Overpass ne filtre plus sur `wheelchair` (débloque les plages sans POI tagué) ; classification en code par `wheelchair` (`no` → exclu), pré-classement priorité (confirmé → partiel → inconnu) puis distance avant de remplir le plafond. `accessiblePMR=true` seulement si confirmé.
+- **`src/lib/utils.ts` `accessibiliteBadge()`** + `HebergementCard`/`OffreCulturelleCard` : badge tri-état honnête (vert « Accessible PMR » / ambre « Accès partiel » / gris « Accessibilité à vérifier »). Tests dans `tests/utils.test.ts`.
+
+### Action 3 — Réécriture IA des descriptions + crons
+- **`scripts/enrich-descriptions.ts`** (nouveau) : réécrit par lot les descriptions templatisées (`Plage labellisée Handiplage à…`, 195 détectées) via Claude Haiku, en reformulant le texte source sans rien inventer ; idempotent, `--limit`/`--dry-run`, sortie gracieuse sans `ANTHROPIC_API_KEY`.
+- **`.github/workflows/enrich-photos.yml`** (08:00 UTC) et **`enrich-descriptions.yml`** (09:00 UTC, secret `ANTHROPIC_API_KEY`) : nouveaux crons autonomes (validate → commit master), groupe `content-master` partagé pour sérialiser les push.
+
+### Vérification
+- `npx tsc --noEmit`, `npm run lint` (0 erreur), `npm test` (**46 tests**, dont wikimedia + accessibiliteBadge), `npm run build` (**281 pages**) : OK.
+- Enrichissement POIs/photos réels non rejouables ici (Overpass & Wikimedia en 403 sous la politique réseau de la session) → délégué aux crons.
+
 ## 2026-06-27 — Autonomie du site + réparation des sources d'import
 
 ### Contexte

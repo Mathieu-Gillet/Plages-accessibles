@@ -1,6 +1,6 @@
 // src/components/features/OffreCulturelleCard.tsx
 import { Globe, MapPin } from 'lucide-react'
-import { distanceLabel } from '@/lib/utils'
+import { distanceLabel, accessibiliteBadge } from '@/lib/utils'
 import type { OffreCulturelle } from '@/types'
 
 const ICONES_TYPE: Record<string, string> = {
@@ -15,6 +15,7 @@ const ICONES_TYPE: Record<string, string> = {
 
 export function OffreCulturelleCard({ offre: o }: { offre: OffreCulturelle }) {
   const icone = ICONES_TYPE[o.type.toLowerCase()] ?? '📍'
+  const badge = accessibiliteBadge(o.niveauAccessibilite, o.accessiblePMR)
 
   return (
     <div className="bg-sable rounded-xl p-4 border border-sable-fonce">
@@ -33,8 +34,8 @@ export function OffreCulturelleCard({ offre: o }: { offre: OffreCulturelle }) {
           <span className="text-xs font-semibold text-ocean bg-ocean-pale px-2 py-1 rounded-full">
             {distanceLabel(o.distanceKm)}
           </span>
-          {o.accessiblePMR && (
-            <p className="text-xs text-vert-accessible font-semibold mt-1">♿ Accessible</p>
+          {badge && (
+            <p className={`text-xs ${badge.className} font-semibold mt-1`}>{badge.text}</p>
           )}
         </div>
       </div>
