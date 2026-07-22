@@ -1,0 +1,31 @@
+{
+  "slug": "plage-de-porsmeur-plouescat",
+  "nom": "Plage de Porsmeur",
+  "description": "Plage labellisée Handiplage à Plouescat. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de Porsmeur\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, rampe acces, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Plouescat",
+  "codePostal": "29430",
+  "departement": "Finistère",
+  "region": "Bretagne",
+  "latitude": 48.65876803803991,
+  "longitude": -4.218772899474078,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Plouescat_-_Plage_de_Porsmeur_-_bo%C3%AEte_%C3%A0_livres.jpg/1280px-Plouescat_-_Plage_de_Porsmeur_-_bo%C3%AEte_%C3%A0_livres.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-22",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "RAMPE_ACCES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
