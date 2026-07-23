@@ -1,0 +1,29 @@
+{
+  "slug": "deauville-plage-des-six-fusilles-deauville",
+  "nom": "Deauville plage des six fusillés",
+  "description": "Plage labellisée Handiplage à Deauville. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Deauville plage des six fusillés\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Deauville",
+  "codePostal": "14800",
+  "departement": "Calvados",
+  "region": "Normandie",
+  "latitude": 49.3607292,
+  "longitude": 0.0664682,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Plage_de_Deauville.jpg/1280px-Plage_de_Deauville.jpg",
+  "photos": [],
+  "noteGlobale": 4.2,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-07-23",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
