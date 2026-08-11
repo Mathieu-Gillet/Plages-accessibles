@@ -1,0 +1,24 @@
+{
+  "slug": "plage-du-lac-dauron-bourges",
+  "nom": "Plage du Lac d'Auron",
+  "description": "Plage \"Plage du Lac d'Auron\" située à Bourges, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant limitée. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=limited) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Bourges",
+  "codePostal": "18000",
+  "departement": "Cher",
+  "region": "Centre-Val de Loire",
+  "latitude": 47.0552775,
+  "longitude": 2.397583,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Morisot_Personnages_sur_la_plage.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-08-11",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
