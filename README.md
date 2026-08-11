@@ -34,7 +34,8 @@ Le site est accessible sur **http://localhost:3000**. Aucune variable d'environn
 
 ```
 content/
-└── plages/                   ← Données des plages (un fichier JSON par plage)
+├── plages/                   ← Données des plages (un fichier JSON par plage)
+└── exclusions.json           ← Liste noire éditoriale (plages définitivement écartées de l'import)
 
 src/
 ├── app/
@@ -112,10 +113,31 @@ reviewer pour le contenu généré.
 
 1. Déduplique les plages existantes (photo identique, GPS à ~100 m)
 2. Interroge les sources par ordre de fiabilité (labels officiels → OSM → IA)
-3. Valide chaque candidat (GPS en France, ≥ 1 équipement, description ≥ 120 car.)
-4. Réécrit la description via Claude Haiku (si `ANTHROPIC_API_KEY` présent)
-5. Cherche une vraie photo sur Wikimedia Commons
-6. Écrit les JSON (max 25/jour), **valide le tout puis commite directement sur `master`**
+3. Écarte les candidats inscrits dans `content/exclusions.json` (voir ci-dessous)
+4. Valide chaque candidat (GPS en France, ≥ 1 équipement, description ≥ 120 car.)
+5. Réécrit la description via Claude Haiku (si `ANTHROPIC_API_KEY` présent)
+6. Cherche une vraie photo sur Wikimedia Commons
+7. Écrit les JSON (max 25/jour), **valide le tout puis commite directement sur `master`**
+
+#### Retirer une plage pour de bon
+
+Supprimer le fichier de `content/plages/` **ne suffit pas** : les sources sont
+réinterrogées chaque matin et la fiche revient le lendemain. Il faut aussi
+ajouter une entrée dans `content/exclusions.json` :
+
+```json
+{
+  "slug": "plage-du-lac-dauron-bourges",
+  "commune": "Bourges",
+  "latitude": 47.0552775,
+  "longitude": 2.397583,
+  "date": "2026-08-11",
+  "raison": "Fiche construite sur un seul tag wheelchair=limited, photo hors-sujet."
+}
+```
+
+`latitude`/`longitude` sont facultatives mais recommandées : elles bloquent aussi
+la réimportation du même lieu sous un autre nom (nœud OSM renommé, autre source).
 
 `.github/workflows/enrich-pois.yml` complète de la même façon les hébergements et offres culturelles accessibles (source OSM, tags `wheelchair=yes/designated`, rayon 10 km), validés puis commités directement sur `master`.
 

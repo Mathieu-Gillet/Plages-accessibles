@@ -28,6 +28,7 @@ import { fetchBeachPhoto } from './lib/wikimedia'
 import { generateDescription, isAiDescriptionAvailable } from './lib/ai-description'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'plages')
+const EXCLUSIONS_FILE = path.join(process.cwd(), 'content', 'exclusions.json')
 // Daily write cap. Overridable via env so a weekend catch-up run can use a
 // higher value (the CI validates content before merge, so a higher cap is safe).
 const MAX_PER_RUN = Number(process.env.MAX_PER_RUN) || 25
@@ -63,6 +64,32 @@ interface RunSummary {
   rejected: Array<{ slug: string; reason: string }>
   capped: number
   deleted: string[]
+  excluded: string[]
+}
+
+interface Exclusion {
+  slug: string
+  raison?: string
+  latitude?: number
+  longitude?: number
+}
+
+/**
+ * Editorial blocklist (content/exclusions.json).
+ *
+ * Deleting a file from content/plages/ is not enough on its own: the sources are
+ * re-queried every morning and the candidate simply comes back the next day.
+ * Anything listed here is dropped before validation, permanently.
+ */
+async function readExclusions(): Promise<Exclusion[]> {
+  try {
+    const raw = await fs.readFile(EXCLUSIONS_FILE, 'utf8')
+    const parsed = JSON.parse(raw) as { exclusions?: Exclusion[] }
+    return (parsed.exclusions ?? []).filter((e) => typeof e.slug === 'string' && e.slug.length > 0)
+  } catch {
+    // No blocklist yet (or unreadable) — importing everything is the safe default.
+    return []
+  }
 }
 
 interface BeachFile {
@@ -181,6 +208,8 @@ function printSummary(summary: RunSummary, dryRun: boolean): void {
   summary.deleted.forEach((s) => console.log(`  x ${s}`))
   console.log(`Doublons skippés   : ${summary.skippedDuplicates.length}`)
   summary.skippedDuplicates.forEach((s) => console.log(`  ~ ${s}`))
+  console.log(`Exclues (liste noire) : ${summary.excluded.length}`)
+  summary.excluded.forEach((s) => console.log(`  ! ${s}`))
   console.log(`Rejetées      : ${summary.rejected.length}`)
   summary.rejected.forEach((r) => console.log(`  - ${r.slug} : ${r.reason}`))
   if (summary.capped > 0) {
@@ -196,6 +225,7 @@ async function main(): Promise<void> {
     rejected: [],
     capped: 0,
     deleted: [],
+    excluded: [],
   }
 
   if (isAiDescriptionAvailable()) {
@@ -221,6 +251,18 @@ async function main(): Promise<void> {
     if (k) occupiedGeoCells.add(k)
   }
 
+  const exclusions = await readExclusions()
+  const excludedSlugs = new Set(exclusions.map((e) => e.slug))
+  // Block the excluded coordinates too, so the same physical place cannot come
+  // back under a slightly different name (a renamed OSM node, another source).
+  for (const e of exclusions) {
+    const k = geoCellKey(e.latitude, e.longitude)
+    if (k) occupiedGeoCells.add(k)
+  }
+  if (excludedSlugs.size > 0) {
+    console.log(`[exclusions] ${excludedSlugs.size} plage(s) sur liste noire éditoriale`)
+  }
+
   // Collect every photo URL already in use so new beaches don't reuse them.
   const usedPhotos = new Set<string>(
     remainingBeaches.map((b) => b.photo).filter((p): p is string => !!p),
@@ -231,6 +273,11 @@ async function main(): Promise<void> {
 
   let qualifiedCount = 0
   for (const candidate of candidates) {
+    if (excludedSlugs.has(candidate.slug)) {
+      summary.excluded.push(candidate.slug)
+      continue
+    }
+
     if (existingSlugs.has(candidate.slug)) {
       summary.skippedDuplicates.push(candidate.slug)
       continue

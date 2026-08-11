@@ -42,7 +42,7 @@ area["ISO3166-1"="FR"]["admin_level"="2"]->.fr;
 out center tags 1000;
 `.trim()
 
-interface OverpassTags {
+export interface OverpassTags {
   name?: string
   'name:fr'?: string
   'addr:city'?: string
@@ -88,14 +88,19 @@ function truthy(v: string | undefined): boolean {
   return s === 'yes' || s === 'designated' || s === 'true' || s === '1'
 }
 
-function mapAccessibilites(t: OverpassTags): TypeAccessibilite[] {
+export function mapAccessibilites(t: OverpassTags): TypeAccessibilite[] {
   const acc = new Set<TypeAccessibilite>()
 
   // Wheelchair is the primary signal — required to even be in the result set.
+  //
+  // `wheelchair=limited` is deliberately NOT mapped to anything: in OSM it means
+  // "partially accessible", i.e. it documents a LIMITATION, not a facility.
+  // Mapping it to CHEMIN_ACCES ("cheminement d'accès adapté") turned a caveat
+  // into a claimed amenity and was enough, on its own, to manufacture a full
+  // listing out of a single ambiguous tag. A `limited` site now only qualifies
+  // if it also carries a concrete equipment tag below.
   if (t.wheelchair === 'yes' || t.wheelchair === 'designated') {
     acc.add('FAUTEUIL_ROULANT')
-    acc.add('CHEMIN_ACCES')
-  } else if (t.wheelchair === 'limited') {
     acc.add('CHEMIN_ACCES')
   }
 
@@ -110,7 +115,7 @@ function mapAccessibilites(t: OverpassTags): TypeAccessibilite[] {
   return [...acc]
 }
 
-function buildDescription(nom: string, commune: string, t: OverpassTags): string {
+export function buildDescription(nom: string, commune: string, t: OverpassTags): string {
   const native =
     t['wheelchair:description:fr'] ??
     t['wheelchair:description'] ??
@@ -129,15 +134,17 @@ function buildDescription(nom: string, commune: string, t: OverpassTags): string
   if (t.surface === 'sand' || t.surface === 'fine_sand') feats.push('sable fin')
 
   const featStr = feats.length > 0 ? feats.join(', ') : 'aménagements pour personnes à mobilité réduite'
-  const tagMention = t.wheelchair
-    ? `La mention d'accessibilité (tag wheelchair=${t.wheelchair}) indique un effort `
-    : `Les tags d'accessibilité renseignés indiquent un effort `
+  // Wording kept strictly to what the data actually supports. The previous
+  // template claimed the data was "vérifiée par recoupement avec les
+  // informations terrain" — nobody performs that check — and described every
+  // site as "balnéaire", which is wrong for the inland lakes and plans d'eau
+  // that make up a good part of this directory.
   const core =
-    `Plage "${nom}" située à ${commune}, répertoriée sur OpenStreetMap comme accessible ` +
-    `aux personnes en situation de handicap. Équipements et caractéristiques renseignés ` +
-    `par les contributeurs locaux : ${featStr}. Les données OpenStreetMap sont mises à jour ` +
-    `en continu par la communauté et vérifiées par recoupement avec les informations terrain. ` +
-    `${tagMention}d'aménagement pour l'accueil des PMR sur ce site balnéaire.`
+    `${nom}, à ${commune} : site de baignade référencé sur OpenStreetMap avec des ` +
+    `informations d'accessibilité renseignées par les contributeurs locaux — ${featStr}. ` +
+    `Ces données sont contributives et n'ont pas été vérifiées sur le terrain par notre ` +
+    `équipe : nous vous conseillons de confirmer les équipements disponibles auprès de la ` +
+    `commune avant votre visite.`
 
   return native.trim().length >= 40 ? `${native.trim()} ${core}` : core
 }
@@ -180,7 +187,10 @@ async function toCandidate(e: OverpassElement): Promise<Candidate | null> {
     latitude: lat,
     longitude: lon,
     accessibilites,
-    noteGlobale: 4.0,
+    // No rating: nobody has reviewed this beach. The previous hard-coded 4.0
+    // published a ★4/5 badge for a site with zero avis. The UI hides the badge
+    // when noteGlobale is 0, so this simply stops inventing a score.
+    noteGlobale: 0,
     photo: `https://picsum.photos/seed/${slug}/1200/600`,
     verifiedBy: 'openstreetmap',
     description: buildDescription(nom, commune, t),
