@@ -16,6 +16,7 @@ import type {
   TypeAccessibilite,
 } from '@/types'
 import { TYPES_ACCESSIBILITE } from './content-schema'
+import { extensionPour, televerserImage } from './stockage'
 import { STATS_VIDES, appliquerSeuil } from './votes-core'
 
 const SUPABASE_URL = process.env.SUPABASE_URL?.replace(/\/+$/, '')
@@ -150,22 +151,27 @@ export async function getCommentairesPublies(): Promise<Map<string, Avis[]>> {
     note: number
     auteur: string | null
     commentaire: string | null
+    photo_url: string | null
     created_at: string
   }>(
     'commentaires',
-    'votes?select=id,plage_slug,note,auteur,commentaire,created_at' +
-      '&statut=eq.publie&commentaire=not.is.null&order=created_at.desc',
+    'votes?select=id,plage_slug,note,auteur,commentaire,photo_url,created_at' +
+      '&statut=eq.publie&or=(commentaire.not.is.null,photo_url.not.is.null)' +
+      '&order=created_at.desc',
   )
 
   const parPlage = new Map<string, Avis[]>()
   for (const r of rows) {
-    if (!r.commentaire) continue
+    // Un avis sans texte mais avec photo reste publiable : l'image *est* le
+    // témoignage. Un avis sans ni l'un ni l'autre n'a rien à afficher.
+    if (!r.commentaire && !r.photo_url) continue
     const liste = parPlage.get(r.plage_slug) ?? []
     liste.push({
       id: r.id,
       note: r.note,
       auteur: r.auteur,
-      commentaire: r.commentaire,
+      commentaire: r.commentaire ?? '',
+      photoUrl: r.photo_url,
       date: new Date(r.created_at),
     })
     parPlage.set(r.plage_slug, liste)
@@ -264,13 +270,20 @@ export function compterVotesPlage(slug: string): Promise<number> {
   return compter('compter votes plage', `plage_slug=eq.${encodeURIComponent(slug)}`)
 }
 
-/** Insère le vote. Lève DejaVoteError si l'index d'unicité (plage, votant) saute. */
-export async function enregistrerVote(vote: NouveauVote): Promise<void> {
+/**
+ * Insère le vote et renvoie son identifiant.
+ * Lève DejaVoteError si l'index d'unicité (plage, votant) saute.
+ *
+ * L'identifiant sert à rattacher une photo *après* l'insertion : téléverser
+ * avant, c'est laisser un fichier orphelin dans le bucket chaque fois qu'un
+ * visiteur revote sur la même plage — le cas d'échec le plus fréquent.
+ */
+export async function enregistrerVote(vote: NouveauVote): Promise<string> {
   const res = await ecrire('enregistrer vote', 'votes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Prefer: 'return=minimal',
+      Prefer: 'return=representation',
     },
     body: JSON.stringify({
       plage_slug: vote.slug,
@@ -285,4 +298,48 @@ export async function enregistrerVote(vote: NouveauVote): Promise<void> {
   })
   if (res.status === 409) throw new DejaVoteError() // violation de votes_plage_votant_uniq
   if (!res.ok) throw new SupabaseError('enregistrer vote', res.status)
+
+  const lignes = (await res.json()) as Array<{ id: string }>
+  const id = lignes[0]?.id
+  if (!id) throw new SupabaseError('enregistrer vote (id absent)', res.status)
+  return id
+}
+
+// ─── Photo d'avis ───────────────────────────────────────────────────────────
+
+/**
+ * Téléverse la photo d'un avis et renvoie son URL publique.
+ *
+ * Le chemin porte l'identifiant du vote : une photo est ainsi toujours
+ * rattachable à la ligne qu'un modérateur a sous les yeux, et supprimer le vote
+ * suffit à retrouver le fichier correspondant.
+ */
+export async function televerserPhotoAvis(opts: {
+  voteId: string
+  slug: string
+  contenu: ArrayBuffer
+  typeMime: string
+}): Promise<string> {
+  const extension = extensionPour(opts.typeMime)
+  if (!extension) throw new SupabaseError('type de photo non supporté', 415)
+
+  return televerserImage({
+    chemin: `${opts.slug}/${opts.voteId}.${extension}`,
+    contenu: opts.contenu,
+    typeMime: opts.typeMime,
+  })
+}
+
+/** Rattache l'URL de la photo au vote déjà enregistré. */
+export async function attacherPhotoAuVote(voteId: string, photoUrl: string): Promise<void> {
+  const res = await ecrire(
+    'attacher photo',
+    `votes?id=eq.${encodeURIComponent(voteId)}`,
+    {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+      body: JSON.stringify({ photo_url: photoUrl }),
+    },
+  )
+  if (!res.ok) throw new SupabaseError('attacher photo', res.status)
 }

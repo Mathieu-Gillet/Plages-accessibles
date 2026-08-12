@@ -7,30 +7,31 @@
 // PR à merger à la main.
 import { z } from 'zod'
 import { NextResponse } from 'next/server'
-import { cookies } from 'next/headers'
 import { revalidatePath, revalidateTag } from 'next/cache'
-import { randomUUID } from 'node:crypto'
 import { clientIp, isHoneypotTriggered, isRateLimited } from '@/lib/anti-spam'
 import { getPlageBySlug } from '@/lib/content'
 import { TYPES_ACCESSIBILITE } from '@/lib/content-schema'
-import { SEUIL_VOTES, STATUTS_EQUIPEMENT } from '@/types'
+import {
+  SEUIL_VOTES,
+  STATUTS_EQUIPEMENT,
+  TAILLE_MAX_PHOTO_AVIS,
+  TYPES_IMAGE_AVIS,
+} from '@/types'
 import { hashEmpreinte, normaliserEquipements } from '@/lib/votes-core'
+import { lireVotant, poserCookieVotant } from '@/lib/votant'
 import {
   DejaVoteError,
   MAX_VOTES_PAR_IP,
   SupabaseError,
   TAG_VOTES,
+  attacherPhotoAuVote,
   compterVotesIp,
   compterVotesPlage,
   enregistrerVote,
   selDeVote,
+  televerserPhotoAvis,
   votesConfigures,
 } from '@/lib/votes'
-
-/** Cookie de votant : anonyme, sans donnée personnelle, uniquement là pour
- *  empêcher un même navigateur de voter deux fois sur la même plage. */
-const COOKIE_VOTANT = 'pa_votant'
-const COOKIE_MAX_AGE = 60 * 60 * 24 * 365 // 1 an
 
 const VotePayloadSchema = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/, 'Slug invalide'),
@@ -62,6 +63,7 @@ async function notifierModeration(opts: {
   note: number
   auteur?: string
   commentaire: string
+  photoUrl?: string | null
 }): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY
   const from = process.env.RESEND_FROM_EMAIL
@@ -78,9 +80,19 @@ async function notifierModeration(opts: {
     La note (${etoiles} ${opts.note}/5) est déjà comptabilisée.
     Seul le texte ci-dessous attend une validation.
   </p>
-  <blockquote style="border-left:3px solid #0369a1;margin:0;padding:8px 12px;background:#f8fafc">
+  ${
+    opts.commentaire
+      ? `<blockquote style="border-left:3px solid #0369a1;margin:0;padding:8px 12px;background:#f8fafc">
     ${escHtml(opts.commentaire)}
-  </blockquote>
+  </blockquote>`
+      : '<p style="color:#475569"><em>Aucun texte — cet avis ne contient qu\'une photo.</em></p>'
+  }
+  ${
+    opts.photoUrl
+      ? `<p style="color:#475569">Photo jointe (à relire avant publication) :</p>
+  <p><img src="${escHtml(opts.photoUrl)}" alt="" style="max-width:100%;border-radius:8px"></p>`
+      : ''
+  }
   <p style="color:#475569">
     Auteur : ${escHtml(opts.auteur ?? 'Anonyme')} · Plage : <code>${escHtml(opts.slug)}</code>
   </p>
@@ -113,12 +125,60 @@ async function notifierModeration(opts: {
   }
 }
 
-export async function POST(req: Request) {
-  let body: unknown
+/**
+ * Une requête de vote arrive sous deux formes :
+ *   · `application/json` — le formulaire du site, inchangé ;
+ *   · `multipart/form-data` — l'application mobile, quand une photo accompagne
+ *     l'avis. Le corps JSON voyage alors dans le champ `payload`, la photo dans
+ *     le champ `photo`.
+ *
+ * Le multipart évite le base64, qui gonflerait l'image de 33 % et ferait
+ * frôler la limite de taille de corps de la plateforme sur une photo de 3 Mo.
+ */
+async function lireRequete(
+  req: Request,
+): Promise<{ body: unknown; photo: File | null } | null> {
+  const typeContenu = req.headers.get('content-type') ?? ''
+
+  if (!typeContenu.includes('multipart/form-data')) {
+    try {
+      return { body: await req.json(), photo: null }
+    } catch {
+      return null
+    }
+  }
+
   try {
-    body = await req.json()
+    const form = await req.formData()
+    const brut = form.get('payload')
+    if (typeof brut !== 'string') return null
+    const photo = form.get('photo')
+    return {
+      body: JSON.parse(brut),
+      photo: photo instanceof File && photo.size > 0 ? photo : null,
+    }
   } catch {
+    return null
+  }
+}
+
+export async function POST(req: Request) {
+  const requete = await lireRequete(req)
+  if (!requete) {
     return Response.json({ error: 'Corps de requête invalide' }, { status: 400 })
+  }
+  const { body, photo } = requete
+
+  if (photo) {
+    if (!TYPES_IMAGE_AVIS.includes(photo.type as (typeof TYPES_IMAGE_AVIS)[number])) {
+      return Response.json(
+        { error: 'Format de photo non supporté (JPEG, PNG ou WebP)' },
+        { status: 415 },
+      )
+    }
+    if (photo.size > TAILLE_MAX_PHOTO_AVIS) {
+      return Response.json({ error: 'Photo trop lourde (5 Mo maximum)' }, { status: 413 })
+    }
   }
 
   // Les bots remplissent le champ caché : on simule un succès pour ne pas
@@ -161,12 +221,12 @@ export async function POST(req: Request) {
   const { vus, absents } = normaliserEquipements(equipements, plage.accessibilites)
 
   // Identité du votant : cookie anonyme posé au premier vote.
-  const jar = await cookies()
-  const votantExistant = jar.get(COOKIE_VOTANT)?.value
-  const votantId = votantExistant ?? randomUUID()
+  const votant = await lireVotant()
   const sel = selDeVote()
-  const votantHash = hashEmpreinte(sel, votantId)
+  const votantHash = hashEmpreinte(sel, votant.id)
   const ipHash = hashEmpreinte(sel, ip)
+
+  let photoUrl: string | null = null
 
   try {
     // Plafond souple par IP : tolère une famille, bloque une ferme à votes.
@@ -177,7 +237,7 @@ export async function POST(req: Request) {
       )
     }
 
-    await enregistrerVote({
+    const voteId = await enregistrerVote({
       slug,
       note,
       equipementsVus: vus,
@@ -187,6 +247,24 @@ export async function POST(req: Request) {
       votantHash,
       ipHash,
     })
+
+    // Best-effort, et volontairement : la note est déjà comptabilisée. Perdre
+    // la photo à cause d'un incident de stockage ne doit pas faire perdre le
+    // vote, ni afficher une erreur à quelqu'un dont la contribution est passée.
+    if (photo) {
+      try {
+        const url = await televerserPhotoAvis({
+          voteId,
+          slug,
+          contenu: await photo.arrayBuffer(),
+          typeMime: photo.type,
+        })
+        await attacherPhotoAuVote(voteId, url)
+        photoUrl = url
+      } catch (err) {
+        console.error('[api/vote] photo non enregistrée :', err)
+      }
+    }
   } catch (err) {
     if (err instanceof DejaVoteError) {
       return Response.json(
@@ -208,13 +286,14 @@ export async function POST(req: Request) {
   revalidatePath(`/plage/${slug}`)
   revalidatePath('/')
 
-  if (commentaire?.trim()) {
+  if (commentaire?.trim() || photoUrl) {
     await notifierModeration({
       nom: plage.nom,
       slug,
       note,
       auteur: auteur?.trim() || undefined,
-      commentaire: commentaire.trim(),
+      commentaire: commentaire?.trim() ?? '',
+      photoUrl,
     })
   }
 
@@ -228,21 +307,12 @@ export async function POST(req: Request) {
       seuil: SEUIL_VOTES,
       seuilAtteint: nombreVotes >= SEUIL_VOTES,
       commentaireEnModeration: Boolean(commentaire?.trim()),
+      photoEnModeration: photoUrl !== null,
     },
     { status: 201 },
   )
 
-  // Posé sur la réponse elle-même : en Route Handler, c'est la voie fiable
-  // pour émettre un Set-Cookie.
-  if (!votantExistant) {
-    res.cookies.set(COOKIE_VOTANT, votantId, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      path: '/',
-      maxAge: COOKIE_MAX_AGE,
-    })
-  }
+  poserCookieVotant(res, votant)
 
   return res
 }

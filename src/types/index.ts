@@ -148,8 +148,14 @@ export interface Avis {
   note: number
   commentaire: string
   auteur?: string | null
+  /** Photo prise sur place, soumise à la même modération que le texte. */
+  photoUrl?: string | null
   date: Date
 }
+
+/** Formats acceptés pour la photo d'un avis, et taille maximale. */
+export const TYPES_IMAGE_AVIS = ['image/jpeg', 'image/png', 'image/webp'] as const
+export const TAILLE_MAX_PHOTO_AVIS = 5 * 1024 * 1024
 
 export const REGIONS_FRANCE = [
   'Auvergne-Rhône-Alpes',

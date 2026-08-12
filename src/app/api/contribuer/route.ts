@@ -1,6 +1,7 @@
 import { z } from 'zod'
 import { TYPES_ACCESSIBILITE } from '@/lib/content-schema'
-import { REGIONS_FRANCE } from '@/types'
+import { REGIONS_FRANCE, TAILLE_MAX_PHOTO_AVIS, TYPES_IMAGE_AVIS } from '@/types'
+import { extensionPour, stockageConfigure, televerserImage } from '@/lib/stockage'
 import { clientIp, isHoneypotTriggered, isRateLimited } from '@/lib/anti-spam'
 import { slugify } from '@/lib/utils'
 import {
@@ -49,12 +50,55 @@ function escapeCell(value: string): string {
     .trim()
 }
 
-export async function POST(req: Request) {
-  let body: unknown
+/**
+ * Comme /api/vote : `application/json` pour le formulaire du site,
+ * `multipart/form-data` quand l'application mobile joint une photo (champ
+ * `payload` pour le JSON, `photo` pour l'image).
+ */
+async function lireRequete(
+  req: Request,
+): Promise<{ body: unknown; photo: File | null } | null> {
+  const typeContenu = req.headers.get('content-type') ?? ''
+
+  if (!typeContenu.includes('multipart/form-data')) {
+    try {
+      return { body: await req.json(), photo: null }
+    } catch {
+      return null
+    }
+  }
+
   try {
-    body = await req.json()
+    const form = await req.formData()
+    const brut = form.get('payload')
+    if (typeof brut !== 'string') return null
+    const photo = form.get('photo')
+    return {
+      body: JSON.parse(brut),
+      photo: photo instanceof File && photo.size > 0 ? photo : null,
+    }
   } catch {
+    return null
+  }
+}
+
+export async function POST(req: Request) {
+  const requete = await lireRequete(req)
+  if (!requete) {
     return Response.json({ error: 'Corps de requête invalide' }, { status: 400 })
+  }
+  const { body, photo } = requete
+
+  if (photo) {
+    if (!TYPES_IMAGE_AVIS.includes(photo.type as (typeof TYPES_IMAGE_AVIS)[number])) {
+      return Response.json(
+        { error: 'Format de photo non supporté (JPEG, PNG ou WebP)' },
+        { status: 415 },
+      )
+    }
+    if (photo.size > TAILLE_MAX_PHOTO_AVIS) {
+      return Response.json({ error: 'Photo trop lourde (5 Mo maximum)' }, { status: 413 })
+    }
   }
 
   // Bots fill the hidden field: pretend success so they don't adapt.
@@ -83,6 +127,26 @@ export async function POST(req: Request) {
   const timestamp = Date.now()
   const branch = `contribution/${slug}-${timestamp}`
 
+  // Photo envoyée depuis le téléphone : téléversée d'abord, puis référencée par
+  // son URL dans la fiche JSON de la Pull Request. Un échec de stockage ne doit
+  // pas faire perdre la proposition — la fiche part alors sans photo, ce qui
+  // reste très largement mieux que rien.
+  let photoTeleversee: string | null = null
+  if (photo && stockageConfigure()) {
+    const extension = extensionPour(photo.type)
+    if (extension) {
+      try {
+        photoTeleversee = await televerserImage({
+          chemin: `propositions/${slug}-${timestamp}.${extension}`,
+          contenu: await photo.arrayBuffer(),
+          typeMime: photo.type,
+        })
+      } catch (err) {
+        console.error('[api/contribuer] photo non téléversée :', err)
+      }
+    }
+  }
+
   const hasGps = data.latitude !== undefined && data.longitude !== undefined
   const hasPremierAvis = data.premierAvisNote !== undefined
 
@@ -99,7 +163,7 @@ export async function POST(req: Request) {
     region: data.region,
     latitude: data.latitude ?? 0,
     longitude: data.longitude ?? 0,
-    photo: data.photo || null,
+    photo: photoTeleversee || data.photo || null,
     photos: [],
     // Aucune note dans le contenu : elle appartient désormais aux visiteurs
     // (table Supabase `votes`). La note éventuellement donnée par le
