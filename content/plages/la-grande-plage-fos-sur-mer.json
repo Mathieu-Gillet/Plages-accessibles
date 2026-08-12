@@ -10,8 +10,6 @@
   "longitude": 4.939728,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/La_grande_plage_de_Fos.jpg/1280px-La_grande_plage_de_Fos.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-05-01",
   "verifiedBy": "datatourisme",
@@ -100,6 +98,5 @@
       "distanceKm": 9.4,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

@@ -10,8 +10,6 @@
   "longitude": -1.7809224128723147,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/St%C3%A8le_en_hommage_%C3%A0_Henry_Martinet_-_Hendaye-Plage.jpg/1280px-St%C3%A8le_en_hommage_%C3%A0_Henry_Martinet_-_Hendaye-Plage.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

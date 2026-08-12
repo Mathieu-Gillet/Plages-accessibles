@@ -10,8 +10,6 @@
   "longitude": 1.072626113892,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Le_Touquet-Paris-Plage_2019_-_Avenue_de_l%27Amiral-Tourville.jpg/1280px-Le_Touquet-Paris-Plage_2019_-_Avenue_de_l%27Amiral-Tourville.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

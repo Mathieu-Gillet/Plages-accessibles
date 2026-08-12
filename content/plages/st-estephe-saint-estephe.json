@@ -10,8 +10,6 @@
   "longitude": 0.672762393951,
   "photo": "https://picsum.photos/seed/st-estephe-saint-estephe/1200/600",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

@@ -10,8 +10,6 @@
   "longitude": 2.397583,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Morisot_Personnages_sur_la_plage.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-08-11",
   "verifiedBy": "openstreetmap",
@@ -19,6 +17,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

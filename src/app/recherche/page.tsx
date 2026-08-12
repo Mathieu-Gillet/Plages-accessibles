@@ -5,8 +5,14 @@ import {
   getRegions,
   getDepartements,
 } from '@/lib/content'
+import { getStatsVotes } from '@/lib/votes'
+import { attacherStats } from '@/lib/carte-accueil'
 import { FiltresRecherche } from '@/components/features/FiltresRecherche'
 import { ListePlages } from '@/components/features/ListePlages'
+
+// Les pastilles de note dépendent des votes : même fenêtre de revalidation que
+// l'accueil et les fiches.
+export const revalidate = 300
 
 interface SearchParams {
   region?: string
@@ -43,6 +49,8 @@ export default async function PageRecherche({
     page,
     pageSize: PAGE_SIZE,
   })
+  const statsVotes = await getStatsVotes()
+  const resultats = attacherStats(plages, statsVotes)
   const regions = getRegions()
   const departements = getDepartements(sp.region)
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE))
@@ -72,7 +80,7 @@ export default async function PageRecherche({
           </p>
 
           <Suspense fallback={<div className="animate-pulse h-64 bg-ocean-pale rounded-xl" />}>
-            <ListePlages plages={plages} page={page} totalPages={totalPages} searchParams={sp} />
+            <ListePlages plages={resultats} page={page} totalPages={totalPages} searchParams={sp} />
           </Suspense>
         </div>
       </div>

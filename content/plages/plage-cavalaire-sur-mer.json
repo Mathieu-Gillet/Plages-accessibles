@@ -10,8 +10,6 @@
   "longitude": 6.5257,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Th%C3%A9o_van_Rysselberghe-Plage_de_Cavalaire-Mus%C3%A9e_de_Grenoble.jpg/1280px-Th%C3%A9o_van_Rysselberghe-Plage_de_Cavalaire-Mus%C3%A9e_de_Grenoble.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-22",
   "verifiedBy": "handiplage.fr",
@@ -37,6 +35,5 @@
       "accessiblePMR": true
     }
   ],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

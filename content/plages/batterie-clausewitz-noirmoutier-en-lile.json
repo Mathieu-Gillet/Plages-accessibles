@@ -10,8 +10,6 @@
   "longitude": -2.3054603,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Noirmoutier-en-l%27%C3%8Ele_-_Plage_des_Dames_-_03.jpg/1280px-Noirmoutier-en-l%27%C3%8Ele_-_Plage_des_Dames_-_03.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-05",
   "verifiedBy": "openstreetmap",
@@ -19,6 +17,5 @@
     "SABLE_COMPACT"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

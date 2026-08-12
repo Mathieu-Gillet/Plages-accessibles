@@ -10,8 +10,6 @@
   "longitude": 7.410825490952,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Littoral_path_between_Plage_de_la_Mala_and_Plage_Marquet_in_Cap-d%27Ail_07.jpg/1280px-Littoral_path_between_Plage_de_la_Mala_and_Plage_Marquet_in_Cap-d%27Ail_07.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

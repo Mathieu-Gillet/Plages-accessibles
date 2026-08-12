@@ -10,8 +10,6 @@
   "longitude": 3.553163100488,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Marseillan-plage-002.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-03",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "SIGNALISATION_BRAILLE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

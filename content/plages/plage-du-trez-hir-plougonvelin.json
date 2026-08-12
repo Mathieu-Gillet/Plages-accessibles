@@ -10,8 +10,6 @@
   "longitude": -4.704251289368,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/4/40/Bretagne_coast_beach_boats_2011.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-03",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

@@ -10,8 +10,6 @@
   "longitude": -1.413513422012,
   "photo": "https://picsum.photos/seed/plage-centrale-vieux-boucau-les-bains/1200/600",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-03",
   "verifiedBy": "handiplage.fr",
@@ -23,6 +21,5 @@
     "RAMPE_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

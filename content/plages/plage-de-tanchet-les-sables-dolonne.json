@@ -10,8 +10,6 @@
   "longitude": -1.7651939392089844,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Plage_de_sauveterre.jpg/1280px-Plage_de_sauveterre.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-24",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

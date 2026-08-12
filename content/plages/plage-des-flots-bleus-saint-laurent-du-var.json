@@ -10,8 +10,6 @@
   "longitude": 7.188786864280702,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/A_boat_off_the_beach_of_Saint-Laurent-du-Var_%2831558701742%29.jpg/1280px-A_boat_off_the_beach_of_Saint-Laurent-du-Var_%2831558701742%29.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -28,6 +26,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

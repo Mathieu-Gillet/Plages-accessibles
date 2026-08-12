@@ -10,8 +10,6 @@
   "longitude": -1.666842699051,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/San_Juan_de_Luz%2C_Saint-Jean-de-Luz%2C_Donibane-Lohizune_-_Plage_de_Saint-Jean-de-Luz%2C_Panorama.jpg/1280px-San_Juan_de_Luz%2C_Saint-Jean-de-Luz%2C_Donibane-Lohizune_-_Plage_de_Saint-Jean-de-Luz%2C_Panorama.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

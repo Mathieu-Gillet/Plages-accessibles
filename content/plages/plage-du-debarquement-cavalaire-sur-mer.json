@@ -10,8 +10,6 @@
   "longitude": 6.543731689453,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Th%C3%A9o_Van_Rysselberghe_-_Plage_de_Cavalaire.jpg/1280px-Th%C3%A9o_Van_Rysselberghe_-_Plage_de_Cavalaire.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-03",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

@@ -10,8 +10,6 @@
   "longitude": -1.445054200027,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Capbreton_plage_de_l%27Estacade_ann%C3%A9es_1930.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

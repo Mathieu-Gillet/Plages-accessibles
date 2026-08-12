@@ -10,8 +10,6 @@
   "longitude": -1.2638126,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Rivedoux_Plage_%28196491355%29.jpeg/1280px-Rivedoux_Plage_%28196491355%29.jpeg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-05",
   "verifiedBy": "openstreetmap",
@@ -21,6 +19,5 @@
     "SABLE_COMPACT"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

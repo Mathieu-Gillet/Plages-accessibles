@@ -10,8 +10,6 @@
   "longitude": 6.172664165497,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Passerelle_sur_le_Laudon_Plage_de_St-Jorioz_%28novembre_2022%29.JPG/1280px-Passerelle_sur_le_Laudon_Plage_de_St-Jorioz_%28novembre_2022%29.JPG",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

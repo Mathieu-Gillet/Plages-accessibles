@@ -1,10 +1,13 @@
 import { Info } from 'lucide-react'
+import { SEUIL_VOTES } from '@/types'
 
+// Les couleurs reprennent celles des marqueurs de la carte, pour que la légende
+// et la carte racontent la même histoire.
 const TRANCHES = [
-  { couleur: '#16a34a', label: '4.5 – 5', desc: 'Très bien équipée — Tiralo, Hippocampe, personnel formé, accès facilité…' },
-  { couleur: '#0077b6', label: '3.5 – 4.4', desc: 'Bien équipée — équipements essentiels présents' },
-  { couleur: '#f59e0b', label: '2 – 3.4', desc: 'Accessibilité de base — quelques équipements recensés' },
-  { couleur: '#9ca3af', label: '< 2', desc: 'Peu équipée — données limitées' },
+  { couleur: '#4ade80', label: '4.5 – 5', desc: 'Accès jugé très facile par les visiteurs' },
+  { couleur: '#7dd3fc', label: '3.5 – 4.4', desc: 'Accès jugé satisfaisant' },
+  { couleur: '#fcd34d', label: '2 – 3.4', desc: 'Accès jugé difficile par endroits' },
+  { couleur: '#e2e8f0', label: '< 2', desc: 'Accès jugé très difficile' },
 ]
 
 export function InfobulleNote() {
@@ -30,9 +33,12 @@ export function InfobulleNote() {
           transition-opacity duration-150 pointer-events-none z-50
         "
       >
-        <p className="font-bold mb-1.5">Comment est calculée la note ?</p>
-        <p className="text-white/70 mb-2 leading-relaxed">
-          Elle mesure le niveau d&apos;équipement PMR de la plage, de 0 à 5, selon le nombre et la qualité des aménagements accessibles recensés.
+        <p className="font-bold mb-1.5">D&apos;où vient cette note ?</p>
+        <p className="text-white/80 mb-2 leading-relaxed">
+          Elle est donnée par les visiteurs : chacun note de 1 à 5 la facilité
+          d&apos;accès qu&apos;il a réellement constatée sur place. La moyenne
+          n&apos;est publiée qu&apos;à partir de {SEUIL_VOTES} votes, pour
+          qu&apos;elle veuille dire quelque chose.
         </p>
         <ul className="space-y-1.5">
           {TRANCHES.map(({ couleur, label, desc }) => (
@@ -40,7 +46,7 @@ export function InfobulleNote() {
               <span className="font-bold shrink-0 w-14" style={{ color: couleur }}>
                 ★ {label}
               </span>
-              <span className="text-white/80">{desc}</span>
+              <span className="text-white/90">{desc}</span>
             </li>
           ))}
         </ul>

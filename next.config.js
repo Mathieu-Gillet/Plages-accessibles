@@ -24,6 +24,13 @@ const securityHeaders = [
 ]
 
 const nextConfig = {
+  // /api/vote lit la fiche de la plage (content/plages/*.json) pour valider le
+  // slug et borner les équipements confirmables. La lecture est dynamique
+  // (readdirSync), donc invisible pour le traceur de dépendances : sans cette
+  // inclusion explicite, les fiches sont absentes du bundle de la fonction.
+  outputFileTracingIncludes: {
+    '/api/vote': ['./content/plages/**/*.json'],
+  },
   images: {
     // Explicit allowlist — mitigates GHSA-9g9p-9gw9-jx7f (Image Optimizer DoS).
     // picsum.photos kept for placeholder images; replace with real sources as available.

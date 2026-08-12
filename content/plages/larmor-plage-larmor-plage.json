@@ -10,8 +10,6 @@
   "longitude": -3.381262594674,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Larmor-Plage_et_la_rade_de_Lorient..jpg/1280px-Larmor-Plage_et_la_rade_de_Lorient..jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -27,6 +25,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

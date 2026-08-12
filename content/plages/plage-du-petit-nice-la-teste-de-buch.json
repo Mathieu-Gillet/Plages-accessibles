@@ -10,8 +10,6 @@
   "longitude": -1.24179,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Arcachon-poste-secours-plage-du-Moulleau-byRundvald.jpg/1280px-Arcachon-poste-secours-plage-du-Moulleau-byRundvald.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-05-01",
   "verifiedBy": "datatourisme",
@@ -22,6 +20,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

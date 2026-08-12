@@ -10,8 +10,6 @@
   "longitude": -3.136576924896,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Morbihan_Saint-Pierre-Quiberon_Plage_Du_Petit_Rohu_Baigneuse_23092016_-_panoramio_-_rene_boulay.jpg/1280px-Morbihan_Saint-Pierre-Quiberon_Plage_Du_Petit_Rohu_Baigneuse_23092016_-_panoramio_-_rene_boulay.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-02",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

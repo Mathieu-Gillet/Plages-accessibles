@@ -10,8 +10,6 @@
   "longitude": 8.724381,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Ajaccio_plage_2.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

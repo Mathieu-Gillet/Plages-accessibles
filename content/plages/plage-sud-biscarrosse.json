@@ -10,8 +10,6 @@
   "longitude": -1.2548681232,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Biscarrosse_beaches%2C_looking_south%2C_2015.jpg/1280px-Biscarrosse_beaches%2C_looking_south%2C_2015.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-29",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

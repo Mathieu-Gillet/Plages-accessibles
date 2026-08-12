@@ -10,8 +10,6 @@
   "longitude": 3.3251294,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Plage_du_Moulin_%28%C3%89tables-sur-Mer%2C_22%29_-_01.jpg/1280px-Plage_du_Moulin_%28%C3%89tables-sur-Mer%2C_22%29_-_01.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-06",
   "verifiedBy": "openstreetmap",
@@ -21,6 +19,5 @@
     "SABLE_COMPACT"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

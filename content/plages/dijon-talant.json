@@ -10,8 +10,6 @@
   "longitude": 5.0083282,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Dijon_-_Palais_des_Ducs_et_des_%C3%89tats_de_Bourgogne_-_01.jpg/1280px-Dijon_-_Palais_des_Ducs_et_des_%C3%89tats_de_Bourgogne_-_01.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -23,6 +21,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

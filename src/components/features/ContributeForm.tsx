@@ -653,16 +653,17 @@ export function ContributeForm() {
         </div>
       </section>
 
-      {/* Section : Premier avis — mise en avant */}
+      {/* Section : ressenti du contributeur — aide à la relecture */}
       <section className="bg-ocean-pale rounded-2xl border-2 border-ocean p-6">
         <div className="flex items-center gap-2 mb-1">
           <span className="text-xl" aria-hidden="true">⭐</span>
-          <h2 className="font-bold text-ardoise text-lg">Votre premier avis</h2>
-          <span className="text-xs bg-ocean text-white px-2 py-0.5 rounded-full font-semibold">mis en avant à l&apos;import</span>
+          <h2 className="font-bold text-ardoise text-lg">Votre ressenti</h2>
+          <span className="text-xs bg-ocean text-white px-2 py-0.5 rounded-full font-semibold">aide à la relecture</span>
         </div>
         <p className="text-ardoise-clair text-sm mb-5">
-          Vous avez visité cette plage ? Partagez votre expérience — votre avis sera publié en premier
-          dès que la plage sera validée et importée sur le site.
+          Vous avez visité cette plage ? Votre ressenti accompagne la proposition et
+          aide à la valider. Les notes affichées sur le site, elles, viennent uniquement
+          des votes de visiteurs : vous pourrez voter sur la fiche dès sa publication.
         </p>
 
         <div className="space-y-4">

@@ -10,8 +10,6 @@
   "longitude": 6.275661,
   "photo": "https://picsum.photos/seed/bois-vieux-rousset-serre-poncon/1200/600",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-04",
   "verifiedBy": "openstreetmap",
@@ -20,6 +18,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

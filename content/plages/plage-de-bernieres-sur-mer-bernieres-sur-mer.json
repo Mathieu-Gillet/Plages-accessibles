@@ -10,8 +10,6 @@
   "longitude": -0.424711704254,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Totem_JunoBeach-BernieresSurMer.jpg/1280px-Totem_JunoBeach-BernieresSurMer.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

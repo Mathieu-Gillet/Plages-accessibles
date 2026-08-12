@@ -10,8 +10,6 @@
   "longitude": -1.4882397,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Plage_d%27Ondres.JPG/1280px-Plage_d%27Ondres.JPG",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-24",
   "verifiedBy": "openstreetmap",
@@ -66,6 +64,5 @@
       "distanceKm": 9.7,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

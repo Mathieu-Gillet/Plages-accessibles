@@ -10,8 +10,6 @@
   "longitude": 0.565581321716,
   "photo": "https://picsum.photos/seed/base-de-loisirs-de-montrejeau-montrejeau/1200/600",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

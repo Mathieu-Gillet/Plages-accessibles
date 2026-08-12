@@ -52,7 +52,7 @@ export default function PageAPropos() {
         <ul className="space-y-2 list-disc list-inside">
           <li>Signalant une plage accessible non référencée</li>
           <li>Mettant à jour les informations d&apos;une plage existante</li>
-          <li>Laissant un avis sur une plage que vous avez visitée</li>
+          <li>Notant une plage que vous avez visitée et en confirmant ses équipements</li>
           <li>Participant au développement sur GitHub</li>
         </ul>
 

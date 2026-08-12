@@ -10,8 +10,6 @@
   "longitude": -2.3385,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Pornichet-FR-44-la_plage-01.jpg/1280px-Pornichet-FR-44-la_plage-01.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-21",
   "verifiedBy": "handiplage.fr",
@@ -90,6 +88,5 @@
       "distanceKm": 9.4,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

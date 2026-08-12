@@ -10,8 +10,6 @@
   "longitude": -0.2835631370544434,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Plage_Colleville-Montgomery.JPG/1280px-Plage_Colleville-Montgomery.JPG",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-04",
   "verifiedBy": "handiplage.fr",
@@ -23,6 +21,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

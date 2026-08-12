@@ -10,8 +10,6 @@
   "longitude": 7.153000831604,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Cagnes-sur-Mer_%2806%29_Boulevard_de_la_Plage_334.jpg/1280px-Cagnes-sur-Mer_%2806%29_Boulevard_de_la_Plage_334.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-03",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

@@ -10,8 +10,6 @@
   "longitude": 1.550402641296,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Canard_%C3%A0_canettes_du_Parking_de_la_Baie_d%27Authie_de_Fort_Mahon_Plage.jpg/1280px-Canard_%C3%A0_canettes_du_Parking_de_la_Baie_d%27Authie_de_Fort_Mahon_Plage.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -27,6 +25,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

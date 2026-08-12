@@ -10,8 +10,6 @@
   "longitude": 6.694219708442689,
   "photo": "https://picsum.photos/seed/plage-san-peire-les-issambres-roquebrune-sur-argens/1200/600",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -27,6 +25,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

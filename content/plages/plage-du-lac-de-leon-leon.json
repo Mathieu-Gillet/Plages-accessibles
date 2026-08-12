@@ -10,8 +10,6 @@
   "longitude": -1.319504,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/The_waves_plage_de_Lette_Blanche_L%C3%A9on.jpg/1280px-The_waves_plage_de_Lette_Blanche_L%C3%A9on.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-05",
   "verifiedBy": "openstreetmap",
@@ -21,6 +19,5 @@
     "SABLE_COMPACT"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

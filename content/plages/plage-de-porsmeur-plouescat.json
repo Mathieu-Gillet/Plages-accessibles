@@ -10,8 +10,6 @@
   "longitude": -4.218772899474078,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Plouescat_-_Plage_de_Porsmeur_-_bo%C3%AEte_%C3%A0_livres.jpg/1280px-Plouescat_-_Plage_de_Porsmeur_-_bo%C3%AEte_%C3%A0_livres.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-22",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

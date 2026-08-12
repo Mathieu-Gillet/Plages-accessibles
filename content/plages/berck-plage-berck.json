@@ -10,8 +10,6 @@
   "longitude": 1.5589479,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Cerfs_volants_plage_Berck_2025.jpg/1280px-Cerfs_volants_plage_Berck_2025.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-05",
   "verifiedBy": "openstreetmap",
@@ -20,6 +18,5 @@
     "SABLE_COMPACT"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

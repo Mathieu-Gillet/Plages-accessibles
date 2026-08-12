@@ -10,8 +10,6 @@
   "longitude": 5.178874413062,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/La_plage_de_carry_022.jpg/1280px-La_plage_de_carry_022.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -38,6 +36,5 @@
       "accessiblePMR": true
     }
   ],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

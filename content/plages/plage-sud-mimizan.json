@@ -10,8 +10,6 @@
   "longitude": -1.2993264,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Mimizan_Plage_Nord_les_commerces_%283%29.JPG",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-26",
   "verifiedBy": "datatourisme",
@@ -44,6 +42,5 @@
       "distanceKm": 5.8,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

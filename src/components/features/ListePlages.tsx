@@ -1,7 +1,7 @@
 // src/components/features/ListePlages.tsx
 import Link from 'next/link'
 import { PlageCardResume } from './PlageCard'
-import type { PlageResume } from '@/types'
+import type { PlageAvecVotes } from '@/types'
 
 interface SearchParams {
   region?: string
@@ -11,7 +11,7 @@ interface SearchParams {
 }
 
 interface ListePlagesProps {
-  plages: PlageResume[]
+  plages: PlageAvecVotes[]
   page: number
   totalPages: number
   searchParams: SearchParams

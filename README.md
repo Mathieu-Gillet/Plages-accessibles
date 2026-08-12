@@ -14,7 +14,8 @@ Annuaire collaboratif et gratuit des plages françaises accessibles aux personne
 - **Leaflet + React-Leaflet** (carte interactive OpenStreetMap)
 - **Zod** (validation du contenu au build : un fichier invalide = build cassé, jamais de données corrompues en prod)
 - **Aucune base de données** — chaque plage est un fichier JSON dans `content/plages/`, versionné dans Git
-- **GitHub comme back-office** — pipeline autonome : l'import quotidien valide et commite directement sur `master` ; les contributions/avis du site ouvrent des Pull Requests mergées automatiquement dès que la CI est verte (aucun merge manuel)
+- **GitHub comme back-office** — pipeline autonome : l'import quotidien valide et commite directement sur `master` ; les contributions du site ouvrent des Pull Requests mergées automatiquement dès que la CI est verte (aucun merge manuel)
+- **Notes 100 % communautaires** — aucune note n'est importée : les visiteurs notent l'accessibilité et confirment les équipements réellement présents. La moyenne n'est publiée qu'à partir de **5 votes** (`SEUIL_VOTES`)
 - **Vercel** (hébergement, Analytics, Speed Insights)
 
 ---
@@ -26,7 +27,7 @@ npm install
 npm run dev
 ```
 
-Le site est accessible sur **http://localhost:3000**. Aucune variable d'environnement n'est requise pour consulter le site en local (seuls les formulaires de contribution/avis nécessitent `GITHUB_PAT`, voir `.env.example`).
+Le site est accessible sur **http://localhost:3000**. Aucune variable d'environnement n'est requise pour consulter le site en local : sans Supabase configuré, les pages s'affichent normalement, simplement sans note communautaire, et `/api/vote` répond `503`. Le formulaire de contribution nécessite `GITHUB_PAT` (voir `.env.example`).
 
 ---
 
@@ -47,7 +48,7 @@ src/
 │   ├── a-propos/             ← Présentation du projet et des équipements
 │   ├── accessibilite/        ← Déclaration d'accessibilité RGAA
 │   ├── api/contribuer/       ← POST → crée une branche + PR GitHub (nouvelle plage)
-│   ├── api/avis/             ← POST → crée une branche + PR GitHub (nouvel avis)
+│   ├── api/vote/             ← POST → enregistre un vote communautaire (Supabase)
 │   ├── robots.ts / sitemap.ts ← SEO
 ├── components/
 │   ├── features/             ← Composants métier (cartes, filtres, formulaires…)
@@ -82,7 +83,7 @@ scripts/
 .github/workflows/
 ├── import-plages.yml         ← Cron quotidien : nouvelles plages → commit direct master
 ├── enrich-pois.yml           ← Cron quotidien : POIs accessibles → commit direct master
-└── ci.yml                    ← Validation + auto-merge des PR publiques (contribution/avis)
+└── ci.yml                    ← Validation + auto-merge des PR publiques (contribution/*)
 ```
 
 ---
@@ -122,11 +123,22 @@ reviewer pour le contenu généré.
 ### 2. Formulaires du site (visiteurs)
 
 - **/contribuer** → `POST /api/contribuer` → PR `contribution/*` (plage créée avec `actif: false`, activée par l'admin)
-- **Avis sur une page plage** → `POST /api/avis` → PR `avis/*` (+ notification email optionnelle via Resend)
+- **Vote sur une page plage** → `POST /api/vote` → ligne dans la table Supabase `votes` (aucune PR)
 
-Ces PR publiques sont **mergées automatiquement dès que la CI est verte** (job `auto-merge` de `.github/workflows/ci.yml`, limité aux préfixes `contribution/` et `avis/`). Les plages contribuées restent `actif: false` jusqu'à activation par l'admin ; les avis sont publiés au merge.
+Les PR de contribution sont **mergées automatiquement dès que la CI est verte** (job `auto-merge` de `.github/workflows/ci.yml`, limité au préfixe `contribution/`). Les plages contribuées restent `actif: false` jusqu'à activation par l'admin.
 
-Protection anti-spam : honeypot + rate-limit par IP. Le `GITHUB_PAT` côté serveur est requis.
+Protection anti-spam : honeypot + rate-limit par IP. Le `GITHUB_PAT` côté serveur est requis pour `/contribuer`.
+
+### 2 bis. Votes communautaires
+
+Un vote = une note de 1 à 5 **plus** la validation des équipements annoncés (« vu sur place » / « absent » / « je ne sais pas »).
+
+- **Stockage** : table Supabase `votes`, schéma dans `supabase/migrations/0001_votes_communautaires.sql` (à exécuter une fois dans le SQL Editor).
+- **Seuil de publication** : `SEUIL_VOTES = 5` (`src/types/index.ts`). En dessous, la moyenne n'apparaît nulle part — ni fiche, ni carte, ni `aggregateRating` JSON-LD. Seule la progression (« 3/5 votes ») est visible.
+- **Unicité** : cookie anonyme `pa_votant` (index unique `plage_slug + votant_hash`) + plafond souple de 3 votes par IP et par plage. Ni IP ni identifiant ne sont stockés en clair, seulement des empreintes SHA-256 salées par `VOTE_SALT`.
+- **Accès** : côté serveur uniquement, via la *service role key*. Le navigateur ne contacte jamais Supabase, donc la CSP `connect-src` reste inchangée.
+- **Commentaires** : `statut = 'en_attente'` à l'insertion, publiés après passage à `'publie'` (Supabase → Table editor). La note, elle, compte immédiatement.
+- **Fraîcheur** : accueil, fiches et recherche sont en ISR (5 min) ; un vote purge le cache immédiatement (`revalidateTag` + `revalidatePath`).
 
 ### 3. Fichier JSON direct (contributeurs Git)
 
@@ -145,17 +157,16 @@ Créez `content/plages/nom-de-la-plage.json` :
   "longitude": -1.5678,
   "photo": "https://upload.wikimedia.org/...",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-01-01",
   "verifiedBy": "handiplage.fr",
   "accessibilites": ["FAUTEUIL_ROULANT", "TIRALO", "CHEMIN_ACCES"],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }
 ```
+
+Aucun champ de note ici : `noteGlobale`, `nombreAvis` et `avis` ont été supprimés du schéma lors du passage en mode communautaire. La note d'une plage vit dans la table Supabase `votes`.
 
 Types d'accessibilité disponibles : `FAUTEUIL_ROULANT`, `TIRALO`, `HIPPOCAMPE`, `HANDISURF`, `CHEMIN_ACCES`, `RAMPE_ACCES`, `SABLE_COMPACT`, `DOUCHES_ACCESSIBLES`, `SANITAIRES_ADAPTES`, `PARKINGS_PMR`, `PERSONNEL_FORME`, `LOCATION_MATERIEL`, `SIGNALISATION_BRAILLE`, `BOUCLE_MAGNETIQUE`
 
@@ -171,9 +182,12 @@ Variables d'environnement (voir `.env.example`) :
 
 | Variable | Requis | Usage |
 |---|---|---|
-| `GITHUB_PAT` | Oui (formulaires) | Fine-grained PAT, scopes Contents + Pull requests, restreint à ce dépôt |
+| `GITHUB_PAT` | Oui (`/contribuer`) | Fine-grained PAT, scopes Contents + Pull requests, restreint à ce dépôt |
+| `SUPABASE_URL` | Oui (votes) | URL du projet Supabase. Absent → pages OK sans notes, `/api/vote` en `503` |
+| `SUPABASE_SERVICE_ROLE_KEY` | Oui (votes) | *Service role key*. **Serveur uniquement**, jamais exposée au navigateur |
+| `VOTE_SALT` | Oui (votes) | Chaîne aléatoire longue, salant les empreintes de votant et d'IP. La changer réinitialise la déduplication |
 | `NEXT_PUBLIC_SITE_URL` | Recommandé | URL canonique (SEO, sitemap) |
-| `RESEND_API_KEY` / `RESEND_FROM_EMAIL` / `ADMIN_EMAIL` | Non | Notification email à l'admin lors d'un nouvel avis |
+| `RESEND_API_KEY` / `RESEND_FROM_EMAIL` / `ADMIN_EMAIL` | Non | Notification email à l'admin quand un commentaire attend modération |
 
 Secrets GitHub Actions (workflows d'import) :
 

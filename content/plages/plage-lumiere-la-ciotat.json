@@ -10,8 +10,6 @@
   "longitude": 5.620858669281,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ciotat-plage.jpg/1280px-Ciotat-plage.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -29,6 +27,5 @@
     "SIGNALISATION_BRAILLE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

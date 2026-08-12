@@ -10,8 +10,6 @@
   "longitude": -2.505880594253,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/La_Turballe_plage_Bretons_1858.JPG/1280px-La_Turballe_plage_Bretons_1858.JPG",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

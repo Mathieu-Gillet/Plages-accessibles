@@ -10,8 +10,6 @@
   "longitude": 55.2256,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Paul_Signac._Saint-Tropez._Plage_de_Granier.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-19",
   "verifiedBy": "handiplage.fr",
@@ -23,6 +21,5 @@
     "PARKINGS_PMR"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

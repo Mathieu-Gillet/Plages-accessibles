@@ -10,8 +10,6 @@
   "longitude": -1.1602807044982912,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Plage-rochelle.jpg/1280px-Plage-rochelle.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -22,6 +20,5 @@
     "SIGNALISATION_BRAILLE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

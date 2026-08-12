@@ -10,8 +10,6 @@
   "longitude": 7.484892010689,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Plage_du_Buse%2C_Roquebrune-Cap-Martin_in_July_2020.jpg/1280px-Plage_du_Buse%2C_Roquebrune-Cap-Martin_in_July_2020.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -27,6 +25,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

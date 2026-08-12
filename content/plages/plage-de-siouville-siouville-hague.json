@@ -10,8 +10,6 @@
   "longitude": -1.844244003296,
   "photo": "https://picsum.photos/seed/plage-de-siouville-siouville-hague/1200/600",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-29",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

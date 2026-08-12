@@ -10,8 +10,6 @@
   "longitude": 6.1757812,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Plage_du_Pradeau%2C_Hy%C3%A8res_-_panoramio.jpg/1280px-Plage_du_Pradeau%2C_Hy%C3%A8res_-_panoramio.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -54,6 +52,5 @@
       "distanceKm": 8.5,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

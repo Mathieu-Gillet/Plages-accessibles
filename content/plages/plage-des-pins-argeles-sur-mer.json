@@ -10,8 +10,6 @@
   "longitude": 3.047806832459,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Argel%C3%A8s-sur-Mer_-_Villas_plage_%28CP_Brun%29.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

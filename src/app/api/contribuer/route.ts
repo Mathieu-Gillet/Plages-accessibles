@@ -82,21 +82,9 @@ export async function POST(req: Request) {
   const slug = slugify(`${data.nom}-${data.commune}`)
   const timestamp = Date.now()
   const branch = `contribution/${slug}-${timestamp}`
-  const today = new Date().toISOString().slice(0, 10)
 
   const hasGps = data.latitude !== undefined && data.longitude !== undefined
   const hasPremierAvis = data.premierAvisNote !== undefined
-
-  const avis = hasPremierAvis
-    ? [
-        {
-          note: data.premierAvisNote!,
-          auteur: data.premierAvisAuteur || undefined,
-          commentaire: data.premierAvisCommentaire || undefined,
-          date: today,
-        },
-      ]
-    : []
 
   // verifiedAt/verifiedBy are intentionally omitted: the content schema
   // only accepts date strings, a literal `null` would break the site build
@@ -113,17 +101,14 @@ export async function POST(req: Request) {
     longitude: data.longitude ?? 0,
     photo: data.photo || null,
     photos: [],
-    // noteGlobale is the *aggregate* rating published in the schema.org
-    // AggregateRating rich-snippet — never a single contributor's score. Keep it
-    // at 0 (no rating shown) until the beach is activated and has a real basis;
-    // the contributor's own rating still lives in `avis`/`nombreAvis` below.
-    noteGlobale: 0,
-    nombreAvis: hasPremierAvis ? 1 : 0,
+    // Aucune note dans le contenu : elle appartient désormais aux visiteurs
+    // (table Supabase `votes`). La note éventuellement donnée par le
+    // contributeur est reportée dans le corps de la PR comme signal éditorial,
+    // et il pourra voter sur la fiche dès sa publication.
     actif: false,
     accessibilites: data.accessibilites,
     hebergements: [],
     offresCulturelles: [],
-    avis,
   }
 
   const accessibilitesLabel = data.accessibilites.length > 0
@@ -154,13 +139,14 @@ export async function POST(req: Request) {
       ? `### Source du contributeur\n\n${data.noteContributeur}\n`
       : '',
     hasPremierAvis ? [
-      `### ⭐ Premier avis du contributeur`,
+      `### ⭐ Ressenti du contributeur`,
       ``,
       `> **Note :** ${etoiles} (${data.premierAvisNote}/5)`,
-      data.premierAvisAuteur ? `> **Auteur :** ${data.premierAvisAuteur}` : '',
+      data.premierAvisAuteur ? `> **Auteur :** ${escapeCell(data.premierAvisAuteur)}` : '',
       data.premierAvisCommentaire ? `>\n> *"${data.premierAvisCommentaire}"*` : '',
       ``,
-      `*Cet avis est inclus dans le fichier JSON et sera publié automatiquement dès le merge.*`,
+      `*Signal éditorial pour la relecture uniquement : cette note n'est pas écrite dans le JSON.*`,
+      `*Les notes du site proviennent exclusivement des votes de visiteurs, publiés à partir de 5 votes.*`,
     ].filter(Boolean).join('\n') : '',
     ``,
     `---`,

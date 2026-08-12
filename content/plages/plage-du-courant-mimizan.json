@@ -10,8 +10,6 @@
   "longitude": -1.287444,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Mimizan_l%27%C3%A9pave_du_Virgo_plage_de_Lespecier.jpg/1280px-Mimizan_l%27%C3%A9pave_du_Virgo_plage_de_Lespecier.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-05-01",
   "verifiedBy": "datatourisme",
@@ -45,6 +43,5 @@
       "distanceKm": 4.9,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

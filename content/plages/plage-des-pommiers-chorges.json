@@ -10,8 +10,6 @@
   "longitude": 6.324043,
   "photo": "https://picsum.photos/seed/plage-des-pommiers-chorges/1200/600",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

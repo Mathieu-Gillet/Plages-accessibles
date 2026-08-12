@@ -10,8 +10,6 @@
   "longitude": -1.2559,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Biscarrosse_%28Landes%29_-_Plage_5.jpg/1280px-Biscarrosse_%28Landes%29_-_Plage_5.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-21",
   "verifiedBy": "handiplage.fr",
@@ -38,6 +36,5 @@
       "distanceKm": 8.9,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

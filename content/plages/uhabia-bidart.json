@@ -10,8 +10,6 @@
   "longitude": -1.6001466,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Bidart_Bassilour_Uhabia.jpg/1280px-Bidart_Bassilour_Uhabia.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-05",
   "verifiedBy": "openstreetmap",
@@ -20,6 +18,5 @@
     "SABLE_COMPACT"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

@@ -10,8 +10,6 @@
   "longitude": -1.431728767618,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Y%C3%A9go_ligne_H1_Soorts-Hossegor_Plage_Centrale.JPG/1280px-Y%C3%A9go_ligne_H1_Soorts-Hossegor_Plage_Centrale.JPG",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-02",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

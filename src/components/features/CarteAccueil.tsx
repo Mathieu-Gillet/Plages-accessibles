@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { MapPin, List } from 'lucide-react'
 import { formatNote } from '@/lib/utils'
-import type { PlageResume } from '@/types'
+import { SEUIL_VOTES, type PlageAvecVotes } from '@/types'
 
 const CarteLeaflet = dynamic(() => import('../map/CarteLeaflet'), {
   ssr: false,
@@ -19,38 +19,55 @@ const CarteLeaflet = dynamic(() => import('../map/CarteLeaflet'), {
   ),
 })
 
-type FiltreNote = 'toutes' | '4-5' | '3-4' | '2-3' | '0-2'
+// Les anciens filtres par tranche de note (★ 4–5, ★ 3–4…) n'ont plus de sens :
+// une plage n'a de note qu'à partir de SEUIL_VOTES votes, donc l'écrasante
+// majorité tomberait dans une seule tranche. On filtre désormais sur ce qui
+// distingue réellement les plages : avoir ou non une note communautaire.
+type Filtre = 'toutes' | 'notees' | 'en-attente'
 
-const FILTRES: { value: FiltreNote; label: string }[] = [
+const FILTRES: { value: Filtre; label: string }[] = [
   { value: 'toutes', label: 'Toutes' },
-  { value: '4-5',   label: '★ 4 – 5' },
-  { value: '3-4',   label: '★ 3 – 4' },
-  { value: '2-3',   label: '★ 2 – 3' },
-  { value: '0-2',   label: '★ < 2' },
+  { value: 'notees', label: '★ Notées par les visiteurs' },
+  { value: 'en-attente', label: 'En attente de votes' },
 ]
 
-function filtrerParNote(plages: PlageResume[], filtre: FiltreNote): PlageResume[] {
+function filtrer(plages: PlageAvecVotes[], filtre: Filtre): PlageAvecVotes[] {
   switch (filtre) {
-    case '4-5': return plages.filter(p => p.noteGlobale >= 4)
-    case '3-4': return plages.filter(p => p.noteGlobale >= 3 && p.noteGlobale < 4)
-    case '2-3': return plages.filter(p => p.noteGlobale >= 2 && p.noteGlobale < 3)
-    case '0-2': return plages.filter(p => p.noteGlobale > 0 && p.noteGlobale < 2)
-    default:    return plages
+    case 'notees':
+      return plages.filter((p) => p.stats.notePubliee !== null)
+    case 'en-attente':
+      return plages.filter((p) => p.stats.notePubliee === null)
+    default:
+      return plages
   }
 }
 
 interface CarteAccueilProps {
-  plages: PlageResume[]
+  plages: PlageAvecVotes[]
+  /** Nombre maximum de plages retenues par région, affiché au visiteur. */
+  maxParRegion: number
+  /** Taille du catalogue complet, pour renvoyer vers la recherche. */
+  totalCatalogue: number
 }
 
-export function CarteAccueil({ plages }: CarteAccueilProps) {
-  const [filtre, setFiltre] = useState<FiltreNote>('toutes')
+export function CarteAccueil({ plages, maxParRegion, totalCatalogue }: CarteAccueilProps) {
+  const [filtre, setFiltre] = useState<Filtre>('toutes')
   const [vue, setVue] = useState<'carte' | 'liste'>('carte')
 
-  const plagesFiltrees = useMemo(() => filtrerParNote(plages, filtre), [plages, filtre])
+  const plagesFiltrees = useMemo(() => filtrer(plages, filtre), [plages, filtre])
 
   return (
     <div className="w-full space-y-3">
+      {/* La carte est une sélection, pas le catalogue : le dire explicitement
+          évite de laisser croire que le site ne recense que ces plages. */}
+      <p className="text-sm text-ardoise-clair">
+        Une sélection de {maxParRegion} plages par région, les mieux notées par
+        les visiteurs en tête.{' '}
+        <Link href="/recherche" className="text-ocean font-semibold hover:underline">
+          Voir les {totalCatalogue} plages recensées →
+        </Link>
+      </p>
+
       {/* Toggle carte / liste — la vue liste est l'alternative accessible au
           clavier et aux lecteurs d'écran de la carte Leaflet (RGAA 1.1). */}
       <div
@@ -94,7 +111,10 @@ export function CarteAccueil({ plages }: CarteAccueilProps) {
           {plagesFiltrees.length === 0 ? (
             <p className="p-4 text-ardoise-clair">Aucune plage ne correspond à ce filtre.</p>
           ) : (
-            <ul className="divide-y divide-ocean-pale max-h-[500px] overflow-y-auto" aria-label="Liste des plages accessibles">
+            <ul
+              className="divide-y divide-ocean-pale max-h-[500px] overflow-y-auto"
+              aria-label="Liste des plages accessibles"
+            >
               {plagesFiltrees.map((p) => (
                 <li key={p.id}>
                   <Link
@@ -107,9 +127,16 @@ export function CarteAccueil({ plages }: CarteAccueilProps) {
                         {p.commune} · {p.departement}
                       </span>
                     </span>
-                    {p.noteGlobale > 0 && (
-                      <span className="shrink-0 text-sm font-semibold text-ocean" aria-label={`Note ${formatNote(p.noteGlobale)} sur 5`}>
-                        ★ {formatNote(p.noteGlobale)}
+                    {p.stats.notePubliee !== null ? (
+                      <span
+                        className="shrink-0 text-sm font-semibold text-ocean"
+                        aria-label={`Note ${formatNote(p.stats.notePubliee)} sur 5, moyenne de ${p.stats.nombreVotes} votes`}
+                      >
+                        <span aria-hidden="true">★ {formatNote(p.stats.notePubliee)}</span>
+                      </span>
+                    ) : (
+                      <span className="shrink-0 text-xs text-ardoise-clair">
+                        {p.stats.nombreVotes}/{SEUIL_VOTES} votes
                       </span>
                     )}
                   </Link>
@@ -120,7 +147,7 @@ export function CarteAccueil({ plages }: CarteAccueilProps) {
         </div>
       )}
 
-      <div className="flex flex-wrap gap-2" role="group" aria-label="Filtrer les plages par note">
+      <div className="flex flex-wrap gap-2" role="group" aria-label="Filtrer les plages">
         {FILTRES.map(({ value, label }) => {
           const actif = filtre === value
           return (
@@ -128,9 +155,10 @@ export function CarteAccueil({ plages }: CarteAccueilProps) {
               key={value}
               onClick={() => setFiltre(value)}
               className="px-4 py-1.5 rounded-full text-sm font-semibold border transition-colors"
-              style={actif
-                ? { backgroundColor: '#2d6a4f', color: 'white', borderColor: '#2d6a4f' }
-                : { backgroundColor: 'white', color: '#2d6a4f', borderColor: '#2d6a4f' }
+              style={
+                actif
+                  ? { backgroundColor: '#2d6a4f', color: 'white', borderColor: '#2d6a4f' }
+                  : { backgroundColor: 'white', color: '#2d6a4f', borderColor: '#2d6a4f' }
               }
               aria-pressed={actif}
             >
@@ -139,7 +167,8 @@ export function CarteAccueil({ plages }: CarteAccueilProps) {
           )
         })}
         <span className="self-center text-xs text-ardoise-clair ml-1">
-          {plagesFiltrees.length} plage{plagesFiltrees.length !== 1 ? 's' : ''}
+          {plagesFiltrees.length} plage{plagesFiltrees.length !== 1 ? 's' : ''} affichée
+          {plagesFiltrees.length !== 1 ? 's' : ''}
         </span>
       </div>
     </div>

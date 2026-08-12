@@ -10,8 +10,6 @@
   "longitude": 3.046146451221,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/8/82/PLAGE_DU_ROUET_La_Palme_2012_07_23_0038_Romero_G._%28Moyen%29.JPG",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-02",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

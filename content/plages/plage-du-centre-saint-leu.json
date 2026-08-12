@@ -10,8 +10,6 @@
   "longitude": 55.28679462436556,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/St.Leu-plage.jpg/1280px-St.Leu-plage.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

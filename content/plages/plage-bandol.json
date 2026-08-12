@@ -10,8 +10,6 @@
   "longitude": 5.7531,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Plage_Renecros.jpg/1280px-Plage_Renecros.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-22",
   "verifiedBy": "handiplage.fr",
@@ -45,6 +43,5 @@
       "distanceKm": 4.3,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

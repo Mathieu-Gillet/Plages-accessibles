@@ -10,8 +10,6 @@
   "longitude": 2.109235,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Gravelines_vue_centrale_depuis_plage.jpg/1280px-Gravelines_vue_centrale_depuis_plage.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -57,6 +55,5 @@
       "distanceKm": 2,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

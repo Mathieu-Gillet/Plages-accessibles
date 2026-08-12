@@ -103,7 +103,6 @@ function toCandidate(b: ClaudeBeach): Candidate | null {
     latitude: b.latitude,
     longitude: b.longitude,
     accessibilites,
-    noteGlobale: 3.5,
     photo: `https://picsum.photos/seed/${slug}/1200/600`,
     verifiedBy: 'claude-research',
     description: b.description,

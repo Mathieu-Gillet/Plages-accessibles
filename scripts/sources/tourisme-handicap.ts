@@ -116,7 +116,6 @@ function toCandidate(r: TourismeRecord): Candidate | null {
     latitude: geo.lat,
     longitude: geo.lon,
     accessibilites,
-    noteGlobale: 4.0,
     photo: `https://picsum.photos/seed/${slug}/1200/600`,
     verifiedBy: 'tourisme-handicap',
     description: buildDescription(nom, commune, handicaps),

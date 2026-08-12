@@ -1,14 +1,13 @@
 // src/components/features/PlageCard.tsx
 import Link from 'next/link'
 import Image from 'next/image'
-import { MapPin, Star } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 import { BadgeAccessibilite } from './BadgeAccessibilite'
-import { InfobulleNote } from './InfobulleNote'
-import { formatNote } from '@/lib/utils'
-import type { PlageResume, TypeAccessibilite } from '@/types'
+import { BadgeNote } from './NoteCommunautaire'
+import type { PlageAvecVotes, TypeAccessibilite } from '@/types'
 
 interface PlageCardProps {
-  plage: PlageResume
+  plage: PlageAvecVotes
 }
 
 export function PlageCardResume({ plage }: PlageCardProps) {
@@ -35,16 +34,9 @@ export function PlageCardResume({ plage }: PlageCardProps) {
       </div>
 
       {/* Badge note — hors overflow pour permettre au tooltip de s'afficher */}
-      {plage.noteGlobale > 0 && (
-        <div
-          className="absolute top-3 right-3 bg-ocean text-white text-sm font-bold px-2 py-1 rounded-lg flex items-center gap-1.5"
-          aria-label={`Note : ${formatNote(plage.noteGlobale)}`}
-        >
-          <Star size={13} fill="currentColor" aria-hidden="true" />
-          {formatNote(plage.noteGlobale)}
-          <InfobulleNote />
-        </div>
-      )}
+      <div className="absolute top-3 right-3">
+        <BadgeNote stats={plage.stats} />
+      </div>
 
       {/* Contenu */}
       <div className="p-4">

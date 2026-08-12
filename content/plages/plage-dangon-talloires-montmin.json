@@ -10,8 +10,6 @@
   "longitude": 6.2219396,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Plage_de_Doussard-1_%282017%29.jpg/1280px-Plage_de_Doussard-1_%282017%29.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-05",
   "verifiedBy": "openstreetmap",
@@ -20,6 +18,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

@@ -10,8 +10,6 @@
   "longitude": 3.1768459081649785,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Narbonne_-%29_Narbonne_Plage_-_panoramio_%281%29.jpg/1280px-Narbonne_-%29_Narbonne_Plage_-_panoramio_%281%29.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -27,6 +25,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

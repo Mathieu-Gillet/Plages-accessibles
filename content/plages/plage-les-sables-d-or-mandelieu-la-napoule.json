@@ -10,8 +10,6 @@
   "longitude": 6.950740814209,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Mandelieu_-_La_Plage_de_la_Raguette_-_Copie.jpg/1280px-Mandelieu_-_La_Plage_de_la_Raguette_-_Copie.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-03",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

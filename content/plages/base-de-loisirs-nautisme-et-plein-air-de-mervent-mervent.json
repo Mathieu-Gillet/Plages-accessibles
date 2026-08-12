@@ -10,8 +10,6 @@
   "longitude": -0.756983757019043,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Granul%C3%A9s_plastiques_industriels_sur_une_plage_de_la_c%C3%B4te_Aquitaine.JPG/1280px-Granul%C3%A9s_plastiques_industriels_sur_une_plage_de_la_c%C3%B4te_Aquitaine.JPG",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -23,6 +21,5 @@
     "SIGNALISATION_BRAILLE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

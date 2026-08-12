@@ -8,8 +8,6 @@
   "region": "Occitanie",
   "latitude": 43.4768,
   "longitude": 4.1356,
-  "noteGlobale": 4.2,
-  "nombreAvis": 28,
   "actif": true,
   "verifiedAt": "2026-04-16",
   "verifiedBy": "seed",
@@ -53,6 +51,5 @@
     }
   ],
   "offresCulturelles": [],
-  "avis": [],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Le_Grau-du-Roi_-_Plage_Rive_Gauche_-_2.jpg/1280px-Le_Grau-du-Roi_-_Plage_Rive_Gauche_-_2.jpg"
 }

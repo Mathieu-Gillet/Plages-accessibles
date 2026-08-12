@@ -10,8 +10,6 @@
   "longitude": 6.745862960815431,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Fr%C3%A9jus-Plage_-_panoramio.jpg/1280px-Fr%C3%A9jus-Plage_-_panoramio.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -28,6 +26,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

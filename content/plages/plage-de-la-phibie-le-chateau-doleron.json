@@ -10,8 +10,6 @@
   "longitude": -1.1961675,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Le_ch%C3%A2teau_Bertaud_vu_depuis_la_plage_de_la_Foux.jpg/1280px-Le_ch%C3%A2teau_Bertaud_vu_depuis_la_plage_de_la_Foux.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-05",
   "verifiedBy": "openstreetmap",
@@ -21,6 +19,5 @@
     "SABLE_COMPACT"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

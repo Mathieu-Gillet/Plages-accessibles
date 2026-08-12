@@ -10,8 +10,6 @@
   "longitude": -3.422133922577,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/084_Ploemeur_Plage_des_Kaolins.jpg/1280px-084_Ploemeur_Plage_des_Kaolins.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -27,6 +25,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

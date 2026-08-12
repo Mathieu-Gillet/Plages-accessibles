@@ -10,8 +10,6 @@
   "longitude": -1.264715194702,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rivedoux_Plage_%28196358237%29.jpeg/1280px-Rivedoux_Plage_%28196358237%29.jpeg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "SIGNALISATION_BRAILLE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

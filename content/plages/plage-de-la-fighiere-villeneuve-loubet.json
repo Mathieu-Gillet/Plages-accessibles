@@ -10,8 +10,6 @@
   "longitude": 7.140094041824,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Bd_tabarly_garden_beach.jpg/1280px-Bd_tabarly_garden_beach.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-03",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

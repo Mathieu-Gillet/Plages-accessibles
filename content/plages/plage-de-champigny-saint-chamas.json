@@ -10,8 +10,6 @@
   "longitude": 5.118089318276,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/St_Chamas_Plage_de_Merveille_.jpg/1280px-St_Chamas_Plage_de_Merveille_.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-29",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

@@ -10,8 +10,6 @@
   "longitude": -1.4448329,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Le_Ch%E2%80%99ti_Blockhaus_sur_la_plage_d%E2%80%99Audresselles.jpg/1280px-Le_Ch%E2%80%99ti_Blockhaus_sur_la_plage_d%E2%80%99Audresselles.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-05",
   "verifiedBy": "openstreetmap",
@@ -21,6 +19,5 @@
     "SABLE_COMPACT"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

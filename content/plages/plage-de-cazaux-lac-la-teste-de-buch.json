@@ -10,8 +10,6 @@
   "longitude": -1.1711156,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Poste_de_secours_plage_de_Salie_Nord.jpg/1280px-Poste_de_secours_plage_de_Salie_Nord.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-05-01",
   "verifiedBy": "datatourisme",
@@ -36,6 +34,5 @@
       "distanceKm": 9,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

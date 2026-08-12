@@ -10,8 +10,6 @@
   "longitude": -0.751469135284,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Plage_SW_from_Pointe_All%C3%A8gre_kz01.jpg/1280px-Plage_SW_from_Pointe_All%C3%A8gre_kz01.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -31,6 +29,5 @@
       "accessiblePMR": true
     }
   ],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

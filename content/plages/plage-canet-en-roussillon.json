@@ -10,8 +10,6 @@
   "longitude": 3.0219,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/6/60/Canet-en-Roussillon_-_Sur_la_plage_%28CP_MTIL%29.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-22",
   "verifiedBy": "handiplage.fr",
@@ -86,6 +84,5 @@
       "distanceKm": 10,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

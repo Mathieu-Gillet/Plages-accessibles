@@ -10,8 +10,6 @@
   "longitude": -1.561024188995,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Hauteville-sur-Mer_-_Panorama_de_la_plage.jpg/1280px-Hauteville-sur-Mer_-_Panorama_de_la_plage.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

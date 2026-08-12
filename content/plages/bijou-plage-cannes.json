@@ -10,8 +10,6 @@
   "longitude": 7.036077976227,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Plage_Zamenhoff.jpg/1280px-Plage_Zamenhoff.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -29,6 +27,5 @@
     "SIGNALISATION_BRAILLE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

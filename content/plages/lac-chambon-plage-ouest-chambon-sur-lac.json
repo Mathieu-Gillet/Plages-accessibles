@@ -10,8 +10,6 @@
   "longitude": 2.915287,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Chambon_%28commune_d%27%C3%89guzon-Chant%C3%B4me%29_-_Plages_de_Chambon_et_Foug%C3%A8res.jpg/1280px-Chambon_%28commune_d%27%C3%89guzon-Chant%C3%B4me%29_-_Plages_de_Chambon_et_Foug%C3%A8res.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -22,6 +20,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

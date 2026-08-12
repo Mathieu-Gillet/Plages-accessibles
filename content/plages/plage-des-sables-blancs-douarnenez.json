@@ -10,8 +10,6 @@
   "longitude": -4.353139400482179,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Sur_la_plage_%C3%A0_Douarnenez._G.38433.jpg/1280px-Sur_la_plage_%C3%A0_Douarnenez._G.38433.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-02",
   "verifiedBy": "handiplage.fr",
@@ -21,6 +19,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

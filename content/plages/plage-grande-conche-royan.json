@@ -9,8 +9,6 @@
   "latitude": 45.6225,
   "longitude": -1.0244,
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-18",
   "verifiedBy": "handiplage.fr",
@@ -55,6 +53,5 @@
       "accessiblePMR": true
     }
   ],
-  "avis": [],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/00_2632_Royan-Plage.jpg/1280px-00_2632_Royan-Plage.jpg"
 }

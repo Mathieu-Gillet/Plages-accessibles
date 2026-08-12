@@ -9,8 +9,6 @@
   "latitude": 43.4969,
   "longitude": -1.5378,
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-18",
   "verifiedBy": "handiplage.fr",
@@ -129,6 +127,5 @@
       "accessiblePMR": true
     }
   ],
-  "avis": [],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Anglet_plage_01.jpg"
 }

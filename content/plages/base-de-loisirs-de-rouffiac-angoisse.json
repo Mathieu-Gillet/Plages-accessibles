@@ -10,8 +10,6 @@
   "longitude": 1.16277553,
   "photo": "https://cdt64.media.tourinsoft.eu/upload/Plage---0M7A2524--Camping---Base-de-Rouffiac-Declic-Decolle.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-05-01",
   "verifiedBy": "datatourisme",
@@ -33,6 +31,5 @@
       "distanceKm": 7.6,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

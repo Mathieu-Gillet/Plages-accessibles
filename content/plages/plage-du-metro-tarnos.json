@@ -10,8 +10,6 @@
   "longitude": -1.5007225,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Arriv%C3%A9e_%C3%A0_Tarnos-Plage._Mer_d%C3%A9cha%C3%AEn%C3%A9e_-_panoramio.jpg/1280px-Arriv%C3%A9e_%C3%A0_Tarnos-Plage._Mer_d%C3%A9cha%C3%AEn%C3%A9e_-_panoramio.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-28",
   "verifiedBy": "openstreetmap",
@@ -125,6 +123,5 @@
       "distanceKm": 9.9,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

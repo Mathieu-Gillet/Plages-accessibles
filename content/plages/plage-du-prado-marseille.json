@@ -8,8 +8,6 @@
   "region": "Provence-Alpes-Côte d'Azur",
   "latitude": 43.2636,
   "longitude": 5.3741,
-  "noteGlobale": 4.5,
-  "nombreAvis": 43,
   "actif": true,
   "verifiedAt": "2026-04-16",
   "verifiedBy": "seed",
@@ -126,14 +124,6 @@
       "longitude": 5.3986698,
       "distanceKm": 7.7,
       "accessiblePMR": true
-    }
-  ],
-  "avis": [
-    {
-      "note": 4,
-      "commentaire": "Top !!",
-      "auteur": "Mathieu",
-      "date": "2026-06-27"
     }
   ],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/La_plage_des_catalans%2C_Marseille_-_panoramio.jpg/1280px-La_plage_des_catalans%2C_Marseille_-_panoramio.jpg"

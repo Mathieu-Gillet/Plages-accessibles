@@ -10,8 +10,6 @@
   "longitude": 6.5808402,
   "photo": "https://picsum.photos/seed/plan-d-eau-de-praz-sur-arly-praz-sur-arly/1200/600",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-06",
   "verifiedBy": "openstreetmap",
@@ -20,6 +18,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

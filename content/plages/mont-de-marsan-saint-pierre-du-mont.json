@@ -10,8 +10,6 @@
   "longitude": -0.536350607872,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Confluent_Mont_de_Marsan.JPG/1280px-Confluent_Mont_de_Marsan.JPG",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

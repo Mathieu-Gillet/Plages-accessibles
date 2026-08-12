@@ -10,8 +10,6 @@
   "longitude": -1.845502395776,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Les_Pieux_%28Manche%2C_Fr%29_plage.jpg/1280px-Les_Pieux_%28Manche%2C_Fr%29_plage.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-02",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

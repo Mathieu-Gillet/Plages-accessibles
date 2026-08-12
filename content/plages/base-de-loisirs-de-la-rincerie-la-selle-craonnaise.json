@@ -10,8 +10,6 @@
   "longitude": -1.062026023865,
   "photo": "https://picsum.photos/seed/base-de-loisirs-de-la-rincerie-la-selle-craonnaise/1200/600",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "SIGNALISATION_BRAILLE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

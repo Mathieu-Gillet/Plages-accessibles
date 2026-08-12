@@ -10,8 +10,6 @@
   "longitude": 0.0745,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Les_planches_de_la_plage_de_Deauville.jpg/1280px-Les_planches_de_la_plage_de_Deauville.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-21",
   "verifiedBy": "handiplage.fr",
@@ -68,6 +66,5 @@
       "accessiblePMR": true
     }
   ],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

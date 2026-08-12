@@ -10,8 +10,6 @@
   "longitude": 3.0460438,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Leucate_plage_jcb.jpg/1280px-Leucate_plage_jcb.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-04",
   "verifiedBy": "openstreetmap",
@@ -20,6 +18,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }
