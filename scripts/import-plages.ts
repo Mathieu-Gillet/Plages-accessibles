@@ -25,6 +25,7 @@ import { claudeResearchSource } from './sources/claude-research'
 import type { Source } from './sources/types'
 import { validateCandidate, type Candidate } from './lib/validate-candidate'
 import { fetchBeachPhoto } from './lib/wikimedia'
+import { chargerPhotosRejetees } from './lib/photos-rejetees'
 import { generateDescription, isAiDescriptionAvailable } from './lib/ai-description'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'plages')
@@ -222,9 +223,13 @@ async function main(): Promise<void> {
   }
 
   // Collect every photo URL already in use so new beaches don't reuse them.
-  const usedPhotos = new Set<string>(
-    remainingBeaches.map((b) => b.photo).filter((p): p is string => !!p),
-  )
+  // Les images écartées après relecture rejoignent les photos déjà utilisées :
+  // dans les deux cas, `fetchBeachPhoto` doit passer son chemin.
+  const rejetees = await chargerPhotosRejetees()
+  const usedPhotos = new Set<string>([
+    ...remainingBeaches.map((b) => b.photo).filter((p): p is string => !!p),
+    ...rejetees,
+  ])
 
   const candidates = await gatherCandidates()
   console.log(`[total] ${candidates.length} candidat(s) uniques après dedup inter-sources`)
@@ -270,6 +275,8 @@ async function main(): Promise<void> {
     const realPhoto = await fetchBeachPhoto({
       nom: result.plage.nom,
       commune: result.plage.commune,
+      latitude: result.plage.latitude,
+      longitude: result.plage.longitude,
       excludeUrls: usedPhotos,
     })
     const chosenPhoto = realPhoto ?? result.plage.photo

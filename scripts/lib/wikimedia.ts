@@ -19,6 +19,11 @@ const THUMB_WIDTH = 1200
 // Photos antérieures à cette année seront ignorées.
 const MIN_PHOTO_YEAR = 2010
 
+// Plancher du dernier recours (cf. fetchBeachPhoto). Une photo de 2008 montre
+// encore la plage d'aujourd'hui ; une carte postale de 1925 numérisée par la
+// BnF, non — et Commons en regorge, avec « plage » dans le titre.
+const ANNEE_PLANCHER = 1995
+
 // Off-topic filename tokens. When a Wikipedia/Commons filename contains one of
 // these (town hall, church, bridge, station, statue, museum…) it is almost
 // certainly NOT a beach photo — this is exactly the failure mode where a
@@ -52,6 +57,17 @@ function filenameOf(url: string): string {
 export function isOffTopicPhoto(url: string): boolean {
   const fn = filenameOf(url)
   return OFF_TOPIC_TOKENS.test(fn) && !BEACH_TOKENS.test(fn)
+}
+
+/**
+ * True quand le nom de fichier annonce explicitement une plage, un lac ou un
+ * rivage. Sert de garde-fou à la recherche géographique : à 5 km d'un plan
+ * d'eau, Commons référence surtout des clochers et des maisons, qu'aucune liste
+ * de mots interdits ne saurait toutes énumérer. Ici on inverse la logique — on
+ * n'accepte que ce qui se déclare comme une photo d'eau.
+ */
+function looksLikeBeachPhoto(titleOrUrl: string): boolean {
+  return BEACH_TOKENS.test(filenameOf(titleOrUrl))
 }
 
 /** Lowercase + strip diacritics and leading "plage de/du/des/d'" article. */
@@ -96,6 +112,12 @@ interface CommonsSearchResponse {
   }
 }
 
+interface CommonsGeosearchResponse {
+  query?: {
+    geosearch?: Array<{ title: string; pageid: number; dist: number }>
+  }
+}
+
 interface ImageInfoItem {
   thumburl?: string
   url?: string
@@ -119,15 +141,15 @@ function extractYear(raw: string): number | null {
   return y && y >= 1900 && y <= new Date().getFullYear() ? y : null
 }
 
-/** Renvoie true si la photo est récente (>= MIN_PHOTO_YEAR) ou si aucune date n'est disponible. */
-function isPhotoRecent(ii: ImageInfoItem): boolean {
+/** Renvoie true si la photo est assez récente, ou si aucune date n'est disponible. */
+function isPhotoRecent(ii: ImageInfoItem, anneeMin = MIN_PHOTO_YEAR): boolean {
   const raw =
     ii.extmetadata?.DateTimeOriginal?.value ??
     ii.extmetadata?.DateTime?.value ??
     ii.timestamp
   if (!raw) return true
   const year = extractYear(raw)
-  return year === null || year >= MIN_PHOTO_YEAR
+  return year === null || year >= anneeMin
 }
 
 async function fetchJson<T>(url: string): Promise<T> {
@@ -166,7 +188,12 @@ async function tryWikipediaPageImage(title: string): Promise<string | null> {
  * like "File:Plage_de_Cabourg.jpg" rather than random photos that happen to
  * mention the commune in their description.
  */
-async function tryCommonsIntitle(commune: string, term: string, excludeUrls?: Set<string>): Promise<string | null> {
+async function tryCommonsIntitle(
+  commune: string,
+  term: string,
+  excludeUrls?: Set<string>,
+  anneeMin = MIN_PHOTO_YEAR,
+): Promise<string | null> {
   const searchUrl = new URL(COMMONS)
   searchUrl.searchParams.set('action', 'query')
   searchUrl.searchParams.set('format', 'json')
@@ -183,32 +210,85 @@ async function tryCommonsIntitle(commune: string, term: string, excludeUrls?: Se
 
     // Try each candidate in order — first one with a usable URL wins.
     for (const cand of candidates) {
-      const infoUrl = new URL(COMMONS)
-      infoUrl.searchParams.set('action', 'query')
-      infoUrl.searchParams.set('format', 'json')
-      infoUrl.searchParams.set('origin', '*')
-      infoUrl.searchParams.set('titles', cand.title)
-      infoUrl.searchParams.set('prop', 'imageinfo')
-      infoUrl.searchParams.set('iiprop', 'url|timestamp|extmetadata')
-      infoUrl.searchParams.set('iiextmetadatafilter', 'DateTimeOriginal|DateTime')
-      infoUrl.searchParams.set('iiurlwidth', String(THUMB_WIDTH))
-
-      const info = await fetchJson<ImageInfoResponse>(infoUrl.toString())
-      const pages = info.query?.pages ?? {}
-      for (const page of Object.values(pages)) {
-        const ii = page.imageinfo?.[0]
-        if (!ii) continue
-        if (!isPhotoRecent(ii)) {
-          const raw = ii.extmetadata?.DateTimeOriginal?.value ?? ii.extmetadata?.DateTime?.value ?? ii.timestamp
-          console.warn(`[wikimedia] photo trop ancienne ignorée : ${cand.title} (${raw})`)
-          continue
-        }
-        const url = ii.thumburl ?? ii.url
-        if (url && !excludeUrls?.has(url) && !isOffTopicPhoto(url)) return url
-      }
+      const resolue = await resoudreUrlImage(cand.title, excludeUrls, anneeMin)
+      if (resolue) return resolue
     }
   } catch (err) {
     console.warn(`[wikimedia] intitle:${term} ${commune} : ${(err as Error).message}`)
+  }
+  return null
+}
+
+/**
+ * Résout un titre `File:…` de Commons en URL de vignette utilisable.
+ *
+ * `anneeMin` abaisse le filtre de fraîcheur pour le dernier recours : une photo
+ * de 2008 d'une plage montre toujours cette plage, alors qu'un aplat vide ne
+ * montre rien. Le plancher reste haut par rapport aux fonds numérisés — sans
+ * lui, une carte postale de 1925 se glisse dans le catalogue.
+ */
+async function resoudreUrlImage(
+  title: string,
+  excludeUrls?: Set<string>,
+  anneeMin = MIN_PHOTO_YEAR,
+): Promise<string | null> {
+  const infoUrl = new URL(COMMONS)
+  infoUrl.searchParams.set('action', 'query')
+  infoUrl.searchParams.set('format', 'json')
+  infoUrl.searchParams.set('origin', '*')
+  infoUrl.searchParams.set('titles', title)
+  infoUrl.searchParams.set('prop', 'imageinfo')
+  infoUrl.searchParams.set('iiprop', 'url|timestamp|extmetadata')
+  infoUrl.searchParams.set('iiextmetadatafilter', 'DateTimeOriginal|DateTime')
+  infoUrl.searchParams.set('iiurlwidth', String(THUMB_WIDTH))
+
+  const info = await fetchJson<ImageInfoResponse>(infoUrl.toString())
+  for (const page of Object.values(info.query?.pages ?? {})) {
+    const ii = page.imageinfo?.[0]
+    if (!ii) continue
+    if (!isPhotoRecent(ii, anneeMin)) continue
+    const url = ii.thumburl ?? ii.url
+    if (url && !excludeUrls?.has(url) && !isOffTopicPhoto(url)) return url
+  }
+  return null
+}
+
+/**
+ * Recherche géographique : les fichiers Commons géolocalisés autour des
+ * coordonnées de la plage, du plus proche au plus lointain.
+ *
+ * C'est le dernier recours, et le seul qui fonctionne pour les baignades
+ * intérieures (lacs, bases de loisirs) : leur nom n'a pas d'article Wikipédia
+ * et ne contient ni « plage » ni le nom de la commune. La contrepartie est que
+ * la proximité seule ne garantit rien — d'où le filtre `looksLikeBeachPhoto`,
+ * qui n'accepte qu'un fichier se déclarant comme plage, lac ou rivage.
+ */
+async function tryCommonsGeosearch(
+  latitude: number,
+  longitude: number,
+  excludeUrls?: Set<string>,
+  anneeMin = MIN_PHOTO_YEAR,
+): Promise<string | null> {
+  const url = new URL(COMMONS)
+  url.searchParams.set('action', 'query')
+  url.searchParams.set('format', 'json')
+  url.searchParams.set('origin', '*')
+  url.searchParams.set('list', 'geosearch')
+  url.searchParams.set('gscoord', `${latitude}|${longitude}`)
+  url.searchParams.set('gsradius', '4000') // 4 km : au-delà, on quitte le plan d'eau
+  url.searchParams.set('gsnamespace', '6') // espace Fichier
+  url.searchParams.set('gslimit', '50')
+
+  try {
+    const data = await fetchJson<CommonsGeosearchResponse>(url.toString())
+    const candidats = (data.query?.geosearch ?? []).filter((c) => looksLikeBeachPhoto(c.title))
+
+    for (const candidat of candidats) {
+      const resolue = await resoudreUrlImage(candidat.title, excludeUrls, anneeMin)
+      if (resolue) return resolue
+    }
+  } catch (err) {
+    console.warn(`[wikimedia] geosearch ${latitude},${longitude} : ${(err as Error).message}`)
   }
   return null
 }
@@ -221,6 +301,8 @@ async function tryCommonsIntitle(commune: string, term: string, excludeUrls?: Se
 export async function fetchBeachPhoto(opts: {
   nom: string
   commune: string
+  latitude?: number
+  longitude?: number
   excludeUrls?: Set<string>
 }): Promise<string | null> {
   const { excludeUrls } = opts
@@ -242,6 +324,24 @@ export async function fetchBeachPhoto(opts: {
   // 3. Same in English
   const fromCommonsEn = await tryCommonsIntitle(opts.commune, 'beach', excludeUrls)
   if (fromCommonsEn) return fromCommonsEn
+
+  // 4. Autour des coordonnées — rattrape les baignades intérieures, dont le nom
+  //    ne ressemble ni à un article Wikipédia ni au nom de la commune.
+  const aDesCoordonnees = opts.latitude !== undefined && opts.longitude !== undefined
+  if (aDesCoordonnees) {
+    const fromGeo = await tryCommonsGeosearch(opts.latitude!, opts.longitude!, excludeUrls)
+    if (fromGeo) return fromGeo
+  }
+
+  // 5. Dernier recours : les mêmes recherches, filtre de fraîcheur levé. Une
+  //    photo de 2008 de la plage de Siouville reste une photo de cette plage ;
+  //    l'alternative n'est pas une photo plus récente, c'est aucune photo.
+  const anciennes = await tryCommonsIntitle(opts.commune, 'plage', excludeUrls, ANNEE_PLANCHER)
+  if (anciennes) return anciennes
+  if (aDesCoordonnees) {
+    const geoAncienne = await tryCommonsGeosearch(opts.latitude!, opts.longitude!, excludeUrls, ANNEE_PLANCHER)
+    if (geoAncienne) return geoAncienne
+  }
 
   // No reliable beach photo found — return null instead of misleading commune lead.
   return null

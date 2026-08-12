@@ -12,6 +12,7 @@
 import { promises as fs } from 'node:fs'
 import path from 'node:path'
 import { fetchBeachPhoto, isOffTopicPhoto } from './lib/wikimedia'
+import { chargerPhotosRejetees } from './lib/photos-rejetees'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'plages')
 
@@ -19,6 +20,8 @@ interface BeachJson {
   slug: string
   nom: string
   commune: string
+  latitude?: number
+  longitude?: number
   photo?: string | null
   [key: string]: unknown
 }
@@ -45,6 +48,23 @@ async function main(): Promise<void> {
   const force = process.argv.includes('--force')
   const files = (await fs.readdir(CONTENT_DIR)).filter((f) => f.endsWith('.json'))
 
+  // Images déjà écartées après relecture : la recherche Wikimedia étant
+  // déterministe, sans cette exclusion le cron les réattribuerait à l'identique.
+  const rejetees = await chargerPhotosRejetees()
+  if (rejetees.size > 0) {
+    console.log(`${rejetees.size} images exclues (content/photos-rejetees.json)`)
+  }
+
+  // Photos déjà attribuées. Sans ce relevé, deux plages d'une même commune
+  // héritent du même cliché : la recherche Wikimedia est déterministe et rend
+  // le même premier résultat. `import-plages.ts` s'en prémunit déjà, pas ce
+  // script — d'où trois plages de Mimizan illustrées à l'identique.
+  const dejaUtilisees = new Set<string>()
+  for (const file of files) {
+    const data = JSON.parse(await fs.readFile(path.join(CONTENT_DIR, file), 'utf8')) as BeachJson
+    if (data.photo && !isPlaceholder(data.photo)) dejaUtilisees.add(data.photo)
+  }
+
   let enriched = 0
   let skipped = 0
   let notFound = 0
@@ -63,10 +83,19 @@ async function main(): Promise<void> {
 
     const wasOffTopic = !!data.photo && isOffTopicPhoto(data.photo)
     process.stdout.write(`[fetch] ${data.slug}${wasOffTopic ? ' (hors-sujet)' : ''} ... `)
-    const url = await fetchBeachPhoto({ nom: data.nom, commune: data.commune })
+    const url = await fetchBeachPhoto({
+      nom: data.nom,
+      commune: data.commune,
+      // Ouvre la recherche géographique, seule voie pour les baignades
+      // intérieures dont le nom ne dit ni « plage » ni la commune.
+      latitude: data.latitude,
+      longitude: data.longitude,
+      excludeUrls: new Set([...rejetees, ...dejaUtilisees]),
+    })
 
     if (url) {
       data.photo = url
+      dejaUtilisees.add(url)
       await fs.writeFile(full, JSON.stringify(data, null, 2) + '\n', 'utf8')
       console.log('OK')
       enriched++
