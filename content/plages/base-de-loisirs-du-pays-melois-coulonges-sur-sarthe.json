@@ -1,0 +1,25 @@
+{
+  "slug": "base-de-loisirs-du-pays-melois-coulonges-sur-sarthe",
+  "nom": "Base de loisirs du Pays Mêlois",
+  "description": "Plage \"Base de loisirs du Pays Mêlois\" située à Coulonges-sur-Sarthe, répertoriée sur OpenStreetMap comme accessible aux personnes en situation de handicap. Équipements et caractéristiques renseignés par les contributeurs locaux : accessibilité fauteuil roulant. Les données OpenStreetMap sont mises à jour en continu par la communauté et vérifiées par recoupement avec les informations terrain. La mention d'accessibilité (tag wheelchair=yes) indique un effort d'aménagement pour l'accueil des PMR sur ce site balnéaire.",
+  "commune": "Coulonges-sur-Sarthe",
+  "codePostal": "61170",
+  "departement": "Orne",
+  "region": "Normandie",
+  "latitude": 48.5115439,
+  "longitude": 0.3580392,
+  "photo": "https://picsum.photos/seed/base-de-loisirs-du-pays-melois-coulonges-sur-sarthe/1200/600",
+  "photos": [],
+  "noteGlobale": 4,
+  "nombreAvis": 0,
+  "actif": true,
+  "verifiedAt": "2026-08-12",
+  "verifiedBy": "openstreetmap",
+  "accessibilites": [
+    "FAUTEUIL_ROULANT",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": [],
+  "avis": []
+}
