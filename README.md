@@ -17,6 +17,7 @@ Annuaire collaboratif et gratuit des plages françaises accessibles aux personne
 - **GitHub comme back-office** — pipeline autonome : l'import quotidien valide et commite directement sur `master` ; les contributions du site ouvrent des Pull Requests mergées automatiquement dès que la CI est verte (aucun merge manuel)
 - **Notes 100 % communautaires** — aucune note n'est importée : les visiteurs notent l'accessibilité et confirment les équipements réellement présents. La moyenne n'est publiée qu'à partir de **5 votes** (`SEUIL_VOTES`)
 - **Vercel** (hébergement, Analytics, Speed Insights)
+- **Application Android** (Kotlin + Jetpack Compose) dans `android/` — catalogue embarqué pour une consultation hors réseau, notes appelées en ligne. Voir [android/README.md](android/README.md)
 
 ---
 
@@ -35,7 +36,10 @@ Le site est accessible sur **http://localhost:3000**. Aucune variable d'environn
 
 ```
 content/
-└── plages/                   ← Données des plages (un fichier JSON par plage)
+├── plages/                   ← Données des plages (un fichier JSON par plage)
+├── photos-validees.json      ← Photos relues et approuvées
+├── photos-rejetees.json      ← Photos écartées — jamais réattribuées par le cron
+└── preview.webp              ← Logo source de l'icône de l'application mobile
 
 src/
 ├── app/
@@ -49,6 +53,9 @@ src/
 │   ├── accessibilite/        ← Déclaration d'accessibilité RGAA
 │   ├── api/contribuer/       ← POST → crée une branche + PR GitHub (nouvelle plage)
 │   ├── api/vote/             ← POST → enregistre un vote communautaire (Supabase)
+│   ├── api/stats/            ← GET → agrégats de toutes les plages (app mobile)
+│   ├── api/plage/[slug]/votes/ ← GET → note, équipements confirmés, commentaires (app mobile)
+│   ├── (api/vote et api/contribuer acceptent aussi du multipart : photo jointe)
 │   ├── robots.ts / sitemap.ts ← SEO
 ├── components/
 │   ├── features/             ← Composants métier (cartes, filtres, formulaires…)
@@ -57,13 +64,21 @@ src/
 │   ├── content.ts            ← Chargeur de contenu JSON (cache mémoire, filtres, recherche)
 │   ├── content-schema.ts     ← Schémas Zod de validation du contenu
 │   ├── github.ts             ← Helpers API GitHub (branche, commit, PR)
+│   ├── stockage.ts           ← Téléversement des photos d'avis (Supabase Storage)
 │   ├── anti-spam.ts          ← Honeypot + rate-limit par IP des routes publiques
 │   ├── site.ts               ← URL canonique du site
 │   └── utils.ts              ← Utilitaires (formatNote, slugify, cn…)
 └── types/index.ts            ← Interfaces TypeScript partagées
 
+android/                      ← Application Android native (Kotlin + Compose) — voir android/README.md
+├── app/src/main/assets/      ← plages.json généré depuis content/plages/ (catalogue hors-ligne)
+└── app/src/main/java/fr/plagesaccessibles/
+    ├── data/                 ← Catalogue embarqué, API des votes, favoris, localisation
+    └── ui/ecrans/            ← Accueil, Recherche, Carte, Détail, Contribuer
+
 scripts/
 ├── import-plages.ts          ← Orchestrateur d'import quotidien (CI)
+├── build-android-assets.ts   ← content/plages/ → asset embarqué dans l'APK
 ├── enrich-pois.ts            ← Enrichissement hébergements + offres culturelles (OSM)
 ├── enrich-photos.ts          ← Enrichissement photos Wikimedia Commons
 ├── sources/                  ← Connecteurs de sources de données
@@ -97,6 +112,11 @@ scripts/
 | `npm run lint` | Vérification ESLint (flat config, ESLint 9) |
 | `npx tsx scripts/import-plages.ts --dry-run` | Tester l'import sans écrire de fichiers |
 | `npx tsx scripts/enrich-pois.ts` | Enrichir les POIs des plages existantes |
+| `npm run android:assets` | Régénérer le catalogue embarqué dans l'app Android |
+| `npx tsx scripts/planches-photos.ts` | Assembler les photos non relues en planches-contact |
+| `npx tsx scripts/audit-photos.ts --appliquer` | Écarter noir et blanc, scans et cartes du catalogue |
+| `npx tsx scripts/build-android-icone.ts` | Régénérer l'icône et les visuels Play Store |
+| `cd android && ./gradlew :app:assembleDebug` | Compiler l'APK de l'application Android |
 
 ---
 
