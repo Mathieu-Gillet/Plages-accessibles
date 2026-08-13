@@ -8,10 +8,8 @@
   "region": "Provence-Alpes-Côte d'Azur",
   "latitude": 44.4667187,
   "longitude": 6.3228196,
-  "photo": "https://picsum.photos/seed/port-saint-pierre-le-sauze-du-lac/1200/600",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Lac_de_Serre_Pon%C3%A7on_2017_3.jpg/1280px-Lac_de_Serre_Pon%C3%A7on_2017_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-05",
   "verifiedBy": "openstreetmap",
@@ -20,6 +18,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

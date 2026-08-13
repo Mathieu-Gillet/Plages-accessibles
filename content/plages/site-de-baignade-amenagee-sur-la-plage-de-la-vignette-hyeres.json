@@ -10,8 +10,6 @@
   "longitude": 6.135864257812501,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Plage%2C_Hy%C3%A8res%2C_Provence-Alpes-C%C3%B4te_d%27Azur%2C_France_-_panoramio.jpg/1280px-Plage%2C_Hy%C3%A8res%2C_Provence-Alpes-C%C3%B4te_d%27Azur%2C_France_-_panoramio.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -29,6 +27,5 @@
     "SIGNALISATION_BRAILLE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

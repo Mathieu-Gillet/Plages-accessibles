@@ -8,10 +8,8 @@
   "region": "Nouvelle-Aquitaine",
   "latitude": 45.7417265,
   "longitude": 0.0873623,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Pacific_Partnership_2023-_Sailors_Volunteer_at_a_Beach_Cleanup_Event_in_Tonga_%288130163%29.jpg/1280px-Pacific_Partnership_2023-_Sailors_Volunteer_at_a_Beach_Cleanup_Event_in_Tonga_%288130163%29.jpg",
+  "photo": "https://picsum.photos/seed/baignade-de-la-grande-ile-de-marsac-marsac/1200/600",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-29",
   "verifiedBy": "handiplage.fr",
@@ -20,6 +18,5 @@
     "SANITAIRES_ADAPTES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

@@ -10,8 +10,6 @@
   "longitude": -1.328594684601,
   "photo": "https://picsum.photos/seed/la-faute-sur-mer-plage-des-belugas-laiguillon-la-presquile/1200/600",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-03",
   "verifiedBy": "handiplage.fr",
@@ -23,6 +21,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

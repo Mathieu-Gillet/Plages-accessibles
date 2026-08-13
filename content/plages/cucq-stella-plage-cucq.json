@@ -8,10 +8,8 @@
   "region": "Hauts-de-France",
   "latitude": 50.47991646626839,
   "longitude": 1.5759587287902832,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Les_voies_de_Stella-Plage_-_Cucq.png/1280px-Les_voies_de_Stella-Plage_-_Cucq.png",
+  "photo": "https://picsum.photos/seed/cucq-stella-plage-cucq/1200/600",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-02",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

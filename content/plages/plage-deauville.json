@@ -8,10 +8,8 @@
   "region": "Normandie",
   "latitude": 49.3612,
   "longitude": 0.0745,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Les_planches_de_la_plage_de_Deauville.jpg/1280px-Les_planches_de_la_plage_de_Deauville.jpg",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Plage_de_Deauville.jpg/1280px-Plage_de_Deauville.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-21",
   "verifiedBy": "handiplage.fr",
@@ -68,6 +66,5 @@
       "accessiblePMR": true
     }
   ],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

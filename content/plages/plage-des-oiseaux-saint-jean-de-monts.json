@@ -10,8 +10,6 @@
   "longitude": -2.068900752399,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Plage_de_Saint_Jean_de_Monts_depuis_l%27estacade.jpg/1280px-Plage_de_Saint_Jean_de_Monts_depuis_l%27estacade.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-02",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

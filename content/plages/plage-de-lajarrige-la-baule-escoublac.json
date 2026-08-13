@@ -10,8 +10,6 @@
   "longitude": -2.386114597320557,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Plage_de_La_Baule-Escoublac_en_automne_%28octobre_2022%29.JPG/1280px-Plage_de_La_Baule-Escoublac_en_automne_%28octobre_2022%29.JPG",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -27,6 +25,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

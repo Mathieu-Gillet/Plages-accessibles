@@ -10,8 +10,6 @@
   "longitude": 3.940358161926,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Palavas-les-Flots_-_plage_des_coquilles_-_bo%C3%AEte_%C3%A0_livres.jpg/1280px-Palavas-les-Flots_-_plage_des_coquilles_-_bo%C3%AEte_%C3%A0_livres.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

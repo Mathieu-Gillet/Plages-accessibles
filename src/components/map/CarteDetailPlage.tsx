@@ -1,7 +1,7 @@
 'use client'
 // src/components/map/CarteDetailPlage.tsx
 import dynamic from 'next/dynamic'
-import type { Hebergement, OffreCulturelle, PlageResume } from '@/types'
+import type { Hebergement, OffreCulturelle, PlageAvecVotes } from '@/types'
 
 const CarteLeaflet = dynamic(() => import('./CarteLeaflet'), {
   ssr: false,
@@ -21,7 +21,9 @@ interface CarteDetailPlageProps {
 export function CarteDetailPlage({
   latitude, longitude, nom, hebergements, offres
 }: CarteDetailPlageProps) {
-  const plageMarqueur: PlageResume[] = [{
+  // Marqueur de localisation uniquement : la note est déjà affichée en en-tête
+  // de fiche, la répéter dans la bulle n'apporterait rien.
+  const plageMarqueur: PlageAvecVotes[] = [{
     id: 'plage',
     nom,
     slug: '',
@@ -30,10 +32,9 @@ export function CarteDetailPlage({
     region: '',
     latitude,
     longitude,
-    noteGlobale: 0,
-    nombreAvis: 0,
     photo: null,
     accessibilites: [],
+    stats: { nombreVotes: 0, notePubliee: null },
   }]
 
   const poi = [
@@ -49,6 +50,7 @@ export function CarteDetailPlage({
         centreInitial={[latitude, longitude]}
         zoomInitial={13}
         marqueursPoi={poi}
+        afficherNote={false}
         lienGoogleMaps
       />
     </div>

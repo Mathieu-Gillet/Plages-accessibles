@@ -10,8 +10,6 @@
   "longitude": 5.9214413,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Plage%2C_Saint-Mandrier-sur-Mer_-_panoramio.jpg/1280px-Plage%2C_Saint-Mandrier-sur-Mer_-_panoramio.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-05",
   "verifiedBy": "openstreetmap",
@@ -21,6 +19,5 @@
     "SABLE_COMPACT"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

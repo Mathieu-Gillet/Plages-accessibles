@@ -10,8 +10,6 @@
   "longitude": 2.3745753,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Paris_Plages_2013_DSC_0822w.jpg/1280px-Paris_Plages_2013_DSC_0822w.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-05",
   "verifiedBy": "openstreetmap",
@@ -19,6 +17,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

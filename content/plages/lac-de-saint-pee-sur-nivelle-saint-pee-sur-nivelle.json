@@ -8,10 +8,8 @@
   "region": "Nouvelle-Aquitaine",
   "latitude": 43.347753118496,
   "longitude": -1.521799564362,
-  "photo": "https://picsum.photos/seed/lac-de-saint-pee-sur-nivelle-saint-pee-sur-nivelle/1200/600",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Saint-P%C3%A9e-sur-Nivelle_%28lac%29%2C_5.jpg/1280px-Saint-P%C3%A9e-sur-Nivelle_%28lac%29%2C_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

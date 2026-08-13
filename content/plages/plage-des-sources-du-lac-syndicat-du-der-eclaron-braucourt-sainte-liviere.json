@@ -8,10 +8,8 @@
   "region": "Grand Est",
   "latitude": 48.5675554,
   "longitude": 4.8464512,
-  "photo": "https://picsum.photos/seed/plage-des-sources-du-lac-syndicat-du-der-eclaron-braucourt-sainte-liviere/1200/600",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Sunset_On_Lac_Du_Der_France_%2856966056%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "SIGNALISATION_BRAILLE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

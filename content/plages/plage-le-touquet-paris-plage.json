@@ -9,8 +9,6 @@
   "latitude": 50.5236,
   "longitude": 1.5853,
   "photos": [],
-  "noteGlobale": 4.5,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-18",
   "verifiedBy": "handiplage.fr",
@@ -60,6 +58,5 @@
     }
   ],
   "offresCulturelles": [],
-  "avis": [],
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/1933_MG_J-Type_J2_in_Le_Touquet-Paris-Plage_%281%29.jpg/1280px-1933_MG_J-Type_J2_in_Le_Touquet-Paris-Plage_%281%29.jpg"
+  "photo": "https://picsum.photos/seed/plage-le-touquet-paris-plage/1200/600"
 }

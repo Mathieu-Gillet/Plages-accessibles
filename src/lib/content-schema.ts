@@ -64,13 +64,6 @@ export const offreCulturelleSchema = z.object({
   niveauAccessibilite: niveauAccessibiliteSchema.optional(),
 })
 
-export const avisSchema = z.object({
-  note: z.number().int().min(1).max(5),
-  commentaire: z.string().optional(),
-  auteur: z.string().optional(),
-  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Date au format YYYY-MM-DD'),
-})
-
 export const plageContentSchema = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/, 'Slug en kebab-case minuscule'),
   nom: z.string().min(1),
@@ -83,8 +76,11 @@ export const plageContentSchema = z.object({
   longitude: z.number().min(-180).max(180),
   photo: z.string().url().refine(u => u.startsWith('https://'), 'HTTPS requis').nullable().optional(),
   photos: z.array(z.string().url().refine(u => u.startsWith('https://'), 'HTTPS requis')).default([]),
-  noteGlobale: z.number().min(0).max(5).default(0),
-  nombreAvis: z.number().int().min(0).default(0),
+  // Aucune note dans le contenu : depuis le passage en mode communautaire, la
+  // note d'une plage est calculée à partir des votes de visiteurs (table
+  // Supabase `votes`, cf. src/lib/votes.ts) et n'est publiée qu'au-delà de
+  // SEUIL_VOTES. Les champs `noteGlobale`, `nombreAvis` et `avis` des anciennes
+  // fiches ont été supprimés ; Zod ignore silencieusement une clé résiduelle.
   actif: z.boolean().default(true),
   // Traçabilité éditoriale (audit recommandation) :
   verifiedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable().optional(),
@@ -92,7 +88,6 @@ export const plageContentSchema = z.object({
   accessibilites: z.array(accessibiliteSchema).default([]),
   hebergements: z.array(hebergementSchema).default([]),
   offresCulturelles: z.array(offreCulturelleSchema).default([]),
-  avis: z.array(avisSchema).default([]),
 }).refine(
   // (0, 0) is the placeholder used by contribution PRs lacking GPS coords;
   // it must be filled in before a beach goes live on the map.

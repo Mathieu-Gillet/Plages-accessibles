@@ -8,10 +8,8 @@
   "region": "Bretagne",
   "latitude": 47.5779,
   "longitude": -3.0699,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/4/40/H%C3%B4tel_de_la_plage_-_D%C3%A9p%C3%B4t_d%27otages_payants_-_salle_de_billard_-_Carnac_-_M%C3%A9diath%C3%A8que_de_l%27architecture_et_du_patrimoine_-_APD0001720.jpg",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Carnac_%2C_la_grande_plage_-_panoramio.jpg/1280px-Carnac_%2C_la_grande_plage_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-21",
   "verifiedBy": "handiplage.fr",
@@ -77,6 +75,5 @@
       "distanceKm": 9,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

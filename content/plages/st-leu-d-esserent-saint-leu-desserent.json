@@ -8,10 +8,8 @@
   "region": "Hauts-de-France",
   "latitude": 49.2112709,
   "longitude": 2.412806,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Op%C3%A9ration_de_rev%C3%A9g%C3%A9talisation_de_la_plage_pour_lutter_contre_l%27%C3%A9rosion.jpg/1280px-Op%C3%A9ration_de_rev%C3%A9g%C3%A9talisation_de_la_plage_pour_lutter_contre_l%27%C3%A9rosion.jpg",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/St.Leu-plage.jpg/1280px-St.Leu-plage.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -22,6 +20,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

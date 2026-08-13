@@ -10,8 +10,6 @@
   "longitude": 3.4220335,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Plage_des_C%C3%A9lestins%2C_Vichy%2C_la_nuit_%282%29.jpg/1280px-Plage_des_C%C3%A9lestins%2C_Vichy%2C_la_nuit_%282%29.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-05",
   "verifiedBy": "openstreetmap",
@@ -21,6 +19,5 @@
     "SABLE_COMPACT"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

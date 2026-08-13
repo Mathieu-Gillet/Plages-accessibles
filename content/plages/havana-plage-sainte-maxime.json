@@ -10,8 +10,6 @@
   "longitude": 6.637249588966,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Digue_et_plage_de_Sainte-Maxime.jpg/1280px-Digue_et_plage_de_Sainte-Maxime.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-29",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

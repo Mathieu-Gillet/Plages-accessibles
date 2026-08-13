@@ -16,7 +16,6 @@ import type {
   TypeAccessibilite,
   Hebergement,
   OffreCulturelle,
-  Avis,
 } from '@/types'
 
 const CONTENT_DIR = join(process.cwd(), 'content', 'plages')
@@ -49,8 +48,10 @@ function loadAll(): PlageDetail[] {
     plages.push(toPlageDetail(result.data))
   }
 
-  // Stable order: rating desc, then name asc.
-  plages.sort((a, b) => b.noteGlobale - a.noteGlobale || a.nom.localeCompare(b.nom))
+  // Ordre stable et neutre. Le contenu ne porte plus de note, donc plus de tri
+  // par pertinence ici : la mise en avant (carte d'accueil, top) est calculée
+  // à partir des votes par src/lib/carte-accueil.ts.
+  plages.sort((a, b) => a.nom.localeCompare(b.nom, 'fr'))
   cache = plages
   return cache
 }
@@ -70,10 +71,6 @@ function toPlageDetail(raw: PlageContent): PlageDetail {
     .map((o, idx) => ({ id: `${raw.slug}-o-${idx}`, ...o }))
     .sort((a, b) => a.distanceKm - b.distanceKm)
 
-  const avis: Avis[] = raw.avis
-    .map((a, idx) => ({ id: `${raw.slug}-a-${idx}`, ...a, date: new Date(a.date) }))
-    .sort((a, b) => b.date.getTime() - a.date.getTime())
-
   return {
     id,
     nom: raw.nom,
@@ -87,12 +84,10 @@ function toPlageDetail(raw: PlageContent): PlageDetail {
     longitude: raw.longitude,
     photo: raw.photo ?? null,
     photos: raw.photos,
-    noteGlobale: raw.noteGlobale,
-    nombreAvis: raw.nombreAvis,
+    verifiedAt: raw.verifiedAt ?? null,
     accessibilites,
     hebergements,
     offresCulturelles,
-    avis,
   }
 }
 
@@ -106,10 +101,9 @@ function toResume(p: PlageDetail): PlageResume {
     region: p.region,
     latitude: p.latitude,
     longitude: p.longitude,
-    noteGlobale: p.noteGlobale,
-    nombreAvis: p.nombreAvis,
     photo: p.photo,
     accessibilites: p.accessibilites,
+    verifiedAt: p.verifiedAt,
   }
 }
 

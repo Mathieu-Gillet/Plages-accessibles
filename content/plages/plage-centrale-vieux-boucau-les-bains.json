@@ -8,10 +8,8 @@
   "region": "Nouvelle-Aquitaine",
   "latitude": 43.788197614228,
   "longitude": -1.413513422012,
-  "photo": "https://picsum.photos/seed/plage-centrale-vieux-boucau-les-bains/1200/600",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Lac_Marin_de_Port_d%27Albret_-_Vieux-Boucau-les-Bains%2C_France_-_July_14%2C_2024_01.jpg/1280px-Lac_Marin_de_Port_d%27Albret_-_Vieux-Boucau-les-Bains%2C_France_-_July_14%2C_2024_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-03",
   "verifiedBy": "handiplage.fr",
@@ -23,6 +21,5 @@
     "RAMPE_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

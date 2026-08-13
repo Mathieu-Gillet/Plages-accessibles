@@ -10,8 +10,6 @@
   "longitude": 3.1552314,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Narbonne_Plage_-%29_Gruissan_-_panoramio.jpg/1280px-Narbonne_Plage_-%29_Gruissan_-_panoramio.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-04",
   "verifiedBy": "openstreetmap",
@@ -20,6 +18,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

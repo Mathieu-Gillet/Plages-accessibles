@@ -10,8 +10,6 @@
   "longitude": 55.473747253417976,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Saint-Pierre-Quib%C3%A9ron_Plage_2.jpg/1280px-Saint-Pierre-Quib%C3%A9ron_Plage_2.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -27,6 +25,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

@@ -10,8 +10,6 @@
   "longitude": 6.149581319574,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Hy%C3%A8res_-_Plage_de_l%27Almanarre%2C_posidonies%2C_suite_temp%C3%AAte_Ciar%C3%A1n_2023.jpg/1280px-Hy%C3%A8res_-_Plage_de_l%27Almanarre%2C_posidonies%2C_suite_temp%C3%AAte_Ciar%C3%A1n_2023.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

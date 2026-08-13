@@ -10,8 +10,6 @@
   "longitude": -1.7869,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Plage_et_baie_des_Sables-d%27Olonne_%C3%A0_mar%C3%A9e_basse_%28juin_2023%29.JPG/1280px-Plage_et_baie_des_Sables-d%27Olonne_%C3%A0_mar%C3%A9e_basse_%28juin_2023%29.JPG",
   "photos": [],
-  "noteGlobale": 4.5,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-19",
   "verifiedBy": "handiplage.fr",
@@ -37,6 +35,5 @@
       "distanceKm": 9.3,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

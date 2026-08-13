@@ -10,8 +10,6 @@
   "longitude": 5.789054632187,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Grande_plage_Saint-Nazaire.jpg/1280px-Grande_plage_Saint-Nazaire.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

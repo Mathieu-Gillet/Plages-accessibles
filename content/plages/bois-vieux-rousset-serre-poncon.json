@@ -8,10 +8,8 @@
   "region": "Provence-Alpes-Côte d'Azur",
   "latitude": 44.4773721,
   "longitude": 6.275661,
-  "photo": "https://picsum.photos/seed/bois-vieux-rousset-serre-poncon/1200/600",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Lac_de_Serre-Pon%C3%A7on_DSC00726.jpg/1280px-Lac_de_Serre-Pon%C3%A7on_DSC00726.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-04",
   "verifiedBy": "openstreetmap",
@@ -20,6 +18,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

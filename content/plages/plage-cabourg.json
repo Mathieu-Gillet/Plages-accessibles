@@ -8,8 +8,6 @@
   "region": "Normandie",
   "latitude": 49.2865,
   "longitude": -0.1243,
-  "noteGlobale": 4.6,
-  "nombreAvis": 37,
   "actif": true,
   "verifiedAt": "2026-04-16",
   "verifiedBy": "seed",
@@ -104,6 +102,5 @@
       "accessiblePMR": true
     }
   ],
-  "avis": [],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/CabourgPlage.jpg/1280px-CabourgPlage.jpg"
 }

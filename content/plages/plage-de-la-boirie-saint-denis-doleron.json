@@ -10,8 +10,6 @@
   "longitude": -1.3728764,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Cabines_de_plage_%C3%A0_Saint_Denys.JPG/1280px-Cabines_de_plage_%C3%A0_Saint_Denys.JPG",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -39,6 +37,5 @@
       "accessiblePMR": true
     }
   ],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

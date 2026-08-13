@@ -8,8 +8,6 @@
   "region": "Occitanie",
   "latitude": 43.4074,
   "longitude": 3.6857,
-  "noteGlobale": 4.1,
-  "nombreAvis": 19,
   "actif": true,
   "verifiedAt": "2026-04-16",
   "verifiedBy": "seed",
@@ -94,6 +92,5 @@
       "accessiblePMR": true
     }
   ],
-  "avis": [],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Dikes_in_Frontignan_Plage_-_March_2022.jpg/1280px-Dikes_in_Frontignan_Plage_-_March_2022.jpg"
 }

@@ -8,10 +8,8 @@
   "region": "Provence-Alpes-Côte d'Azur",
   "latitude": 43.13698178676,
   "longitude": 5.776374489069,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Saint-Nazaire_-_Plage_de_Saint-Marc_-_bo%C3%AEte_%C3%A0_livres.jpg/1280px-Saint-Nazaire_-_Plage_de_Saint-Marc_-_bo%C3%AEte_%C3%A0_livres.jpg",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Plage_de_Saint-Nazaire_-_panoramio.jpg/1280px-Plage_de_Saint-Nazaire_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

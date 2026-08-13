@@ -10,8 +10,6 @@
   "longitude": 6.59655519342,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Plage_%28Port_Grimaud%29_%282%29.jpg/1280px-Plage_%28Port_Grimaud%29_%282%29.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-03",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

@@ -8,10 +8,8 @@
   "region": "Nouvelle-Aquitaine",
   "latitude": 44.878124267481,
   "longitude": -0.578917993774,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Blankenberge_Beach_R01.jpg/1280px-Blankenberge_Beach_R01.jpg",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Zeebrugge_Beach_R01.jpg/1280px-Zeebrugge_Beach_R01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -126,6 +124,5 @@
       "distanceKm": 9.7,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

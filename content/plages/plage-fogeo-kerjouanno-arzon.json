@@ -10,8 +10,6 @@
   "longitude": -2.880322337150574,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Arzon_Plage-sud-Golfe-de-Rhuys.jpg/1280px-Arzon_Plage-sud-Golfe-de-Rhuys.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-02",
   "verifiedBy": "handiplage.fr",
@@ -23,6 +21,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

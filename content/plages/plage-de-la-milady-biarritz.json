@@ -10,8 +10,6 @@
   "longitude": -1.5741133689880373,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Biarritz-Plage-de-la-Cote-des-Basques-Sauveteurs-byRundvald.jpg/1280px-Biarritz-Plage-de-la-Cote-des-Basques-Sauveteurs-byRundvald.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

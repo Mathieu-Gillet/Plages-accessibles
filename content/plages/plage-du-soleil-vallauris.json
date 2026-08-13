@@ -8,10 +8,8 @@
   "region": "Provence-Alpes-Côte d'Azur",
   "latitude": 43.564737538556,
   "longitude": 7.072271111285,
-  "photo": "https://picsum.photos/seed/plage-du-soleil-vallauris/1200/600",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Golfe_juan_vue_de_mer.JPG/1280px-Golfe_juan_vue_de_mer.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

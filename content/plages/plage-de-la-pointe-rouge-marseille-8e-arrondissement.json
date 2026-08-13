@@ -10,8 +10,6 @@
   "longitude": 5.37111,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Marseille%2C_la_plage_des_Catalans_%2813169643263%29.jpg/1280px-Marseille%2C_la_plage_des_Catalans_%2813169643263%29.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-27",
   "verifiedBy": "datatourisme",
@@ -124,6 +122,5 @@
       "distanceKm": 9.8,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

@@ -10,8 +10,6 @@
   "longitude": -1.426720619202,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/La_Couarde-sur-Mer_Plage_du_Bois_Henri_IV.jpg/1280px-La_Couarde-sur-Mer_Plage_du_Bois_Henri_IV.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

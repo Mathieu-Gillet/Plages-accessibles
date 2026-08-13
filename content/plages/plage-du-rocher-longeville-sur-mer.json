@@ -10,8 +10,6 @@
   "longitude": -1.505936980248,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Longeville-sur-Mer_Plage_de_la_Carti%C3%A8re_aux_Chats_%282%29.jpg/1280px-Longeville-sur-Mer_Plage_de_la_Carti%C3%A8re_aux_Chats_%282%29.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

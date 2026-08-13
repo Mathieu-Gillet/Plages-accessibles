@@ -8,10 +8,8 @@
   "region": "Normandie",
   "latitude": 49.32307728592,
   "longitude": 1.072626113892,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Le_Touquet-Paris-Plage_2019_-_Avenue_de_l%27Amiral-Tourville.jpg/1280px-Le_Touquet-Paris-Plage_2019_-_Avenue_de_l%27Amiral-Tourville.jpg",
+  "photo": "https://picsum.photos/seed/tourville-la-riviere-tourville-la-riviere/1200/600",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

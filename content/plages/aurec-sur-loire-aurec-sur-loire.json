@@ -8,10 +8,8 @@
   "region": "Auvergne-Rhône-Alpes",
   "latitude": 45.365561240026,
   "longitude": 4.194159507752,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Aurec-sur-Loire_Vue_g%C3%A9n%C3%A9rale.JPG/1280px-Aurec-sur-Loire_Vue_g%C3%A9n%C3%A9rale.JPG",
+  "photo": "https://picsum.photos/seed/aurec-sur-loire-aurec-sur-loire/1200/600",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -30,6 +28,5 @@
       "distanceKm": 10,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

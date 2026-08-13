@@ -10,8 +10,6 @@
   "longitude": -1.4311201,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Notre_Dame_Beach%2C_Soorts-Hossegor.jpg/1280px-Notre_Dame_Beach%2C_Soorts-Hossegor.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-05",
   "verifiedBy": "openstreetmap",
@@ -21,6 +19,5 @@
     "SABLE_COMPACT"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

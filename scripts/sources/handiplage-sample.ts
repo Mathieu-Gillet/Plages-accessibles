@@ -26,7 +26,6 @@ function photoFor(slug: string): string {
 const CANDIDATES: Candidate[] = [
   {
     slug: 'plage-centrale-berck-sur-mer',
-    noteGlobale: 4.2,
     photo: photoFor('plage-centrale-berck-sur-mer'),
     nom: 'Plage centrale de Berck-sur-Mer',
     description:
@@ -49,7 +48,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-le-touquet-paris-plage',
-    noteGlobale: 4.5,
     photo: photoFor('plage-le-touquet-paris-plage'),
     nom: 'Grande plage du Touquet-Paris-Plage',
     description:
@@ -74,7 +72,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-sables-d-or-anglet',
-    noteGlobale: 4.2,
     photo: photoFor('plage-sables-d-or-anglet'),
     nom: "Plage des Sables d'Or à Anglet",
     description:
@@ -97,7 +94,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'grande-plage-biarritz',
-    noteGlobale: 4.2,
     photo: photoFor('grande-plage-biarritz'),
     nom: 'Grande Plage de Biarritz',
     description:
@@ -119,7 +115,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-grande-conche-royan',
-    noteGlobale: 4.2,
     photo: photoFor('plage-grande-conche-royan'),
     nom: 'Plage de la Grande Conche à Royan',
     description:
@@ -144,7 +139,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-centrale-sables-d-olonne',
-    noteGlobale: 4.5,
     photo: photoFor('plage-centrale-sables-d-olonne'),
     nom: "Plage Centrale des Sables-d'Olonne",
     description:
@@ -170,7 +164,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-du-sillon-saint-malo',
-    noteGlobale: 4.2,
     photo: photoFor('plage-du-sillon-saint-malo'),
     nom: 'Plage du Sillon à Saint-Malo',
     description:
@@ -194,7 +187,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'grande-plage-quiberon',
-    noteGlobale: 4.2,
     photo: photoFor('grande-plage-quiberon'),
     nom: 'Grande Plage de Quiberon',
     description:
@@ -216,7 +208,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-carras-nice',
-    noteGlobale: 4.2,
     photo: photoFor('plage-carras-nice'),
     nom: 'Plage Carras à Nice',
     description:
@@ -240,7 +231,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-boucan-canot-saint-paul',
-    noteGlobale: 4.0,
     photo: photoFor('plage-boucan-canot-saint-paul'),
     nom: 'Plage de Boucan Canot à Saint-Paul',
     description:
@@ -262,7 +252,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'grande-plage-carnac',
-    noteGlobale: 4.2,
     photo: photoFor('grande-plage-carnac'),
     nom: 'Grande Plage de Carnac',
     description:
@@ -286,7 +275,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-deauville',
-    noteGlobale: 4.2,
     photo: photoFor('plage-deauville'),
     nom: 'Plage de Deauville',
     description:
@@ -311,7 +299,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-pornichet',
-    noteGlobale: 4.0,
     photo: photoFor('plage-pornichet'),
     nom: 'Plage de Pornichet',
     description:
@@ -333,7 +320,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-biscarrosse',
-    noteGlobale: 4.0,
     photo: photoFor('plage-biscarrosse'),
     nom: 'Plage de Biscarrosse-Plage',
     description:
@@ -357,7 +343,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-mimizan',
-    noteGlobale: 4.0,
     photo: photoFor('plage-mimizan'),
     nom: 'Plage de Mimizan',
     description:
@@ -379,7 +364,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-canet-en-roussillon',
-    noteGlobale: 4.2,
     photo: photoFor('plage-canet-en-roussillon'),
     nom: 'Plage de Canet-en-Roussillon',
     description:
@@ -403,7 +387,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-saintes-maries-de-la-mer',
-    noteGlobale: 4.0,
     photo: photoFor('plage-saintes-maries-de-la-mer'),
     nom: 'Plage des Saintes-Maries-de-la-Mer',
     description:
@@ -424,7 +407,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-cavalaire-sur-mer',
-    noteGlobale: 4.2,
     photo: photoFor('plage-cavalaire-sur-mer'),
     nom: 'Plage de Cavalaire-sur-Mer',
     description:
@@ -448,7 +430,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-bandol',
-    noteGlobale: 4.2,
     photo: photoFor('plage-bandol'),
     nom: 'Plage de Bandol',
     description:
@@ -471,7 +452,6 @@ const CANDIDATES: Candidate[] = [
   },
   {
     slug: 'plage-courseulles-sur-mer',
-    noteGlobale: 4.0,
     photo: photoFor('plage-courseulles-sur-mer'),
     nom: 'Plage de Courseulles-sur-Mer',
     description:

@@ -105,12 +105,9 @@ export function validateCandidate(raw: Candidate): ValidationResult {
     ...raw,
     verifiedAt: raw.verifiedAt ?? today,
     actif: raw.actif ?? true,
-    noteGlobale: raw.noteGlobale ?? 0,
-    nombreAvis: raw.nombreAvis ?? 0,
     photos: (raw.photos ?? []).map((p) => (p.startsWith('http://') ? 'https://' + p.slice(7) : p)),
     hebergements: (raw.hebergements ?? []).map((h) => ({ ...h, siteWeb: upgradeHttps(h.siteWeb) })),
     offresCulturelles: (raw.offresCulturelles ?? []).map((o) => ({ ...o, siteWeb: upgradeHttps(o.siteWeb) })),
-    avis: raw.avis ?? [],
   }
   const parsed = plageContentSchema.safeParse(draft)
   if (!parsed.success) {

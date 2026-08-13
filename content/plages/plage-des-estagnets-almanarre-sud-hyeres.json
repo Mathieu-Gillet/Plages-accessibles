@@ -10,8 +10,6 @@
   "longitude": 6.133460998535157,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Hy%C3%A8res_-_Plage_de_l%27Almanarre%2C_d%C3%A9gradation_route_du_sel_suite_temp%C3%AAte_Ciar%C3%A1n_2023.jpg/1280px-Hy%C3%A8res_-_Plage_de_l%27Almanarre%2C_d%C3%A9gradation_route_du_sel_suite_temp%C3%AAte_Ciar%C3%A1n_2023.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-29",
   "verifiedBy": "handiplage.fr",
@@ -22,6 +20,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

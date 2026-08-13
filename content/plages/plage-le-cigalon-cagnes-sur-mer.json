@@ -8,10 +8,8 @@
   "region": "Provence-Alpes-Côte d'Azur",
   "latitude": 43.6561131,
   "longitude": 7.1634583,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Boulevard_de_la_Plage.jpg/1280px-Boulevard_de_la_Plage.jpg",
+  "photo": "https://picsum.photos/seed/plage-le-cigalon-cagnes-sur-mer/1200/600",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-05",
   "verifiedBy": "openstreetmap",
@@ -20,6 +18,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

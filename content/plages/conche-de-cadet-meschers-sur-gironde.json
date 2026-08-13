@@ -10,8 +10,6 @@
   "longitude": -0.9634056,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Plage_Meschers_1009827.jpg/1280px-Plage_Meschers_1009827.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-05",
   "verifiedBy": "openstreetmap",
@@ -19,6 +17,5 @@
     "SABLE_COMPACT"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

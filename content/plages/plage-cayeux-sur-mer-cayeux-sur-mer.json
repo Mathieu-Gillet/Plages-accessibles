@@ -10,8 +10,6 @@
   "longitude": 1.494054794312,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Cayeux-sur-Mer_Plage_7.jpg/1280px-Cayeux-sur-Mer_Plage_7.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

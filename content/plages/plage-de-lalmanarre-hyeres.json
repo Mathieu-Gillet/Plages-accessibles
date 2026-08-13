@@ -10,8 +10,6 @@
   "longitude": 6.133031845093,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Plage%2C_Hy%C3%A8res_-_panoramio.jpg/1280px-Plage%2C_Hy%C3%A8res_-_panoramio.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -73,6 +71,5 @@
       "distanceKm": 8.8,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

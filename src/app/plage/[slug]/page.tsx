@@ -6,12 +6,17 @@ import { BadgeAccessibilite } from '@/components/features/BadgeAccessibilite'
 import { CarteDetailPlage } from '@/components/map/CarteDetailPlage'
 import { HebergementCard } from '@/components/features/HebergementCard'
 import { OffreCulturelleCard } from '@/components/features/OffreCulturelleCard'
-import { AvisSection } from '@/components/features/AvisSection'
-import { formatNote } from '@/lib/utils'
+import { SectionCommunautaire } from '@/components/features/SectionCommunautaire'
+import { ConfirmationsEquipements } from '@/components/features/ConfirmationsEquipements'
+import { BlocNote } from '@/components/features/NoteCommunautaire'
 import { MapPin } from 'lucide-react'
-import { InfobulleNote } from '@/components/features/InfobulleNote'
 import { SITE_URL } from '@/lib/site'
-import type { PlageDetail } from '@/types'
+import { getVotesPlage } from '@/lib/votes'
+import type { PlageDetail, StatsVote } from '@/types'
+
+// Les notes et confirmations proviennent des votes : la page est régénérée
+// périodiquement, et immédiatement après un vote via revalidatePath.
+export const revalidate = 300
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }))
@@ -50,8 +55,13 @@ function serializeJsonLd(data: unknown): string {
     .replace(/&/g, '\\u0026')
 }
 
-/** schema.org structured data — enables rich results (rating, map pin) on search engines. */
-function buildJsonLd(plage: PlageDetail) {
+/**
+ * schema.org structured data — enables rich results (rating, map pin).
+ * `aggregateRating` n'est émis que si une note communautaire est publiée : un
+ * rich-snippet adossé à une note fabriquée serait trompeur, et les consignes
+ * Google l'interdisent explicitement.
+ */
+function buildJsonLd(plage: PlageDetail, stats: StatsVote) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Beach',
@@ -72,14 +82,14 @@ function buildJsonLd(plage: PlageDetail) {
       latitude: plage.latitude,
       longitude: plage.longitude,
     },
-    ...(plage.nombreAvis > 0 && plage.noteGlobale > 0
+    ...(stats.notePubliee !== null
       ? {
           aggregateRating: {
             '@type': 'AggregateRating',
-            ratingValue: plage.noteGlobale,
-            reviewCount: plage.nombreAvis,
+            ratingValue: stats.notePubliee,
+            ratingCount: stats.nombreVotes,
             bestRating: 5,
-            worstRating: 0,
+            worstRating: 1,
           },
         }
       : {}),
@@ -91,11 +101,13 @@ export default async function PagePlage({ params }: { params: Promise<{ slug: st
   const plage = getPlageBySlug(slug)
   if (!plage) notFound()
 
+  const { stats, equipements, commentaires } = await getVotesPlage(slug)
+
   return (
     <article className="max-w-6xl mx-auto px-4 py-10">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: serializeJsonLd(buildJsonLd(plage)) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(buildJsonLd(plage, stats)) }}
       />
       {/* En-tête */}
       <header className="mb-8">
@@ -147,18 +159,7 @@ export default async function PagePlage({ params }: { params: Promise<{ slug: st
             </p>
           </div>
 
-          {plage.noteGlobale > 0 && (
-            <div
-              className="flex flex-col items-center bg-ocean text-white px-5 py-3 rounded-xl relative"
-              aria-label={`Note : ${formatNote(plage.noteGlobale)} sur 5`}
-            >
-              <span className="text-3xl font-extrabold">{formatNote(plage.noteGlobale)}</span>
-              <span className="text-xs opacity-80 mt-1 flex items-center gap-1">
-                sur 5
-                <InfobulleNote />
-              </span>
-            </div>
-          )}
+          <BlocNote stats={stats} />
         </div>
 
         {plage.description && (
@@ -178,6 +179,10 @@ export default async function PagePlage({ params }: { params: Promise<{ slug: st
             <BadgeAccessibilite key={type} type={type} />
           ))}
         </div>
+        <ConfirmationsEquipements
+          declares={plage.accessibilites}
+          confirmations={equipements}
+        />
       </section>
 
       {/* Carte */}
@@ -237,8 +242,13 @@ export default async function PagePlage({ params }: { params: Promise<{ slug: st
         )}
       </div>
 
-      {/* Avis */}
-      <AvisSection avis={plage.avis} slug={plage.slug} />
+      {/* Votes et retours des visiteurs */}
+      <SectionCommunautaire
+        slug={plage.slug}
+        equipements={plage.accessibilites}
+        commentaires={commentaires}
+        stats={stats}
+      />
     </article>
   )
 }

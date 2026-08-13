@@ -8,10 +8,8 @@
   "region": "Corse",
   "latitude": 42.670229054172,
   "longitude": 9.446493387222,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Bastia_Vue_vers_la_plage-_cartolina_viaggiata-_circa_1910.jpg/1280px-Bastia_Vue_vers_la_plage-_cartolina_viaggiata-_circa_1910.jpg",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Anse_de_Portu_Vechju_et_plage_de_Ficaghjola%2C_Bastia.jpg/1280px-Anse_de_Portu_Vechju_et_plage_de_Ficaghjola%2C_Bastia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

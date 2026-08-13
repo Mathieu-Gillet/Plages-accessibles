@@ -8,10 +8,8 @@
   "region": "Bretagne",
   "latitude": 47.80381158915,
   "longitude": -4.31395398999,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/027_Plage_du_St%C3%AAr.jpg/1280px-027_Plage_du_St%C3%AAr.jpg",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Plage_de_Porz_Carn_%289597777025%29.jpg/1280px-Plage_de_Porz_Carn_%289597777025%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

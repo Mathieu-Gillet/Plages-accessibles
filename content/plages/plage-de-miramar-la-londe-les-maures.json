@@ -10,8 +10,6 @@
   "longitude": 6.242208480835,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Plage_du_Pellegrin%2C_La_Londe-les-Maures_%2814807176904%29.jpg/1280px-Plage_du_Pellegrin%2C_La_Londe-les-Maures_%2814807176904%29.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-02",
   "verifiedBy": "handiplage.fr",
@@ -22,6 +20,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

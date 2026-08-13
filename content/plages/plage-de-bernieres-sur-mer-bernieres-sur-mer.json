@@ -8,10 +8,8 @@
   "region": "Normandie",
   "latitude": 49.334896800952,
   "longitude": -0.424711704254,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Totem_JunoBeach-BernieresSurMer.jpg/1280px-Totem_JunoBeach-BernieresSurMer.jpg",
+  "photo": "https://picsum.photos/seed/plage-de-bernieres-sur-mer-bernieres-sur-mer/1200/600",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

@@ -184,7 +184,6 @@ async function toCandidate(p: GdPlace): Promise<Candidate | null> {
     latitude: lat,
     longitude: lon,
     accessibilites,
-    noteGlobale: 4.2,
     photo: `https://picsum.photos/seed/${slug}/1200/600`,
     verifiedBy: 'handiplage.fr',
     description: buildDescription(nom, commune, accessibilites),

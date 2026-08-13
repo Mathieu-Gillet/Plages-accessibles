@@ -8,10 +8,8 @@
   "region": "Nouvelle-Aquitaine",
   "latitude": 43.375561479019,
   "longitude": -1.761844395636,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/L%27ancien_h%C3%B4tel_L%E2%80%99Eskualduna_d%27Hendaye-Plage_cr%C3%A9%C3%A9_par_l%27architecte_Henry_Martinet%2C_aujourd%27hui_une_r%C3%A9sidence_%28c%C3%B4t%C3%A9_oc%C3%A9an%29.jpg/1280px-L%27ancien_h%C3%B4tel_L%E2%80%99Eskualduna_d%27Hendaye-Plage_cr%C3%A9%C3%A9_par_l%27architecte_Henry_Martinet%2C_aujourd%27hui_une_r%C3%A9sidence_%28c%C3%B4t%C3%A9_oc%C3%A9an%29.jpg",
+  "photo": "https://picsum.photos/seed/plage-des-deux-jumeaux-hendaye/1200/600",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-03",
   "verifiedBy": "handiplage.fr",
@@ -27,6 +25,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

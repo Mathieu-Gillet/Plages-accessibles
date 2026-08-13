@@ -172,7 +172,6 @@ function toCandidate(r: DtRecord): Candidate | null {
     latitude: lat,
     longitude: lon,
     accessibilites,
-    noteGlobale: 4.0,
     photo: photo ?? `https://picsum.photos/seed/${slug}/1200/600`,
     verifiedBy: 'datatourisme',
     description: desc,

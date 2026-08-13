@@ -10,8 +10,6 @@
   "longitude": 4.121696949005,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Grau_du_roi_plage.jpg/1280px-Grau_du_roi_plage.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

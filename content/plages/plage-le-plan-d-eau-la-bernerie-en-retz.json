@@ -10,8 +10,6 @@
   "longitude": -2.0359035,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/La_grande_Plage.JPG/1280px-La_grande_Plage.JPG",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -88,6 +86,5 @@
       "distanceKm": 8.1,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

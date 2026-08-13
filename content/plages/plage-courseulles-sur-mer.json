@@ -10,8 +10,6 @@
   "longitude": -0.4598,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Courseulles-sur-Mer_Plage_10.jpg/1280px-Courseulles-sur-Mer_Plage_10.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-22",
   "verifiedBy": "handiplage.fr",
@@ -50,6 +48,5 @@
       "distanceKm": 0.2,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

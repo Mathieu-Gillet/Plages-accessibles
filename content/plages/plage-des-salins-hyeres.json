@@ -10,8 +10,6 @@
   "longitude": 6.197190284729,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Plage%2C_Hy%C3%A8res_-_panoramio_%281%29.jpg/1280px-Plage%2C_Hy%C3%A8res_-_panoramio_%281%29.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-29",
   "verifiedBy": "handiplage.fr",
@@ -21,6 +19,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

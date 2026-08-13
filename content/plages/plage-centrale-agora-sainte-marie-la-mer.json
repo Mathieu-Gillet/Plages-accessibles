@@ -10,8 +10,6 @@
   "longitude": 3.037140369415,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Lever_du_soleil_sur_la_plage_ste_Marie_la_mer.jpg/1280px-Lever_du_soleil_sur_la_plage_ste_Marie_la_mer.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -22,6 +20,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

@@ -8,10 +8,8 @@
   "region": "Provence-Alpes-Côte d'Azur",
   "latitude": 44.5087461,
   "longitude": 6.3137342,
-  "photo": "https://picsum.photos/seed/plage-des-tremouilles-chorges/1200/600",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Lac_de_Serre-Pon%C3%A7on_-_Chorges%2C_France_-_July_12%2C_2024_01.jpg/1280px-Lac_de_Serre-Pon%C3%A7on_-_Chorges%2C_France_-_July_12%2C_2024_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-04",
   "verifiedBy": "openstreetmap",
@@ -20,6 +18,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

@@ -10,8 +10,6 @@
   "longitude": -2.0225,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Saint-Malo_-_plage_du_M%C3%B4le.jpg/1280px-Saint-Malo_-_plage_du_M%C3%B4le.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-19",
   "verifiedBy": "handiplage.fr",
@@ -85,6 +83,5 @@
       "distanceKm": 1.2,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

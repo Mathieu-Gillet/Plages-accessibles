@@ -180,7 +180,6 @@ async function toCandidate(e: OverpassElement): Promise<Candidate | null> {
     latitude: lat,
     longitude: lon,
     accessibilites,
-    noteGlobale: 4.0,
     photo: `https://picsum.photos/seed/${slug}/1200/600`,
     verifiedBy: 'openstreetmap',
     description: buildDescription(nom, commune, t),

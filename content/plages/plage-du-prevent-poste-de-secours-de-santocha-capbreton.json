@@ -8,10 +8,8 @@
   "region": "Nouvelle-Aquitaine",
   "latitude": 43.646348741442,
   "longitude": -1.445054200027,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Capbreton_plage_de_l%27Estacade_ann%C3%A9es_1930.jpg",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Plage_Santocha_%28Capbreton%29.jpg/1280px-Plage_Santocha_%28Capbreton%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

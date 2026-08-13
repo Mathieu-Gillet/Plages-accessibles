@@ -8,10 +8,8 @@
   "region": "Nouvelle-Aquitaine",
   "latitude": 45.130474484837,
   "longitude": 1.764909625053,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Beynat2.jpg/1280px-Beynat2.jpg",
+  "photo": "https://picsum.photos/seed/beynat-beynat/1200/600",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -26,6 +24,5 @@
     "SIGNALISATION_BRAILLE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

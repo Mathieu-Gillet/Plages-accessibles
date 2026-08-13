@@ -8,10 +8,8 @@
   "region": "Pays de la Loire",
   "latitude": 46.52280311334934,
   "longitude": -0.756983757019043,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Granul%C3%A9s_plastiques_industriels_sur_une_plage_de_la_c%C3%B4te_Aquitaine.JPG/1280px-Granul%C3%A9s_plastiques_industriels_sur_une_plage_de_la_c%C3%B4te_Aquitaine.JPG",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Plage_SW_from_Pointe_All%C3%A8gre_kz01.jpg/1280px-Plage_SW_from_Pointe_All%C3%A8gre_kz01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -23,6 +21,5 @@
     "SIGNALISATION_BRAILLE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

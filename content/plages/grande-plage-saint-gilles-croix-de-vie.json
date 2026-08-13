@@ -10,8 +10,6 @@
   "longitude": -1.9391077,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/La_grande_plage%2C_Saint-Gilles-Croix-de-Vie_%2835190203911%29.jpg/1280px-La_grande_plage%2C_Saint-Gilles-Croix-de-Vie_%2835190203911%29.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -61,6 +59,5 @@
       "distanceKm": 1.3,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

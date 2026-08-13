@@ -8,10 +8,8 @@
   "region": "Provence-Alpes-Côte d'Azur",
   "latitude": 43.34145851304226,
   "longitude": 6.694219708442689,
-  "photo": "https://picsum.photos/seed/plage-san-peire-les-issambres-roquebrune-sur-argens/1200/600",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Fun_at_the_beach_%2836798565026%29.jpg/1280px-Fun_at_the_beach_%2836798565026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -27,6 +25,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

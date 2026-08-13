@@ -8,10 +8,8 @@
   "region": "Bourgogne-Franche-Comté",
   "latitude": 46.576754546849,
   "longitude": 5.750141143799,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Clairvaux-les-Lacs_-_Panneau_direction_plage_%28juil_2018%29.jpg/1280px-Clairvaux-les-Lacs_-_Panneau_direction_plage_%28juil_2018%29.jpg",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Clairvaux-les-Lacs_-_la_plage.JPG/1280px-Clairvaux-les-Lacs_-_la_plage.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-29",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

@@ -10,8 +10,6 @@
   "longitude": 4.84668653,
   "photo": "https://adt52.media.tourinsoft.eu/upload/Plage-des-Sources-Eclaron-inondee-Pascal-Philippe-Coll-OT-Lac-du-Der.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-26",
   "verifiedBy": "datatourisme",
@@ -19,6 +17,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

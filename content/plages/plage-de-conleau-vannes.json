@@ -10,8 +10,6 @@
   "longitude": -2.777802944183,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Vannes_-_Presqu%27%C3%AEle_de_Conleau_-_Plage_02.jpg/1280px-Vannes_-_Presqu%27%C3%AEle_de_Conleau_-_Plage_02.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-03",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

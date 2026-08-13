@@ -8,10 +8,8 @@
   "region": "Nouvelle-Aquitaine",
   "latitude": 43.38958092619,
   "longitude": -1.682453155518,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Socoa-Ciboure%2C_pr%C3%A8s_de_la_plage.JPG/1280px-Socoa-Ciboure%2C_pr%C3%A8s_de_la_plage.JPG",
+  "photo": "https://picsum.photos/seed/plage-de-socoa-ciboure/1200/600",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-01",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "PERSONNEL_FORME"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

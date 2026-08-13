@@ -10,8 +10,6 @@
   "longitude": -3.1186,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Quiberon_-_Plage_%281%29.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-19",
   "verifiedBy": "handiplage.fr",
@@ -34,6 +32,5 @@
       "accessiblePMR": true
     }
   ],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

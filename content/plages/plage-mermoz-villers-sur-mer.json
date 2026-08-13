@@ -10,8 +10,6 @@
   "longitude": -0.006330013275,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Villers-sur-Mer_%2814%29_Plage_977.jpg/1280px-Villers-sur-Mer_%2814%29_Plage_977.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-02",
   "verifiedBy": "handiplage.fr",
@@ -23,6 +21,5 @@
     "SANITAIRES_ADAPTES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

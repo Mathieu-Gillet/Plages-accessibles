@@ -8,10 +8,8 @@
   "region": "Auvergne-Rhône-Alpes",
   "latitude": 45.40095480675765,
   "longitude": 2.663218975067139,
-  "photo": "https://picsum.photos/seed/plage-de-lastioulles-tremouille/1200/600",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Lac_de_Lastioulles%2C_Cantal_%2852321309451%29.jpg/1280px-Lac_de_Lastioulles%2C_Cantal_%2852321309451%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -22,6 +20,5 @@
     "SIGNALISATION_BRAILLE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

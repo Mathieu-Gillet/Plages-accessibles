@@ -2,7 +2,7 @@
 // src/components/map/CarteLeaflet.tsx
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import L from 'leaflet'
-import type { PlageResume } from '@/types'
+import { SEUIL_VOTES, type PlageAvecVotes } from '@/types'
 import { formatNote } from '@/lib/utils'
 import 'leaflet/dist/leaflet.css'
 
@@ -15,11 +15,19 @@ L.Icon.Default.mergeOptions({
   shadowUrl: '/leaflet/marker-shadow.png',
 })
 
-// Icône personnalisée bleue
-function creerIconePlage(note: number) {
+// Marqueur : la couleur porte la note communautaire, jamais une note importée.
+// `note === null` = seuil de votes non atteint → marqueur neutre, sans chiffre.
+function creerIconePlage(note: number | null) {
   // amber-700 (#b45309) instead of amber-500: white text on it reaches ~4.9:1
   // (vs ~1.9:1 on #f59e0b), so the note inside the marker stays legible.
-  const couleur = note >= 4.5 ? '#16a34a' : note >= 3.5 ? '#0077b6' : '#b45309'
+  const couleur =
+    note === null
+      ? '#4a5568' // ardoise-clair : « pas encore noté », visuellement en retrait
+      : note >= 4.5
+        ? '#16a34a'
+        : note >= 3.5
+          ? '#0077b6'
+          : '#b45309'
   return L.divIcon({
     html: `<div style="
       background: ${couleur};
@@ -36,7 +44,7 @@ function creerIconePlage(note: number) {
       border: 2px solid white;
       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     ">
-      <span style="transform: rotate(45deg)">${note > 0 ? note.toFixed(1) : '🏖'}</span>
+      <span style="transform: rotate(45deg)">${note === null ? '🏖' : note.toFixed(1)}</span>
     </div>`,
     className: '',
     iconSize: [32, 32],
@@ -46,7 +54,7 @@ function creerIconePlage(note: number) {
 }
 
 interface CarteLeafletProps {
-  plages: PlageResume[]
+  plages: PlageAvecVotes[]
   hauteur?: string
   centreInitial?: [number, number]
   zoomInitial?: number
@@ -57,6 +65,9 @@ interface CarteLeafletProps {
     type: 'hebergement' | 'culture'
   }>
   lienGoogleMaps?: boolean
+  /** Masque la ligne de note dans la bulle — utile sur la carte de détail,
+   *  où la note figure déjà dans l'en-tête de la fiche. */
+  afficherNote?: boolean
 }
 
 export default function CarteLeaflet({
@@ -66,6 +77,7 @@ export default function CarteLeaflet({
   zoomInitial = 6,
   marqueursPoi = [],
   lienGoogleMaps = false,
+  afficherNote = true,
 }: CarteLeafletProps) {
   return (
     <MapContainer
@@ -83,18 +95,24 @@ export default function CarteLeaflet({
         <Marker
           key={plage.id}
           position={[plage.latitude, plage.longitude]}
-          icon={creerIconePlage(plage.noteGlobale)}
+          icon={creerIconePlage(plage.stats.notePubliee)}
           title={plage.nom}
         >
           <Popup>
             <div className="min-w-[180px]">
               <p className="font-bold text-ardoise text-base leading-tight">{plage.nom}</p>
               <p className="text-xs text-ardoise-clair mt-0.5">{plage.commune}</p>
-              {plage.noteGlobale > 0 && (
+              {!afficherNote ? null : plage.stats.notePubliee !== null ? (
                 <p className="text-sm font-bold mt-2 flex items-center gap-1" style={{ color: '#b45309' }}>
                   <span aria-hidden="true">★</span>
-                  <span>{formatNote(plage.noteGlobale)}</span>
-                  <span className="text-ardoise-clair font-normal text-xs">/ 5</span>
+                  <span>{formatNote(plage.stats.notePubliee)}</span>
+                  <span className="text-ardoise-clair font-normal text-xs">
+                    / 5 · {plage.stats.nombreVotes} votes
+                  </span>
+                </p>
+              ) : (
+                <p className="text-xs text-ardoise-clair mt-2">
+                  Pas encore notée — {plage.stats.nombreVotes}/{SEUIL_VOTES} votes
                 </p>
               )}
               <a

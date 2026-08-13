@@ -10,8 +10,6 @@
   "longitude": -3.167281150818,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Erdeven_Roche_Seche_plage_blockhaus.jpg/1280px-Erdeven_Roche_Seche_plage_blockhaus.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-03",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

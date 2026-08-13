@@ -8,10 +8,8 @@
   "region": "Bretagne",
   "latitude": 47.87129114501789,
   "longitude": -4.104015827178956,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/6/64/B%C3%A9nodet-Plage.jpg",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/B%C3%A9nodet_-_Grande_plage..jpg/1280px-B%C3%A9nodet_-_Grande_plage..jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-04",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

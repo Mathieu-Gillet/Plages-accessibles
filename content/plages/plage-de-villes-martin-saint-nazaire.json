@@ -10,8 +10,6 @@
   "longitude": -2.227746248245,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Plage_de_Saint-Nazaire_-_panoramio.jpg/1280px-Plage_de_Saint-Nazaire_-_panoramio.jpg",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-30",
   "verifiedBy": "handiplage.fr",
@@ -24,6 +22,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

@@ -10,8 +10,6 @@
   "longitude": 3.1639296,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Narbonne_-%29_Narbonne_Plage_-_panoramio.jpg/1280px-Narbonne_-%29_Narbonne_Plage_-_panoramio.jpg",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-07-04",
   "verifiedBy": "openstreetmap",
@@ -20,6 +18,5 @@
     "CHEMIN_ACCES"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

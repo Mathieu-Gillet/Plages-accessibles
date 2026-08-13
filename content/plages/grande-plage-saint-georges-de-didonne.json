@@ -10,8 +10,6 @@
   "longitude": -0.989319864096,
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Plages_de_Saint-Georges-de-Didonne_%282%29.JPG/1280px-Plages_de_Saint-Georges-de-Didonne_%282%29.JPG",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-27",
   "verifiedBy": "handiplage.fr",
@@ -54,6 +52,5 @@
       "distanceKm": 4.7,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

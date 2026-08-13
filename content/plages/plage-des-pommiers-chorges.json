@@ -8,10 +8,8 @@
   "region": "Provence-Alpes-Côte d'Azur",
   "latitude": 44.5225409,
   "longitude": 6.324043,
-  "photo": "https://picsum.photos/seed/plage-des-pommiers-chorges/1200/600",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Lac_de_Serre_Pon%C3%A7on_en_janvier_%28Hautes-Alpes%2C_France%29_DSC02104.jpg/1280px-Lac_de_Serre_Pon%C3%A7on_en_janvier_%28Hautes-Alpes%2C_France%29_DSC02104.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-06-28",
   "verifiedBy": "handiplage.fr",
@@ -25,6 +23,5 @@
     "BOUCLE_MAGNETIQUE"
   ],
   "hebergements": [],
-  "offresCulturelles": [],
-  "avis": []
+  "offresCulturelles": []
 }

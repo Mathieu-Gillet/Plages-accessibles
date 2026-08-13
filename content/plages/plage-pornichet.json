@@ -8,10 +8,8 @@
   "region": "Pays de la Loire",
   "latitude": 47.2641,
   "longitude": -2.3385,
-  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Pornichet-FR-44-la_plage-01.jpg/1280px-Pornichet-FR-44-la_plage-01.jpg",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Plage_de_La_Baule_-_Pornichet_-_panoramio.jpg/1280px-Plage_de_La_Baule_-_Pornichet_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
   "photos": [],
-  "noteGlobale": 4,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-21",
   "verifiedBy": "handiplage.fr",
@@ -90,6 +88,5 @@
       "distanceKm": 9.4,
       "accessiblePMR": true
     }
-  ],
-  "avis": []
+  ]
 }

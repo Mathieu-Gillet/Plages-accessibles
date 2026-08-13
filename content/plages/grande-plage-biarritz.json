@@ -9,8 +9,6 @@
   "latitude": 43.4848,
   "longitude": -1.5614,
   "photos": [],
-  "noteGlobale": 4.2,
-  "nombreAvis": 0,
   "actif": true,
   "verifiedAt": "2026-04-18",
   "verifiedBy": "handiplage.fr",
@@ -128,6 +126,5 @@
       "accessiblePMR": true
     }
   ],
-  "avis": [],
   "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Biarritz-Plage.JPG/1280px-Biarritz-Plage.JPG"
 }
