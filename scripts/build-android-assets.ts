@@ -10,6 +10,11 @@
 //
 // Chaque fiche passe par le même schéma Zod que le site : un contenu invalide
 // casse la génération de l'asset, jamais l'app en production.
+//
+// Le projet Android vit dans un dépôt séparé (Mathieu-Gillet/app_plages-accessibles),
+// non public. Ce script reste ici parce qu'il lit le contenu du site ; il écrit
+// dans le clone de l'app, désigné par `APP_ANDROID` ou, à défaut, cherché à côté
+// de ce dépôt.
 
 import { promises as fs } from 'node:fs'
 import path from 'node:path'
@@ -17,7 +22,8 @@ import { plageContentSchema } from '../src/lib/content-schema'
 import type { TypeAccessibilite } from '../src/types'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'plages')
-const ASSET_PATH = path.join(process.cwd(), 'android', 'app', 'src', 'main', 'assets', 'plages.json')
+const APP_ANDROID = process.env.APP_ANDROID ?? path.join(process.cwd(), '..', 'app_plages-accessibles')
+const ASSET_PATH = path.join(APP_ANDROID, 'app', 'src', 'main', 'assets', 'plages.json')
 
 /**
  * Fiche telle que l'app la consomme. Volontairement plus pauvre que
@@ -102,6 +108,18 @@ async function main(): Promise<void> {
   // Tri stable par nom : l'asset est versionné, un ordre dépendant du système
   // de fichiers produirait un diff à chaque génération.
   plages.sort((a, b) => a.nom.localeCompare(b.nom, 'fr'))
+
+  // Sans ce garde-fou, `mkdir -p` fabriquerait une arborescence Android orpheline
+  // à côté du dépôt au lieu de signaler que le clone de l'app est introuvable.
+  try {
+    await fs.access(path.join(APP_ANDROID, 'settings.gradle.kts'))
+  } catch {
+    throw new Error(
+      `Clone de l'app Android introuvable dans ${APP_ANDROID}.\n` +
+        `Clonez github.com/Mathieu-Gillet/app_plages-accessibles à côté de ce dépôt, ` +
+        `ou indiquez son chemin : APP_ANDROID=/chemin/vers/le/clone npm run android:assets`,
+    )
+  }
 
   await fs.mkdir(path.dirname(ASSET_PATH), { recursive: true })
   await fs.writeFile(ASSET_PATH, JSON.stringify({ plages }), 'utf-8')

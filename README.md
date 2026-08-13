@@ -17,7 +17,7 @@ Annuaire collaboratif et gratuit des plages françaises accessibles aux personne
 - **GitHub comme back-office** — pipeline autonome : l'import quotidien valide et commite directement sur `master` ; les contributions du site ouvrent des Pull Requests mergées automatiquement dès que la CI est verte (aucun merge manuel)
 - **Notes 100 % communautaires** — aucune note n'est importée : les visiteurs notent l'accessibilité et confirment les équipements réellement présents. La moyenne n'est publiée qu'à partir de **5 votes** (`SEUIL_VOTES`)
 - **Vercel** (hébergement, Analytics, Speed Insights)
-- **Application Android** (Kotlin + Jetpack Compose) dans `android/` — catalogue embarqué pour une consultation hors réseau, notes appelées en ligne. Voir [android/README.md](android/README.md)
+- **Application Android** (Kotlin + Jetpack Compose) — catalogue embarqué pour une consultation hors réseau, notes appelées en ligne. Son code vit dans un dépôt séparé et non public : `Mathieu-Gillet/app_plages-accessibles`
 
 ---
 
@@ -70,15 +70,9 @@ src/
 │   └── utils.ts              ← Utilitaires (formatNote, slugify, cn…)
 └── types/index.ts            ← Interfaces TypeScript partagées
 
-android/                      ← Application Android native (Kotlin + Compose) — voir android/README.md
-├── app/src/main/assets/      ← plages.json généré depuis content/plages/ (catalogue hors-ligne)
-└── app/src/main/java/fr/plagesaccessibles/
-    ├── data/                 ← Catalogue embarqué, API des votes, favoris, localisation
-    └── ui/ecrans/            ← Accueil, Recherche, Carte, Détail, Contribuer
-
 scripts/
 ├── import-plages.ts          ← Orchestrateur d'import quotidien (CI)
-├── build-android-assets.ts   ← content/plages/ → asset embarqué dans l'APK
+├── build-android-assets.ts   ← content/plages/ → asset embarqué dans l'APK (dépôt app_plages-accessibles)
 ├── enrich-pois.ts            ← Enrichissement hébergements + offres culturelles (OSM)
 ├── enrich-photos.ts          ← Enrichissement photos Wikimedia Commons
 ├── sources/                  ← Connecteurs de sources de données
@@ -116,7 +110,11 @@ scripts/
 | `npx tsx scripts/planches-photos.ts` | Assembler les photos non relues en planches-contact |
 | `npx tsx scripts/audit-photos.ts --appliquer` | Écarter noir et blanc, scans et cartes du catalogue |
 | `npx tsx scripts/build-android-icone.ts` | Régénérer l'icône et les visuels Play Store |
-| `cd android && ./gradlew :app:assembleDebug` | Compiler l'APK de l'application Android |
+
+Les deux commandes `android:*` écrivent dans le clone de l'application Android, cherché
+par défaut à côté de ce dépôt (`../app_plages-accessibles`) ou désigné par la variable
+`APP_ANDROID`. Le code de l'app et la compilation de l'APK vivent dans ce dépôt séparé
+et non public : [Mathieu-Gillet/app_plages-accessibles](https://github.com/Mathieu-Gillet/app_plages-accessibles).
 
 ---
 

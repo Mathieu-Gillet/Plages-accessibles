@@ -16,9 +16,14 @@ import { promises as fs } from 'node:fs'
 import path from 'node:path'
 import sharp from 'sharp'
 
+// Le projet Android vit dans un dépôt séparé (Mathieu-Gillet/app_plages-accessibles),
+// non public. Ce script reste ici parce que sa source est un visuel du site ; il écrit
+// dans le clone de l'app, désigné par `APP_ANDROID` ou, à défaut, cherché à côté de
+// ce dépôt.
 const SOURCE = path.join(process.cwd(), 'content', 'preview.webp')
-const RES = path.join(process.cwd(), 'android', 'app', 'src', 'main', 'res')
-const STORE = path.join(process.cwd(), 'android', 'store')
+const APP_ANDROID = process.env.APP_ANDROID ?? path.join(process.cwd(), '..', 'app_plages-accessibles')
+const RES = path.join(APP_ANDROID, 'app', 'src', 'main', 'res')
+const STORE = path.join(APP_ANDROID, 'store')
 
 /** Densités Android : mdpi vaut 48 dp, les autres en sont des multiples. */
 const DENSITES: Array<{ dossier: string; taille: number }> = [
@@ -50,6 +55,18 @@ function degradeSvg(largeur: number, haut: string, bas: string, hauteur = largeu
 }
 
 async function main(): Promise<void> {
+  // Sans ce garde-fou, `mkdir -p` fabriquerait une arborescence Android orpheline
+  // à côté du dépôt au lieu de signaler que le clone de l'app est introuvable.
+  try {
+    await fs.access(path.join(APP_ANDROID, 'settings.gradle.kts'))
+  } catch {
+    throw new Error(
+      `Clone de l'app Android introuvable dans ${APP_ANDROID}.\n` +
+        `Clonez github.com/Mathieu-Gillet/app_plages-accessibles à côté de ce dépôt, ` +
+        `ou indiquez son chemin : APP_ANDROID=/chemin/vers/le/clone npx tsx scripts/build-android-icone.ts`,
+    )
+  }
+
   const source = sharp(SOURCE)
   const meta = await source.metadata()
   const cote = Math.min(meta.width ?? 1024, meta.height ?? 1024)
