@@ -1,0 +1,25 @@
+{
+  "slug": "plage-les-granges-les-sables-dolonne",
+  "nom": "Plage Les Granges",
+  "description": "Plage labellisée Handiplage à Les Sables-d'Olonne. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage Les Granges\" : tiralo, fauteuil roulant, parkings pmr, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Les Sables-d'Olonne",
+  "codePostal": "85100",
+  "departement": "Vendée",
+  "region": "Pays de la Loire",
+  "latitude": 46.579483158369584,
+  "longitude": -1.8449413776397707,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Plage_et_baie_des_Sables-d%27Olonne_%C3%A0_mar%C3%A9e_basse_%28juin_2023%29.JPG/1280px-Plage_et_baie_des_Sables-d%27Olonne_%C3%A0_mar%C3%A9e_basse_%28juin_2023%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "photos": [],
+  "actif": true,
+  "verifiedAt": "2026-08-19",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "PARKINGS_PMR",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": []
+}
