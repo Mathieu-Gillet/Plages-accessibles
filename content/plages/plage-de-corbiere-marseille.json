@@ -1,0 +1,27 @@
+{
+  "slug": "plage-de-corbiere-marseille",
+  "nom": "Plage de Corbière",
+  "description": "Plage labellisée Handiplage à Marseille. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de Corbière\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Marseille",
+  "codePostal": "13001",
+  "departement": "Bouches-du-Rhône",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.3578462,
+  "longitude": 5.2876073,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/View_of_Plage_de_Bonneveine_with_ferris_wheel_from_the_breakwater%2C_Marseille%2C_2012.jpg/1280px-View_of_Plage_de_Bonneveine_with_ferris_wheel_from_the_breakwater%2C_Marseille%2C_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "photos": [],
+  "actif": true,
+  "verifiedAt": "2026-08-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES"
+  ],
+  "hebergements": [],
+  "offresCulturelles": []
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "plage-de-la-pointe-rouge-marseille",
+  "nom": "Plage de la Pointe Rouge",
+  "description": "Plage labellisée Handiplage à Marseille. Le label Handiplage est délivré par l'association nationale Handiplage après un audit sur site : il garantit un accueil adapté des personnes en situation de handicap et la présence d'équipements dédiés. Équipements et services identifiés pour \"Plage de la Pointe Rouge\" : tiralo, fauteuil roulant, hippocampe, parkings pmr, douches accessibles, sanitaires adaptes, chemin acces, boucle magnetique, signalisation braille. Informations issues de la fiche officielle publiée sur handiplage.fr.",
+  "commune": "Marseille",
+  "codePostal": "13001",
+  "departement": "Bouches-du-Rhône",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "latitude": 43.24415547781272,
+  "longitude": 5.370898246765138,
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Plage_de_Bonneveine_at_dusk%2C_Marseille%2C_2015.jpg/1280px-Plage_de_Bonneveine_at_dusk%2C_Marseille%2C_2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "photos": [],
+  "actif": true,
+  "verifiedAt": "2026-08-27",
+  "verifiedBy": "handiplage.fr",
+  "accessibilites": [
+    "TIRALO",
+    "FAUTEUIL_ROULANT",
+    "HIPPOCAMPE",
+    "PARKINGS_PMR",
+    "DOUCHES_ACCESSIBLES",
+    "SANITAIRES_ADAPTES",
+    "CHEMIN_ACCES",
+    "BOUCLE_MAGNETIQUE",
+    "SIGNALISATION_BRAILLE"
+  ],
+  "hebergements": [],
+  "offresCulturelles": []
+}
