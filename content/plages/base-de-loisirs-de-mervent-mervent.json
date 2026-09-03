@@ -19,6 +19,17 @@
   ],
   "hebergements": [
     {
+      "nom": "La petite coquille",
+      "type": "chambre d'hôtes",
+      "adresse": "17 Chemin de la Pierrière, 85200, Mervent",
+      "telephone": "+33 633850197",
+      "latitude": 46.4899504,
+      "longitude": -0.7803661,
+      "distanceKm": 4,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
       "nom": "Auberge du Lac",
       "type": "hôtel",
       "adresse": "le lac, 85200, Sérigné",
@@ -27,7 +38,90 @@
       "longitude": -0.8079927,
       "distanceKm": 4.4,
       "accessiblePMR": true
+    },
+    {
+      "nom": "Le Rabelais",
+      "type": "hôtel",
+      "adresse": "Mervent",
+      "telephone": "+33 2 51 69 86 20",
+      "latitude": 46.4659835,
+      "longitude": -0.791371,
+      "distanceKm": 6.7,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Fontarabie",
+      "type": "hôtel",
+      "adresse": "57 Rue de la République, Mervent",
+      "latitude": 46.4648035,
+      "longitude": -0.8009825,
+      "distanceKm": 7.2,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Hôtel de Vendée",
+      "type": "hôtel",
+      "adresse": "126 Rue de la République, Mervent",
+      "latitude": 46.4622175,
+      "longitude": -0.7952795,
+      "distanceKm": 7.2,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
     }
   ],
-  "offresCulturelles": []
+  "offresCulturelles": [
+    {
+      "nom": "Pont Romain",
+      "type": "ruines",
+      "adresse": "Mervent",
+      "latitude": 46.5225696,
+      "longitude": -0.7482656,
+      "distanceKm": 0.4,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Pierre Trillaud",
+      "type": "mémorial",
+      "adresse": "Mervent",
+      "latitude": 46.522936,
+      "longitude": -0.7565696,
+      "distanceKm": 0.5,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Château de la Citardière",
+      "type": "château",
+      "adresse": "Mervent",
+      "siteWeb": "https://www.chateaudelacitardiere.com/",
+      "latitude": 46.5342208,
+      "longitude": -0.7398924,
+      "distanceKm": 1.8,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Château de Sérigny",
+      "type": "château",
+      "adresse": "Mervent",
+      "latitude": 46.5258904,
+      "longitude": -0.7080693,
+      "distanceKm": 3.4,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Le Mazeau",
+      "type": "château",
+      "adresse": "Mervent",
+      "latitude": 46.4894405,
+      "longitude": -0.7662085,
+      "distanceKm": 3.6,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    }
+  ]
 }

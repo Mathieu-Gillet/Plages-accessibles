@@ -22,5 +22,57 @@
     "SIGNALISATION_BRAILLE"
   ],
   "hebergements": [],
-  "offresCulturelles": []
+  "offresCulturelles": [
+    {
+      "nom": "Château de Saint-Amadour",
+      "type": "château",
+      "adresse": "La Selle-Craonnaise",
+      "latitude": 47.8390289,
+      "longitude": -1.0301607,
+      "distanceKm": 3.6,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Château de l'Ansaudière",
+      "type": "château",
+      "adresse": "La Selle-Craonnaise",
+      "latitude": 47.8324771,
+      "longitude": -1.0142386,
+      "distanceKm": 5,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Château de la Lande",
+      "type": "château",
+      "adresse": "La Selle-Craonnaise",
+      "latitude": 47.850607,
+      "longitude": -0.9953383,
+      "distanceKm": 5.2,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Château du Roseray",
+      "type": "château",
+      "adresse": "La Selle-Craonnaise",
+      "latitude": 47.9173313,
+      "longitude": -1.0745984,
+      "distanceKm": 6.1,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Vox",
+      "type": "cinéma",
+      "adresse": "La Selle-Craonnaise",
+      "siteWeb": "https://renaze53.fr/culturesportsloisirs/cinema-vox/",
+      "latitude": 47.7938919,
+      "longitude": -1.0577129,
+      "distanceKm": 7.8,
+      "accessiblePMR": true,
+      "niveauAccessibilite": "confirme"
+    }
+  ]
 }

@@ -20,8 +20,89 @@
     "SIGNALISATION_BRAILLE",
     "BOUCLE_MAGNETIQUE"
   ],
-  "hebergements": [],
+  "hebergements": [
+    {
+      "nom": "L'Auberge de Lanouaille",
+      "type": "hôtel",
+      "adresse": "Angoisse",
+      "latitude": 45.3913535,
+      "longitude": 1.138387,
+      "distanceKm": 3.2,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Hôtel des Voyageurs",
+      "type": "hôtel",
+      "adresse": "Angoisse",
+      "latitude": 45.4014708,
+      "longitude": 1.2192155,
+      "distanceKm": 4.6,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Gite de Groupe Le Cantou",
+      "type": "hôtel",
+      "adresse": "Le Bourg, 24270, Saint-Mesmin",
+      "latitude": 45.3523607,
+      "longitude": 1.2057601,
+      "distanceKm": 7.7,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "3Bs Biking",
+      "type": "chambre d'hôtes",
+      "adresse": "Angoisse",
+      "latitude": 45.484568,
+      "longitude": 1.1677191,
+      "distanceKm": 7.8,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    }
+  ],
   "offresCulturelles": [
+    {
+      "nom": "Château de Rouffiac",
+      "type": "château",
+      "adresse": "Angoisse",
+      "latitude": 45.4232906,
+      "longitude": 1.1671746,
+      "distanceKm": 1,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Maison de la Pomme d'Or",
+      "type": "musée",
+      "adresse": "Angoisse",
+      "latitude": 45.3915902,
+      "longitude": 1.1386343,
+      "distanceKm": 3.2,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Espace du 19 Mars 1962",
+      "type": "mémorial",
+      "adresse": "Angoisse",
+      "latitude": 45.4007662,
+      "longitude": 1.2192491,
+      "distanceKm": 4.7,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Château de la Forge",
+      "type": "lieu culturel",
+      "adresse": "Angoisse",
+      "latitude": 45.3658525,
+      "longitude": 1.2141376,
+      "distanceKm": 6.7,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
     {
       "nom": "Moulin de Lasveyras",
       "type": "musée",

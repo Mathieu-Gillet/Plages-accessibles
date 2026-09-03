@@ -24,6 +24,111 @@
     "CHEMIN_ACCES",
     "PERSONNEL_FORME"
   ],
-  "hebergements": [],
-  "offresCulturelles": []
+  "hebergements": [
+    {
+      "nom": "L'Oasis",
+      "type": "hôtel",
+      "adresse": "Narbonne",
+      "latitude": 43.1593909,
+      "longitude": 3.1678937,
+      "distanceKm": 1.1,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Le Provençal",
+      "type": "hôtel",
+      "adresse": "Narbonne",
+      "latitude": 43.1598801,
+      "longitude": 3.1665392,
+      "distanceKm": 1.1,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Hôtel de la Clape",
+      "type": "hôtel",
+      "adresse": "4 Rue des Fleurs, Narbonne",
+      "telephone": "+33 4 68 49 80 15",
+      "siteWeb": "https://www.hoteldelaclape.com",
+      "latitude": 43.1592649,
+      "longitude": 3.1660721,
+      "distanceKm": 1.2,
+      "accessiblePMR": true,
+      "niveauAccessibilite": "confirme"
+    },
+    {
+      "nom": "La Caravelle",
+      "type": "hôtel",
+      "adresse": "10 Promenade du Front de Mer (plage), Narbonne",
+      "latitude": 43.1584048,
+      "longitude": 3.1667565,
+      "distanceKm": 1.2,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Hôtel le Mas Pierrot",
+      "type": "hôtel",
+      "adresse": "44 Rue du Four à Chaux, Narbonne",
+      "telephone": "+33 4 68 45 63 10",
+      "latitude": 43.2065167,
+      "longitude": 3.0782435,
+      "distanceKm": 9.1,
+      "accessiblePMR": true,
+      "niveauAccessibilite": "confirme"
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Théâtre de la Nature",
+      "type": "théâtre",
+      "adresse": "Narbonne",
+      "latitude": 43.1643168,
+      "longitude": 3.1655561,
+      "distanceKm": 1,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Severine",
+      "type": "château",
+      "adresse": "Narbonne",
+      "latitude": 43.1769278,
+      "longitude": 3.1828365,
+      "distanceKm": 1.2,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Ancien Château Rouquette",
+      "type": "ruines",
+      "adresse": "Narbonne",
+      "latitude": 43.1573528,
+      "longitude": 3.1393596,
+      "distanceKm": 3.2,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Four de Rome",
+      "type": "ruines",
+      "adresse": "Narbonne",
+      "latitude": 43.2037568,
+      "longitude": 3.1677261,
+      "distanceKm": 4.2,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Dassault Super Mystère B2",
+      "type": "mémorial",
+      "adresse": "Narbonne",
+      "latitude": 43.1735247,
+      "longitude": 3.1214361,
+      "distanceKm": 4.6,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    }
+  ]
 }

@@ -21,6 +21,100 @@
     "SANITAIRES_ADAPTES",
     "CHEMIN_ACCES"
   ],
-  "hebergements": [],
-  "offresCulturelles": []
+  "hebergements": [
+    {
+      "nom": "Village de gîtes d'Ursanges",
+      "type": "appartement meublé",
+      "adresse": "Neuvic",
+      "latitude": 45.3858464,
+      "longitude": 2.2910538,
+      "distanceKm": 0.2,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Hôtel Du Lac",
+      "type": "hôtel",
+      "adresse": "Neuvic",
+      "latitude": 45.3857027,
+      "longitude": 2.2919148,
+      "distanceKm": 0.3,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Maison Chabrat",
+      "type": "chambre d'hôtes",
+      "adresse": "Neuvic",
+      "latitude": 45.4025725,
+      "longitude": 2.2990608,
+      "distanceKm": 1.7,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Gîte de Gratte Bruyere",
+      "type": "hôtel",
+      "adresse": "19160, Neuvic",
+      "latitude": 45.335743,
+      "longitude": 2.3220338,
+      "distanceKm": 6.3,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Henri Queuille",
+      "type": "mémorial",
+      "adresse": "Neuvic",
+      "latitude": 45.3876848,
+      "longitude": 2.2904316,
+      "distanceKm": 0.1,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Le Paradisio",
+      "type": "cinéma",
+      "adresse": "19160, Neuvic",
+      "latitude": 45.3824878,
+      "longitude": 2.2725861,
+      "distanceKm": 1.6,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Musée départemental de la Résistance Henri Queuille",
+      "type": "musée",
+      "adresse": "Neuvic",
+      "siteWeb": "https://www.correze.fr/nos-missions/culture-patrimoine-sports/les-projets-et-lieux-culturels/le-musee-departemental-de-la-resistance-henri-queuille",
+      "latitude": 45.3818833,
+      "longitude": 2.2716815,
+      "distanceKm": 1.6,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "L'Arbre du Renard",
+      "type": "centre culturel",
+      "adresse": "Neuvic",
+      "telephone": "+33 5 55 96 83 28",
+      "latitude": 45.3707444,
+      "longitude": 2.3134951,
+      "distanceKm": 2.6,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Le Moulin de Tony",
+      "type": "ruines",
+      "adresse": "Neuvic",
+      "latitude": 45.3406414,
+      "longitude": 2.29485,
+      "distanceKm": 5.3,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    }
+  ]
 }

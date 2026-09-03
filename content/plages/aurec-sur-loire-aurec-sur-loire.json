@@ -17,8 +17,104 @@
     "PARKINGS_PMR",
     "BOUCLE_MAGNETIQUE"
   ],
-  "hebergements": [],
+  "hebergements": [
+    {
+      "nom": "Hôtel Les Cèdres Bleus",
+      "type": "hôtel",
+      "adresse": "23 Rue de la Rivière, Aurec-sur-Loire",
+      "telephone": "+33 4 77 35 48 48",
+      "siteWeb": "https://www.lescedresbleus.com/",
+      "latitude": 45.3632454,
+      "longitude": 4.1932503,
+      "distanceKm": 0.3,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Auberge du barrage",
+      "type": "hôtel",
+      "adresse": "446 Route de Saint-Paul, 43110, Aurec-sur-Loire",
+      "telephone": "+33 4 77 35 29 08",
+      "latitude": 45.3805108,
+      "longitude": 4.220567,
+      "distanceKm": 2.6,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Abribis Hotel",
+      "type": "hôtel",
+      "adresse": "Aurec-sur-Loire",
+      "latitude": 45.3737208,
+      "longitude": 4.2716709,
+      "distanceKm": 6.1,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Les Chantignolles",
+      "type": "chambre d'hôtes",
+      "adresse": "Aurec-sur-Loire",
+      "latitude": 45.3011117,
+      "longitude": 4.2453133,
+      "distanceKm": 8.2,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Les Balcons du Velay",
+      "type": "hôtel",
+      "adresse": "Aurec-sur-Loire",
+      "siteWeb": "https://www.hotel-restaurant-balcons-velay.fr/",
+      "latitude": 45.2832162,
+      "longitude": 4.1827676,
+      "distanceKm": 9.2,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    }
+  ],
   "offresCulturelles": [
+    {
+      "nom": "Château du Moine Sacristain",
+      "type": "château",
+      "adresse": "Aurec-sur-Loire",
+      "latitude": 45.3678865,
+      "longitude": 4.1988775,
+      "distanceKm": 0.5,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Château de Chazourne",
+      "type": "château",
+      "adresse": "Aurec-sur-Loire",
+      "latitude": 45.3684485,
+      "longitude": 4.1889125,
+      "distanceKm": 0.5,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Château seigneurial d'Aurec",
+      "type": "château",
+      "adresse": "Aurec-sur-Loire",
+      "siteWeb": "https://chateaudaurec.fr/",
+      "latitude": 45.368105,
+      "longitude": 4.199913,
+      "distanceKm": 0.5,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "AureCinéma",
+      "type": "cinéma",
+      "adresse": "Aurec-sur-Loire",
+      "latitude": 45.3701367,
+      "longitude": 4.1994971,
+      "distanceKm": 0.7,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
     {
       "nom": "La Forge",
       "type": "théâtre",

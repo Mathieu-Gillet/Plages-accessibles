@@ -22,6 +22,113 @@
     "CHEMIN_ACCES",
     "PERSONNEL_FORME"
   ],
-  "hebergements": [],
-  "offresCulturelles": []
+  "hebergements": [
+    {
+      "nom": "Hôtel de France",
+      "type": "hôtel",
+      "adresse": "Montréjeau",
+      "latitude": 43.0784071,
+      "longitude": 0.5741506,
+      "distanceKm": 0.7,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Murmures d'arbres",
+      "type": "chambre d'hôtes",
+      "adresse": "Rue du Seglarès, 31510, Labroquère",
+      "telephone": "+33 6 87 40 18 62",
+      "latitude": 43.04602,
+      "longitude": 0.602146,
+      "distanceKm": 4.7,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Lou Lombrès",
+      "type": "chambre d'hôtes",
+      "adresse": "Montréjeau",
+      "latitude": 43.0568169,
+      "longitude": 0.5098652,
+      "distanceKm": 5.1,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Hôtel du Comminges",
+      "type": "hôtel",
+      "adresse": "Montréjeau",
+      "telephone": "+33 5 61 88 31 43",
+      "latitude": 43.0269996,
+      "longitude": 0.570477,
+      "distanceKm": 5.8,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Candide",
+      "type": "hôtel",
+      "adresse": "Rue de la Poste, 31510, Saint-Bertrand-de-Comminges",
+      "telephone": "+33 5 61 88 33 50",
+      "siteWeb": "https://www.hotelcandide.com/",
+      "latitude": 43.0270077,
+      "longitude": 0.5717371,
+      "distanceKm": 5.8,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Plaque commémorative AUDOUBERT Roger",
+      "type": "mémorial",
+      "adresse": "Montréjeau",
+      "latitude": 43.0855856,
+      "longitude": 0.5681191,
+      "distanceKm": 0.8,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Variétés",
+      "type": "cinéma",
+      "adresse": "7 Place de Verdun, Montréjeau",
+      "siteWeb": "https://cinemalesvarietes.com/",
+      "latitude": 43.0847315,
+      "longitude": 0.5712384,
+      "distanceKm": 0.8,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Plaque de la Société de Secours Mutuels",
+      "type": "mémorial",
+      "adresse": "Montréjeau",
+      "latitude": 43.0880442,
+      "longitude": 0.5614312,
+      "distanceKm": 1.1,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Château de Valmirande",
+      "type": "château",
+      "adresse": "Montréjeau",
+      "latitude": 43.085127,
+      "longitude": 0.5405365,
+      "distanceKm": 2.2,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Monument aux Morts",
+      "type": "mémorial",
+      "adresse": "Montréjeau",
+      "latitude": 43.0796975,
+      "longitude": 0.4871672,
+      "distanceKm": 6.4,
+      "accessiblePMR": true,
+      "niveauAccessibilite": "confirme"
+    }
+  ]
 }

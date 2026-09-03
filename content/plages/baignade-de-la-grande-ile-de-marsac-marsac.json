@@ -17,6 +17,115 @@
     "PARKINGS_PMR",
     "SANITAIRES_ADAPTES"
   ],
-  "hebergements": [],
-  "offresCulturelles": []
+  "hebergements": [
+    {
+      "nom": "Au Calme",
+      "type": "chambre d'hôtes",
+      "adresse": "3 Rue du Rampaud, 16710, Marsac",
+      "telephone": "+33 7 72 08 26 48",
+      "latitude": 45.6863457,
+      "longitude": 0.1409273,
+      "distanceKm": 7.4,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Kyriad Angoulême nord Champniers",
+      "type": "hôtel",
+      "adresse": "184 Rue des Platanes, 16430, Marsac",
+      "latitude": 45.7132944,
+      "longitude": 0.1836683,
+      "distanceKm": 8.1,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "hotelF1",
+      "type": "hôtel",
+      "adresse": "210 Rue des Meneaux, 16430, Champniers",
+      "telephone": "0 891 70 51 62",
+      "siteWeb": "https://all.accor.com/hotel/2290/index.en.shtml#origin=hotelf1",
+      "latitude": 45.6942486,
+      "longitude": 0.1781238,
+      "distanceKm": 8.8,
+      "accessiblePMR": true,
+      "niveauAccessibilite": "confirme"
+    },
+    {
+      "nom": "Ibis budget Angoulême Nord",
+      "type": "hôtel",
+      "adresse": "172 Rue des Meneaux, 16430, Champniers",
+      "telephone": "0 892 70 09 41",
+      "siteWeb": "https://all.accor.com/hotel/7268/index.fr.shtml",
+      "latitude": 45.6936997,
+      "longitude": 0.1785888,
+      "distanceKm": 8.9,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Ibis styles Angoulême Nord",
+      "type": "hôtel",
+      "adresse": "122 Rue des Meneaux, 16430, Champniers",
+      "telephone": "+33 5 45 68 53 22",
+      "siteWeb": "https://all.accor.com/hotel/0397/index.fr.shtml",
+      "latitude": 45.6940467,
+      "longitude": 0.1790344,
+      "distanceKm": 8.9,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Logis du Portal",
+      "type": "château",
+      "adresse": "Marsac",
+      "latitude": 45.765564,
+      "longitude": 0.1112714,
+      "distanceKm": 3.2,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Château de Balzac",
+      "type": "château",
+      "adresse": "Marsac",
+      "latitude": 45.707631,
+      "longitude": 0.1091492,
+      "distanceKm": 4.2,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Donjon de Montignac",
+      "type": "château",
+      "adresse": "Marsac",
+      "latitude": 45.7842278,
+      "longitude": 0.1239506,
+      "distanceKm": 5.5,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Monument aux Morts",
+      "type": "mémorial",
+      "adresse": "Marsac",
+      "latitude": 45.7964532,
+      "longitude": 0.1343978,
+      "distanceKm": 7.1,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Domaine de Fontguyon",
+      "type": "château",
+      "adresse": "Marsac",
+      "latitude": 45.7228361,
+      "longitude": -0.0014162,
+      "distanceKm": 7.2,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    }
+  ]
 }

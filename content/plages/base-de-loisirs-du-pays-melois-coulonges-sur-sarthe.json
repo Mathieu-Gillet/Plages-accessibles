@@ -19,7 +19,91 @@
     "FAUTEUIL_ROULANT",
     "CHEMIN_ACCES"
   ],
-  "hebergements": [],
-  "offresCulturelles": [],
+  "hebergements": [
+    {
+      "nom": "Hôtel de la poste",
+      "type": "hôtel",
+      "adresse": "Coulonges-sur-Sarthe",
+      "telephone": "+332 33 81 18 00",
+      "siteWeb": "https://www.restauranthoteldelaposte.com/",
+      "latitude": 48.5127057,
+      "longitude": 0.3531773,
+      "distanceKm": 0.4,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Le Moulin Foulon",
+      "type": "hôtel",
+      "adresse": "Coulonges-sur-Sarthe",
+      "latitude": 48.536844,
+      "longitude": 0.2414797,
+      "distanceKm": 9,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Le Relais du Ménil Broût",
+      "type": "hôtel",
+      "adresse": "La Prise, 61250, Le Ménil-Broût",
+      "latitude": 48.4828203,
+      "longitude": 0.2431316,
+      "distanceKm": 9,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    }
+  ],
+  "offresCulturelles": [
+    {
+      "nom": "Château d'Aunay",
+      "type": "château",
+      "adresse": "Coulonges-sur-Sarthe",
+      "latitude": 48.5432936,
+      "longitude": 0.278281,
+      "distanceKm": 6.9,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Château de Beaufossé",
+      "type": "château",
+      "adresse": "Coulonges-sur-Sarthe",
+      "latitude": 48.5543762,
+      "longitude": 0.2584416,
+      "distanceKm": 8.7,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Ruines ancien Château",
+      "type": "ruines",
+      "adresse": "Coulonges-sur-Sarthe",
+      "latitude": 48.5435125,
+      "longitude": 0.2464544,
+      "distanceKm": 9,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "René Dupray de La Mahérie",
+      "type": "mémorial",
+      "adresse": "Coulonges-sur-Sarthe",
+      "latitude": 48.4383477,
+      "longitude": 0.4252629,
+      "distanceKm": 9.5,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    },
+    {
+      "nom": "Château des Carreaux",
+      "type": "château",
+      "adresse": "Coulonges-sur-Sarthe",
+      "latitude": 48.5206574,
+      "longitude": 0.4891948,
+      "distanceKm": 9.7,
+      "accessiblePMR": false,
+      "niveauAccessibilite": "inconnu"
+    }
+  ],
   "avis": []
 }
